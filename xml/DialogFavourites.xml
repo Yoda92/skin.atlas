@@ -22,14 +22,14 @@
 				<control type="image">
 					<top>123</top>
 					<left>34</left>
-					<texture>colors/grey800.png</texture>
+					<texture border="5" colordiffuse="accent800">colors/white.png</texture>
 					<height>584</height>
 					<width>390</width>
 				</control>
 				<control type="image">
 					<top>123</top>
 					<left>445</left>
-					<texture>colors/grey800.png</texture>
+					<texture border="5" colordiffuse="accent800">colors/white.png</texture>
 					<height>584</height>
 					<width>1003</width>
 				</control>

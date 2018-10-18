@@ -123,6 +123,7 @@
 				<disabledcolor>text500</disabledcolor>
 				<font>sourcesanspro_regular_26</font>
 				<texturefocus border="26" colordiffuse="main500">shapes/white_rounded_bar.png</texturefocus>
+				<texturenofocus/>
 			</control>
 		</definition>
 	</include>
