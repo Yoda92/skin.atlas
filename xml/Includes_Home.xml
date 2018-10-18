@@ -148,11 +148,10 @@
 			</control>
 			<!-- Widget metadata /-->
 			<control type="group">
-				<visible>Integer.IsGreater(Container(2000).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(2000).NumItems,0) | Container(2000).IsUpdating</visible>
 				<left>34</left>
 				<top>34</top>
 				<control type="grouplist">
-					<visible>Integer.IsGreater(Container(2000).NumItems,0)</visible>
 					<orientation>vertical</orientation>
 					<itemgap>15</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
@@ -239,7 +238,7 @@
 	<include name="home_widget_fallback">
 		<control type="group">
 			<top>-100</top>
-			<visible>!Integer.IsGreater(Container(2000).NumItems,0)</visible>
+			<visible>!Integer.IsGreater(Container(2000).NumItems,0) + !Container(2000).IsUpdating</visible>
 			<control type="image">
 				<aspectratio>center</aspectratio>
 				<height>540</height>
