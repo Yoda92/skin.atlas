@@ -100,6 +100,7 @@
 		<texturesliderbar border="5" colordiffuse="accent300">shapes/white_rounded.png</texturesliderbar>
 		<textureslidernib border="5" colordiffuse="accent100">shapes/white_rounded.png</textureslidernib>
 		<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+		<textureslidernibfocus border="5" colordiffuse="main500">shapes/white_rounded.png</textureslidernibfocus>
 		<pulseonselect>false</pulseonselect>
 		<textcolor>text100</textcolor>
 		<disabledcolor>accent500</disabledcolor>

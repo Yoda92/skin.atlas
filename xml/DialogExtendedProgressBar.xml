@@ -8,7 +8,7 @@
 			<control type="image">
 				<height>144</height>
 				<width>610</width>
-				<texture border="5">shapes/black_rounded.png</texture>
+				<texture border="5" colordiffuse="ccffffff">shapes/black_rounded.png</texture>
 				<top>55</top>
 				<left>1255</left>
 			</control>
