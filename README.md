@@ -5,7 +5,7 @@ Atlas
 
 <a name="About"></a>
 ## About
-Atlas is a skin for Kodi, designed to be clear, simple and light.
+Atlas is designed to be a minimalistic, elegant and intuitive 10-Foot UI for Kodi.
 
 <a name="License"></a>
 ## License
@@ -42,7 +42,7 @@ https://img.shields.io/badge/Download-ALPHA-brightgreen.svg?style=flat-square
 
 <a name="Support"></a>
 ## Support
-For any questions, discussion and support, please check the Atlas post on the Kodi forums [here](https://forum.kodi.tv/forumdisplay.php?fid=160).
+For any questions, discussion and support, please check the Atlas post on the Kodi forums [here](https://forum.kodi.tv/showthread.php?tid=336615).
 
 
 
