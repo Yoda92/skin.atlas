@@ -71,7 +71,7 @@
 		<font>sourcesanspro_regular_26</font>
 		<aligny>center</aligny>
 		<textoffsetx>21</textoffsetx>
-		<textureradioonnofocus colordiffuse="text100">buttons/buttons/toggle_right.png</textureradioonnofocus>
+		<textureradioonnofocus colordiffuse="text100">buttons/toggle_right.png</textureradioonnofocus>
 		<textureradioonfocus colordiffuse="text100">buttons/toggle_right.png</textureradioonfocus>
 		<textureradiooffnofocus colordiffuse="text200">buttons/toggle_left.png</textureradiooffnofocus>
 		<textureradioofffocus colordiffuse="text200">buttons/toggle_left.png</textureradioofffocus>
@@ -99,8 +99,7 @@
 		<sliderheight>13</sliderheight>
 		<texturesliderbar border="5" colordiffuse="accent300">shapes/white_rounded.png</texturesliderbar>
 		<textureslidernib border="5" colordiffuse="accent100">shapes/white_rounded.png</textureslidernib>
-		<textureslidernibfocus border="5">shapes/red500_rounded.png</textureslidernibfocus>
-		<texturefocus border="5">shapes/accent500_rounded.png</texturefocus>
+		<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
 		<pulseonselect>false</pulseonselect>
 		<textcolor>text100</textcolor>
 		<disabledcolor>accent500</disabledcolor>
