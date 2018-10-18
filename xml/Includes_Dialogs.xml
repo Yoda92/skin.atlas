@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="dialog_background">
+		<control type="image">
+			<width>100%</width>
+			<height>100%</height>
+			<texture colordiffuse="A6ffffff">colors/black.png</texture>
+		</control>
+	</include>
+
+	<include name="dialog_panel">
+		<param name="width"/>
+		<param name="height"/>
+		<param name="label"/>
+		<param name="label_id"/>
+		<param name="label_offset">34</param>
+		<definition>
+			<control type="image">
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texture border="5" colordiffuse="accent700">shapes/white_rounded.png</texture>
+			</control>
+			<control type="image">
+				<width>$PARAM[width]</width>
+				<height>89</height>
+				<texture border="5" colordiffuse="main700">shapes/white_rounded_top.png</texture>
+			</control>
+			<control type="image">
+				<top>89</top>
+				<width>$PARAM[width]</width>
+				<height>5</height>
+				<texture>shadows/shadowline_5px_down.png</texture>
+			</control>
+			<control type="label" id="$PARAM[label_id]">
+				<height>89</height>
+				<label>$PARAM[label]</label>
+				<left>$PARAM[label_offset]</left>
+				<font>sourcesanspro_bold_30</font>
+			</control>
+		</definition>
+	</include>
+
+	<include name="dialog_button">
+		<param name="visible">true</param>
+		<param name="width"/>
+		<param name="id"/>
+		<param name="align">center</param>
+		<param name="textoffset"/>
+		<param name="label"/>
+		<param name="height">73</param>
+		<param name="texturecolor">accent800</param>
+		<param name="textcolor">text100</param>
+		<definition>
+			<control type="button" id="$PARAM[id]">
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<visible>$PARAM[visible]</visible>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texturenofocus border="5" colordiffuse="$PARAM[texturecolor]">shapes/white_rounded.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+				<textoffsetx>$PARAM[textoffset]</textoffsetx>
+				<label>$PARAM[label]</label>
+				<align>$PARAM[align]</align>
+				<aligny>center</aligny>
+			</control>
+		</definition>
+	</include>
+
+	<include name="dialog_spincontrolex">
+		<param name="width"/>
+		<param name="id"/>
+		<param name="align">center</param>
+		<param name="textoffset"/>
+		<param name="label"/>
+		<param name="height">73</param>
+		<param name="visible">true</param>
+		<definition>
+			<control type="spincontrolex" id="$PARAM[id]">
+				<visible>$PARAM[visible]</visible>
+				<label>$PARAM[label]</label>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<align>$PARAM[align]</align>
+				<textoffsetx>$PARAM[textoffset]</textoffsetx>
+				<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+			</control>
+		</definition>
+	</include>
+
+	<include name="dialog_radiobutton">
+		<param name="width"/>
+		<param name="id"/>
+		<param name="align">center</param>
+		<param name="textoffset"/>
+		<param name="label"/>
+		<param name="label_width"/>
+		<param name="height">73</param>
+		<definition>
+			<control type="radiobutton" id="$PARAM[id]">
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+				<textoffsetx>$PARAM[textoffset]</textoffsetx>
+				<label>$PARAM[label]</label>
+				<textwidth>$PARAM[label_width]</textwidth>
+				<align>$PARAM[align]</align>
+				<aligny>center</aligny>
+				<radiowidth>$PARAM[height]</radiowidth>
+				<radioheight>$PARAM[height]</radioheight>
+			</control>
+		</definition>
+	</include>
+
+	<include name="dialog_label_bold">
+		<param name="width"/>
+		<param name="id"/>
+		<param name="label"/>
+		<param name="height">89</param>
+		<param name="align">center</param>
+		<definition>
+			<control type="label" id="$PARAM[id]">
+				<height>$PARAM[height]</height>
+				<width>$PARAM[width]</width>
+				<align>$PARAM[align]</align>
+				<aligny>center</aligny>
+				<label>$PARAM[label]</label>
+				<font>sourcesanspro_bold_26</font>
+				<textcolor>text100</textcolor>
+			</control>
+		</definition>
+	</include>
+
+	<include name="dialog_label_regular">
+		<param name="width"/>
+		<param name="id"/>
+		<param name="label"/>
+		<param name="align">center</param>
+		<definition>
+			<control type="label" id="$PARAM[id]">
+				<height>73</height>
+				<width>$PARAM[width]</width>
+				<aligny>center</aligny>
+				<align>$PARAM[align]</align>
+				<label>$PARAM[label]</label>
+				<font>sourcesanspro_regular_26</font>
+				<textcolor>text100</textcolor>
+				<disabledcolor>text500</disabledcolor>
+			</control>
+		</definition>
+	</include>
+
+	<include name="dialog_list">
+		<param name="id"/>
+		<param name="onright"/>
+		<param name="onleft"/>
+		<param name="width"/>
+		<param name="height"/>
+		<param name="top"/>
+		<param name="left"/>
+		<param name="label_width"/>
+		<param name="visible_label2">false</param>
+		<param name="label2_width"/>
+		<definition>
+			<control type="list" id="$PARAM[id]">
+				<onright>$PARAM[onright]</onright>
+				<onleft>$PARAM[onleft]</onleft>
+				<top>$PARAM[top]</top>
+				<left>$PARAM[left]</left>
+				<height>$PARAM[height]</height>
+				<width>$PARAM[width]</width>
+				<itemlayout height="73" width="$PARAM[width]">
+					<control type="group">
+						<left>21</left>
+						<include content="dialog_label_regular">
+							<param name="width">$PARAM[label_width]</param>
+							<param name="label">$INFO[ListItem.Label]</param>
+							<param name="align">left</param>
+						</include>
+					</control>
+					<control type="group">
+						<left>120</left>
+						<visible>$PARAM[visible_label2]</visible>
+						<include content="dialog_label_regular">
+							<param name="width">$PARAM[label2_width]</param>
+							<param name="label">$INFO[ListItem.Label2]</param>
+							<param name="align">left</param>
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="73" width="$PARAM[width]">
+					<control type="image">
+						<visible>Control.HasFocus($PARAM[id])</visible>
+						<height>73</height>
+						<width>$PARAM[width]</width>
+						<texture border="5" colordiffuse="accent500">shapes/white_rounded.png</texture>
+					</control>
+					<control type="image">
+						<visible>!Control.HasFocus($PARAM[id])</visible>
+						<height>73</height>
+						<width>$PARAM[width]</width>
+						<texture border="5" colordiffuse="accent600">shapes/white_rounded.png</texture>
+					</control>
+					<control type="group">
+						<left>21</left>
+						<include content="dialog_label_regular">
+							<param name="width">$PARAM[label_width]</param>
+							<param name="label">$INFO[ListItem.Label]</param>
+							<param name="align">left</param>
+						</include>
+					</control>
+					<control type="group">
+						<left>120</left>
+						<visible>$PARAM[visible_label2]</visible>
+						<include content="dialog_label_regular">
+							<param name="width">$PARAM[label2_width]</param>
+							<param name="label">$INFO[ListItem.Label2]</param>
+							<param name="align">left</param>
+						</include>
+					</control>
+				</focusedlayout>
+			</control>
+		</definition>
+	</include>
+
+	<include name="keyboard_button">
+		<param name="id"/>
+		<param name="label"/>
+		<param name="width">89</param>
+		<param name="height">89</param>
+		<param name="onup"/>
+		<param name="ondown"/>
+		<definition>
+			<control type="button" id="$PARAM[id]">
+				<font>sourcesanspro_bold_26</font>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+				<label>$PARAM[label]</label>
+			</control>
+		</definition>
+	</include>
+
+	<include name="keyboard_radiobutton">
+		<param name="id"/>
+		<param name="icon"/>
+		<param name="alt_icon"/>
+		<param name="width">89</param>
+		<param name="height">89</param>
+		<param name="onup"/>
+		<param name="ondown"/>
+		<definition>
+			<control type="radiobutton" id="$PARAM[id]">
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<radiowidth>$PARAM[width]</radiowidth>
+				<radioheight>$PARAM[height]</radioheight>
+				<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+				<textureradioonnofocus colordiffuse="accent300">$PARAM[icon]</textureradioonnofocus>
+				<textureradioonfocus colordiffuse="accent100">$PARAM[icon]</textureradioonfocus>
+				<textureradiooffnofocus colordiffuse="accent300">$PARAM[alt_icon]</textureradiooffnofocus>
+				<textureradioofffocus colordiffuse="accent100">$PARAM[alt_icon]</textureradioofffocus>
+				<textureradioondisabled colordiffuse="accent500">$PARAM[icon]</textureradioondisabled>
+				<textureradiooffdisabled colordiffuse="accent500">$PARAM[icon]</textureradiooffdisabled>
+				<radioposx>1</radioposx>
+			</control>
+		</definition>
+	</include>
+</includes>

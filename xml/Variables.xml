@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<variable name="plot_var">
+		<value condition="!String.IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
+		<value>$INFO[ListItem.Plot]</value>
+	</variable>
+
+	<variable name="progress_var">
+		<value condition="Integer.IsGreater(ListItem.PlayCount,0)">miscellaneous/checkmark.png</value>
+		<value condition="Integer.IsGreater(ListItem.PercentPlayed,0)">miscellaneous/halfcircle.png</value>
+	</variable>
+
+	<variable name="list_right_var">
+		<value condition="Integer.IsGreater(ListItem.PlayCount,0)"/>
+		<value condition="Integer.IsGreater(ListItem.PercentPlayed,0)"/>
+		<value condition="Container.Content(actors) | Container.Content(directors)">$INFO[ListItem.Appearances]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Addon.Status))">$INFO[ListItem.Property(Addon.Status)]</value>
+		<value condition="!String.IsEmpty(ListItem.Rating)">$INFO[ListItem.Rating]</value>
+		<value>$INFO[ListItem.Label2]</value>
+	</variable>
+
+	<variable name="default_header_var">
+		<value condition="!String.IsEmpty(Container.ShowTitle)">$INFO[Container.ShowTitle]</value>
+		<value condition="!String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
+		<value>$LOCALIZE[31103]</value>
+	</variable>
+
+	<variable name="list_focus_var">
+		<value condition="ControlGroup(9000).HasFocus() | Control.HasFocus(9001)">main700</value>
+		<value>main500</value>
+	</variable>
+
+	<variable name="list_label_var">
+		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+
+	<variable name="list_label_var2">
+		<value condition="!String.IsEmpty(ListItem.Artist) + !String.IsEqual(ListItem.dbtype,artist)">$INFO[ListItem.Artist]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(ListItem.AddonCreator)">$INFO[ListItem.AddonCreator]</value>
+		<value>$INFO[ListItem.Label2]</value>
+	</variable>
+
+	<variable name="list_label_var3">
+		<value condition="!String.IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
+		<value condition="!String.IsEmpty(ListItem.AddonDescription)">$INFO[ListItem.AddonDescription]</value>
+		<value>$INFO[ListItem.Plot]</value>
+	</variable>
+
+	<variable name="common_poster_var">
+		<value condition="String.IsEqual(ListItem.Dbtype,episode)">$INFO[ListItem.Art(tvshow.poster)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value>$INFO[ListItem.Icon]</value>
+	</variable>
+
+	<variable name="common_landscape_var">
+		<value condition="String.IsEqual(ListItem.Dbtype,movie) | String.IsEqual(ListItem.Dbtype,set)">$INFO[ListItem.Art(fanart)]</value>
+		<value>$INFO[ListItem.Icon]</value>
+	</variable>
+
+	<variable name="star_var">
+		<value condition="Integer.IsGreaterOrEqual(ListItem.Rating,9)">rating/5.png</value>
+		<value condition="Integer.IsGreaterOrEqual(ListItem.Rating,8)">rating/4.5.png</value>
+		<value condition="Integer.IsGreaterOrEqual(ListItem.Rating,7)">rating/4.png</value>
+		<value condition="Integer.IsGreaterOrEqual(ListItem.Rating,6)">rating/3.5.png</value>
+		<value condition="Integer.IsGreaterOrEqual(ListItem.Rating,5)">rating/3.png</value>
+		<value condition="Integer.IsGreaterOrEqual(ListItem.Rating,4)">rating/2.5.png</value>
+		<value condition="Integer.IsGreaterOrEqual(ListItem.Rating,3)">rating/2.png</value>
+		<value condition="Integer.IsGreaterOrEqual(ListItem.Rating,2)">rating/1.5.png</value>
+		<value condition="Integer.IsGreaterOrEqual(ListItem.Rating,1)">rating/1.png</value>
+		<value condition="Integer.IsGreaterOrEqual(ListItem.Rating,0)">rating/0.5.png</value>
+		<value>rating/0.png</value>
+	</variable>
+
+	<variable name="home_star_var">
+		<value condition="Integer.IsGreaterOrEqual(Container(2000).ListItem.Rating,9)">rating/5.png</value>
+		<value condition="Integer.IsGreaterOrEqual(Container(2000).ListItem.Rating,8)">rating/4.5.png</value>
+		<value condition="Integer.IsGreaterOrEqual(Container(2000).ListItem.Rating,7)">rating/4.png</value>
+		<value condition="Integer.IsGreaterOrEqual(Container(2000).ListItem.Rating,6)">rating/3.5.png</value>
+		<value condition="Integer.IsGreaterOrEqual(Container(2000).ListItem.Rating,5)">rating/3.png</value>
+		<value condition="Integer.IsGreaterOrEqual(Container(2000).ListItem.Rating,4)">rating/2.5.png</value>
+		<value condition="Integer.IsGreaterOrEqual(Container(2000).ListItem.Rating,3)">rating/2.png</value>
+		<value condition="Integer.IsGreaterOrEqual(Container(2000).ListItem.Rating,2)">rating/1.5.png</value>
+		<value condition="Integer.IsGreaterOrEqual(Container(2000).ListItem.Rating,1)">rating/1.png</value>
+		<value condition="Integer.IsGreaterOrEqual(Container(2000).ListItem.Rating,0)">rating/0.5.png</value>
+		<value>rating/0.png</value>
+	</variable>
+
+	<variable name="dialogselect_image_var">
+		<value condition="String.IsEmpty(Container(6).ListItem.Icon)">$INFO[Container(3).ListItem.Icon]</value>
+		<value>$INFO[Container(6).ListItem.Icon]</value>
+	</variable>
+
+	<variable name="shortcuts_list_focus_var">
+		<value condition="ControlGroup(9000).HasFocus()">shapes/grey600_rounded.png</value>
+		<value>shapes/grey500_rounded.png</value>
+	</variable>
+
+	<variable name="director_var">
+		<value condition="!String.IsEmpty(ListItem.Writer)">$INFO[ListItem.Writer]</value>
+		<value>$INFO[ListItem.Director]</value>
+	</variable>
+
+	<variable name="osd_nib_var">
+		<value condition="Control.HasFocus(12)">grey100</value>
+		<value>grey300</value>
+	</variable>
+
+	<variable name="OSD_label_var">
+		<value condition="Player.HasAudio + !String.IsEmpty(MusicPlayer.Artist)">$INFO[MusicPlayer.Artist] - $INFO[MusicPlayer.Title]</value>
+		<value>$INFO[Player.Title]</value>
+	</variable>
+
+	<variable name="music_thumb_var">
+		<value condition="!String.IsEmpty(Listitem.Art(thumb))">$INFO[Listitem.Art(thumb)]</value>
+		<value condition="String.IsEqual(listitem.dbtype,artist)">DefaultArtist.png</value>
+		<value condition="String.IsEqual(listitem.dbtype,album)">DefaultAlbumCover.png</value>
+		<value>DefaultAudio.png</value>
+	</variable>
+
+	<variable name="home_color_var">
+		<value condition="Control.HasFocus(2000) | Control.HasFocus(3001)">main700</value>
+		<value>main500</value>
+	</variable>
+</includes>

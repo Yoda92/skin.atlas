@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<control type="group">
+				<width>734</width>
+				<height>412</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<include content="dialog_panel">
+					<param name="width">734</param>
+					<param name="height">412</param>
+					<param name="label_id">1</param>
+					<param name="label_offset">21</param>
+				</include>
+				<!-- Dialog text /-->
+				<control type="textbox" id="9">
+					<top>110</top>
+					<left>21</left>
+					<width>692</width>
+					<height>161</height>
+				</control>
+				<control type="grouplist" id="9000">
+					<align>center</align>
+					<orientation>horizontal</orientation>
+					<top>318</top>
+					<itemgap>21</itemgap>
+					<include content="dialog_button">
+						<param name="id">11</param>
+						<param name="width">233</param>
+						<param name="label">$LOCALIZE[31039]</param>
+					</include>
+					<include content="dialog_button">
+						<param name="id">10</param>
+						<param name="width">233</param>
+						<param name="label">$LOCALIZE[31040]</param>
+					</include>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

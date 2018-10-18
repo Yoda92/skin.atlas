@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">1000</defaultcontrol>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=1000&amp;group=mainmenu|hub1101|hub1102|hub1103)</onload>
+	<controls>
+		<include>default_background</include>
+		<control type="group">
+			<include>common_window_animation</include>
+			<!-- Spotlight widget /-->
+			<include>home_widget_panel</include>
+			<include>home_widget</include>
+			<!-- Home menu /-->
+			<include>default_menu</include>
+		</control>
+	</controls>
+</window>

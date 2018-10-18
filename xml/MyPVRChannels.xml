@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">53</defaultcontrol>
+	<menucontrol>9000</menucontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<views>53</views>
+	<controls>
+		<include>default_background</include>
+		<include>clock</include>
+		<control type="group">
+			<include>pvr_window_animation</include>
+			<include>default_header_label</include>
+			<include>view_pvr_channels</include>
+		</control>
+		<control type="group">
+			<include>pvr_settings_window_animation</include>
+			<!-- Options panel /-->
+			<include content="common_options_menu">
+				<param name="list_id">53</param>
+				<param name="include_animation">false</param>
+				<param name="content">mypvrchannels_options_content</param>
+			</include>
+		</control>
+	</controls>
+</window>

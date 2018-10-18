@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+	<backgroundcolor>0</backgroundcolor>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<control type="group">
+				<top>55</top>
+				<left>1255</left>
+				<!-- Background panel /-->
+				<control type="image">
+					<height>144</height>
+					<width>610</width>
+					<texture border="5" colordiffuse="ccffffff">shapes/black_rounded.png</texture>
+				</control>
+				<control type="grouplist">
+					<left>21</left>
+					<itemgap>5</itemgap>
+					<height>144</height>
+					<align>center</align>
+					<!-- Heading /-->
+					<control type="label" id="401">
+						<align>center</align>
+						<height>26</height>
+						<width>568</width>
+						<font>sourcesanspro_bold_30</font>
+					</control>
+					<!-- Message /-->
+					<control type="label" id="402">
+						<align>center</align>
+						<height>26</height>
+						<width>568</width>
+						<textcolor>text300</textcolor>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window type="dialog" id="1107">
+	<backgroundcolor>0</backgroundcolor>
+	<visible>Player.HasAudio + !Window.IsActive(visualisation)</visible>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<control type="group">
+				<top>55</top>
+				<left>1255</left>
+				<!-- Background panel /-->
+				<control type="image">
+					<height>144</height>
+					<width>610</width>
+					<texture border="5" colordiffuse="ccffffff">shapes/black_rounded.png</texture>
+				</control>
+				<control type="grouplist">
+					<left>21</left>
+					<itemgap>5</itemgap>
+					<height>144</height>
+					<align>center</align>
+					<!-- Artist /-->
+					<control type="label">
+						<height>26</height>
+						<width>568</width>
+						<font>sourcesanspro_bold_30</font>
+						<label>$INFO[MusicPlayer.Artist]</label>
+					</control>
+					<!-- Title /-->
+					<control type="label">
+						<height>26</height>
+						<width>568</width>
+						<textcolor>text300</textcolor>
+						<label>$INFO[MusicPlayer.Title]</label>
+					</control>
+					<!-- Duration /-->
+					<control type="label">
+						<height>26</height>
+						<width>568</width>
+						<textcolor>text200</textcolor>
+						<label>$INFO[MusicPlayer.Time] [COLOR text100] / [/COLOR] $INFO[MusicPlayer.Duration]</label>
+					</control>
+				</control>
+				<control type="image">
+					<left>466</left>
+					<height>144</height>
+					<width>144</width>
+					<texture colordiffuse="text100">DefaultAudio.png</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

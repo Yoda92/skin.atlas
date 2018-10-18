@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<control type="group">
+				<width>734</width>
+				<height>412</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<include content="dialog_panel">
+					<param name="width">734</param>
+					<param name="height">412</param>
+					<param name="label">Information</param>
+					<param name="label_offset">21</param>
+				</include>
+				<!-- Dialog text /-->
+				<control type="textbox" id="5">
+					<top>110</top>
+					<left>21</left>
+					<width>692</width>
+					<height>161</height>
+				</control>
+				<control type="grouplist" id="9000">
+					<align>center</align>
+					<orientation>horizontal</orientation>
+					<top>318</top>
+					<itemgap>21</itemgap>
+					<include content="dialog_button">
+						<param name="id">11</param>
+						<param name="width">233</param>
+						<param name="label">$LOCALIZE[31039]</param>
+					</include>
+					<!-- OK /-->
+					<control type="button" id="9001">
+						<textcolor>grey100</textcolor>
+						<width>233</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<label>$LOCALIZE[31048]</label>
+						<align>center</align>
+						<aligny>center</aligny>
+						<onclick>Action(close)</onclick>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

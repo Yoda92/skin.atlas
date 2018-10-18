@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="view_50_list">
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+			<!-- Background panel /-->
+			<include content="view_background_panel">
+				<param name="header_width">608</param>
+				<param name="footer_left">778</param>
+				<param name="footer_width">983</param>
+			</include>
+			<!-- Panel poster /-->
+			<control type="group">
+				<top>185</top>
+				<left>185</left>
+				<control type="group">
+					<top>-5</top>
+					<left>-5</left>
+					<include content="common_poster">
+						<param name="width">566</param>
+						<param name="height">322</param>
+						<param name="fadetime">400</param>
+						<param name="bordersize">5</param>
+						<param name="bordertexture">shadows/shadow_5px.png</param>
+						<param name="texture_var">$VAR[common_landscape_var]</param>
+						<param name="aspectratio">keep</param>
+					</include>
+				</control>
+			</control>
+			<!-- Current item metadata /-->
+			<control type="group">
+				<top>518</top>
+				<left>185</left>
+				<control type="grouplist">
+					<usecontrolcoords>true</usecontrolcoords>
+					<width>556</width>
+					<height>376</height>
+					<itemgap>5</itemgap>
+					<!-- 1. label (title etc.) /-->
+					<control type="label">
+						<height>34</height>
+						<width>556</width>
+						<align>center</align>
+						<label>$VAR[list_label_var]</label>
+						<font>sourcesanspro_bold_34</font>
+					</control>
+					<!-- 2. label (genre etc.) /-->
+					<control type="label">
+						<height>26</height>
+						<width>556</width>
+						<align>center</align>
+						<label>$VAR[list_label_var2]</label>
+						<textcolor>grey300</textcolor>
+						<font>sourcesanspro_regular_26</font>
+					</control>
+					<!-- 3. label (plot etc.) /-->
+					<control type="textbox">
+						<height>200</height>
+						<width>556</width>
+						<label>$VAR[list_label_var3]</label>
+					</control>
+				</control>
+			</control>
+			<control type="list" id="50">
+				<preloaditems>2</preloaditems>
+				<viewtype label="List">info</viewtype>
+				<onup>9000</onup>
+				<onleft>9000</onleft>
+				<onright>9001</onright>
+				<pagecontrol>9001</pagecontrol>
+				<top>164</top>
+				<left>783</left>
+				<width>973</width>
+				<height>754</height>
+				<itemlayout height="89" width="973">
+					<control type="label">
+						<left>42</left>
+						<width>971</width>
+						<height>131</height>
+					</control>
+					<!-- Right-aligned metadata /-->
+					<control type="group">
+						<!-- Rating, Enable/Disable /-->
+						<control type="label">
+							<align>right</align>
+							<right>42</right>
+							<width>889</width>
+							<height>131</height>
+							<label>$VAR[list_right_var]</label>
+						</control>
+						<!-- Progress indicator /-->
+						<!-- This information has first priority /-->
+						<control type="image">
+							<right>11</right>
+							<height>131</height>
+							<width>889</width>
+							<aspectratio align="right">center</aspectratio>
+							<texture>$VAR[progress_var]</texture>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout height="89" width="973">
+					<control type="image">
+						<width>973</width>
+						<height>131</height>
+						<texture border="26" colordiffuse="$VAR[list_focus_var]">shapes/white_rounded_bar.png</texture>
+					</control>
+					<control type="label">
+						<left>42</left>
+						<width>971</width>
+						<height>131</height>
+					</control>
+					<!-- Right-aligned metadata /-->
+					<control type="group">
+						<!-- Rating, Enable/Disable /-->
+						<control type="label">
+							<align>right</align>
+							<right>42</right>
+							<width>889</width>
+							<height>131</height>
+							<label>$VAR[list_right_var]</label>
+						</control>
+						<!-- Progress indicator /-->
+						<!-- This information has first priority /-->
+						<control type="image">
+							<right>11</right>
+							<height>131</height>
+							<width>889</width>
+							<aspectratio align="right">center</aspectratio>
+							<texture>$VAR[progress_var]</texture>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<!-- List overlay /-->
+			<include content="view_list_overlay">
+				<param name="left">804</param>
+				<param name="width">931</param>
+			</include>
+		</control>
+	</include>
+</includes>

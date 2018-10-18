@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="common_window_animation">
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="144" tween="sine" easing="out"/>
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="144" delay="100" tween="sine" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="pvr_window_animation">
+		<animation type="WindowClose" condition="ControlGroup(9000).HasFocus()">
+			<effect type="fade" start="100" end="0" time="144" delay="101" tween="sine" easing="out"/>
+		</animation>
+		<animation type="WindowClose" condition="!ControlGroup(9000).HasFocus()">
+			<effect type="fade" start="100" end="0" time="144" tween="sine" easing="out"/>
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="144" delay="100" tween="sine" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="pvr_settings_window_animation">
+		<animation type="WindowClose" condition="ControlGroup(9000).HasFocus()">
+			<effect type="fade" start="100" end="0" time="144" delay="101" tween="sine" easing="out"/>
+			<effect type="slide" time="101" end="0,-144"/>
+		</animation>
+		<animation type="WindowClose" condition="!ControlGroup(9000).HasFocus()">
+			<effect type="fade" start="100" end="0" time="144" tween="sine" easing="out"/>
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="144" delay="100" tween="sine" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="common_visible_animation">
+		<animation type="Visible">
+			<effect type="fade" start="0" end="100" time="144" tween="sine" easing="out"/>
+		</animation>
+		<animation type="Hidden">
+			<effect type="fade" start="100" end="0" time="144" delay="100" tween="sine" easing="out"/>
+		</animation>
+	</include>
+</includes>

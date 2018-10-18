@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window type="dialog">
+	<backgroundcolor>0</backgroundcolor>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<control type="image">
+				<animation effect="rotate" start="360" end="0" center="auto" time="720" loop="true" condition="true">Conditional</animation>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<width>255</width>
+				<height>255</height>
+				<texture colordiffuse="accent100">miscellaneous/spinner.png</texture>
+				<aspectratio>center</aspectratio>
+			</control>
+		</control>
+	</controls>
+</window>

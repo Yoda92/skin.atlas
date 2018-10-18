@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="view_pvr_guide">
+		<control type="group">
+			<!-- Background panel /-->
+			<control type="image">
+				<left>50</left>
+				<top>219</top>
+				<width>1820</width>
+				<height>633</height>
+				<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				<bordersize>5</bordersize>
+				<bordertexture border="5">shadows/shadow_5px_rounded.png</bordertexture>
+			</control>
+			<control type="group">
+				<top>873</top>
+				<left>432</left>
+				<control type="grouplist">
+					<width>1433</width>
+					<orientation>horizontal</orientation>
+					<itemgap>21</itemgap>
+					<control type="label">
+						<visible>!String.IsEmpty(ListItem.StartTime) + !String.IsEmpty(ListItem.EndTime)</visible>
+						<label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
+						<textcolor>main500</textcolor>
+						<font>sourcesanspro_bold_26</font>
+						<height>30</height>
+						<width>auto</width>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Title]</label>
+						<font>sourcesanspro_bold_26</font>
+						<height>30</height>
+						<width>auto</width>
+					</control>
+				</control>
+				<control type="textbox">
+					<textcolor>text200</textcolor>
+					<visible>!String.IsEmpty(ListItem.Plot)</visible>
+					<top>34</top>
+					<width>1433</width>
+					<height>98</height>
+					<label>$INFO[ListItem.Plot]</label>
+				</control>
+			</control>
+			<control type="EpgGrid" id="10">
+				<scrolltime tween="sine">400</scrolltime>
+				<onup>9000</onup>
+				<ondown>noop</ondown>
+				<onright>9001</onright>
+				<pagecontrol>9001</pagecontrol>
+				<left>55</left>
+				<top>224</top>
+				<height>623</height>
+				<width>1810</width>
+				<orientation>vertical</orientation>
+				<timeblocks>34</timeblocks>
+				<rulerunit>6</rulerunit>
+				<progresstexture border="5" colordiffuse="209A9A9A">shapes/white_rounded.png</progresstexture>
+				<rulerlayout height="89" width="1810">
+					<control type="label">
+						<height>89</height>
+						<width>233</width>
+						<label>$INFO[ListItem.Label]</label>
+						<textoffsetx>21</textoffsetx>
+						<font>sourcesanspro_bold_26</font>
+					</control>
+				</rulerlayout>
+				<channellayout height="89" width="377">
+					<control type="label">
+						<height>85</height>
+						<width>377</width>
+						<label>[COLOR text300][B]$INFO[ListItem.ChannelNumberLabel][/B][/COLOR]     $INFO[ListItem.ChannelName]</label>
+						<textoffsetx>21</textoffsetx>
+						<textcolor>text300</textcolor>
+					</control>
+				</channellayout>
+				<focusedchannellayout height="89" width="377">
+					<control type="label">
+						<height>85</height>
+						<width>377</width>
+						<label>[COLOR text300][B]$INFO[ListItem.ChannelNumberLabel][/B][/COLOR]     $INFO[ListItem.ChannelName]</label>
+						<textoffsetx>21</textoffsetx>
+					</control>
+				</focusedchannellayout>
+				<itemlayout height="89" width="89">
+					<control type="image" id="2">
+						<height>85</height>
+						<width>85</width>
+						<texture border="5" colordiffuse="801e1e1b">shapes/white_rounded.png</texture>
+					</control>
+					<control type="label" id="1">
+						<height>85</height>
+						<width>47</width>
+						<label>$INFO[ListItem.Label]</label>
+						<textoffsetx>21</textoffsetx>
+						<textcolor>text300</textcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout height="89" width="89">
+					<control type="image" id="2">
+						<height>85</height>
+						<width>85</width>
+						<texture border="5" colordiffuse="main500">shapes/white_rounded.png</texture>
+					</control>
+					<control type="label" id="1">
+						<height>85</height>
+						<width>47</width>
+						<label>$INFO[ListItem.Label]</label>
+						<textoffsetx>21</textoffsetx>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="9001">
+				<showonepage>false</showonepage>
+				<onleft>10</onleft>
+				<orientation>vertical</orientation>
+				<right>0</right>
+				<width>13</width>
+				<height>1080</height>
+				<texturesliderbar border="5" colordiffuse="accent300">shapes/white_rounded.png</texturesliderbar>
+				<texturesliderbarfocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturesliderbarfocus>
+			</control>
+		</control>
+	</include>
+</includes>

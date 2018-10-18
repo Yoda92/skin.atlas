@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window type="dialog">
+	<backgroundcolor>0</backgroundcolor>
+	<controls>
+		<control type="group">
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="144" delay="377" tween="quadratic" easing="out"/>
+			</animation>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="144" tween="quadratic" easing="out"/>
+			</animation>
+			<control type="group">
+				<height>377</height>
+				<width>377</width>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<control type="image">
+					<height>377</height>
+					<width>377</width>
+					<texture colordiffuse="E6FFFFFF" border="21">shapes/black_rounded_large.png</texture>
+				</control>
+				<control type="image">
+					<top>63</top>
+					<left>63</left>
+					<height>251</height>
+					<width>251</width>
+					<texture colordiffuse="grey100">icons/volume.png</texture>
+				</control>
+				<control type="label">
+					<top>34</top>
+					<height>34</height>
+					<width>377</width>
+					<align>center</align>
+					<font>sourcesanspro_bold_34</font>
+					<label>$LOCALIZE[31081]</label>
+					<textcolor>grey100</textcolor>
+				</control>
+				<control type="progress">
+					<left>34</left>
+					<top>322</top>
+					<texturebg colordiffuse="E61e1e1b">colors/white.png</texturebg>
+					<midtexture colordiffuse="accent100">colors/white.png</midtexture>
+					<height>21</height>
+					<width>309</width>
+					<info>Player.Volume</info>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

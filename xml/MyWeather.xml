@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">2</defaultcontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<controls>
+		<include>default_background</include>
+		<include>clock</include>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include content="specific_header_label">
+				<param name="label">$LOCALIZE[31113]</param>
+			</include>
+			<!-- Settings /-->
+			<control type="grouplist">
+				<include>common_visible_animation</include>
+				<top>55</top>
+				<right>55</right>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+				<itemgap>21</itemgap>
+				<include content="dialog_spincontrolex">
+					<param name="visible">Weather.IsFetched</param>
+					<param name="id">3</param>
+					<param name="width">377</param>
+					<param name="height">89</param>
+					<param name="align">left</param>
+					<param name="textoffset">21</param>
+				</include>
+				<include content="dialog_button">
+					<param name="id">2</param>
+					<param name="label">$LOCALIZE[31056]</param>
+					<param name="width">233</param>
+					<param name="height">89</param>
+				</include>
+			</control>
+			<!-- Weather information /-->
+			<control type="group">
+				<include>common_visible_animation</include>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<width>1810</width>
+				<height>751</height>
+				<control type="image">
+					<width>1810</width>
+					<height>365</height>
+					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				</control>
+				<control type="image">
+					<left>21</left>
+					<top>21</top>
+					<width>323</width>
+					<height>323</height>
+					<texture>$INFO[Window(weather).Property(Day0.OutlookIcon)]</texture>
+				</control>
+				<control type="image">
+					<visible>Weather.IsFetched</visible>
+					<left>365</left>
+					<top>48</top>
+					<width>269</width>
+					<height>269</height>
+					<texture colordiffuse="text100">icons/temperature.png</texture>
+				</control>
+				<control type="grouplist">
+					<visible>Weather.IsFetched</visible>
+					<left>575</left>
+					<orientation>vertical</orientation>
+					<align>center</align>
+					<width>323</width>
+					<height>365</height>
+					<itemgap>8</itemgap>
+					<control type="label">
+						<label>$INFO[Weather.Temperature]</label>
+						<font>sourcesanspro_regular_128</font>
+						<height>100</height>
+					</control>
+					<control type="label">
+						<textcolor>grey200</textcolor>
+						<label>$INFO[Weather.Conditions]</label>
+						<font>raleway_regular_26</font>
+						<height>26</height>
+					</control>
+				</control>
+				<control type="group">
+					<include content="weather_item">
+						<param name="left">0</param>
+						<param name="day">1</param>
+					</include>
+					<include content="weather_item">
+						<param name="left">305</param>
+						<param name="day">2</param>
+					</include>
+					<include content="weather_item">
+						<param name="left">610</param>
+						<param name="day">3</param>
+					</include>
+					<include content="weather_item">
+						<param name="left">915</param>
+						<param name="day">4</param>
+					</include>
+					<include content="weather_item">
+						<param name="left">1220</param>
+						<param name="day">5</param>
+					</include>
+					<include content="weather_item">
+						<param name="left">1525</param>
+						<param name="day">6</param>
+					</include>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

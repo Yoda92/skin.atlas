@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<shortcut>
+		<label>$LOCALIZE[31000]</label>
+		<label2>Common Menu Item</label2>
+		<action>ActivateWindow(1101,return)</action>
+		<icon>special://skin/media/icons/movie.png</icon>
+	</shortcut>
+
+	<shortcut>
+		<label>$LOCALIZE[31001]</label>
+		<label2>Common Menu Item</label2>
+		<action>ActivateWindow(1102,return)</action>
+		<icon>special://skin/media/icons/monitor.png</icon>
+	</shortcut>
+
+	<shortcut>
+		<label>$LOCALIZE[31002]</label>
+		<label2>Common Menu Item</label2>
+		<action>ActivateWindow(TVGuide)</action>
+		<icon>special://skin/media/icons/tv.png</icon>
+	</shortcut>
+
+	<shortcut>
+		<label>$LOCALIZE[31003]</label>
+		<label2>Common Menu Item</label2>
+		<action>ActivateWindow(Videos,root,return)</action>
+		<icon>special://skin/media/icons/videocamera.png</icon>
+	</shortcut>
+
+	<shortcut>
+		<label>$LOCALIZE[31004]</label>
+		<label2>Common Menu Item</label2>
+		<action>ActivateWindow(Games,return)</action>
+		<icon>special://skin/media/icons/games.png</icon>
+	</shortcut>
+
+	<shortcut>
+		<label>$LOCALIZE[31005]</label>
+		<label2>Common Menu Item</label2>
+		<action>ActivateWindow(Music,return)</action>
+		<icon>special://skin/media/icons/music.png</icon>
+	</shortcut>
+
+	<shortcut>
+		<label>$LOCALIZE[31006]</label>
+		<label2>Common Menu Item</label2>
+		<action>ActivateWindow(Pictures,return)</action>
+		<icon>special://skin/media/icons/picture.png</icon>
+	</shortcut>
+
+	<shortcut>
+		<label>$LOCALIZE[31007]</label>
+		<label2>Common Menu Item</label2>
+		<action>ActivateWindow(addonbrowser,return)</action>
+		<icon>special://skin/media/icons/addons.png</icon>
+	</shortcut>
+
+	<shortcut>
+		<label>$LOCALIZE[31008]</label>
+		<label2>Common Menu Item</label2>
+		<action>ActivateWindow(weather,return)</action>
+		<icon>special://skin/media/icons/weather.png</icon>
+	</shortcut>
+
+	<shortcut>
+		<label>$LOCALIZE[31009]</label>
+		<label2>Common Menu Item</label2>
+		<action>ActivateWindow(Settings,return)</action>
+		<icon>special://skin/media/icons/settings.png</icon>
+	</shortcut>
+</shortcuts>

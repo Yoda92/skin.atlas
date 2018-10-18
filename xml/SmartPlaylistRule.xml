@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">15</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<!-- Dialog items /-->
+			<control type="group">
+				<width>734</width>
+				<height>488</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<include content="dialog_panel">
+					<param name="label">$LOCALIZE[31154]</param>
+					<param name="width">734</param>
+					<param name="height">488</param>
+				</include>
+				<control type="group">
+					<left>34</left>
+					<top>123</top>
+					<!-- Select Field /-->
+					<control type="button" id="15">
+						<ondown>16</ondown>
+						<width>666</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31155]</label>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Select operator /-->
+					<control type="button" id="16">
+						<ondown>20</ondown>
+						<onup>15</onup>
+						<top>86</top>
+						<width>666</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31156]</label>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Enter a value /-->
+					<control type="edit" id="17">
+						<onup>16</onup>
+						<ondown>9000</ondown>
+						<onright>20</onright>
+						<top>172</top>
+						<width>420</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<textoffsetx>21</textoffsetx>
+						<hinttext>$LOCALIZE[31157]</hinttext>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Browse for a value /-->
+					<control type="button" id="20">
+						<onleft>17</onleft>
+						<ondown>9000</ondown>
+						<onup>16</onup>
+						<top>172</top>
+						<left>433</left>
+						<width>233</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<label>$LOCALIZE[31158]</label>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="grouplist" id="9000">
+						<onup condition="Control.HasFocus(18)">17</onup>
+						<onup condition="Control.HasFocus(19)">20</onup>
+						<orientation>horizontal</orientation>
+						<top>258</top>
+						<align>center</align>
+						<height>73</height>
+						<width>666</width>
+						<itemgap>21</itemgap>
+						<!-- OK /-->
+						<include content="dialog_button">
+							<param name="id">18</param>
+							<param name="width">233</param>
+							<param name="label">$LOCALIZE[31048]</param>
+						</include>
+						<!-- Cancel /-->
+						<include content="dialog_button">
+							<param name="id">19</param>
+							<param name="width">233</param>
+							<param name="label">$LOCALIZE[31055]</param>
+						</include>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

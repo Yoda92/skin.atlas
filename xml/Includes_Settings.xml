@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="common_settings_button_header">
+		<param name="id"/>
+		<param name="label"/>
+		<param name="onclick"/>
+		<definition>
+			<control type="button" id="$PARAM[id]">
+				<textcolor>text100</textcolor>
+				<onclick>$PARAM[onclick]</onclick>
+				<label>$PARAM[label]</label>
+				<width>598</width>
+				<height>131</height>
+				<texturefocus border="26" colordiffuse="main500">shapes/white_rounded_bar.png</texturefocus>
+				<font>sourcesanspro_bold_26</font>
+				<align>left</align>
+				<textoffsetx>42</textoffsetx>
+			</control>
+		</definition>
+	</include>
+
+	<include name="common_settings_button_footer">
+		<param name="id"/>
+		<param name="label"/>
+		<param name="onclick"/>
+		<definition>
+			<control type="button" id="$PARAM[id]">
+				<textcolor>text100</textcolor>
+				<onclick>$PARAM[onclick]</onclick>
+				<label>$PARAM[label]</label>
+				<width>973</width>
+				<height>131</height>
+				<align>left</align>
+				<textoffsetx>42</textoffsetx>
+				<textwidth>648</textwidth>
+				<texturefocus border="26" colordiffuse="main500">shapes/white_rounded_bar.png</texturefocus>
+			</control>
+		</definition>
+	</include>
+
+	<include name="common_settings_radiobutton_footer">
+		<param name="id"/>
+		<param name="label"/>
+		<definition>
+			<control type="radiobutton" id="$PARAM[id]">
+				<textcolor>text100</textcolor>
+				<label>$PARAM[label]</label>
+				<width>973</width>
+				<height>131</height>
+				<align>left</align>
+				<textoffsetx>42</textoffsetx>
+				<textwidth>931</textwidth>
+				<texturefocus border="26" colordiffuse="main500">shapes/white_rounded_bar.png</texturefocus>
+				<radiowidth>89</radiowidth>
+				<radioheight>89</radioheight>
+				<radioposx>863</radioposx>
+			</control>
+		</definition>
+	</include>
+
+	<include name="common_settings_spincontrolex_footer">
+		<param name="id"/>
+		<definition>
+			<control type="spincontrolex" id="$PARAM[id]">
+				<pulseonselect>false</pulseonselect>
+				<aligny>center</aligny>
+				<textcolor>text100</textcolor>
+				<disabledcolor>text500</disabledcolor>
+				<font>sourcesanspro_regular_26</font>
+				<width>973</width>
+				<height>131</height>
+				<align>left</align>
+				<textoffsetx>42</textoffsetx>
+				<textwidth>931</textwidth>
+				<texturefocus border="26" colordiffuse="main500">shapes/white_rounded_bar.png</texturefocus>
+				<textureup colordiffuse="text300">buttons/toggle_up.png</textureup>
+				<textureupfocus colordiffuse="text100">buttons/toggle_up.png</textureupfocus>
+				<textureupdisabled colordiffuse="text500">buttons/toggle_up.png</textureupdisabled>
+				<texturedown colordiffuse="text300">buttons/toggle_down.png</texturedown>
+				<texturedownfocus colordiffuse="text100">buttons/toggle_down.png</texturedownfocus>
+				<texturedowndisabled colordiffuse="text500">buttons/toggle_down.png</texturedowndisabled>
+				<spinheight>34</spinheight>
+				<spinwidth>34</spinwidth>
+			</control>
+		</definition>
+	</include>
+
+	<include name="common_settings_label_footer">
+		<param name="id"/>
+		<definition>
+			<control type="label" id="$PARAM[id]">
+				<width>973</width>
+				<height>131</height>
+				<align>center</align>
+				<font>sourcesanspro_bold_26</font>
+			</control>
+		</definition>
+	</include>
+	<include name="common_settings_textbox_footer">
+		<param name="id"/>
+		<definition>
+			<control type="textbox" id="$PARAM[id]">
+				<top>939</top>
+				<left>783</left>
+				<width>973</width>
+				<height>105</height>
+				<textcolor>text300</textcolor>
+			</control>
+		</definition>
+	</include>
+
+	<include name="common_settings_edit_footer">
+		<param name="id"/>
+		<definition>
+			<control type="edit" id="$PARAM[id]">
+				<pulseonselect>false</pulseonselect>
+				<width>973</width>
+				<height>131</height>
+				<aligny>center</aligny>
+				<textoffsetx>42</textoffsetx>
+				<textwidth>889</textwidth>
+				<textcolor>text100</textcolor>
+				<disabledcolor>text500</disabledcolor>
+				<font>sourcesanspro_regular_26</font>
+				<texturefocus border="26" colordiffuse="main500">shapes/white_rounded_bar.png</texturefocus>
+			</control>
+		</definition>
+	</include>
+
+	<include name="common_settings_sliderex_footer">
+		<param name="id"/>
+		<definition>
+			<control type="sliderex" id="$PARAM[id]">
+				<pulseonselect>false</pulseonselect>
+				<width>973</width>
+				<height>131</height>
+				<aligny>center</aligny>
+				<textoffsetx>42</textoffsetx>
+				<textwidth>931</textwidth>
+				<textcolor>text100</textcolor>
+				<disabledcolor>text500</disabledcolor>
+				<font>sourcesanspro_regular_26</font>
+				<texturefocus border="26" colordiffuse="main500">shapes/white_rounded_bar.png</texturefocus>
+			</control>
+		</definition>
+	</include>
+
+	<include name="common_settings_panel">
+		<control type="group">
+			<control type="image">
+				<top>159</top>
+				<left>159</left>
+				<width>608</width>
+				<height>764</height>
+				<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				<bordersize>5</bordersize>
+				<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+			</control>
+			<control type="image">
+				<top>159</top>
+				<left>778</left>
+				<width>983</width>
+				<height>764</height>
+				<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				<bordersize>5</bordersize>
+				<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+			</control>
+		</control>
+	</include>
+
+	<include name="common_settings_menu">
+		<param name="header_id"/>
+		<param name="up_id"/>
+		<param name="footer_id"/>
+		<definition>
+			<control type="group">
+				<control type="grouplist" id="$PARAM[header_id]">
+					<usecontrolcoords>true</usecontrolcoords>
+					<onup>$PARAM[up_id]</onup>
+					<itemgap>-42</itemgap>
+					<onright>$PARAM[footer_id]</onright>
+					<top>164</top>
+					<left>164</left>
+					<width>598</width>
+					<height>754</height>
+				</control>
+				<control type="grouplist" id="$PARAM[footer_id]">
+					<onleft>$PARAM[header_id]</onleft>
+					<onup>$PARAM[up_id]</onup>
+					<usecontrolcoords>true</usecontrolcoords>
+					<itemgap>-42</itemgap>
+					<top>164</top>
+					<left>783</left>
+					<width>973</width>
+					<height>754</height>
+				</control>
+			</control>
+		</definition>
+	</include>
+
+	<include name="default_settings_content">
+		<!--Skin Settings /-->
+		<item>
+			<onclick>ActivateWindow(SkinSettings,return)</onclick>
+			<icon>icons/puzzle.png</icon>
+			<label>Skin Settings</label>
+		</item>
+		<!-- Interface /-->
+		<item>
+			<onclick>ActivateWindow(InterfaceSettings,return)</onclick>
+			<icon>icons/paintbrush.png</icon>
+			<label>Interface</label>
+		</item>
+		<!-- Media /-->
+		<item>
+			<onclick>ActivateWindow(mediasettings,return)</onclick>
+			<icon>icons/play.png</icon>
+			<label>Media Settings</label>
+		</item>
+		<!-- Favourites /-->
+		<item>
+			<onclick>ActivateWindow(favourites,return)</onclick>
+			<icon>icons/star.png</icon>
+			<label>Manage favourites</label>
+		</item>
+		<!-- Player /-->
+		<item>
+			<onclick>ActivateWindow(PlayerSettings,return)</onclick>
+			<icon>icons/play2.png</icon>
+			<label>Player Settings</label>
+		</item>
+		<!-- Service /-->
+		<item>
+			<onclick>ActivateWindow(ServiceSettings)</onclick>
+			<icon>icons/connection.png</icon>
+			<label>Service Settings</label>
+		</item>
+		<!-- Profiles /-->
+		<item>
+			<onclick>ActivateWindow(profiles,return)</onclick>
+			<icon>icons/people.png</icon>
+			<label>Profiles</label>
+		</item>
+		<!-- System Info /-->
+		<item>
+			<onclick>ActivateWindow(SystemInfo)</onclick>
+			<icon>icons/graph2.png</icon>
+			<label>System Information</label>
+		</item>
+		<!-- Filemanager /-->
+		<item>
+			<onclick>ActivateWindow(filemanager)</onclick>
+			<icon>icons/folder2.png</icon>
+			<label>File Manager</label>
+		</item>
+		<!-- System /-->
+		<item>
+			<onclick>ActivateWindow(SystemSettings)</onclick>
+			<icon>icons/system.png</icon>
+			<label>System Settings</label>
+		</item>
+		<!-- PVR /-->
+		<item>
+			<onclick>ActivateWindow(pvrsettings)</onclick>
+			<icon>icons/tv.png</icon>
+			<label>PVR and Live TV Settings</label>
+		</item>
+		<!-- Libreelec (if relevant) /-->
+		<include condition="System.HasAddon(service.libreelec.settings)">libreelec_settings</include>
+	</include>
+
+	<include name="libreelec_settings">
+		<item>
+			<onclick>RunAddon(service.libreelec.settings)</onclick>
+			<icon>icons/libreelec.png</icon>
+			<label>LibreELEC Settings</label>
+		</item>
+	</include>
+
+	<include name="skin_settings_button_header">
+		<param name="id"/>
+		<param name="footer_id"/>
+		<param name="label"/>
+		<definition>
+			<!-- Image visible when control does not have focus /-->
+			<control type="group" id="$PARAM[id]0">
+				<height>42</height>
+				<control type="image">
+					<visible>ControlGroup(10).HasFocus($PARAM[id]) + ControlGroup($PARAM[footer_id]).HasFocus()</visible>
+					<width>598</width>
+					<height>131</height>
+					<texture border="26" colordiffuse="main700">shapes/white_rounded_bar.png</texture>
+				</control>
+			</control>
+			<include content="common_settings_button_header">
+				<param name="id">$PARAM[id]</param>
+				<param name="label">$PARAM[label]</param>
+			</include>
+		</definition>
+	</include>
+</includes>

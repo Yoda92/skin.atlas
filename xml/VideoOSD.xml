@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">10</defaultcontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<zorder>2</zorder>
+	<controls>
+		<control type="group">
+			<!-- Delayed animation due to timing issue with DialogSeekBar.xml /-->
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="144" delay="144" tween="quadratic" easing="out"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="144" tween="quadratic" easing="out"/>
+			</animation>
+			<!-- Slider /-->
+			<control type="group">
+				<control type="slider" id="12">
+					<ondown>10</ondown>
+					<orientation>horizontal</orientation>
+					<bottom>100</bottom>
+					<height>35</height>
+					<width>1920</width>
+					<info>Player.Progress</info>
+					<action>seek</action>
+				</control>
+			</control>
+			<!-- Left controls /-->
+			<include>common_osd_left_control</include>
+			<!-- Right controls /-->
+			<include>common_osd_right_control</include>
+		</control>
+	</controls>
+</window>

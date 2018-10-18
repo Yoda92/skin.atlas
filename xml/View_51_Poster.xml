@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="view_51_poster">
+		<control type="group">
+			<visible>Control.IsVisible(51)</visible>
+			<!-- Background panel /-->
+			<control type="image">
+				<top>354</top>
+				<width>1920</width>
+				<height>372</height>
+				<texture colordiffuse="accent800">colors/white.png</texture>
+			</control>
+			<!-- Shadow /-->
+			<control type="image">
+				<top>349</top>
+				<height>5</height>
+				<width>1920</width>
+				<texture flipy="true">shadows/shadowline_5px_down.png</texture>
+			</control>
+			<control type="image">
+				<top>726</top>
+				<height>5</height>
+				<width>1920</width>
+				<texture>shadows/shadowline_5px_down.png</texture>
+			</control>
+			<!-- Posterview /-->
+			<control type="fixedlist" id="51">
+				<preloaditems>2</preloaditems>
+				<pagecontrol>9001</pagecontrol>
+				<viewtype label="Poster">biglist</viewtype>
+				<onup>9000</onup>
+				<ondown>9001</ondown>
+				<visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows)</visible>
+				<width>1920</width>
+				<top>375</top>
+				<itemlayout width="241">
+					<control type="group">
+						<top>-5</top>
+						<left>16</left>
+						<include content="common_poster">
+							<param name="width">230</param>
+							<param name="height">340</param>
+							<param name="fadetime">200</param>
+							<param name="bordersize">5</param>
+							<param name="bordertexture">shadows/shadow_5px.png</param>
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout width="503">
+					<!-- Two focus items for smooth left and right transition /-->
+					<control type="group">
+						<visible>Container.OnScrollPrevious</visible>
+						<animation effect="fade" start="100" end="0" time="400">Hidden</animation>
+						<top>-5</top>
+						<left>16</left>
+						<include content="common_poster">
+							<param name="width">230</param>
+							<param name="height">340</param>
+							<param name="bordersize">5</param>
+							<param name="bordertexture">shadows/shadow_5px.png</param>
+						</include>
+					</control>
+					<control type="group">
+						<visible>Container.OnScrollNext</visible>
+						<animation effect="fade" start="100" end="0" time="400">Hidden</animation>
+						<left>278</left>
+						<top>-5</top>
+						<include content="common_poster">
+							<param name="width">230</param>
+							<param name="height">340</param>
+							<param name="bordersize">5</param>
+							<param name="bordertexture">shadows/shadow_5px.png</param>
+						</include>
+					</control>
+				</focusedlayout>
+			</control>
+			<!-- Large poster /-->
+			<control type="group">
+				<left>262</left>
+				<top>264</top>
+				<control type="image">
+					<top>-20</top>
+					<left>-20</left>
+					<width>522</width>
+					<height>763</height>
+					<texture>colors/black.png</texture>
+					<bordersize>20</bordersize>
+					<bordertexture border="20">shadows/shadow_20px.png</bordertexture>
+				</control>
+				<control type="group">
+					<include content="common_poster">
+						<param name="width">482</param>
+						<param name="height">723</param>
+						<param name="fadetime">400</param>
+					</include>
+				</control>
+			</control>
+			<!-- Current item metadata /-->
+			<control type="grouplist">
+				<itemgap>8</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<top>726</top>
+				<left>770</left>
+				<!-- Title /-->
+				<control type="label">
+					<visible>!String.IsEmpty(ListItem.Title) + !ListItem.IsParentFolder</visible>
+					<top>21</top>
+					<height>55</height>
+					<width>1129</width>
+					<label>$INFO[ListItem.Title]</label>
+					<font>sourcesanspro_bold_55</font>
+				</control>
+				<!-- Genre /-->
+				<control type="label">
+					<visible>!String.IsEmpty(ListItem.Genre)</visible>
+					<height>26</height>
+					<width>1129</width>
+					<label>$INFO[ListItem.Genre]</label>
+					<textcolor>grey200</textcolor>
+					<font>sourcesanspro_regular_26</font>
+				</control>
+				<!-- Rating /-->
+				<control type="image">
+					<visible>!String.IsEmpty(ListItem.Rating) + !String.IsEmpty(ListItem.Duration) + !String.IsEmpty(ListItem.Year)</visible>
+					<height>26</height>
+					<width>130</width>
+					<texture>$VAR[star_var]</texture>
+				</control>
+				<!-- Rating /-->
+				<control type="label">
+					<visible>!String.IsEmpty(ListItem.Rating) + !String.IsEmpty(ListItem.Duration) + !String.IsEmpty(ListItem.Year)</visible>
+					<top>-34</top>
+					<left>135</left>
+					<height>26</height>
+					<width>1129</width>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Rating]  [COLOR grey300]•[/COLOR]  $INFO[ListItem.Duration] min  [COLOR grey300]•[/COLOR]  $INFO[ListItem.Year]</label>
+					<textcolor>grey200</textcolor>
+				</control>
+				<!-- Plot /-->
+				<control type="textbox">
+					<visible>!String.IsEmpty(ListItem.Plot)</visible>
+					<height>98</height>
+					<width>1129</width>
+					<label>$VAR[plot_var]</label>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

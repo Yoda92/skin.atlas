@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="weather_item">
+		<param name="left"/>
+		<param name="day"/>
+		<definition>
+			<control type="group">
+				<left>$PARAM[left]</left>
+				<top>385</top>
+				<control type="image">
+					<height>365</height>
+					<width>285</width>
+					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				</control>
+				<control type="label">
+					<top>21</top>
+					<label>$INFO[Window(weather).Property(Day$PARAM[day].Title)]</label>
+					<width>285</width>
+					<height>26</height>
+					<align>center</align>
+					<font>raleway_regular_26</font>
+				</control>
+				<control type="image">
+					<top>63</top>
+					<left>42</left>
+					<height>201</height>
+					<width>201</width>
+					<texture>$INFO[Window(weather).Property(Day$PARAM[day].OutlookIcon)]</texture>
+				</control>
+				<control type="label">
+					<visible>Weather.IsFetched</visible>
+					<top>285</top>
+					<label>[COLOR text100]$INFO[Window(weather).Property(Day$PARAM[day].HighTemp)][/COLOR]°  $INFO[Window(weather).Property(Day$PARAM[day].LowTemp)]°</label>
+					<width>285</width>
+					<height>26</height>
+					<align>center</align>
+					<textcolor>text300</textcolor>
+				</control>
+				<control type="label">
+					<top>310</top>
+					<label>$INFO[Window(weather).Property(Day$PARAM[day].Outlook)]</label>
+					<width>285</width>
+					<height>26</height>
+					<align>center</align>
+					<textcolor>text300</textcolor>
+				</control>
+			</control>
+		</definition>
+	</include>
+</includes>

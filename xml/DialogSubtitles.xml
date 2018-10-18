@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window type="dialog">
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">150</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<!-- Dialog items /-->
+			<control type="group">
+				<width>1482</width>
+				<height>796</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<include content="dialog_panel">
+					<param name="width">1482</param>
+					<param name="height">796</param>
+					<param name="label_id"/>
+					<param name="label">$LOCALIZE[31026]</param>
+				</include>
+				<!-- Services /-->
+				<control type="group">
+					<top>89</top>
+					<left>34</left>
+					<include content="dialog_label_bold">
+						<param name="width">233</param>
+						<param name="label">$LOCALIZE[31064]</param>
+					</include>
+					<control type="group">
+						<top>89</top>
+						<control type="image">
+							<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+							<height>584</height>
+							<width>233</width>
+						</control>
+						<include content="dialog_list">
+							<param name="id">150</param>
+							<param name="onright">120</param>
+							<param name="width">233</param>
+							<param name="height">584</param>
+							<param name="top">0</param>
+							<param name="left">0</param>
+							<param name="label_width">191</param>
+						</include>
+					</control>
+				</control>
+				<!-- Subtitles list /-->
+				<control type="group">
+					<top>89</top>
+					<left>288</left>
+					<include content="dialog_label_bold">
+						<param name="width">906</param>
+						<param name="label">$INFO[VideoPlayer.Title]</param>
+					</include>
+					<control type="group">
+						<top>89</top>
+						<control type="image">
+							<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+							<height>584</height>
+							<width>906</width>
+						</control>
+						<include content="dialog_list">
+							<param name="id">120</param>
+							<param name="onright">160</param>
+							<param name="onleft">150</param>
+							<param name="width">906</param>
+							<param name="height">584</param>
+							<param name="top">0</param>
+							<param name="left">0</param>
+							<param name="label_width">864</param>
+							<param name="visible_label2">true</param>
+							<param name="label2_width">744</param>
+						</include>
+					</control>
+					<!-- No subtitle addon installed /-->
+					<control type="group">
+						<visible>!Integer.IsGreater(Container(150).NumItems,0)</visible>
+						<include>common_visible_animation</include>
+						<width>906</width>
+						<height>584</height>
+						<control type="image">
+							<aspectratio>keep</aspectratio>
+							<top>192</top>
+							<width>906</width>
+							<height>200</height>
+							<texture colordiffuse="text300">icons/hidden.png</texture>
+						</control>
+						<control type="label">
+							<top>100</top>
+							<height>584</height>
+							<textcolor>text300</textcolor>
+							<label>$LOCALIZE[31066]</label>
+							<width>906</width>
+							<align>center</align>
+						</control>
+					</control>
+				</control>
+				<!-- Right aligned buttons /-->
+				<control type="group">
+					<top>178</top>
+					<left>1215</left>
+					<control type="button" id="160">
+						<label>Manual search</label>
+						<onleft>120</onleft>
+						<width>233</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+					</control>
+					<!-- Local subtitle warning /-->
+					<control type="grouplist" id="130">
+						<visible>VideoPlayer.HasSubtitles</visible>
+						<width>233</width>
+						<top>509</top>
+						<usecontrolcoords>true</usecontrolcoords>
+						<itemgap>-10</itemgap>
+						<control type="image">
+							<height>55</height>
+							<width>233</width>
+							<texture colordiffuse="grey100">icons/notification.png</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="label">
+							<label>$LOCALIZE[31065]</label>
+							<width>233</width>
+							<height>26</height>
+						</control>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

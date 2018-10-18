@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">100</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<!-- Dialog items /-->
+			<control type="group">
+				<width>1571</width>
+				<height>741</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<include content="dialog_panel">
+					<param name="label">$LOCALIZE[31030]</param>
+					<param name="width">1571</param>
+					<param name="height">741</param>
+				</include>
+				<!-- Addon information /-->
+				<control type="group">
+					<top>123</top>
+					<left>529</left>
+					<!-- Screenshot panel /-->
+					<control type="image">
+						<height>228</height>
+						<width>1008</width>
+						<texture colordiffuse="accent800">colors/white.png</texture>
+					</control>
+					<!-- No screenshots avaible error message/-->
+					<control type="group">
+						<top>-26</top>
+						<visible>!Integer.IsGreater(Container(50).NumItems,0)</visible>
+						<control type="image">
+							<aspectratio>center</aspectratio>
+							<height>228</height>
+							<width>1008</width>
+							<texture colordiffuse="text300">icons/hidden.png</texture>
+						</control>
+						<control type="label">
+							<top>181</top>
+							<height>26</height>
+							<textcolor>text300</textcolor>
+							<label>$LOCALIZE[31031]</label>
+							<width>1008</width>
+							<align>center</align>
+						</control>
+					</control>
+					<!-- Addon metadata /-->
+					<control type="grouplist">
+						<top>249</top>
+						<orientation>vertical</orientation>
+						<itemgap>8</itemgap>
+						<control type="label">
+							<height>34</height>
+							<label>$INFO[ListItem.AddonName]</label>
+							<font>sourcesanspro_bold_34</font>
+							<width>1008</width>
+						</control>
+						<control type="label">
+							<visible>!String.IsEmpty(ListItem.AddonVersion) + !String.IsEmpty(ListItem.AddonCreator)</visible>
+							<height>26</height>
+							<label>$LOCALIZE[31032] $INFO[ListItem.AddonVersion], $LOCALIZE[31033] $INFO[ListItem.AddonCreator]</label>
+							<font>sourcesanspro_regular_26</font>
+							<textcolor>text300</textcolor>
+							<width>1008</width>
+						</control>
+						<control type="textbox">
+							<height>100</height>
+							<label>$INFO[ListItem.AddonSummary]</label>
+							<width>1008</width>
+						</control>
+					</control>
+					<!-- Addon images /-->
+					<!-- At this point, not focusable /-->
+					<control type="list" id="50">
+						<top>21</top>
+						<height>186</height>
+						<width>1008</width>
+						<orientation>horizontal</orientation>
+						<itemlayout width="329" height="186">
+							<control type="group">
+								<left>21</left>
+								<control type="image">
+									<top>-5</top>
+									<left>-5</left>
+									<height>196</height>
+									<width>318</width>
+									<texture>$INFO[ListItem.Icon]</texture>
+									<aspectratio>scale</aspectratio>
+									<bordersize>5</bordersize>
+									<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+								</control>
+							</control>
+						</itemlayout>
+						<focusedlayout width="329" height="186">
+							<control type="group">
+								<left>21</left>
+								<control type="image">
+									<top>-5</top>
+									<left>-5</left>
+									<height>196</height>
+									<width>318</width>
+									<texture>$INFO[ListItem.Icon]</texture>
+									<aspectratio>scale</aspectratio>
+									<bordersize>5</bordersize>
+									<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+								</control>
+							</control>
+						</focusedlayout>
+					</control>
+				</control>
+				<!-- Icon background /-->
+				<control type="image">
+					<top>118</top>
+					<left>29</left>
+					<height>484</height>
+					<width>484</width>
+					<texture>colors/black.png</texture>
+					<bordersize>5</bordersize>
+					<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+				</control>
+				<!-- Icon /-->
+				<control type="image">
+					<top>123</top>
+					<left>34</left>
+					<height>474</height>
+					<width>474</width>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<!-- Main list /-->
+				<control type="grouplist" id="100">
+					<orientation>horizontal</orientation>
+					<top>618</top>
+					<left>34</left>
+					<itemgap>21</itemgap>
+					<!-- Run /-->
+					<include content="dialog_button">
+						<param name="height">89</param>
+						<param name="width">233</param>
+						<param name="id">12</param>
+					</include>
+					<!-- Install /-->
+					<include content="dialog_button">
+						<param name="height">89</param>
+						<param name="width">233</param>
+						<param name="id">6</param>
+					</include>
+					<!-- Enable / Disable /-->
+					<control type="radiobutton" id="7">
+						<selected>!String.StartsWith(Control.GetLabel(7),Enable)</selected>
+						<width>233</width>
+						<height>89</height>
+						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<radiowidth>73</radiowidth>
+						<radioheight>73</radioheight>
+						<radioposy>11</radioposy>
+						<radioposx>170</radioposx>
+					</control>
+					<!-- Update /-->
+					<include content="dialog_button">
+						<param name="height">89</param>
+						<param name="width">233</param>
+						<param name="id">8</param>
+						<param name="label">$LOCALIZE[31034]</param>
+					</include>
+					<!-- Auto-Update /-->
+					<control type="radiobutton" id="13">
+						<width>233</width>
+						<height>89</height>
+						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<radiowidth>73</radiowidth>
+						<radioheight>73</radioheight>
+						<radioposy>11</radioposy>
+						<radioposx>170</radioposx>
+					</control>
+					<!-- Settings /-->
+					<include content="dialog_button">
+						<param name="height">89</param>
+						<param name="width">233</param>
+						<param name="id">9</param>
+						<param name="label">$LOCALIZE[31009]</param>
+					</include>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

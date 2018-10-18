@@ -1,0 +1,653 @@
+# Kodi Media Center language file
+# Addon Name: Helium
+# Addon id: skin.helium
+# Addon Provider: jellybean
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@kodi.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#31000"
+msgid "Movies"
+msgstr ""
+
+msgctxt "#31001"
+msgid "Tv Shows"
+msgstr ""
+
+msgctxt "#31002"
+msgid "Tv"
+msgstr ""
+
+msgctxt "#31003"
+msgid "Videos"
+msgstr ""
+
+msgctxt "#31004"
+msgid "Games"
+msgstr ""
+
+msgctxt "#31005"
+msgid "Music"
+msgstr ""
+
+msgctxt "#31006"
+msgid "Pictures"
+msgstr ""
+
+msgctxt "#31007"
+msgid "Addons"
+msgstr ""
+
+msgctxt "#31008"
+msgid "Weather"
+msgstr ""
+
+msgctxt "#31009"
+msgid "Settings"
+msgstr ""
+
+msgctxt "#31010"
+msgid "All Movies"
+msgstr ""
+
+msgctxt "#31011"
+msgid "Recently Added Movies"
+msgstr ""
+
+msgctxt "#31012"
+msgid "Genres"
+msgstr ""
+
+msgctxt "#31013"
+msgid "Top Rated"
+msgstr ""
+
+msgctxt "#31014"
+msgid "Sets / Collections"
+msgstr ""
+
+msgctxt "#31015"
+msgid "Warning"
+msgstr ""
+
+msgctxt "#31016"
+msgid "You are about to delete settings from the menu. You will no longer be able to change any system settings. Do you want to proceed?"
+msgstr ""
+
+msgctxt "#31017"
+msgid "Search for updates"
+msgstr ""
+
+msgctxt "#31018"
+msgid "Order"
+msgstr ""
+
+msgctxt "#31019"
+msgid "HUB"
+msgstr ""
+
+msgctxt "#31020"
+msgid "Audio settings"
+msgstr ""
+
+msgctxt "#31021"
+msgid "Video settings"
+msgstr ""
+
+msgctxt "#31022"
+msgid "Toggle language"
+msgstr ""
+
+msgctxt "#31023"
+msgid "Video filter"
+msgstr ""
+
+msgctxt "#31024"
+msgid "View mode"
+msgstr ""
+
+msgctxt "#31025"
+msgid "Input settings"
+msgstr ""
+
+msgctxt "#31026"
+msgid "Subtitles"
+msgstr ""
+
+msgctxt "#31027"
+msgid "Download"
+msgstr ""
+
+msgctxt "#31028"
+msgid "Enable subtitles"
+msgstr ""
+
+msgctxt "#31029"
+msgid "Offset subtitles"
+msgstr ""
+
+msgctxt "#31030"
+msgid "Addon information"
+msgstr ""
+
+msgctxt "#31031"
+msgid "No screenshots avaible"
+msgstr ""
+
+msgctxt "#31032"
+msgid "Version"
+msgstr ""
+
+msgctxt "#31033"
+msgid "Created by"
+msgstr ""
+
+msgctxt "#31034"
+msgid "Update"
+msgstr ""
+
+msgctxt "#31035"
+msgid "Power down"
+msgstr ""
+
+msgctxt "#31036"
+msgid "Suspend"
+msgstr ""
+
+msgctxt "#31037"
+msgid "Hibernate"
+msgstr ""
+
+msgctxt "#31038"
+msgid "Reboot"
+msgstr ""
+
+msgctxt "#31039"
+msgid "Yes"
+msgstr ""
+
+msgctxt "#31040"
+msgid "No"
+msgstr ""
+
+msgctxt "#31041"
+msgid "Manage favourites"
+msgstr ""
+
+msgctxt "#31042"
+msgid "No favourites avaible."
+msgstr ""
+
+msgctxt "#31043"
+msgid "Controller configuration"
+msgstr ""
+
+msgctxt "#31044"
+msgid "Controller profiles"
+msgstr ""
+
+msgctxt "#31045"
+msgid "Buttons"
+msgstr ""
+
+msgctxt "#31046"
+msgid "Get more..."
+msgstr ""
+
+msgctxt "#31047"
+msgid "Help"
+msgstr ""
+
+msgctxt "#31048"
+msgid "OK"
+msgstr ""
+
+msgctxt "#31049"
+msgid "Reset"
+msgstr ""
+
+msgctxt "#31050"
+msgid "Browse for media locations"
+msgstr ""
+
+msgctxt "#31051"
+msgid "Browse"
+msgstr ""
+
+msgctxt "#31052"
+msgid "Add"
+msgstr ""
+
+msgctxt "#31053"
+msgid "Remove"
+msgstr ""
+
+msgctxt "#31054"
+msgid "Enter a name for this media source"
+msgstr ""
+
+msgctxt "#31055"
+msgid "Cancel"
+msgstr ""
+
+msgctxt "#31056"
+msgid "Refresh"
+msgstr ""
+
+msgctxt "#31057"
+msgid "Choose art"
+msgstr ""
+
+msgctxt "#31058"
+msgid "Numeric pad"
+msgstr ""
+
+msgctxt "#31059"
+msgid "Backspace"
+msgstr ""
+
+msgctxt "#31060"
+msgid "Done"
+msgstr ""
+
+msgctxt "#31061"
+msgid "Finishes at"
+msgstr ""
+
+msgctxt "#31062"
+msgid "Get more..."
+msgstr ""
+
+msgctxt "#31063"
+msgid "Defaults"
+msgstr ""
+
+msgctxt "#31064"
+msgid "Services"
+msgstr ""
+
+msgctxt "#31065"
+msgid "Local subtitles avaible"
+msgstr ""
+
+msgctxt "#31066"
+msgid "No subtitle service installed."
+msgstr ""
+
+msgctxt "#31067"
+msgid "Director / Writer"
+msgstr ""
+
+msgctxt "#31068"
+msgid "Duration"
+msgstr ""
+
+msgctxt "#31069"
+msgid "Year"
+msgstr ""
+
+msgctxt "#31070"
+msgid "min"
+msgstr ""
+
+msgctxt "#31071"
+msgid "Plot"
+msgstr ""
+
+msgctxt "#31072"
+msgid "No actor information avaible."
+msgstr ""
+
+msgctxt "#31073"
+msgid "Play"
+msgstr ""
+
+msgctxt "#31074"
+msgid "Refresh"
+msgstr ""
+
+msgctxt "#31075"
+msgid "Trailer"
+msgstr ""
+
+msgctxt "#31076"
+msgid "Choose Art"
+msgstr ""
+
+msgctxt "#31077"
+msgid "Filmography"
+msgstr ""
+
+msgctxt "#31078"
+msgid "Event Log"
+msgstr ""
+
+msgctxt "#31079"
+msgid "Create"
+msgstr ""
+
+msgctxt "#31080"
+msgid "File Manager"
+msgstr ""
+
+msgctxt "#31081"
+msgid "Volume"
+msgstr ""
+
+msgctxt "#31082"
+msgid "Login"
+msgstr ""
+
+msgctxt "#31083"
+msgid "Game menu"
+msgstr ""
+
+msgctxt "#31084"
+msgid "Resume"
+msgstr ""
+
+msgctxt "#31085"
+msgid "Select"
+msgstr ""
+
+msgctxt "#31086"
+msgid "Reset"
+msgstr ""
+
+msgctxt "#31087"
+msgid "Start"
+msgstr ""
+
+msgctxt "#31088"
+msgid "Spotlight"
+msgstr ""
+
+msgctxt "#31089"
+msgid "Your library is currently empty. In order to add your media, enter the "files" section and add a media source. After the source has been added you will be able to browse your media."
+msgstr ""
+
+msgctxt "#31090"
+msgid ""Files" section"
+msgstr ""
+
+msgctxt "#31091"
+msgid "Save"
+msgstr ""
+
+msgctxt "#31092"
+msgid "Clear"
+msgstr ""
+
+msgctxt "#31093"
+msgid "Play"
+msgstr ""
+
+msgctxt "#31094"
+msgid "Repeat"
+msgstr ""
+
+msgctxt "#31095"
+msgid "Update Library"
+msgstr ""
+
+msgctxt "#31096"
+msgid "Clean Library"
+msgstr ""
+
+msgctxt "#31097"
+msgid "Play Trailer"
+msgstr ""
+
+msgctxt "#31098"
+msgid "Search"
+msgstr ""
+
+msgctxt "#31099"
+msgid "Shuffle"
+msgstr ""
+
+msgctxt "#31100"
+msgid "Guide"
+msgstr ""
+
+msgctxt "#31101"
+msgid "Channels"
+msgstr ""
+
+msgctxt "#31102"
+msgid "Party Mode"
+msgstr ""
+
+msgctxt "#31103"
+msgid "Root"
+msgstr ""
+
+msgctxt "#31104"
+msgid "TV Guide"
+msgstr ""
+
+msgctxt "#31105"
+msgid "TV Channels"
+msgstr ""
+
+msgctxt "#31106"
+msgid "Music Playlist"
+msgstr ""
+
+msgctxt "#31107"
+msgid "Slideshow"
+msgstr ""
+
+msgctxt "#31108"
+msgid "Randomize"
+msgstr ""
+
+msgctxt "#31109"
+msgid "Load"
+msgstr ""
+
+msgctxt "#31110"
+msgid "Save"
+msgstr ""
+
+msgctxt "#31111"
+msgid "Clear"
+msgstr ""
+
+msgctxt "#31112"
+msgid "TV Guide"
+msgstr ""
+
+msgctxt "#31113"
+msgid "Weather"
+msgstr ""
+
+msgctxt "#31114"
+msgid "Start"
+msgstr ""
+
+msgctxt "#31115"
+msgid "End"
+msgstr ""
+
+msgctxt "#31116"
+msgid "Configure Main Menu"
+msgstr ""
+
+msgctxt "#31117"
+msgid "Not defined"
+msgstr ""
+
+msgctxt "#31118"
+msgid "Add a new menu item"
+msgstr ""
+
+msgctxt "#31119"
+msgid "Remove menu item"
+msgstr ""
+
+msgctxt "#31120"
+msgid "Move menu item up"
+msgstr ""
+
+msgctxt "#31121"
+msgid "Move menu item down"
+msgstr ""
+
+msgctxt "#31122"
+msgid "Change label"
+msgstr ""
+
+msgctxt "#31123"
+msgid "Change icon"
+msgstr ""
+
+msgctxt "#31124"
+msgid "Change action"
+msgstr ""
+
+msgctxt "#31125"
+msgid "Restore to defaults"
+msgstr ""
+
+msgctxt "#31126"
+msgid "Profile Settings"
+msgstr ""
+
+msgctxt "#31127"
+msgid "General"
+msgstr ""
+
+msgctxt "#31128"
+msgid "Profiles"
+msgstr ""
+
+msgctxt "#31129"
+msgid "Automatic login on start up"
+msgstr ""
+
+msgctxt "#31130"
+msgid "Show login screen on start up"
+msgstr ""
+
+msgctxt "#31131"
+msgid "Screen Calibration"
+msgstr ""
+
+msgctxt "#31132"
+msgid "System Information"
+msgstr ""
+
+msgctxt "#31133"
+msgid "Summary"
+msgstr ""
+
+msgctxt "#31134"
+msgid "Storage"
+msgstr ""
+
+msgctxt "#31135"
+msgid "Network"
+msgstr ""
+
+msgctxt "#31136"
+msgid "Video"
+msgstr ""
+
+msgctxt "#31137"
+msgid "Hardware"
+msgstr ""
+
+msgctxt "#31138"
+msgid "PVR"
+msgstr ""
+
+msgctxt "#31139"
+msgid "Skin Settings"
+msgstr ""
+
+msgctxt "#31140"
+msgid "Home Menu"
+msgstr ""
+
+msgctxt "#31141"
+msgid "Configure Main Menu"
+msgstr ""
+
+msgctxt "#31142"
+msgid "Configure HUBs"
+msgstr ""
+
+msgctxt "#31143"
+msgid "Default HUB for movies"
+msgstr ""
+
+msgctxt "#31144"
+msgid "Default HUB for tv shows"
+msgstr ""
+
+msgctxt "#31145"
+msgid "Type"
+msgstr ""
+
+msgctxt "#31146"
+msgid "Name"
+msgstr ""
+
+msgctxt "#31147"
+msgid "Playlist options"
+msgstr ""
+
+msgctxt "#31148"
+msgid "Items must match"
+msgstr ""
+
+msgctxt "#31149"
+msgid "Limit to"
+msgstr ""
+
+msgctxt "#31150"
+msgid "Order by"
+msgstr ""
+
+msgctxt "#31151"
+msgid "Sort direction"
+msgstr ""
+
+msgctxt "#31152"
+msgid "Group by"
+msgstr ""
+
+msgctxt "#31153"
+msgid "Mixed"
+msgstr ""
+
+msgctxt "#31154"
+msgid "Playlist Rule"
+msgstr ""
+
+msgctxt "#31155"
+msgid "Select field"
+msgstr ""
+
+msgctxt "#31156"
+msgid "Select operator"
+msgstr ""
+
+msgctxt "#31157"
+msgid "Enter a value"
+msgstr ""
+
+msgctxt "#31158"
+msgid "Browse"
+msgstr ""

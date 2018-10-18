@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">450</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<!-- Dialog items /-->
+			<control type="group">
+				<width>1482</width>
+				<height>741</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<include content="dialog_panel">
+					<param name="width">1482</param>
+					<param name="height">741</param>
+					<param name="label_id">411</param>
+				</include>
+				<!-- Background second panel /-->
+				<control type="image">
+					<top>123</top>
+					<left>34</left>
+					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+					<height>584</height>
+					<width>1003</width>
+				</control>
+				<!-- List image /-->
+				<control type="image">
+					<bottom>34</bottom>
+					<right>34</right>
+					<texture>colors/black.png</texture>
+					<height>396</height>
+					<width>390</width>
+				</control>
+				<control type="image">
+					<fadetime>400</fadetime>
+					<aspectratio>keep</aspectratio>
+					<bottom>34</bottom>
+					<right>34</right>
+					<texture fallback="icons/hidden.png">$INFO[Container(450).ListItem.Icon]</texture>
+					<height>396</height>
+					<width>390</width>
+				</control>
+				<!-- File list /-->
+				<include content="dialog_list">
+					<param name="id">450</param>
+					<param name="onright">9000</param>
+					<param name="width">1003</param>
+					<param name="height">584</param>
+					<param name="top">123</param>
+					<param name="left">34</param>
+					<param name="label_width">961</param>
+				</include>
+				<!-- Right aligned buttons /-->
+				<control type="grouplist" id="9000">
+					<onleft>450</onleft>
+					<itemgap>21</itemgap>
+					<top>123</top>
+					<left>1058</left>
+					<!-- Add /-->
+					<include content="dialog_button">
+						<param name="id">413</param>
+						<param name="width">390</param>
+						<param name="label">$LOCALIZE[31052]</param>
+					</include>
+					<!-- Cancel /-->
+					<include content="dialog_button">
+						<param name="id">414</param>
+						<param name="width">390</param>
+						<param name="label">$LOCALIZE[31055]</param>
+					</include>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

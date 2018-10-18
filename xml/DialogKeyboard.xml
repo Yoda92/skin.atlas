@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window type="dialog">
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">312</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<!-- Dialog items /-->
+			<control type="group">
+				<width>1457</width>
+				<height>744</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<include content="dialog_panel">
+					<param name="width">1457</param>
+					<param name="height">744</param>
+					<param name="label_id">311</param>
+				</include>
+				<!-- Text being edited /-->
+				<!-- Missing chinese support /-->
+				<control type="edit" id="312">
+					<ondown>100</ondown>
+					<top>123</top>
+					<left>34</left>
+					<width>1389</width>
+					<height>89</height>
+				</control>
+				<!-- Right aligned buttons /-->
+				<control type="grouplist">
+					<onleft condition="Control.HasFocus(300)">111</onleft>
+					<onleft condition="Control.HasFocus(301)">131</onleft>
+					<onleft condition="Control.HasFocus(307)">151</onleft>
+					<onleft condition="Control.HasFocus(309)">171</onleft>
+					<top>233</top>
+					<left>1190</left>
+					<width>233</width>
+					<itemgap>8</itemgap>
+					<!-- Done /-->
+					<include content="dialog_button">
+						<param name="id">300</param>
+						<param name="width">233</param>
+						<param name="height">89</param>
+						<param name="label">Done</param>
+					</include>
+					<!-- Cancel /-->
+					<include content="dialog_button">
+						<param name="id">301</param>
+						<param name="width">233</param>
+						<param name="height">89</param>
+						<param name="label">Cancel</param>
+					</include>
+					<!-- IP Address /-->
+					<include content="dialog_button">
+						<param name="id">307</param>
+						<param name="width">233</param>
+						<param name="height">89</param>
+						<param name="label">IP Address</param>
+					</include>
+					<!-- Layout /-->
+					<include content="dialog_button">
+						<param name="id">309</param>
+						<param name="width">233</param>
+						<param name="height">89</param>
+						<param name="label">Layout</param>
+					</include>
+				</control>
+				<!-- 1st row (0-9) /-->
+				<control type="grouplist">
+					<onright>300</onright>
+					<top>233</top>
+					<left>34</left>
+					<orientation>horizontal</orientation>
+					<itemgap>8</itemgap>
+					<include content="keyboard_button">
+						<param name="id">100</param>
+						<param name="onup">312</param>
+						<param name="ondown">120</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">101</param>
+						<param name="onup">312</param>
+						<param name="ondown">121</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">102</param>
+						<param name="onup">312</param>
+						<param name="ondown">122</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">103</param>
+						<param name="onup">312</param>
+						<param name="ondown">123</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">104</param>
+						<param name="onup">312</param>
+						<param name="ondown">124</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">105</param>
+						<param name="onup">312</param>
+						<param name="ondown">125</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">106</param>
+						<param name="onup">312</param>
+						<param name="ondown">126</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">107</param>
+						<param name="onup">312</param>
+						<param name="ondown">127</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">108</param>
+						<param name="onup">312</param>
+						<param name="ondown">128</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">109</param>
+						<param name="onup">312</param>
+						<param name="ondown">129</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">110</param>
+						<param name="onup">312</param>
+						<param name="ondown">130</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">111</param>
+						<param name="onup">312</param>
+						<param name="ondown">131</param>
+					</include>
+				</control>
+				<!-- 2nd row (A-Z) /-->
+				<control type="grouplist">
+					<onright>301</onright>
+					<top>330</top>
+					<left>34</left>
+					<orientation>horizontal</orientation>
+					<itemgap>8</itemgap>
+					<include content="keyboard_button">
+						<param name="id">120</param>
+						<param name="onup">100</param>
+						<param name="ondown">140</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">121</param>
+						<param name="onup">101</param>
+						<param name="ondown">141</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">122</param>
+						<param name="onup">102</param>
+						<param name="ondown">142</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">123</param>
+						<param name="onup">103</param>
+						<param name="ondown">143</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">124</param>
+						<param name="onup">104</param>
+						<param name="ondown">144</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">125</param>
+						<param name="onup">105</param>
+						<param name="ondown">145</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">126</param>
+						<param name="onup">106</param>
+						<param name="ondown">146</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">127</param>
+						<param name="onup">107</param>
+						<param name="ondown">147</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">128</param>
+						<param name="onup">108</param>
+						<param name="ondown">148</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">129</param>
+						<param name="onup">109</param>
+						<param name="ondown">149</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">130</param>
+						<param name="onup">110</param>
+						<param name="ondown">150</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">131</param>
+						<param name="onup">111</param>
+						<param name="ondown">151</param>
+					</include>
+				</control>
+				<!-- 3rd row (A-Z) /-->
+				<control type="grouplist">
+					<onright>307</onright>
+					<top>427</top>
+					<left>34</left>
+					<orientation>horizontal</orientation>
+					<itemgap>8</itemgap>
+					<include content="keyboard_button">
+						<param name="id">140</param>
+						<param name="onup">120</param>
+						<param name="ondown">160</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">141</param>
+						<param name="onup">121</param>
+						<param name="ondown">161</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">142</param>
+						<param name="onup">122</param>
+						<param name="ondown">162</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">143</param>
+						<param name="onup">123</param>
+						<param name="ondown">163</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">144</param>
+						<param name="onup">124</param>
+						<param name="ondown">164</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">145</param>
+						<param name="onup">125</param>
+						<param name="ondown">165</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">146</param>
+						<param name="onup">126</param>
+						<param name="ondown">166</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">147</param>
+						<param name="onup">127</param>
+						<param name="ondown">167</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">148</param>
+						<param name="onup">128</param>
+						<param name="ondown">168</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">149</param>
+						<param name="onup">129</param>
+						<param name="ondown">169</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">150</param>
+						<param name="onup">130</param>
+						<param name="ondown">170</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">151</param>
+						<param name="onup">131</param>
+						<param name="ondown">171</param>
+					</include>
+				</control>
+				<!-- 4th row (A-Z) /-->
+				<control type="grouplist">
+					<onright>309</onright>
+					<top>524</top>
+					<left>34</left>
+					<orientation>horizontal</orientation>
+					<itemgap>8</itemgap>
+					<include content="keyboard_button">
+						<param name="id">160</param>
+						<param name="onup">140</param>
+						<param name="ondown">304</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">161</param>
+						<param name="onup">141</param>
+						<param name="ondown">302</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">162</param>
+						<param name="onup">142</param>
+						<param name="ondown">303</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">163</param>
+						<param name="onup">143</param>
+						<param name="ondown">32</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">164</param>
+						<param name="onup">144</param>
+						<param name="ondown">32</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">165</param>
+						<param name="onup">145</param>
+						<param name="ondown">32</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">166</param>
+						<param name="onup">146</param>
+						<param name="ondown">32</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">167</param>
+						<param name="onup">147</param>
+						<param name="ondown">305</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">168</param>
+						<param name="onup">148</param>
+						<param name="ondown">306</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">169</param>
+						<param name="onup">149</param>
+						<param name="ondown">8</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">170</param>
+						<param name="onup">170</param>
+						<param name="ondown">171</param>
+					</include>
+					<include content="keyboard_button">
+						<param name="id">171</param>
+						<param name="onup">171</param>
+						<param name="ondown">171</param>
+					</include>
+				</control>
+				<!-- 5th row /-->
+				<control type="grouplist">
+					<top>621</top>
+					<left>34</left>
+					<orientation>horizontal</orientation>
+					<itemgap>8</itemgap>
+					<!-- Symbols / ABC /-->
+					<include content="keyboard_radiobutton">
+						<param name="id">304</param>
+						<param name="onup">160</param>
+						<param name="icon">icons/keyboard/abc.png</param>
+						<param name="alt_icon">icons/keyboard/symbols.png</param>
+					</include>
+					<!-- Shift /-->
+					<include content="keyboard_radiobutton">
+						<param name="id">302</param>
+						<param name="onup">161</param>
+						<param name="icon">icons/keyboard/shift.png</param>
+						<param name="alt_icon">icons/keyboard/shift.png</param>
+					</include>
+					<!-- CAPS /-->
+					<include content="keyboard_radiobutton">
+						<param name="id">303</param>
+						<param name="onup">162</param>
+						<param name="icon">icons/keyboard/caps.png</param>
+						<param name="alt_icon">icons/keyboard/caps.png</param>
+					</include>
+					<!-- Space /-->
+					<control type="radiobutton" id="32">
+						<onup>163</onup>
+						<width>380</width>
+						<height>89</height>
+						<radiowidth>380</radiowidth>
+						<radioheight>89</radioheight>
+						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<textureradioonnofocus colordiffuse="text300">icons/keyboard/space.png</textureradioonnofocus>
+						<textureradioonfocus colordiffuse="text100">icons/keyboard/space.png</textureradioonfocus>
+						<textureradiooffnofocus colordiffuse="text300">icons/keyboard/space.png</textureradiooffnofocus>
+						<textureradioofffocus colordiffuse="text100">icons/keyboard/space.png</textureradioofffocus>
+						<textureradioondisabled colordiffuse="text500">icons/keyboard/space.png</textureradioondisabled>
+						<textureradiooffdisabled colordiffuse="text500">icons/keyboard/space.png</textureradiooffdisabled>
+						<radioposx>1</radioposx>
+					</control>
+					<!-- Left /-->
+					<include content="keyboard_radiobutton">
+						<param name="id">305</param>
+						<param name="onup">167</param>
+						<param name="icon">icons/keyboard/left.png</param>
+						<param name="alt_icon">icons/keyboard/left.png</param>
+					</include>
+					<!-- Right /-->
+					<include content="keyboard_radiobutton">
+						<param name="id">306</param>
+						<param name="onup">168</param>
+						<param name="icon">icons/keyboard/right.png</param>
+						<param name="alt_icon">icons/keyboard/right.png</param>
+					</include>
+					<!-- Backspace /-->
+					<include content="keyboard_radiobutton">
+						<param name="id">8</param>
+						<param name="onup">169</param>
+						<param name="icon">icons/keyboard/backspace.png</param>
+						<param name="alt_icon">icons/keyboard/backspace.png</param>
+					</include>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

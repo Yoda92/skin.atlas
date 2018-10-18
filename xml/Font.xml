@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fonts>
+	<fontset id="default">
+		<font>
+			<name>font13</name>
+			<size>26</size>
+			<filename>sourcesanspro-regular.ttf</filename>
+		</font>
+		<!-- Questrial (kodi logo) /-->
+		<font>
+			<name>questrial_regular_30</name>
+			<size>30</size>
+			<filename>questrial-regular.ttf</filename>
+		</font>
+		<!-- FontAwesome (icons) /-->
+		<font>
+			<name>symbol</name>
+			<size>26</size>
+			<filename>fontawesome-webfont.ttf</filename>
+		</font>
+		<font>
+			<name>symbol_34</name>
+			<size>34</size>
+			<filename>fontawesome-webfont.ttf</filename>
+		</font>
+		<!-- Raleway /-->
+		<!-- Regular /-->
+		<font>
+			<name>raleway_regular_42</name>
+			<size>42</size>
+			<filename>Raleway-Regular.ttf</filename>
+		</font>
+		<font>
+			<name>raleway_regular_30</name>
+			<size>30</size>
+			<filename>Raleway-Regular.ttf</filename>
+		</font>
+		<font>
+			<name>raleway_regular_26</name>
+			<size>26</size>
+			<filename>Raleway-Regular.ttf</filename>
+		</font>
+		<!-- Bold /-->
+		<font>
+			<name>raleway_bold_30</name>
+			<size>30</size>
+			<filename>Raleway-Bold.ttf</filename>
+		</font>
+		<font>
+			<name>raleway_bold_42</name>
+			<size>42</size>
+			<filename>Raleway-Bold.ttf</filename>
+		</font>
+		<font>
+			<name>raleway_bold_55</name>
+			<size>55</size>
+			<filename>Raleway-Bold.ttf</filename>
+		</font>
+		<!-- Source Sans Pro /-->
+		<!-- Regular /-->
+		<font>
+			<name>sourcesanspro_regular_21</name>
+			<size>21</size>
+			<filename>sourcesanspro-regular.ttf</filename>
+		</font>
+		<font>
+			<name>sourcesanspro_regular_26</name>
+			<size>26</size>
+			<filename>sourcesanspro-regular.ttf</filename>
+		</font>
+		<font>
+			<name>sourcesanspro_regular_30</name>
+			<size>30</size>
+			<filename>sourcesanspro-regular.ttf</filename>
+		</font>
+		<font>
+			<name>sourcesanspro_regular_34</name>
+			<size>34</size>
+			<filename>sourcesanspro-regular.ttf</filename>
+		</font>
+		<font>
+			<name>sourcesanspro_regular_128</name>
+			<size>128</size>
+			<filename>sourcesanspro-regular.ttf</filename>
+		</font>
+		<!-- Bold /-->
+		<font>
+			<name>sourcesanspro_bold_26</name>
+			<size>26</size>
+			<filename>sourcesanspro-bold.ttf</filename>
+		</font>
+		<font>
+			<name>sourcesanspro_bold_30</name>
+			<size>30</size>
+			<filename>sourcesanspro-bold.ttf</filename>
+		</font>
+		<font>
+			<name>sourcesanspro_bold_34</name>
+			<size>34</size>
+			<filename>sourcesanspro-bold.ttf</filename>
+		</font>
+		<font>
+			<name>sourcesanspro_semibold_34</name>
+			<size>34</size>
+			<filename>sourcesanspro-semibold.ttf</filename>
+		</font>
+		<font>
+			<name>sourcesanspro_bold_42</name>
+			<size>42</size>
+			<filename>sourcesanspro-bold.ttf</filename>
+		</font>
+		<font>
+			<name>sourcesanspro_bold_55</name>
+			<size>55</size>
+			<filename>sourcesanspro-bold.ttf</filename>
+		</font>
+	</fontset>
+</fonts>

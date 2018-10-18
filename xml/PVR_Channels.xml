@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="view_pvr_channels">
+		<control type="group">
+			<!-- Background panel /-->
+			<include content="view_background_panel">
+				<param name="header_width">608</param>
+				<param name="footer_left">778</param>
+				<param name="footer_width">983</param>
+			</include>
+			<!-- Panel poster /-->
+			<control type="group">
+				<top>185</top>
+				<left>185</left>
+				<control type="group">
+					<top>-5</top>
+					<left>-5</left>
+					<include content="common_poster">
+						<param name="width">566</param>
+						<param name="height">322</param>
+						<param name="fadetime">400</param>
+						<param name="bordersize">5</param>
+						<param name="bordertexture">shadows/shadow_5px.png</param>
+						<param name="aspectratio">keep</param>
+					</include>
+				</control>
+			</control>
+			<!-- List /-->
+			<control type="list" id="53">
+				<viewtype label="List">list</viewtype>
+				<onup>9000</onup>
+				<onleft>9000</onleft>
+				<onright>9001</onright>
+				<pagecontrol>9001</pagecontrol>
+				<top>164</top>
+				<left>783</left>
+				<width>973</width>
+				<height>754</height>
+				<itemlayout height="89" width="973">
+					<control type="label">
+						<left>42</left>
+						<width>889</width>
+						<height>131</height>
+						<label>[COLOR text300][B]$INFO[ListItem.ChannelNumberLabel][/B][/COLOR]     $INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="89" width="973">
+					<control type="image">
+						<visible>ControlGroup(9000).HasFocus() | Control.HasFocus(9001)</visible>
+						<width>973</width>
+						<height>131</height>
+						<texture border="26" colordiffuse="main700">shapes/white_rounded_bar.png</texture>
+					</control>
+					<control type="image">
+						<visible>!ControlGroup(9000).HasFocus() + !Control.HasFocus(9001)</visible>
+						<width>973</width>
+						<height>131</height>
+						<texture border="26" colordiffuse="main500">shapes/white_rounded_bar.png</texture>
+					</control>
+					<control type="label">
+						<left>42</left>
+						<width>889</width>
+						<height>131</height>
+						<label>[COLOR text300][B]$INFO[ListItem.ChannelNumberLabel][/B][/COLOR]     $INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+			<!-- List overlay /-->
+			<include content="view_list_overlay">
+				<param name="left">804</param>
+				<param name="width">931</param>
+			</include>
+			<!-- Current item metadata /-->
+			<control type="group">
+				<top>518</top>
+				<left>185</left>
+				<control type="grouplist">
+					<usecontrolcoords>true</usecontrolcoords>
+					<width>556</width>
+					<height>376</height>
+					<itemgap>5</itemgap>
+					<!-- Current item label /-->
+					<control type="label">
+						<visible>!String.IsEmpty(ListItem.Label)</visible>
+						<height>34</height>
+						<width>556</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>sourcesanspro_bold_34</font>
+					</control>
+					<!-- Current item title /-->
+					<control type="label">
+						<visible>!String.IsEmpty(ListItem.Title)</visible>
+						<height>26</height>
+						<width>556</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Title]</label>
+						<textcolor>text300</textcolor>
+						<font>sourcesanspro_bold_26</font>
+					</control>
+					<!-- Current item start + end time /-->
+					<control type="group">
+						<visible>!String.IsEmpty(ListItem.StartTime) + !String.IsEmpty(ListItem.EndTime)</visible>
+						<height>26</height>
+						<width>556</width>
+						<control type="label">
+							<height>26</height>
+							<width>556</width>
+							<label>$LOCALIZE[31114]: $INFO[ListItem.StartTime]</label>
+							<textcolor>text300</textcolor>
+						</control>
+						<control type="label">
+							<align>right</align>
+							<height>26</height>
+							<width>556</width>
+							<label>$LOCALIZE[31115]: $INFO[ListItem.EndTime]</label>
+							<textcolor>text300</textcolor>
+						</control>
+					</control>
+					<!-- Current item progress /-->
+					<control type="progress">
+						<visible>!String.IsEmpty(ListItem.StartTime) + !String.IsEmpty(ListItem.EndTime)</visible>
+						<top>9</top>
+						<texturebg>colors/grey800.png</texturebg>
+						<midtexture>colors/red500.png</midtexture>
+						<height>8</height>
+						<width>556</width>
+						<info>ListItem.Progress</info>
+					</control>
+					<!-- Current item Plot /-->
+					<control type="textbox">
+						<visible>!String.IsEmpty(ListItem.Plot)</visible>
+						<height>200</height>
+						<width>556</width>
+						<label>$VAR[plot_var]</label>
+					</control>
+				</control>
+			</control>
+			<control type="scrollbar" id="9001">
+				<showonepage>false</showonepage>
+				<onleft>51</onleft>
+				<orientation>vertical</orientation>
+				<right>0</right>
+				<width>13</width>
+				<height>1080</height>
+				<texturesliderbar border="5" colordiffuse="accent300">shapes/white_rounded.png</texturesliderbar>
+				<texturesliderbarfocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturesliderbarfocus>
+			</control>
+		</control>
+	</include>
+</includes>

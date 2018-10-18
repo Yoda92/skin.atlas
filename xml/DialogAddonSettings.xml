@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window type="dialog">
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">9</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<!-- Dialog items /-->
+			<control type="group">
+				<width>1485</width>
+				<height>741</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<include content="dialog_panel">
+					<param name="width">1482</param>
+					<param name="height">741</param>
+					<param name="label_id">2</param>
+				</include>
+				<!-- Background first panel /-->
+				<control type="image">
+					<top>123</top>
+					<left>34</left>
+					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+					<height>584</height>
+					<width>377</width>
+				</control>
+				<!-- Main list /-->
+				<control type="grouplist" id="3">
+					<onright>5</onright>
+					<top>123</top>
+					<left>34</left>
+					<width>377</width>
+					<height>584</height>
+				</control>
+				<include content="dialog_button">
+					<param name="width">377</param>
+					<param name="id">10</param>
+				</include>
+				<!-- Background second panel /-->
+				<control type="image">
+					<top>123</top>
+					<left>435</left>
+					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+					<height>584</height>
+					<width>618</width>
+				</control>
+				<!-- Second list /-->
+				<control type="grouplist" id="5">
+					<top>123</top>
+					<left>435</left>
+					<onleft>3</onleft>
+					<onright>9000</onright>
+					<width>618</width>
+					<height>584</height>
+				</control>
+				<include content="dialog_button">
+					<param name="width">618</param>
+					<param name="id">7</param>
+					<param name="align">left</param>
+					<param name="textoffset">21</param>
+				</include>
+				<include content="dialog_radiobutton">
+					<param name="width">618</param>
+					<param name="id">8</param>
+					<param name="align">left</param>
+					<param name="textoffset">21</param>
+					<param name="label_width">403</param>
+				</include>
+				<include content="dialog_spincontrolex">
+					<param name="width">618</param>
+					<param name="id">9</param>
+					<param name="align">left</param>
+					<param name="textoffset">21</param>
+				</include>
+				<control type="image" id="11">
+					<width>618</width>
+					<height>1</height>
+				</control>
+				<control type="label" id="14">
+					<align>center</align>
+					<width>618</width>
+					<textwidth>576</textwidth>
+					<height>73</height>
+					<font>sourcesanspro_bold_26</font>
+				</control>
+				<control type="sliderex" id="13">
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<height>73</height>
+					<width>618</width>
+				</control>
+				<!-- Background third panel /-->
+				<control type="image">
+					<top>123</top>
+					<left>1074</left>
+					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+					<height>584</height>
+					<width>377</width>
+				</control>
+				<!-- Third list /-->
+				<control type="grouplist" id="9000">
+					<onleft>5</onleft>
+					<top>123</top>
+					<left>1074</left>
+					<itemgap>0</itemgap>
+					<height>584</height>
+					<width>377</width>
+					<include content="dialog_button">
+						<param name="width">377</param>
+						<param name="id">28</param>
+					</include>
+					<include content="dialog_button">
+						<param name="width">377</param>
+						<param name="id">29</param>
+					</include>
+					<include content="dialog_button">
+						<param name="width">377</param>
+						<param name="id">30</param>
+					</include>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window type="dialog">
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">450</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<!-- Dialog items /-->
+			<control type="group">
+				<width>1482</width>
+				<height>741</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<include content="dialog_panel">
+					<param name="width">1482</param>
+					<param name="height">741</param>
+					<param name="label_id">1</param>
+					<param name="label">$LOCALIZE[31041]</param>
+				</include>
+				<!-- Background second panel /-->
+				<control type="image">
+					<top>123</top>
+					<left>34</left>
+					<texture>colors/grey800.png</texture>
+					<height>584</height>
+					<width>390</width>
+				</control>
+				<control type="image">
+					<top>123</top>
+					<left>445</left>
+					<texture>colors/grey800.png</texture>
+					<height>584</height>
+					<width>1003</width>
+				</control>
+				<!-- List image /-->
+				<control type="image">
+					<fadetime>200</fadetime>
+					<top>118</top>
+					<left>29</left>
+					<texture>$INFO[Container(450).ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+					<height>594</height>
+					<width>400</width>
+					<bordersize>5</bordersize>
+					<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+				</control>
+				<!-- File list /-->
+				<include content="dialog_list">
+					<param name="id">450</param>
+					<param name="onright"/>
+					<param name="width">1003</param>
+					<param name="height">584</param>
+					<param name="top">123</param>
+					<param name="left">445</param>
+					<param name="label_width">1011</param>
+				</include>
+				<!-- No Favourites /-->
+				<control type="group">
+					<visible>!Integer.IsGreater(Container(450).NumItems,0)</visible>
+					<include>common_visible_animation</include>
+					<top>123</top>
+					<left>445</left>
+					<width>1003</width>
+					<height>584</height>
+					<control type="image">
+						<aspectratio>keep</aspectratio>
+						<top>192</top>
+						<width>1003</width>
+						<height>200</height>
+						<texture colordiffuse="text300">icons/hidden.png</texture>
+					</control>
+					<control type="label">
+						<top>100</top>
+						<height>584</height>
+						<textcolor>text300</textcolor>
+						<label>$LOCALIZE[31042]</label>
+						<width>1003</width>
+						<align>center</align>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

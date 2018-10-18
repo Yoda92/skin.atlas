@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<controls>
+		<control type="image" id="13">
+			<include>common_visible_animation</include>
+			<centerleft>50%</centerleft>
+			<centertop>50%</centertop>
+			<width>128</width>
+			<height>128</height>
+			<texture colordiffuse="80ffffff">icons/pause.png</texture>
+		</control>
+	</controls>
+</window>

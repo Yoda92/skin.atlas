@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">52</defaultcontrol>
+	<controls>
+		<include>default_background</include>
+		<include>clock</include>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include content="specific_header_label">
+				<param name="label">$LOCALIZE[31082]</param>
+			</include>
+			<!-- Background panel /-->
+			<include>icon_view_panel</include>
+			<!-- Icon list /-->
+			<control type="list" id="52">
+				<orientation>horizontal</orientation>
+				<top>400</top>
+				<itemlayout width="291">
+					<!-- To accommodate the focus texture, the poster is <top>5</top> /-->
+					<control type="group">
+						<left>21</left>
+						<top>5</top>
+						<control type="image">
+							<top>-5</top>
+							<left>-5</left>
+							<height>280</height>
+							<width>280</width>
+							<texture border="5" colordiffuse="main500">shapes/white_rounded.png</texture>
+							<bordersize>5</bordersize>
+							<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+						</control>
+						<control type="image">
+							<height>220</height>
+							<width>270</width>
+							<texture colordiffuse="accent100" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<!-- Textbox to avoid scrolling /-->
+						<control type="textbox">
+							<left>21</left>
+							<top>181</top>
+							<aligny>center</aligny>
+							<align>center</align>
+							<height>89</height>
+							<width>228</width>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="291">
+					<!-- To accommodate the focus texture, the poster is <top>5</top> /-->
+					<control type="group">
+						<left>16</left>
+						<control type="image">
+							<top>-5</top>
+							<left>-5</left>
+							<height>290</height>
+							<width>290</width>
+							<texture border="5" colordiffuse="accent100">shapes/white_rounded.png</texture>
+							<bordersize>5</bordersize>
+							<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+						</control>
+						<control type="image">
+							<top>5</top>
+							<left>5</left>
+							<height>270</height>
+							<width>270</width>
+							<texture border="5" colordiffuse="main500">shapes/white_rounded.png</texture>
+						</control>
+						<control type="group">
+							<top>5</top>
+							<left>5</left>
+							<control type="image">
+								<height>220</height>
+								<width>270</width>
+								<texture colordiffuse="accent100" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<!-- Textbox to avoid scrolling /-->
+							<control type="textbox">
+								<left>21</left>
+								<top>181</top>
+								<aligny>center</aligny>
+								<align>center</align>
+								<height>89</height>
+								<width>228</width>
+							</control>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

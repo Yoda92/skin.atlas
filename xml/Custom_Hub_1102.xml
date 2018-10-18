@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window id="1102">
+	<defaultcontrol always="true">10</defaultcontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<controls>
+		<include>default_background</include>
+		<include>clock</include>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include content="specific_header_label">
+				<param name="label">$LOCALIZE[31019]</param>
+			</include>
+			<!-- Background panel /-->
+			<include>icon_view_panel</include>
+			<!-- Icon list /-->
+			<include content="icon_view_list">
+				<param name="id">10</param>
+				<param name="content">skinshortcuts-group-hub1102</param>
+			</include>
+		</control>
+	</controls>
+</window>

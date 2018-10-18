@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>	
+	<backgroundcolor>background</backgroundcolor>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<control type="visualisation">
+				<height>100%</height>
+				<width>100%</width>
+				<visible>Player.HasAudio</visible>
+			</control>
+		</control>
+	</controls>
+</window>

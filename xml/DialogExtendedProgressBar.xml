@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window type="dialog">
+	<backgroundcolor>0</backgroundcolor>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<!-- Background panel /-->
+			<control type="image">
+				<height>144</height>
+				<width>610</width>
+				<texture border="5">shapes/black_rounded.png</texture>
+				<top>55</top>
+				<left>1255</left>
+			</control>
+			<!-- Dialog items /-->
+			<control type="grouplist">
+				<usecontrolcoords>true</usecontrolcoords>
+				<top>76</top>
+				<left>1276</left>
+				<itemgap>5</itemgap>
+				<!-- Header /-->
+				<control type="label" id="30">
+					<align>center</align>
+					<height>26</height>
+					<width>568</width>
+					<font>sourcesanspro_bold_30</font>
+				</control>
+				<!-- Text /-->
+				<control type="label" id="31">
+					<align>center</align>
+					<height>26</height>
+					<width>568</width>
+					<textcolor>grey300</textcolor>
+				</control>
+				<control type="progress" id="32">
+					<top>19</top>
+					<width>568</width>
+					<height>21</height>
+					<texturebg border="5" colordiffuse="accent300">shapes/white_rounded.png</texturebg>
+					<midtexture border="5" colordiffuse="accent100">shapes/white_rounded.png</midtexture>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

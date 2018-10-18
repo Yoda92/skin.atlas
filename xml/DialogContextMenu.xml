@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window type="dialog">
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">996</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<!-- Button template /-->
+			<control type="button" id="1000">
+				<width>412</width>
+				<height>73</height>
+				<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+				<texturenofocus border="5" colordiffuse="accent800">colors/white.png</texturenofocus>
+			</control>
+			<control type="group">
+				<width>412</width>
+				<height>734</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<!-- Grouplist containing context menu /-->
+				<control type="grouplist" id="996">
+					<width>412</width>
+					<height max="734">auto</height>
+					<itemgap>0</itemgap>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

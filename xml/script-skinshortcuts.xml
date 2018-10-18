@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">211</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<control type="group">
+				<width>1482</width>
+				<height>741</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<include content="dialog_panel">
+					<param name="width">1482</param>
+					<param name="height">741</param>
+					<param name="label">$LOCALIZE[31116]</param>
+				</include>
+				<!-- Background first panel /-->
+				<control type="image">
+					<top>123</top>
+					<left>34</left>
+					<width>566</width>
+					<height>584</height>
+					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				</control>
+				<control type="list" id="211">
+					<onright>9000</onright>
+					<top>123</top>
+					<left>34</left>
+					<width>566</width>
+					<height>584</height>
+					<itemlayout width="566" height="73">
+						<control type="label">
+							<height>73</height>
+							<left>34</left>
+							<label fallback="[I]$LOCALIZE[31117][/I]">$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<right>34</right>
+							<height>73</height>
+							<width>73</width>
+							<texture colordiffuse="text100">$INFO[ListItem.Icon]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="566" height="73">
+						<control type="image">
+							<visible>ControlGroup(9000).HasFocus()</visible>
+							<height>73</height>
+							<width>566</width>
+							<texture border="5" colordiffuse="accent600">shapes/white_rounded.png</texture>
+						</control>
+						<control type="image">
+							<visible>!ControlGroup(9000).HasFocus()</visible>
+							<height>73</height>
+							<width>566</width>
+							<texture border="5" colordiffuse="accent500">shapes/white_rounded.png</texture>
+						</control>
+						<control type="label">
+							<height>73</height>
+							<left>34</left>
+							<label fallback="[I]$LOCALIZE[31117][/I]">$INFO[ListItem.label]</label>
+						</control>
+						<control type="image">
+							<right>34</right>
+							<height>73</height>
+							<width>73</width>
+							<texture colordiffuse="text100">$INFO[ListItem.Icon]</texture>
+						</control>
+					</focusedlayout>
+				</control>
+				<!-- Background second panel /-->
+				<control type="image">
+					<top>123</top>
+					<left>621</left>
+					<width>827</width>
+					<height>584</height>
+					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				</control>
+				<!-- Options /-->
+				<control type="grouplist" id="9000">
+					<orientation>vertical</orientation>
+					<onleft>211</onleft>
+					<top>123</top>
+					<left>621</left>
+					<width>827</width>
+					<height>584</height>
+					<!-- Buttons for managing shortcuts /-->
+					<!-- Add /-->
+					<include content="dialog_button">
+						<param name="id">301</param>
+						<param name="label">$LOCALIZE[31118]</param>
+					</include>
+					<!-- Remove /-->
+					<include content="dialog_button">
+						<param name="id">302</param>
+						<param name="label">$LOCALIZE[31119]</param>
+					</include>
+					<!-- Move Up /-->
+					<include content="dialog_button">
+						<param name="id">303</param>
+						<param name="label">$LOCALIZE[31120]</param>
+					</include>
+					<!-- Move Down /-->
+					<include content="dialog_button">
+						<param name="id">304</param>
+						<param name="label">$LOCALIZE[31121]</param>
+					</include>
+					<!-- Change Label /-->
+					<include content="dialog_button">
+						<param name="id">305</param>
+						<param name="label">$LOCALIZE[31122]</param>
+					</include>
+					<!-- Change Icon /-->
+					<include content="dialog_button">
+						<param name="id">306</param>
+						<param name="label">$LOCALIZE[31123]</param>
+					</include>
+					<!-- Change Action /-->
+					<include content="dialog_button">
+						<param name="id">307</param>
+						<param name="label">$LOCALIZE[31124]</param>
+					</include>
+					<!-- Restore to defaults /-->
+					<include content="dialog_button">
+						<param name="id">308</param>
+						<param name="label">$LOCALIZE[31125]</param>
+					</include>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

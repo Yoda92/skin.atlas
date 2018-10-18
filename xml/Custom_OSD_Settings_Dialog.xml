@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window type="dialog" id="1106">
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">10</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<!-- Dialog items /-->
+			<control type="group">
+				<width>734</width>
+				<height>376</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<include content="dialog_panel">
+					<param name="width">734</param>
+					<param name="height">376</param>
+					<param name="label">$LOCALIZE[31009]</param>
+				</include>
+				<!-- Button background panel /-->
+				<control type="image">
+					<left>34</left>
+					<top>123</top>
+					<width>666</width>
+					<height>219</height>
+					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				</control>
+				<!-- List /-->
+				<control type="grouplist" id="10">
+					<left>34</left>
+					<top>123</top>
+					<!-- Audio settings /-->
+					<control type="button" id="101">
+						<visible>!Player.HasGame</visible>
+						<onclick>ActivateWindow(osdaudiosettings)</onclick>
+						<width>666</width>
+						<height>73</height>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31020]</label>
+					</control>
+					<!-- Video settings /-->
+					<control type="button" id="102">
+						<visible>!Player.HasGame</visible>
+						<onclick>ActivateWindow(osdvideosettings)</onclick>
+						<width>666</width>
+						<height>73</height>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31021]</label>
+					</control>
+					<!-- Toggle language /-->
+					<control type="button" id="103">
+						<visible>!Player.HasGame</visible>
+						<onclick>AudioNextLanguage</onclick>
+						<width>666</width>
+						<height>73</height>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31022]</label>
+						<label2>[COLOR text200]$INFO[VideoPlayer.AudioLanguage][/COLOR]</label2>
+					</control>
+					<!-- Games: Video filter /-->
+					<control type="button" id="104">
+						<visible>Player.HasGame</visible>
+						<onclick>ActivateWindow(GameVideoFilter)</onclick>
+						<width>666</width>
+						<height>73</height>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31023]</label>
+					</control>
+					<!-- Games: View mode /-->
+					<control type="button" id="105">
+						<visible>Player.HasGame</visible>
+						<onclick>ActivateWindow(GameViewMode)</onclick>
+						<width>666</width>
+						<height>73</height>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31024]</label>
+					</control>
+					<!-- Games: Input /-->
+					<control type="button" id="106">
+						<visible>Player.HasGame</visible>
+						<onclick>ActivateWindow(GameControllers)</onclick>
+						<width>666</width>
+						<height>73</height>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31025]</label>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

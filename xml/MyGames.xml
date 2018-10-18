@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>50</defaultcontrol>
+	<menucontrol>9000</menucontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<views>50</views>
+	<controls>
+		<include>default_background</include>
+		<include>clock</include>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>default_header_label</include>
+			<include>view_50_list</include>
+		</control>
+		<!-- Options panel /-->
+		<include content="common_options_menu">
+			<param name="list_id">50</param>
+			<param name="content">mygames_options_content</param>
+		</include>
+		<control type="scrollbar" id="9001">
+			<include>common_window_animation</include>
+			<visible>Control.IsVisible(50)</visible>
+			<showonepage>false</showonepage>
+			<onleft>50</onleft>
+			<orientation>vertical</orientation>
+			<right>0</right>
+			<width>13</width>
+			<height>1080</height>
+			<texturesliderbar border="5" colordiffuse="accent300">shapes/white_rounded.png</texturesliderbar>
+			<texturesliderbarfocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturesliderbarfocus>
+		</control>
+	</controls>
+</window>

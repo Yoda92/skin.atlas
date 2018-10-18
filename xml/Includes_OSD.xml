@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="common_osd_left_control">
+		<control type="grouplist" id="10">
+			<left>34</left>
+			<bottom>9</bottom>
+			<onright condition="Player.HasVideo">3</onright>
+			<onright condition="Player.HasAudio">6</onright>
+			<onup>12</onup>
+			<height>89</height>
+			<width>1920</width>
+			<orientation>horizontal</orientation>
+			<!-- Play / Pause /-->
+			<control type="togglebutton" id="1">
+				<height>89</height>
+				<width>89</width>
+				<texturefocus colordiffuse="text100">osd/play_focus.png</texturefocus>
+				<texturenofocus colordiffuse="text100">osd/play.png</texturenofocus>
+				<alttexturefocus colordiffuse="text100">osd/pause_focus.png</alttexturefocus>
+				<alttexturenofocus colordiffuse="text100">osd/pause.png</alttexturenofocus>
+				<usealttexture>!Player.Paused</usealttexture>
+				<onclick>PlayerControl(Play)</onclick>
+			</control>
+			<!-- Stop /-->
+			<include content="osd_button">
+				<param name="texturefocus">osd/stop_focus.png</param>
+				<param name="texturenofocus">osd/stop.png</param>
+				<param name="onclick">PlayerControl(Stop)</param>
+				<param name="id">2</param>
+			</include>
+		</control>	
+	</include>
+
+	<include name="common_osd_right_control">
+		<control type="grouplist" id="11">
+			<bottom>9</bottom>
+			<right>34</right>
+			<onleft>10</onleft>
+			<onup>12</onup>
+			<height>89</height>
+			<width>1920</width>
+			<orientation>horizontal</orientation>
+			<align>right</align>
+			<!-- Subtitles /-->
+			<include content="osd_button">
+				<param name="visible">Player.HasVideo</param>
+				<param name="texturefocus">osd/subtitles_focus.png</param>
+				<param name="texturenofocus">osd/subtitles.png</param>
+				<param name="onclick">ActivateWindow(1105,return)</param>
+				<param name="id">3</param>
+			</include>
+			<!-- Settings /-->
+			<include content="osd_button">
+				<param name="visible">Player.HasVideo</param>
+				<param name="texturefocus">osd/settings_focus.png</param>
+				<param name="texturenofocus">osd/settings.png</param>
+				<param name="onclick">ActivateWindow(1106,return)</param>
+				<param name="id">5</param>
+			</include>
+			<!-- Audio Settings /-->
+			<include content="osd_button">
+				<param name="visible">Player.HasAudio</param>
+				<param name="texturefocus">osd/settings_focus.png</param>
+				<param name="texturenofocus">osd/settings.png</param>
+				<param name="onclick">ActivateWindow(osdaudiosettings,return)</param>
+				<param name="id">6</param>
+			</include>
+			<!-- Visualization /-->
+			<include content="osd_button">
+				<param name="visible">Player.HasAudio</param>
+				<param name="texturefocus">osd/visualization_focus.png</param>
+				<param name="texturenofocus">osd/visualization.png</param>
+				<param name="id">500</param>
+			</include>
+		</control>
+	</include>
+
+	<include name="osd_button">
+		<param name="texturenofocus"/>
+		<param name="texturefocus"/>
+		<param name="visible">true</param>
+		<param name="onclick"/>
+		<param name="id"/>
+		<definition>
+			<control type="button" id="$PARAM[id]">
+				<visible>$PARAM[visible]</visible>
+				<height>89</height>
+				<width>89</width>
+				<texturefocus colordiffuse="text100">$PARAM[texturefocus]</texturefocus>
+				<texturenofocus colordiffuse="text100">$PARAM[texturenofocus]</texturenofocus>
+				<onclick>$PARAM[onclick]</onclick>
+			</control>
+		</definition>
+	</include>
+</includes>

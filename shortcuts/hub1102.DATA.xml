@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<shortcut>
+		<label>All Tv Shows</label>
+		<label2>Common_Hub</label2>
+		<action>ActivateWindow(Videos,special://skin/playlists/tvshows/alltvshows.xsp,return)</action>
+		<icon>special://skin/media/icons/list.png</icon>
+	</shortcut>
+	<shortcut>
+		<label>In Progress Tv Shows</label>
+		<label2>Common_Hub</label2>
+		<action>ActivateWindow(Videos,special://skin/playlists/tvshows/inprogresstvshows.xsp,return)</action>
+		<icon>special://skin/media/icons/play.png</icon>
+	</shortcut>
+	<shortcut>
+		<label>Recently Added Tv Shows</label>
+		<label2>Common_Hub</label2>
+		<action>ActivateWindow(Videos,special://skin/playlists/tvshows/recentlyaddedtvshows.xsp,return)</action>
+		<icon>special://skin/media/icons/clock.png</icon>
+	</shortcut>
+	<shortcut>
+		<label>Genres</label>
+		<label2>Common_Hub</label2>
+		<action>ActivateWindow(Videos,special://skin/playlists/tvshows/genres.xsp,return)</action>
+		<icon>special://skin/media/icons/genres.png</icon>
+	</shortcut>
+	<shortcut>
+		<label>Top Rated</label>
+		<label2>Common_Hub</label2>
+		<action>ActivateWindow(Videos,special://skin/playlists/tvshows/topratedtvshows.xsp,return)</action>
+		<icon>special://skin/media/icons/star.png</icon>
+	</shortcut>
+</shortcuts>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window type="dialog">
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">10</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<!-- Dialog items /-->
+			<control type="group">
+				<width>1288</width>
+				<height>725</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<include content="dialog_panel">
+					<param name="width">1288</param>
+					<param name="height">725</param>
+					<param name="label_id">2</param>
+				</include>
+				<control type="group">
+					<top>89</top>
+					<include content="dialog_label_bold">
+						<param name="width">1288</param>
+						<param name="label">$LOCALIZE[31050]</param>
+					</include>
+				</control>
+				<!-- Background panel /-->
+				<control type="image">
+					<left>34</left>
+					<top>178</top>
+					<width>809</width>
+					<height>261</height>
+					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				</control>
+				<!-- Main list /-->
+				<control type="list" id="10">
+					<onright>9000</onright>
+					<ondown>12</ondown>
+					<itemgap>21</itemgap>
+					<left>34</left>
+					<top>178</top>
+					<width>809</width>
+					<height>261</height>
+					<itemlayout height="73">
+						<control type="group">
+							<left>21</left>
+							<include content="dialog_label_regular">
+								<param name="width">767</param>
+								<param name="label">$INFO[ListItem.Label]</param>
+							</include>
+						</control>
+					</itemlayout>
+					<focusedlayout height="73">
+						<control type="image">
+							<visible>Control.HasFocus(10)</visible>
+							<height>73</height>
+							<width>809</width>
+							<texture border="5" colordiffuse="accent500">shapes/white_rounded.png</texture>
+						</control>
+						<control type="group">
+							<left>21</left>
+							<include content="dialog_label_regular">
+								<param name="width">767</param>
+								<param name="label">$INFO[ListItem.Label]</param>
+							</include>
+						</control>
+					</focusedlayout>
+				</control>
+				<!-- Right aligned buttons /-->
+				<control type="grouplist" id="9000">
+					<onleft>10</onleft>
+					<ondown>12</ondown>
+					<itemgap>21</itemgap>
+					<top>178</top>
+					<left>864</left>
+					<!-- Browse /-->
+					<include content="dialog_button">
+						<param name="id">11</param>
+						<param name="width">390</param>
+						<param name="label">$LOCALIZE[31051]</param>
+					</include>
+					<!-- Add /-->
+					<include content="dialog_button">
+						<param name="id">13</param>
+						<param name="width">390</param>
+						<param name="label">$LOCALIZE[31052]</param>
+					</include>
+					<!-- Remove /-->
+					<include content="dialog_button">
+						<param name="id">14</param>
+						<param name="width">390</param>
+						<param name="label">$LOCALIZE[31053]</param>
+					</include>
+				</control>
+				<!-- Bottom dialog items /-->
+				<control type="group">
+					<top>435</top>
+					<!-- Enter a name... /-->
+					<include content="dialog_label_bold">
+						<param name="width">1288</param>
+						<param name="label">$LOCALIZE[31054]</param>
+					</include>
+					<control type="edit" id="12">
+						<top>89</top>
+						<left>34</left>
+						<width>1220</width>
+						<height>73</height>
+						<onup>10</onup>
+						<ondown>9001</ondown>
+					</control>
+					<control type="grouplist" id="9001">
+						<orientation>horizontal</orientation>
+						<top>183</top>
+						<left>237</left>
+						<itemgap>21</itemgap>
+						<onup>12</onup>
+						<!-- OK /-->
+						<include content="dialog_button">
+							<param name="id">18</param>
+							<param name="width">390</param>
+							<param name="label">$LOCALIZE[31048]</param>
+						</include>
+						<!-- Cancel /-->
+						<include content="dialog_button">
+							<param name="id">19</param>
+							<param name="width">390</param>
+							<param name="label">$LOCALIZE[31055]</param>
+						</include>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

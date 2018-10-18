@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overrides>
+	<!-- Additional Common Items -->
+	<shortcut label="Hub #1" type="Hub" grouping="common">ActivateWindow(1101)</shortcut>
+	<shortcut label="Hub #2" type="Hub" grouping="common">ActivateWindow(1102)</shortcut>
+	<shortcut label="Hub #3" type="Hub" grouping="common">ActivateWindow(1103)</shortcut>
+
+	<!-- Default thumbnail location -->
+	<thumbnailBrowseDefault>special://skin/media/icons/</thumbnailBrowseDefault>
+
+	<!-- Warning -->
+	<warn heading="$LOCALIZE[31015]" message="$LOCALIZE[31016]">ActivateWindow(Settings)</warn>
+
+	<doNotShareMenu />
+</overrides>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colors>	
+	<!-- The following color definitions are for reference only -->
+	<color name="red500">FF9d1627</color> <!-- Ruby Red /-->
+	<color name="red700">FF73111d</color> <!-- Prune /-->
+
+	<color name="yellow500">FFfffc69</color> <!-- Unmellow Yellow /-->
+
+	<color name="blue300">FF697c8e</color> <!-- Slate gray /-->
+	<color name="blue500">FF486076</color> <!-- Deep Space Sparkle /-->
+	<color name="blue700">FF283541</color> <!-- Gunmetal /-->
+	<color name="blue800">FF354656</color> <!-- Charcoal /-->
+	<color name="blue900">FF1b232b</color> <!-- Dark Gunmetal /-->
+
+	<color name="grey100">FFF1F1F1</color> <!-- Anti-Flash White /-->
+	<color name="grey200">FFb5b5b5</color> <!-- Ash Grey /-->
+	<color name="grey300">FF9A9A9A</color> <!-- Spanish Grey /-->
+	<color name="grey500">FF3c3c3a</color> <!-- Black Olive /-->
+	<color name="grey600">FF272725</color> <!-- Raisin black /-->
+	<color name="grey700">FF1e1e1b</color> <!-- Eerie Black /-->
+	<color name="grey800">FF11110f</color> <!-- Licorice /-->
+	<color name="grey900">FF090806</color> <!-- Smokey Black /-->
+	
+	<!-- The following color definitions are for the actual color scheme -->
+	<color name="main300">FF697c8e</color> 
+	<color name="main500">FF486076</color> 
+	<color name="main700">FF283541</color> 
+	<color name="main800">FF354656</color> 
+	<color name="main900">FF1b232b</color> 
+	
+	<color name="accent100">FFF1F1F1</color> 
+	<color name="accent200">FFb5b5b5</color>
+	<color name="accent300">FF9A9A9A</color>
+	<color name="accent500">FF3c3c3a</color> 
+	<color name="accent600">FF272725</color> 
+	<color name="accent700">FF1e1e1b</color> 
+	<color name="accent800">FF11110f</color> 
+	<color name="accent900">FF090806</color> 
+	
+	<color name="text100">FFF1F1F1</color> 
+	<color name="text200">FFb5b5b5</color>
+	<color name="text300">FF9A9A9A</color>
+	<color name="text500">FF3c3c3a</color> 
+	<color name="text600">FF272725</color> 
+	<color name="text700">FF1e1e1b</color> 
+	<color name="text800">FF11110f</color> 
+	<color name="text900">FF090806</color>
+	
+	<color name="selected500">FFfffc69</color>
+	
+	<color name="background">FF000000</color>
+</colors>

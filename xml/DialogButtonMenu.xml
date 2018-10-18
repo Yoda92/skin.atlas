@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window type="dialog">
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<controls>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include>dialog_background</include>
+			<control type="group">
+				<width>412</width>
+				<height>734</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<!-- Grouplist containing context menu /-->
+				<control type="grouplist" id="9000">
+					<width>412</width>
+					<height max="734">auto</height>
+					<itemgap>0</itemgap>
+					<!-- Power Down /-->
+					<control type="button" id="9001">
+						<width>412</width>
+						<height>73</height>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturenofocus border="5" colordiffuse="accent800">colors/white.png</texturenofocus>
+						<label>$LOCALIZE[31035]</label>
+						<onclick>PowerDown()</onclick>
+						<visible>System.CanPowerDown</visible>
+					</control>
+					<!-- Suspend /-->
+					<control type="button" id="9002">
+						<width>412</width>
+						<height>73</height>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturenofocus border="5" colordiffuse="accent800">colors/white.png</texturenofocus>
+						<label>$LOCALIZE[31036]</label>
+						<onclick>Suspend()</onclick>
+						<visible>System.CanSuspend</visible>
+					</control>
+					<!-- Hibernate /-->
+					<control type="button" id="9003">
+						<width>412</width>
+						<height>73</height>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturenofocus border="5" colordiffuse="accent800">colors/white.png</texturenofocus>
+						<label>$LOCALIZE[31037]</label>
+						<onclick>Hibernate()</onclick>
+						<visible>System.CanHibernate</visible>
+					</control>
+					<!-- Reboot /-->
+					<control type="button" id="9004">
+						<width>412</width>
+						<height>73</height>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturenofocus border="5" colordiffuse="accent800">colors/white.png</texturenofocus>
+						<label>$LOCALIZE[31038]</label>
+						<onclick>Reset()</onclick>
+						<visible>System.CanReboot</visible>
+					</control>
+					<!-- Settings /-->
+					<control type="button" id="9005">
+						<width>412</width>
+						<height>73</height>
+						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturenofocus border="5" colordiffuse="accent800">colors/white.png</texturenofocus>
+						<label>$LOCALIZE[31009]</label>
+						<onclick>ActivateWindow(Settings,return)</onclick>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

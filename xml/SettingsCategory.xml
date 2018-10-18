@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol>3</defaultcontrol>
+	<controls>
+		<include>default_background</include>
+		<include>clock</include>
+		<control type="group">
+			<include>common_window_animation</include>
+			<include content="specific_header_label">
+				<param name="id">2</param>
+			</include>
+			<include>common_settings_panel</include>
+			<include content="common_settings_menu">
+				<param name="header_id">3</param>
+				<param name="up_id">9000</param>
+				<param name="footer_id">5</param>
+			</include>
+			<include content="common_settings_button_header">
+				<param name="id">10</param>
+			</include>
+			<include content="common_settings_button_footer">
+				<param name="id">7</param>
+			</include>
+			<include content="common_settings_radiobutton_footer">
+				<param name="id">8</param>
+			</include>
+			<include content="common_settings_label_footer">
+				<param name="id">14</param>
+			</include>
+			<include content="common_settings_spincontrolex_footer">
+				<param name="id">9</param>
+			</include>
+			<include content="common_settings_edit_footer">
+				<param name="id">12</param>
+			</include>
+			<include content="common_settings_sliderex_footer">
+				<param name="id">13</param>
+			</include>
+			<include content="common_settings_textbox_footer">
+				<param name="id">6</param>
+			</include>
+			<include content="view_list_overlay">
+				<param name="left">185</param>
+				<param name="width">556</param>
+			</include>
+			<include content="view_list_overlay">
+				<param name="left">804</param>
+				<param name="width">931</param>
+			</include>
+			<!-- Options panel /-->
+			<include content="common_options_menu">
+				<param name="list_id">3</param>
+				<param name="include_animation">false</param>
+				<param name="content">settingscategory_options_content</param>
+			</include>
+		</control>
+	</controls>
+</window>

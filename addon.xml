@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.atlas" version="0.7.0" name="Atlas" provider-name="Yoda92">
+	<requires>
+		<import addon="xbmc.gui" version="5.13.0"/>
+		<import addon="script.skinshortcuts" version="1.0.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Atlas skin by Yoda92.</summary>
+		<disclaimer lang="en">Mouse and touch are not supported.</disclaimer>
+		<description lang="en">Atlas is designed to be clear, simple and light.</description>
+		<platform>all</platform>
+		<license>Creative Commons Attribution-Noncommercial-Share Alike 3.0</license>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<screenshot>resources/screenshot-04.jpg</screenshot>
+			<screenshot>resources/screenshot-05.jpg</screenshot>
+			<screenshot>resources/screenshot-06.jpg</screenshot>
+			<screenshot>resources/screenshot-07.jpg</screenshot>
+			<screenshot>resources/screenshot-08.jpg</screenshot>
+			<screenshot>resources/screenshot-09.jpg</screenshot>
+		</assets>
+		<source>https://github.com/yoda92/skin.atlas/</source>
+	</extension>
+</addon>

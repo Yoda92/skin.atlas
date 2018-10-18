@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="DefaultDialogSelect">
+		<control type="group">
+			<width>1482</width>
+			<height>741</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">1482</param>
+				<param name="height">741</param>
+				<param name="label_id">1</param>
+			</include>
+			<!-- Background second panel /-->
+			<control type="image">
+				<top>123</top>
+				<left>34</left>
+				<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				<height>584</height>
+				<width>1003</width>
+			</control>
+			<!-- List image /-->
+			<control type="image">
+				<bottom>34</bottom>
+				<right>34</right>
+				<texture>colors/black.png</texture>
+				<height>396</height>
+				<width>390</width>
+			</control>
+			<control type="image">
+				<fadetime>400</fadetime>
+				<aspectratio>keep</aspectratio>
+				<bottom>34</bottom>
+				<right>34</right>
+				<texture fallback="icons/hidden.png">$VAR[dialogselect_image_var]</texture>
+				<height>396</height>
+				<width>390</width>
+			</control>
+			<!-- File list /-->
+			<include content="dialog_list">
+				<param name="id">3</param>
+				<param name="onright">9001</param>
+				<param name="width">1003</param>
+				<param name="height">584</param>
+				<param name="top">123</param>
+				<param name="left">34</param>
+				<param name="label_width">961</param>
+			</include>
+			<include content="dialog_list">
+				<param name="id">6</param>
+				<param name="onright">9001</param>
+				<param name="width">1003</param>
+				<param name="height">584</param>
+				<param name="top">123</param>
+				<param name="left">34</param>
+				<param name="label_width">961</param>
+			</include>
+			<!-- Right aligned buttons /-->
+			<control type="grouplist" id="9001">
+				<onleft>3</onleft>
+				<itemgap>21</itemgap>
+				<top>123</top>
+				<left>1058</left>
+				<!-- Get more /-->
+				<include content="dialog_button">
+					<param name="id">5</param>
+					<param name="width">390</param>
+					<param name="label">$LOCALIZE[31062]</param>
+				</include>
+				<!-- Cancel /-->
+				<include content="dialog_button">
+					<param name="id">7</param>
+					<param name="width">390</param>
+					<param name="label">$LOCALIZE[31055]</param>
+				</include>
+			</control>
+		</control>
+	</include>
+
+	<include name="GameDialogSelectView">
+		<control type="group">
+			<width>1397</width>
+			<height>377</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">1397</param>
+				<param name="height">377</param>
+				<param name="label_id">1</param>
+			</include>
+			<!-- Background second panel /-->
+			<control type="image">
+				<top>123</top>
+				<left>34</left>
+				<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				<height>220</height>
+				<width>1329</width>
+			</control>
+			<control type="panel" id="11">
+				<top>123</top>
+				<left>34</left>
+				<orientation>horizontal</orientation>
+				<height>220</height>
+				<width>1329</width>
+				<itemlayout height="220" width="327">
+					<control type="group">
+						<left>21</left>
+						<top>21</top>
+						<control type="image">
+							<top>-5</top>
+							<left>-5</left>
+							<height>188</height>
+							<width>316</width>
+							<texture>colors/black.png</texture>
+							<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="gamewindow">
+							<width>306</width>
+							<height>178</height>
+							<scalingmethod>$INFO[ListItem.Property(game.scalingmethod)]</scalingmethod>
+							<viewmode>$INFO[ListItem.Property(game.viewmode)]</viewmode>
+						</control>
+						<control type="image">
+							<top>144</top>
+							<height>34</height>
+							<width>306</width>
+							<texture colordiffuse="80ffffff">colors/black.png</texture>
+						</control>
+						<control type="label">
+							<top>144</top>
+							<height>34</height>
+							<width>306</width>
+							<align>center</align>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout height="220" width="327">
+					<control type="group">
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="103" time="89" center="auto"/>
+						</animation>
+						<animation type="UnFocus">
+							<effect type="zoom" start="103" end="100" time="89" center="auto"/>
+						</animation>
+						<left>21</left>
+						<top>21</top>
+						<control type="image">
+							<top>-5</top>
+							<left>-5</left>
+							<animation type="Focus">
+								<effect type="fade" start="0" end="100" time="89"/>
+							</animation>
+							<animation type="UnFocus">
+								<effect type="fade" start="100" end="0" time="89"/>
+							</animation>
+							<width>316</width>
+							<height>188</height>
+							<texture border="5" colordiffuse="accent100">shapes/white_rounded.png</texture>
+						</control>
+						<control type="image">
+							<top>-5</top>
+							<left>-5</left>
+							<height>188</height>
+							<width>316</width>
+							<texture>colors/black.png</texture>
+							<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="gamewindow">
+							<width>306</width>
+							<height>178</height>
+							<scalingmethod>$INFO[ListItem.Property(game.scalingmethod)]</scalingmethod>
+							<viewmode>$INFO[ListItem.Property(game.viewmode)]</viewmode>
+						</control>
+						<control type="image">
+							<top>144</top>
+							<height>34</height>
+							<width>306</width>
+							<texture colordiffuse="80ffffff">colors/black.png</texture>
+						</control>
+						<control type="label">
+							<top>144</top>
+							<height>34</height>
+							<width>306</width>
+							<align>center</align>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+
+	<include name="GameDialogSelectFilter">
+		<control type="group">
+			<width>1397</width>
+			<height>377</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">1397</param>
+				<param name="height">377</param>
+				<param name="label_id">1</param>
+			</include>
+			<!-- Background second panel /-->
+			<control type="image">
+				<top>123</top>
+				<left>34</left>
+				<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				<height>220</height>
+				<width>1329</width>
+			</control>
+			<control type="panel" id="11">
+				<top>123</top>
+				<left>34</left>
+				<orientation>horizontal</orientation>
+				<height>220</height>
+				<width>1329</width>
+				<itemlayout height="220" width="327">
+					<control type="group">
+						<left>21</left>
+						<top>21</top>
+						<control type="image">
+							<top>-5</top>
+							<left>-5</left>
+							<height>188</height>
+							<width>316</width>
+							<texture>colors/black.png</texture>
+							<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="gamewindow">
+							<width>306</width>
+							<height>178</height>
+							<scalingmethod>$INFO[ListItem.Property(game.scalingmethod)]</scalingmethod>
+							<viewmode>$INFO[ListItem.Property(game.viewmode)]</viewmode>
+						</control>
+						<control type="image">
+							<top>144</top>
+							<height>34</height>
+							<width>306</width>
+							<texture colordiffuse="80ffffff">colors/black.png</texture>
+						</control>
+						<control type="label">
+							<top>144</top>
+							<height>34</height>
+							<width>306</width>
+							<align>center</align>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout height="220" width="327">
+					<control type="group">
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="103" time="89" center="auto"/>
+						</animation>
+						<animation type="UnFocus">
+							<effect type="zoom" start="103" end="100" time="89" center="auto"/>
+						</animation>
+						<left>21</left>
+						<top>21</top>
+						<control type="image">
+							<top>-5</top>
+							<left>-5</left>
+							<animation type="Focus">
+								<effect type="fade" start="0" end="100" time="89"/>
+							</animation>
+							<animation type="UnFocus">
+								<effect type="fade" start="100" end="0" time="89"/>
+							</animation>
+							<width>316</width>
+							<height>188</height>
+							<texture border="5" colordiffuse="accent100">shapes/white_rounded.png</texture>
+						</control>
+						<control type="image">
+							<top>-5</top>
+							<left>-5</left>
+							<height>188</height>
+							<width>316</width>
+							<texture>colors/black.png</texture>
+							<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+							<bordersize>5</bordersize>
+						</control>
+						<control type="gamewindow">
+							<width>306</width>
+							<height>178</height>
+							<scalingmethod>$INFO[ListItem.Property(game.scalingmethod)]</scalingmethod>
+							<viewmode>$INFO[ListItem.Property(game.viewmode)]</viewmode>
+						</control>
+						<control type="image">
+							<top>144</top>
+							<height>34</height>
+							<width>306</width>
+							<texture colordiffuse="80ffffff">colors/black.png</texture>
+						</control>
+						<control type="label">
+							<top>144</top>
+							<height>34</height>
+							<width>306</width>
+							<align>center</align>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+</includes>
