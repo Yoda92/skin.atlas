@@ -4,12 +4,12 @@
 	<defaultcontrol>9000</defaultcontrol>
 	<controls>
 		<include>default_background</include>
-		<include>clock</include>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include content="specific_header_label">
+			<include content="default_header_label">
 				<param name="label">$LOCALIZE[31132]</param>
 			</include>
+			<include>clock</include>
 			<include>common_settings_panel</include>
 			<control type="group">
 				<control type="grouplist" id="9000">
@@ -17,8 +17,8 @@
 					<itemgap>-42</itemgap>
 					<top>164</top>
 					<left>164</left>
-					<width>598</width>
-					<height>754</height>
+					<width>560</width>
+					<height>752</height>
 					<include content="common_settings_button_header">
 						<param name="id">95</param>
 						<param name="label">$LOCALIZE[31133]</param>
@@ -45,58 +45,52 @@
 					</include>
 				</control>
 				<control type="grouplist" id="9001">
-					<top>175</top>
-					<left>808</left>
+					<top>164</top>
+					<left>765</left>
+					<width>1012</width>
+					<height>752</height>
 					<control type="label" id="2">
-						<width>926</width>
+						<width>994</width>
 						<height>55</height>
 					</control>
 					<control type="label" id="3">
-						<width>926</width>
+						<width>994</width>
 						<height>55</height>
 					</control>
 					<control type="label" id="4">
-						<width>926</width>
+						<width>994</width>
 						<height>55</height>
 					</control>
 					<control type="label" id="5">
-						<width>926</width>
+						<width>994</width>
 						<height>55</height>
 					</control>
 					<control type="label" id="6">
-						<width>926</width>
+						<width>994</width>
 						<height>55</height>
 					</control>
 					<control type="label" id="7">
-						<width>926</width>
+						<width>994</width>
 						<height>55</height>
 					</control>
 					<control type="label" id="8">
-						<width>926</width>
+						<width>994</width>
 						<height>55</height>
 					</control>
 					<control type="label" id="9">
-						<width>926</width>
+						<width>994</width>
 						<height>55</height>
 					</control>
 					<control type="label" id="10">
-						<width>926</width>
+						<width>994</width>
 						<height>55</height>
 					</control>
 					<control type="label" id="11">
-						<width>926</width>
+						<width>994</width>
 						<height>55</height>
 					</control>
 				</control>
 			</control>
-			<include content="view_list_overlay">
-				<param name="left">185</param>
-				<param name="width">556</param>
-			</include>
-			<include content="view_list_overlay">
-				<param name="left">804</param>
-				<param name="width">931</param>
-			</include>
 		</control>
 	</controls>
 </window>

@@ -9,9 +9,9 @@ Atlas is designed to be a minimalistic, elegant and intuitive 10-Foot UI for Kod
 
 <a name="License"></a>
 ## License
-This software is licensed under a [Attribution-NonCommmercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) license
+This software is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/) license
 
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![License: CC-BY-SA 3.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/3.0/)
 
 <a name="Compatibility"></a>
 ## Compatibility
@@ -32,13 +32,13 @@ https://img.shields.io/badge/Download-ALPHA-brightgreen.svg?style=flat-square
 
 <a name="Credits"></a>
 ## Credits
-* Font Awesome (https://fontawesome.com/) - All icons used in this skin are created from Font Awesome.
-* https://coolors.co/ - Many colors used in this skin are inspired from coolors.co.
+* Font Awesome (https://fontawesome.com/) - Most icons used in this skin are created from Font Awesome.
 * All the people who have helped me in the forums!
 
 <a name="Dependencies"></a>
 ## Dependencies
 * script.skinshortcuts version 1.0.0 or higher
+* resource.images.moviegenreicons.transparent 0.0.1 or higher
 
 <a name="Support"></a>
 ## Support

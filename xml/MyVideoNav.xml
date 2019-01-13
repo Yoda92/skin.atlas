@@ -3,16 +3,92 @@
 	<defaultcontrol always="true">50</defaultcontrol>
 	<menucontrol>9000</menucontrol>
 	<backgroundcolor>0</backgroundcolor>
-	<views>51,50</views>
+	<views>54,55,51,52,50,53</views>
 	<controls>
 		<include>default_background</include>
-		<include>clock</include>
 		<control type="group">
-			<include>common_window_animation</include>
-			<include>default_fanart</include>
-			<include>default_header_label</include>
-			<include>view_50_list</include>
-			<include>view_51_poster</include>
+			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
+			</animation>
+			<control type="group">
+				<include>view_50_list</include>
+				<include>view_51_poster</include>
+				<include>view_52_fanart</include>
+				<include>view_53_list</include>
+				<include>view_54_episode_vertical</include>
+				<include>view_55_panel</include>
+			</control>
+		</control>
+		<!-- Header + Clock /-->
+		<control type="group">
+			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
+			</animation>
+			<visible>Control.IsVisible(55)</visible>
+			<include>delayed_zoom_animation</include>
+			<include>view_zoom_animation</include>
+			<include content="default_header_label">
+				<param name="container_id">55</param>
+			</include>	
+			<include>clock</include>
+		</control>
+		<control type="group">
+			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
+			</animation>
+			<visible>Control.IsVisible(50)</visible>
+			<include>delayed_zoom_animation</include>
+			<include>view_zoom_animation</include>
+			<include content="default_header_label">
+				<param name="container_id">50</param>
+				<param name="width">623</param>
+			</include>
+			<include>clock</include>	
+		</control>
+		<control type="group">
+			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
+			</animation>
+			<visible>Control.IsVisible(53)</visible>
+			<include>delayed_zoom_animation</include>
+			<include>view_zoom_animation</include>
+			<include content="default_header_label">
+				<param name="container_id">53</param>
+			</include>
+			<include>clock</include>	
+		</control>
+		<control type="group">
+			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
+			</animation>
+			<visible>Control.IsVisible(54)</visible>
+			<include>delayed_zoom_animation</include>
+			<include>view_zoom_animation</include>
+			<include content="default_header_label">
+				<param name="container_id">54</param>
+				<param name="width">623</param>
+			</include>
+			<include>clock</include>	
+		</control>
+		<control type="group">
+			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
+			</animation>
+			<visible>Control.IsVisible(51)</visible>
+			<include>delayed_zoom_animation</include>
+			<include>view_zoom_animation</include>
+			<include content="default_header_label">
+				<param name="container_id">51</param>
+			</include>	
+			<include>clock</include>
+		</control>
+		<control type="group">
+			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
+			</animation>
+			<visible>Control.IsVisible(52)</visible>
+			<include>delayed_zoom_animation</include>
+			<include>view_zoom_animation</include>
 		</control>
 		<!-- Options panel /-->
 		<include content="common_options_menu">
@@ -20,29 +96,26 @@
 			<param name="content">myvideonav_options_content</param>
 		</include>
 		<!-- Scrollbar /-->
-		<control type="scrollbar" id="9001">
+		<control type="group">
 			<include>common_window_animation</include>
-			<visible>Control.IsVisible(51)</visible>
-			<showonepage>false</showonepage>
-			<onup>51</onup>
-			<orientation>horizontal</orientation>
-			<bottom>0</bottom>
-			<height>13</height>
-			<width>1920</width>
-			<texturesliderbar border="5" colordiffuse="accent300">shapes/white_rounded.png</texturesliderbar>
-			<texturesliderbarfocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturesliderbarfocus>
-		</control>
-		<control type="scrollbar" id="9001">
-			<include>common_window_animation</include>
-			<visible>Control.IsVisible(50)</visible>
-			<showonepage>false</showonepage>
-			<onleft>50</onleft>
-			<orientation>vertical</orientation>
-			<right>0</right>
-			<width>13</width>
-			<height>1080</height>
-			<texturesliderbar border="5" colordiffuse="accent300">shapes/white_rounded.png</texturesliderbar>
-			<texturesliderbarfocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturesliderbarfocus>
+			<include content="common_horizontal_scrollbar">
+				<param name="view_id">55</param>
+			</include>
+			<include content="common_vertical_scrollbar">
+				<param name="view_id">54</param>
+			</include>
+			<include content="common_vertical_scrollbar">
+				<param name="view_id">53</param>
+			</include>
+			<include content="common_horizontal_scrollbar">
+				<param name="view_id">52</param>
+			</include>
+			<include content="common_horizontal_scrollbar">
+				<param name="view_id">51</param>
+			</include>
+			<include content="common_vertical_scrollbar">
+				<param name="view_id">50</param>
+			</include>
 		</control>
 	</controls>
 </window>

@@ -1,52 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <colors>	
-	<!-- The following color definitions are for reference only -->
-	<color name="red500">FF9d1627</color> <!-- Ruby Red /-->
-	<color name="red700">FF73111d</color> <!-- Prune /-->
+	<color name="main300">ccffffff</color> 
+	<color name="main500">80ffffff</color> 
+	<color name="main600">60ffffff</color>
+	<color name="main700">40ffffff</color>
+	<color name="main800">33ffffff</color>
+	<color name="main900">20ffffff</color>
+	<color name="main1000">10ffffff</color>
+	<color name="main1100">08ffffff</color>
 
-	<color name="yellow500">FFfffc69</color> <!-- Unmellow Yellow /-->
+	<color name="secondary300">B3000000</color>
+	<color name="secondary500">80000000</color>
+	<color name="secondary700">60000000</color>
+	<color name="secondary800">30000000</color>
+	<color name="secondary900">20000000</color>
 
-	<color name="blue300">FF697c8e</color> <!-- Slate gray /-->
-	<color name="blue500">FF486076</color> <!-- Deep Space Sparkle /-->
-	<color name="blue700">FF283541</color> <!-- Gunmetal /-->
-	<color name="blue800">FF354656</color> <!-- Charcoal /-->
-	<color name="blue900">FF1b232b</color> <!-- Dark Gunmetal /-->
+	<color name="accent100">FFF0F0F0</color> 
+	<color name="accent200">FFD0D0D0</color>
+	<color name="accent300">FFA0A0A0</color>
+	<color name="accent500">FF282828</color> 
+	<color name="accent600">FF232323</color> 
+	<color name="accent650">FF202020</color> 
+	<color name="accent700">FF191919</color> 
+	<color name="accent800">FF111111</color> 
+	<color name="accent850">FF2d3436</color>
+	<color name="accent900">FF080808</color> 
 
-	<color name="grey100">FFF1F1F1</color> <!-- Anti-Flash White /-->
-	<color name="grey200">FFb5b5b5</color> <!-- Ash Grey /-->
-	<color name="grey300">FF9A9A9A</color> <!-- Spanish Grey /-->
-	<color name="grey500">FF3c3c3a</color> <!-- Black Olive /-->
-	<color name="grey600">FF272725</color> <!-- Raisin black /-->
-	<color name="grey700">FF1e1e1b</color> <!-- Eerie Black /-->
-	<color name="grey800">FF11110f</color> <!-- Licorice /-->
-	<color name="grey900">FF090806</color> <!-- Smokey Black /-->
-	
-	<!-- The following color definitions are for the actual color scheme -->
-	<color name="main300">FF697c8e</color> 
-	<color name="main500">FF486076</color> 
-	<color name="main700">FF283541</color> 
-	<color name="main800">FF354656</color> 
-	<color name="main900">FF1b232b</color> 
-	
-	<color name="accent100">FFF1F1F1</color> 
-	<color name="accent200">FFb5b5b5</color>
-	<color name="accent300">FF9A9A9A</color>
-	<color name="accent500">FF3c3c3a</color> 
-	<color name="accent600">FF272725</color> 
-	<color name="accent700">FF1e1e1b</color> 
-	<color name="accent800">FF11110f</color> 
-	<color name="accent900">FF090806</color> 
-	
-	<color name="text100">FFF1F1F1</color> 
-	<color name="text200">FFb5b5b5</color>
-	<color name="text300">FF9A9A9A</color>
-	<color name="text500">FF3c3c3a</color> 
-	<color name="text600">FF272725</color> 
-	<color name="text700">FF1e1e1b</color> 
-	<color name="text800">FF11110f</color> 
-	<color name="text900">FF090806</color>
-	
-	<color name="selected500">FFfffc69</color>
-	
+
+	<color name="text100">FFF0F0F0</color> 
+	<color name="text150">FFE0E0E0</color> 
+	<color name="text200">FFC8C8C8</color>
+	<color name="text300">FFA0A0A0</color>
+	<color name="text400">FF606060</color>
+	<color name="text500">FF404040</color> 
+	<color name="text600">FF303030</color> 
+	<color name="text650">FF181818</color> 
+	<color name="text700">FF252525</color> 
+	<color name="text800">FF222222</color> 
+	<color name="text850">FF111111</color>
+	<color name="text900">FF080808</color> 
+
+	<color name="selected500">FFfdcb6e</color>
+	<color name="red500">FFe74c3c</color>
+	<color name="blue100">FFbdc3c7</color>
+	<color name="blue150">FF487eb0</color>
+	<color name="blue200">ff485460</color>
+	<color name="blue300">FF3c6382</color>
+	<color name="blue500">FF34495e</color>
+	<color name="blue700">FF2c3e50</color>
+	<color name="blue800">FF38444D</color>
+	<color name="blue900">FF1e272e</color>
+	<color name="blue1000">FF111112</color>
+
 	<color name="background">FF000000</color>
 </colors>

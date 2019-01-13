@@ -2,44 +2,159 @@
 <includes>
 	<include name="common_window_animation">
 		<animation type="WindowClose">
-			<effect type="fade" start="100" end="0" time="144" tween="sine" easing="out"/>
+			<effect type="fade" start="100" end="0" time="200" easing="out"/>
 		</animation>
 		<animation type="WindowOpen">
-			<effect type="fade" start="0" end="100" time="144" delay="100" tween="sine" easing="out"/>
+			<effect type="fade" start="0" end="100" time="200" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="delayed_window_animation">
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="200" easing="out"/>
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="200" easing="out" delay="200" reversible="false"/>
+		</animation>
+	</include>
+
+	<include name="delayed_slide_left_animation">
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="233" tween="cubic" easing="out"/>
+			<effect type="slide" start="0,0" end="-144,0" time="233" tween="cubic" easing="out"/>
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="200" easing="out" delay="200" reversible="false"/>
+		</animation>
+	</include>
+
+	<include name="delayed_slide_right_animation">
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="233" tween="cubic" easing="out"/>
+			<effect type="slide" start="0,0" end="144,0" time="233" tween="cubic" easing="out"/>
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="200" easing="out" delay="200" reversible="false"/>
+		</animation>
+	</include>
+
+	<include name="delayed_zoom_animation">
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="200" tween="cubic"/>
+			<effect type="zoom" start="100,100" end="110,110" time="200" tween="cubic" center="960,540"/>
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="200" easing="out" delay="200" reversible="false"/>
 		</animation>
 	</include>
 
 	<include name="pvr_window_animation">
 		<animation type="WindowClose" condition="ControlGroup(9000).HasFocus()">
-			<effect type="fade" start="100" end="0" time="144" delay="101" tween="sine" easing="out"/>
+			<effect type="fade" start="100" end="0" time="144" delay="100" easing="out"/>
 		</animation>
 		<animation type="WindowClose" condition="!ControlGroup(9000).HasFocus()">
-			<effect type="fade" start="100" end="0" time="144" tween="sine" easing="out"/>
+			<effect type="fade" start="100" end="0" time="144" easing="out"/>
 		</animation>
 		<animation type="WindowOpen">
-			<effect type="fade" start="0" end="100" time="144" delay="100" tween="sine" easing="out"/>
+			<effect type="fade" start="0" end="100" time="144" easing="out"/>
 		</animation>
 	</include>
 
 	<include name="pvr_settings_window_animation">
 		<animation type="WindowClose" condition="ControlGroup(9000).HasFocus()">
 			<effect type="fade" start="100" end="0" time="144" delay="101" tween="sine" easing="out"/>
-			<effect type="slide" time="101" end="0,-144"/>
+			<effect type="slide" time="144" end="0,-144"/>
 		</animation>
 		<animation type="WindowClose" condition="!ControlGroup(9000).HasFocus()">
 			<effect type="fade" start="100" end="0" time="144" tween="sine" easing="out"/>
 		</animation>
 		<animation type="WindowOpen">
-			<effect type="fade" start="0" end="100" time="144" delay="100" tween="sine" easing="out"/>
+			<effect type="fade" start="0" end="100" time="144" tween="sine" easing="out"/>
 		</animation>
 	</include>
 
 	<include name="common_visible_animation">
 		<animation type="Visible">
-			<effect type="fade" start="0" end="100" time="144" tween="sine" easing="out"/>
+			<effect type="fade" start="0" end="100" time="144" easing="out"/>
 		</animation>
 		<animation type="Hidden">
-			<effect type="fade" start="100" end="0" time="144" delay="100" tween="sine" easing="out"/>
+			<effect type="fade" start="100" end="0" time="144" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="common_zoom_animation">
+		<animation type="Focus">
+			<effect type="zoom" start="100,100" end="110,110" time="200" tween="cubic" center="auto"/>
+		</animation>
+		<animation type="UnFocus">
+			<effect type="zoom" start="110,110" end="100,100" time="200" tween="cubic" center="auto"/>
+		</animation>
+	</include>
+
+	<include name="small_zoom_animation">
+		<animation type="Focus">
+			<effect type="zoom" start="100,100" end="105,105" time="200" tween="cubic" center="auto"/>
+		</animation>
+		<animation type="UnFocus">
+			<effect type="zoom" start="105,105" end="100,100" time="200" tween="cubic" center="auto"/>
+		</animation>
+	</include>
+
+	<include name="window_slide_animation_left">
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="233" tween="cubic" easing="out"/>
+			<effect type="slide" start="0,0" end="-144,0" time="233" tween="cubic" easing="out"/>
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="233" tween="cubic" easing="out"/>
+			<effect type="slide" start="-144,0" end="0,0" time="233" tween="cubic" easing="out"/>
+		</animation>
+	</include>
+
+	<include name="window_slide_animation_right">
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="233" tween="cubic" easing="out"/>
+			<effect type="slide" start="0,0" end="144,0" time="233" tween="cubic" easing="out"/>
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="233" tween="cubic" easing="out"/>
+			<effect type="slide" start="144,0" end="0,0" time="233" tween="cubic" easing="out"/>
+		</animation>	
+	</include>
+
+	<include name="window_zoom_animation">
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="200" tween="cubic"/>
+			<effect type="zoom" start="100,100" end="110,110" time="200" tween="cubic" center="960,540"/>
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="200" tween="cubic"/>
+			<effect type="zoom" start="110,110" end="100,100" time="200" tween="cubic" center="960,540"/>
+		</animation>
+	</include>
+
+	<include name="view_slide_animation_left">
+		<animation type="Hidden">
+			<effect type="fade" start="100" end="0" time="233" tween="cubic" easing="out"/>
+			<effect type="slide" start="0,0" end="-144,0" time="233" tween="cubic" easing="out"/>
+		</animation>
+		<animation type="Visible">
+			<effect type="fade" start="0" end="100" time="233" tween="cubic" easing="out" delay="300"/>
+			<effect type="slide" start="-144,0" end="0,0" time="233" tween="cubic" easing="out" delay="300"/>
+		</animation>
+	</include>
+
+	<include name="view_slide_animation_right">
+		<animation type="Visible">
+			<effect type="fade" start="0" end="100" time="233" tween="cubic" easing="out" delay="300"/>
+			<effect type="slide" start="144,0" end="0,0" time="233" tween="cubic" easing="out" delay="300"/>
+		</animation>	
+	</include>
+
+	<include name="view_zoom_animation">
+		<animation type="Visible" reversible="false">
+			<effect type="fade" start="0" end="100" time="200" tween="cubic" delay="300"/>
+			<effect type="zoom" start="110,110" end="100,100" time="200" tween="cubic" center="960,540" delay="300"/>
 		</animation>
 	</include>
 </includes>

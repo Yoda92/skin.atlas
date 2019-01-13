@@ -29,7 +29,7 @@
 					<control type="image">
 						<height>89</height>
 						<width>524</width>
-						<texture border="5" colordiffuse="accent900">shapes/white_rounded.png</texture>
+						<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
 					</control>
 					<control type="label" id="4">
 						<width>524</width>
@@ -52,6 +52,8 @@
 						<param name="width">233</param>
 						<param name="height">89</param>
 						<param name="label">$LOCALIZE[31059]</param>
+						<param name="texturecolor">main900</param>
+						<param name="disabledcolor">text900</param>
 					</include>
 					<!-- Done /-->
 					<include content="dialog_button">
@@ -59,6 +61,8 @@
 						<param name="width">233</param>
 						<param name="height">89</param>
 						<param name="label">$LOCALIZE[31060]</param>
+						<param name="texturecolor">main900</param>
+						<param name="disabledcolor">text900</param>
 					</include>
 				</control>
 				<!-- 1-3 /-->

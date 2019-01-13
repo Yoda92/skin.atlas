@@ -1,69 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="common_options_menu">
+		<param name="header_label">$LOCALIZE[31163]</param>
+		<param name="header_icon">icons/set.png</param>
 		<param name="list_id"/>
-		<param name="include_animation">true</param>
 		<param name="content"/>
 		<definition>
 			<control type="group">
-				<include condition="$PARAM[include_animation]">common_window_animation</include>
-				<animation effect="slide" time="101" end="0,144" condition="ControlGroup(9000).HasFocus()">Conditional</animation>
+				<include/>
 				<!-- Background fade /-->
-				<control type="image">
-					<visible>ControlGroup(9000).HasFocus() | Control.HasFocus(9001)</visible>
-					<animation type="Visible">
-						<effect type="fade" start="0" end="100" time="101"/>
+				<control type="group">
+					<control type="image">
+						<visible>ControlGroup(9000).HasFocus() | Control.HasFocus(9001)</visible>
+						<include>common_visible_animation</include>
+						<width>1920</width>
+						<height>1080</height>
+						<texture colordiffuse="80ffffff">colors/black.png</texture>
+					</control>
+				</control>
+				<!-- Options /-->
+				<control type="group">
+					<left>-455</left>
+					<!-- Background panel /-->
+					<animation type="Conditional" condition="ControlGroup(9000).HasFocus() + [ !Window.Next(tvchannels) + !Window.Next(tvguide) ]">
+						<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
 					</animation>
-					<animation type="Hidden">
-						<effect type="fade" start="100" end="0" time="101"/>
-					</animation>
-					<width>1920</width>
-					<height>1080</height>
-					<texture colordiffuse="80ffffff">colors/black.png</texture>
-				</control>
-				<!-- Background panel /-->
-				<control type="image">
-					<top>-144</top>
-					<width>1920</width>
-					<height>209</height>
-					<texture colordiffuse="main700">miscellaneous/panel.png</texture>
-				</control>
-				<control type="image">
-					<left>915</left>
-					<width>89</width>
-					<height>55</height>
-					<texture colordiffuse="main500">icons/settings.png</texture>
-					<aspectratio>keep</aspectratio>
-				</control>
-				<!-- Settings list /-->
-				<control type="grouplist" id="9000">
-					<top>-117</top>
-					<width>1920</width>
-					<height>89</height>
-					<orientation>horizontal</orientation>
-					<itemgap>21</itemgap>
-					<align>center</align>
-					<ondown>$PARAM[list_id]</ondown>
-					<onback>$PARAM[list_id]</onback>
-					<include>$PARAM[content]</include>
+					<control type="image">
+						<width>455</width>
+						<height>1080</height>
+						<texture colordiffuse="blue900">colors/white.png</texture>
+					</control>
+					<control type="image">
+						<width>455</width>
+						<height>144</height>
+						<texture colordiffuse="blue800">colors/white.png</texture>
+					</control>
+					<control type="image">
+						<top>144</top>
+						<width>455</width>
+						<height>5</height>
+						<texture>shadows/shadowline_5px_down.png</texture>
+					</control>
+					<control type="image">
+						<left>455</left>
+						<width>10</width>
+						<height>1080</height>
+						<texture>shadows/shadowline_10px_right.png</texture>
+					</control>
+					<!-- Header /-->
+					<control type="grouplist">
+						<align>center</align>
+						<width>455</width>
+						<height>144</height>
+						<orientation>horizontal</orientation>
+						<itemgap>11</itemgap>
+						<control type="image">
+							<height>144</height>
+							<width>30</width>
+							<aspectratio>keep</aspectratio>
+							<texture colordiffuse="main300">$PARAM[header_icon]</texture>
+						</control>
+						<control type="label">
+							<label>$PARAM[header_label]</label>
+							<width>auto</width>
+							<height>144</height>
+							<textcolor>text100</textcolor>
+							<font>small_header</font>
+						</control>
+					</control>
+					<!-- Settings list /-->
+					<control type="grouplist" id="9000">
+						<left>21</left>
+						<top>165</top>
+						<width>413</width>
+						<height>970</height>
+						<usecontrolcoords>true</usecontrolcoords>
+						<orientation>vertical</orientation>
+						<onright>$PARAM[list_id]</onright>
+						<onback>$PARAM[list_id]</onback>
+						<include>$PARAM[content]</include>
+					</control>
 				</control>
 			</control>
 		</definition>
 	</include>
 
 	<include name="myplaylist_options_content">
+		<!-- Idden objects /-->
+		<control type="button" id="3">
+			<visible>false</visible>
+		</control>
+		<control type="button" id="4">
+			<visible>false</visible>
+		</control>
+		<!-- View options label /-->
+		<include content="common_options_header">
+			<param name="label">$LOCALIZE[31163]</param>
+		</include>
 		<!-- View type /-->
 		<include content="common_options_button">
-			<param name="id">2</param>
+			<param name="id">200</param>
 			<param name="visible">Integer.IsGreater(Container.ViewCount,1)</param>
+			<param name="label">$LOCALIZE[31164]:</param>
+			<param name="label2">$INFO[Container.Viewmode]</param>
+			<param name="onclick">Container.NextViewMode</param>
 		</include>
 		<!-- Sort method /-->
 		<include content="common_options_button">
-			<param name="id">3</param>
+			<param name="id">201</param>
 			<param name="visible">Control.IsEnabled(3)</param>
+			<param name="label">$LOCALIZE[31165]:</param>
+			<param name="label2">$INFO[Container.SortMethod]</param>
+			<param name="onclick">SendClick(3)</param>
 		</include>
 		<!-- Sort mode /-->
-		<include>common_options_togglebutton</include>
+		<include content="common_options_button">
+			<param name="id">202</param>
+			<param name="visible">Control.IsEnabled(4)</param>
+			<param name="label">$LOCALIZE[31166]:</param>
+			<param name="label2">$INFO[Container.SortOrder]</param>
+			<param name="onclick">SendClick(4)</param>
+		</include>
 		<!-- Save /-->
 		<include content="common_options_button">
 			<param name="id">21</param>
@@ -93,25 +150,43 @@
 			<visible>Control.IsEnabled(20)</visible>
 			<width>220</width>
 			<height>89</height>
-			<texturenofocus border="5" colordiffuse="main800">shapes/white_rounded.png</texturenofocus>
 			<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 			<label>$LOCALIZE[31099]</label>
 		</control>
 	</include>
 
 	<include name="myvideonav_options_content">
+		<!-- Idden objects /-->
+		<control type="button" id="3">
+			<visible>false</visible>
+		</control>
+		<control type="button" id="4">
+			<visible>false</visible>
+		</control>
 		<!-- View type /-->
 		<include content="common_options_button">
-			<param name="id">2</param>
+			<param name="id">200</param>
 			<param name="visible">Integer.IsGreater(Container.ViewCount,1)</param>
+			<param name="label">$LOCALIZE[31164]:</param>
+			<param name="label2">$INFO[Container.Viewmode]</param>
+			<param name="onclick">Container.NextViewMode</param>
 		</include>
 		<!-- Sort method /-->
 		<include content="common_options_button">
-			<param name="id">3</param>
+			<param name="id">201</param>
 			<param name="visible">Control.IsEnabled(3)</param>
+			<param name="label">$LOCALIZE[31165]:</param>
+			<param name="label2">$INFO[Container.SortMethod]</param>
+			<param name="onclick">SendClick(3)</param>
 		</include>
 		<!-- Sort mode /-->
-		<include>common_options_togglebutton</include>
+		<include content="common_options_button">
+			<param name="id">202</param>
+			<param name="visible">Control.IsEnabled(4)</param>
+			<param name="label">$LOCALIZE[31166]:</param>
+			<param name="label2">$INFO[Container.SortOrder]</param>
+			<param name="onclick">SendClick(4)</param>
+		</include>
 		<!-- Update /-->
 		<include content="common_options_button">
 			<param name="id">20</param>
@@ -142,18 +217,41 @@
 	</include>
 
 	<include name="mymusicnav_options_content">
+		<!-- Idden objects /-->
+		<control type="button" id="3">
+			<visible>false</visible>
+		</control>
+		<control type="button" id="4">
+			<visible>false</visible>
+		</control>
+		<!-- View options label /-->
+		<include content="common_options_header">
+			<param name="label">$LOCALIZE[31163]</param>
+		</include>
 		<!-- View type /-->
 		<include content="common_options_button">
-			<param name="id">2</param>
+			<param name="id">200</param>
 			<param name="visible">Integer.IsGreater(Container.ViewCount,1)</param>
+			<param name="label">$LOCALIZE[31164]:</param>
+			<param name="label2">$INFO[Container.Viewmode]</param>
+			<param name="onclick">Container.NextViewMode</param>
 		</include>
 		<!-- Sort method /-->
 		<include content="common_options_button">
-			<param name="id">3</param>
+			<param name="id">201</param>
 			<param name="visible">Control.IsEnabled(3)</param>
+			<param name="label">$LOCALIZE[31165]:</param>
+			<param name="label2">$INFO[Container.SortMethod]</param>
+			<param name="onclick">SendClick(3)</param>
 		</include>
 		<!-- Sort mode /-->
-		<include>common_options_togglebutton</include>
+		<include content="common_options_button">
+			<param name="id">202</param>
+			<param name="visible">Control.IsEnabled(4)</param>
+			<param name="label">$LOCALIZE[31166]:</param>
+			<param name="label2">$INFO[Container.SortOrder]</param>
+			<param name="onclick">SendClick(4)</param>
+		</include>
 		<!-- Update /-->
 		<include content="common_options_button">
 			<param name="id">20</param>
@@ -171,74 +269,144 @@
 			<param name="label">$LOCALIZE[31098]</param>
 		</include>
 		<!-- Party Mode /-->
-		<control type="radiobutton" id="16">
-			<visible>Control.IsEnabled(16)</visible>
-			<width>220</width>
-			<height>89</height>
-			<texturenofocus border="5" colordiffuse="main800">shapes/white_rounded.png</texturenofocus>
-			<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-			<label>$LOCALIZE[31102]</label>
-		</control>
+		<include content="common_options_radiobutton">
+			<param name="id">16</param>
+			<param name="visible">Control.IsEnabled(16)</param>
+			<param name="label">$LOCALIZE[31102]</param>
+		</include>	
 	</include>
 
 	<include name="myprograms_options_content">
+		<!-- Idden objects /-->
+		<control type="button" id="3">
+			<visible>false</visible>
+		</control>
+		<control type="button" id="4">
+			<visible>false</visible>
+		</control>
+		<!-- View options label /-->
+		<include content="common_options_header">
+			<param name="label">$LOCALIZE[31163]</param>
+		</include>
 		<!-- View type /-->
 		<include content="common_options_button">
-			<param name="id">2</param>
+			<param name="id">200</param>
 			<param name="visible">Integer.IsGreater(Container.ViewCount,1)</param>
+			<param name="label">$LOCALIZE[31164]:</param>
+			<param name="label2">$INFO[Container.Viewmode]</param>
+			<param name="onclick">Container.NextViewMode</param>
 		</include>
 		<!-- Sort method /-->
 		<include content="common_options_button">
-			<param name="id">3</param>
+			<param name="id">201</param>
 			<param name="visible">Control.IsEnabled(3)</param>
+			<param name="label">$LOCALIZE[31165]:</param>
+			<param name="label2">$INFO[Container.SortMethod]</param>
+			<param name="onclick">SendClick(3)</param>
 		</include>
 		<!-- Sort mode /-->
-		<include>common_options_togglebutton</include>
+		<include content="common_options_button">
+			<param name="id">202</param>
+			<param name="visible">Control.IsEnabled(4)</param>
+			<param name="label">$LOCALIZE[31166]:</param>
+			<param name="label2">$INFO[Container.SortOrder]</param>
+			<param name="onclick">SendClick(4)</param>
+		</include>
 	</include>
 
 	<include name="mypvrchannels_options_content">
+		<!-- Idden objects /-->
+		<control type="button" id="3">
+			<visible>false</visible>
+		</control>
+		<control type="button" id="4">
+			<visible>false</visible>
+		</control>
+		<!-- View options label /-->
+		<include content="common_options_header">
+			<param name="label">$LOCALIZE[31163]</param>
+		</include>
+		<!-- View type /-->
+		<include content="common_options_button">
+			<param name="id">200</param>
+			<param name="visible">Integer.IsGreater(Container.ViewCount,1)</param>
+			<param name="label">$LOCALIZE[31164]:</param>
+			<param name="label2">$INFO[Container.Viewmode]</param>
+			<param name="onclick">Container.NextViewMode</param>
+		</include>
+		<!-- Sort method /-->
+		<include content="common_options_button">
+			<param name="id">201</param>
+			<param name="visible">Control.IsEnabled(3)</param>
+			<param name="label">$LOCALIZE[31165]:</param>
+			<param name="label2">$INFO[Container.SortMethod]</param>
+			<param name="onclick">SendClick(3)</param>
+		</include>
+		<!-- Sort mode /-->
+		<include content="common_options_button">
+			<param name="id">202</param>
+			<param name="visible">Control.IsEnabled(4)</param>
+			<param name="label">$LOCALIZE[31166]:</param>
+			<param name="label2">$INFO[Container.SortOrder]</param>
+			<param name="onclick">SendClick(4)</param>
+		</include>
 		<!-- Guide /-->
 		<include content="common_options_button">
 			<param name="id">100</param>
 			<param name="onclick">ActivateWindow(TVGuide)</param>
 			<param name="label">$LOCALIZE[31104]</param>
 		</include>
-		<!-- View type /-->
-		<include content="common_options_button">
-			<param name="id">2</param>
-			<param name="visible">Integer.IsGreater(Container.ViewCount,1)</param>
-		</include>
-		<!-- Sort method /-->
-		<include content="common_options_button">
-			<param name="id">3</param>
-			<param name="visible">Control.IsEnabled(3)</param>
-		</include>
-		<!-- Sort mode /-->
-		<include>common_options_togglebutton</include>
 	</include>
 
 	<include name="mypvrguide_options_content">
+		<!-- Idden objects /-->
+		<control type="button" id="3">
+			<visible>false</visible>
+		</control>
+		<control type="button" id="4">
+			<visible>false</visible>
+		</control>
+		<!-- View options label /-->
+		<include content="common_options_header">
+			<param name="label">$LOCALIZE[31163]</param>
+		</include>
+		<!-- View type /-->
+		<include content="common_options_button">
+			<param name="id">200</param>
+			<param name="visible">Integer.IsGreater(Container.ViewCount,1)</param>
+			<param name="label">$LOCALIZE[31164]:</param>
+			<param name="label2">$INFO[Container.Viewmode]</param>
+			<param name="onclick">Container.NextViewMode</param>
+		</include>
+		<!-- Sort method /-->
+		<include content="common_options_button">
+			<param name="id">201</param>
+			<param name="visible">Control.IsEnabled(3)</param>
+			<param name="label">$LOCALIZE[31165]:</param>
+			<param name="label2">$INFO[Container.SortMethod]</param>
+			<param name="onclick">SendClick(3)</param>
+		</include>
+		<!-- Sort mode /-->
+		<include content="common_options_button">
+			<param name="id">202</param>
+			<param name="visible">Control.IsEnabled(4)</param>
+			<param name="label">$LOCALIZE[31166]:</param>
+			<param name="label2">$INFO[Container.SortOrder]</param>
+			<param name="onclick">SendClick(4)</param>
+		</include>
 		<!-- Channels /-->
 		<include content="common_options_button">
 			<param name="id">100</param>
 			<param name="onclick">ActivateWindow(TVChannels)</param>
 			<param name="label">$LOCALIZE[31105]</param>
 		</include>
-		<!-- View type /-->
-		<include content="common_options_button">
-			<param name="id">2</param>
-			<param name="visible">Integer.IsGreater(Container.ViewCount,1)</param>
-		</include>
-		<!-- Sort method /-->
-		<include content="common_options_button">
-			<param name="id">3</param>
-			<param name="visible">Control.IsEnabled(3)</param>
-		</include>
-		<!-- Sort mode /-->
-		<include>common_options_togglebutton</include>
 	</include>
 
 	<include name="settingscategory_options_content">
+		<!-- View options label /-->
+		<include content="common_options_header">
+			<param name="label">$LOCALIZE[31163]</param>
+		</include>
 		<!-- Settings Level /-->
 		<include content="common_options_button">
 			<param name="id">20</param>
@@ -247,18 +415,41 @@
 	</include>
 
 	<include name="addonbrowser_options_content">
+		<!-- Idden objects /-->
+		<control type="button" id="3">
+			<visible>false</visible>
+		</control>
+		<control type="button" id="4">
+			<visible>false</visible>
+		</control>
+		<!-- View options label /-->
+		<include content="common_options_header">
+			<param name="label">$LOCALIZE[31163]</param>
+		</include>
 		<!-- View type /-->
 		<include content="common_options_button">
-			<param name="id">2</param>
+			<param name="id">200</param>
 			<param name="visible">Integer.IsGreater(Container.ViewCount,1)</param>
+			<param name="label">$LOCALIZE[31164]:</param>
+			<param name="label2">$INFO[Container.Viewmode]</param>
+			<param name="onclick">Container.NextViewMode</param>
 		</include>
 		<!-- Sort method /-->
 		<include content="common_options_button">
-			<param name="id">3</param>
+			<param name="id">201</param>
 			<param name="visible">Control.IsEnabled(3)</param>
+			<param name="label">$LOCALIZE[31165]:</param>
+			<param name="label2">$INFO[Container.SortMethod]</param>
+			<param name="onclick">SendClick(3)</param>
 		</include>
 		<!-- Sort mode /-->
-		<include>common_options_togglebutton</include>
+		<include content="common_options_button">
+			<param name="id">202</param>
+			<param name="visible">Control.IsEnabled(4)</param>
+			<param name="label">$LOCALIZE[31166]:</param>
+			<param name="label2">$INFO[Container.SortOrder]</param>
+			<param name="onclick">SendClick(4)</param>
+		</include>
 		<!-- Check for updates /-->
 		<include content="common_options_button">
 			<param name="id">9</param>
@@ -268,23 +459,59 @@
 	</include>
 
 	<include name="mygames_options_content">
+		<!-- Idden objects /-->
+		<control type="button" id="3">
+			<visible>false</visible>
+		</control>
+		<control type="button" id="4">
+			<visible>false</visible>
+		</control>
+		<!-- View options label /-->
+		<include content="common_options_header">
+			<param name="label">$LOCALIZE[31163]</param>
+		</include>
 		<!-- View type /-->
 		<include content="common_options_button">
-			<param name="id">2</param>
+			<param name="id">200</param>
 			<param name="visible">Integer.IsGreater(Container.ViewCount,1)</param>
+			<param name="label">$LOCALIZE[31164]:</param>
+			<param name="label2">$INFO[Container.Viewmode]</param>
+			<param name="onclick">Container.NextViewMode</param>
 		</include>
 		<!-- Sort method /-->
 		<include content="common_options_button">
-			<param name="id">3</param>
+			<param name="id">201</param>
 			<param name="visible">Control.IsEnabled(3)</param>
+			<param name="label">$LOCALIZE[31165]:</param>
+			<param name="label2">$INFO[Container.SortMethod]</param>
+			<param name="onclick">SendClick(3)</param>
 		</include>
 		<!-- Sort mode /-->
-		<include>common_options_togglebutton</include>
+		<include content="common_options_button">
+			<param name="id">202</param>
+			<param name="visible">Control.IsEnabled(4)</param>
+			<param name="label">$LOCALIZE[31166]:</param>
+			<param name="label2">$INFO[Container.SortOrder]</param>
+			<param name="onclick">SendClick(4)</param>
+		</include>
 	</include>
 
 	<include name="eventlog_options_content">
+		<control type="button" id="4">
+			<visible>false</visible>
+		</control>
+		<!-- View options label /-->
+		<include content="common_options_header">
+			<param name="label">$LOCALIZE[31163]</param>
+		</include>
 		<!-- Sort mode /-->
-		<include>common_options_togglebutton</include>
+		<include content="common_options_button">
+			<param name="id">202</param>
+			<param name="visible">Control.IsEnabled(4)</param>
+			<param name="label">$LOCALIZE[31166]:</param>
+			<param name="label2">$INFO[Container.SortOrder]</param>
+			<param name="onclick">SendClick(4)</param>
+		</include>
 		<!-- Clear /-->
 		<include content="common_options_button">
 			<param name="id">20</param>
@@ -299,6 +526,10 @@
 	</include>
 
 	<include name="mymusicplaylisteditor_options_content">
+		<!-- View options label /-->
+		<include content="common_options_header">
+			<param name="label">$LOCALIZE[31163]</param>
+		</include>
 		<!-- Load /-->
 		<include content="common_options_button">
 			<param name="id">6</param>
@@ -320,18 +551,41 @@
 	</include>
 
 	<include name="mypics_options_content">
+		<!-- Idden objects /-->
+		<control type="button" id="3">
+			<visible>false</visible>
+		</control>
+		<control type="button" id="4">
+			<visible>false</visible>
+		</control>
+		<!-- View options label /-->
+		<include content="common_options_header">
+			<param name="label">$LOCALIZE[31163]</param>
+		</include>
 		<!-- View type /-->
 		<include content="common_options_button">
-			<param name="id">2</param>
+			<param name="id">200</param>
 			<param name="visible">Integer.IsGreater(Container.ViewCount,1)</param>
+			<param name="label">$LOCALIZE[31164]:</param>
+			<param name="label2">$INFO[Container.Viewmode]</param>
+			<param name="onclick">Container.NextViewMode</param>
 		</include>
 		<!-- Sort method /-->
 		<include content="common_options_button">
-			<param name="id">3</param>
+			<param name="id">201</param>
 			<param name="visible">Control.IsEnabled(3)</param>
+			<param name="label">$LOCALIZE[31165]:</param>
+			<param name="label2">$INFO[Container.SortMethod]</param>
+			<param name="onclick">SendClick(3)</param>
 		</include>
 		<!-- Sort mode /-->
-		<include>common_options_togglebutton</include>
+		<include content="common_options_button">
+			<param name="id">202</param>
+			<param name="visible">Control.IsEnabled(4)</param>
+			<param name="label">$LOCALIZE[31166]:</param>
+			<param name="label2">$INFO[Container.SortOrder]</param>
+			<param name="onclick">SendClick(4)</param>
+		</include>
 		<!-- Slideshow /-->
 		<include content="common_options_button">
 			<param name="id">6</param>
@@ -339,30 +593,94 @@
 			<param name="label">$LOCALIZE[31107]</param>
 		</include>
 		<!-- Randomize /-->
-		<control type="radiobutton" id="9">
-			<visible>Control.IsEnabled(9)</visible>
-			<width>220</width>
-			<height>89</height>
-			<texturenofocus border="5" colordiffuse="main800">shapes/white_rounded.png</texturenofocus>
-			<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-			<label>$LOCALIZE[31108]</label>
-		</control>
+		<include content="common_options_radiobutton">
+			<param name="id">9</param>
+			<param name="visible">Control.IsEnabled(9)</param>
+			<param name="label">$LOCALIZE[31108]</param>
+		</include>	
+	</include>
+
+	<include name="common_options_radiobutton">
+		<param name="id"/>
+		<param name="visible"/>
+		<param name="label"/>
+		<definition>
+			<control type="radiobutton" id="$PARAM[id]">
+				<font>medium_footer</font>
+				<textwidth>371</textwidth>
+				<textoffsetx>21</textoffsetx>
+				<align>left</align>
+				<visible>$PARAM[visible]</visible>
+				<label>[COLOR text200]$PARAM[label][/COLOR]</label>
+				<width>413</width>
+				<height>89</height>
+				<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
+			</control>
+		</definition>
 	</include>
 
 	<include name="common_options_button">
 		<param name="id"/>
 		<param name="visible"/>
 		<param name="label"/>
+		<param name="label2"/>
 		<param name="onclick"/>
+		<param name="onclick2"/>
 		<definition>
 			<control type="button" id="$PARAM[id]">
+				<font>medium_footer</font>
+				<textwidth>371</textwidth>
+				<textoffsetx>21</textoffsetx>
+				<align>left</align>
+				<label>$PARAM[label]</label>
+				<textcolor>text100</textcolor>
+				<focusedcolor>text700</focusedcolor>
+				<visible>$PARAM[visible]</visible>
+				<onclick>$PARAM[onclick2]</onclick>
+				<onclick>$PARAM[onclick]</onclick>
+				<width>413</width>
+				<height>89</height>
+				<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
+				<alttexturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</alttexturefocus>
+			</control>
+			<control type="label" id="$PARAM[id]00">
+				<visible>!Control.HasFocus($PARAM[id])</visible>
+				<right>21</right>
+				<visible>$PARAM[visible]</visible>
+				<height>89</height>
+				<width>413</width>
+				<top>-89</top>
+				<label>$PARAM[label2]</label>
+				<align>right</align>
+				<textcolor>text200</textcolor>
+				<font>medium_footer</font>
+			</control>
+			<control type="label" id="$PARAM[id]01">
+				<visible>Control.HasFocus($PARAM[id])</visible>
+				<right>21</right>
+				<visible>$PARAM[visible]</visible>
+				<height>89</height>
+				<width>413</width>
+				<top>-89</top>
+				<label>$PARAM[label2]</label>
+				<align>right</align>
+				<textcolor>text700</textcolor>
+				<font>medium_footer</font>
+			</control>
+		</definition>
+	</include>
+
+	<include name="common_options_label">
+		<param name="visible"/>
+		<param name="label"/>
+		<definition>
+			<control type="label" id="9999">
 				<visible>$PARAM[visible]</visible>
 				<label>$PARAM[label]</label>
-				<onclick>$PARAM[onclick]</onclick>
-				<width>220</width>
+				<width>413</width>
 				<height>89</height>
-				<texturenofocus border="5" colordiffuse="main800">shapes/white_rounded.png</texturenofocus>
-				<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
+				<textcolor>text100</textcolor>
+				<font>small_header</font>
 			</control>
 		</definition>
 	</include>
@@ -374,16 +692,19 @@
 		<param name="onclick"/>
 		<definition>
 			<control type="togglebutton" id="$PARAM[id]">
+				<textwidth>371</textwidth>
+				<textoffsetx>21</textoffsetx>
+				<align>left</align>
 				<label>$PARAM[label]</label>
 				<visible>$PARAM[visible]</visible>
 				<onclick>$PARAM[onclick]</onclick>
-				<width>220</width>
+				<font>medium_footer</font>
+				<width>413</width>
 				<height>89</height>
-				<texturenofocus border="5" colordiffuse="main800">shapes/white_rounded.png</texturenofocus>
 				<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-				<alttexturenofocus border="5" colordiffuse="main800">shapes/white_rounded.png</alttexturenofocus>
 				<alttexturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</alttexturefocus>
 			</control>
 		</definition>
 	</include>
+
 </includes>

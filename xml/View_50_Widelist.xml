@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="view_50_list">
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+			<include condition="!Window.IsActive(tvchannels)">view_zoom_animation</include>
+			<include condition="!Window.IsActive(tvchannels)">window_zoom_animation</include>
+			<include>default_fanart</include>
+			<!-- All metadata /-->
+			<control type="group">
+				<top>155</top>
+				<left>55</left>
+				<control type="group">
+					<top>-10</top>
+					<left>-10</left>
+					<include content="common_poster">
+						<param name="width">643</param>
+						<param name="height">366</param>
+						<param name="fadetime">300</param>
+						<param name="bordersize">10</param>
+						<param name="bordertexture">shadows/shadow_10px.png</param>
+						<param name="texture_var">$VAR[common_landscape_var]</param>
+						<param name="aspectratio">keep</param>
+					</include>
+				</control>
+				<!-- Media flags /-->
+				<control type="grouplist">
+					<top>727</top>
+					<orientation>horizontal</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					<itemgap>34</itemgap>
+					<include content="common_media_flag">
+						<param name="label">$INFO[ListItem.Rating]</param>
+						<param name="visible">!String.IsEmpty(ListItem.Rating)</param>
+						<param name="flag_diffuse">selected500</param>
+						<param name="flag">media_flags/star.png</param>
+					</include>
+					<include content="common_media_flag">
+						<param name="label">$INFO[ListItem.Duration(mins)] minutes</param>
+						<param name="visible">!String.IsEmpty(ListItem.Duration)</param>
+						<param name="flag">media_flags/timer.png</param>
+					</include>
+					<include content="common_media_flag">
+						<param name="visible">!String.IsEmpty(ListItem.Mpaa)</param>
+						<param name="label">$VAR[mpaa_var]</param>
+						<param name="flag">media_flags/information.png</param>
+					</include>
+				</control>
+				<!-- Current item metadata /-->
+				<control type="group">
+					<top>372</top>
+					<control type="grouplist">
+						<usecontrolcoords>true</usecontrolcoords>
+						<width>623</width>
+						<height>376</height>
+						<itemgap>8</itemgap>
+						<!-- 1. label (title etc.) /-->
+						<control type="label">
+							<height>44</height>
+							<width>623</width>
+							<align>center</align>
+							<label>$VAR[list_label_var]</label>
+							<font>medium_header</font>
+						</control>
+						<!-- 2. label (genre etc.) /-->
+						<control type="label">
+							<visible>!String.IsEqual(ListItem.dbtype,set) + [ !String.IsEmpty(ListItem.Label2) | !String.IsEmpty(ListItem.ChannelName)]</visible>
+							<height>26</height>
+							<width>623</width>
+							<align>center</align>
+							<label>$VAR[list_label_var2]</label>
+							<textcolor>text200</textcolor>
+							<font>common_light</font>
+						</control>
+						<!-- 3. label (plot etc.) /-->
+						<control type="textbox">
+							<height>200</height>
+							<width>623</width>
+							<label>$VAR[list_label_var3]</label>
+						</control>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<control type="fixedlist" id="50">
+					<focusposition>5</focusposition>
+					<movement>4</movement>
+					<orientation>vertical</orientation>
+					<preloaditems>2</preloaditems>
+					<viewtype label="Widelist">info</viewtype>
+					<onup>9000</onup>
+					<onleft>9000</onleft>
+					<onright>9001</onright>
+					<pagecontrol>9001</pagecontrol>
+					<left>733</left>
+					<width>1187</width>
+					<height>1080</height>
+					<itemlayout height="89" width="1187">
+						<!-- Label case: /-->
+						<control type="label">
+							<font>common_list_2</font>
+							<left>42</left>
+							<width>1187</width>
+							<height>89</height>
+							<label>$VAR[list_label_var]</label>
+						</control>
+						<!-- Right-aligned metadata /-->
+						<control type="group">
+							<!-- Rating, Enable/Disable /-->
+							<control type="label">
+								<font>common_list_2</font>
+								<align>right</align>
+								<right>42</right>
+								<width>889</width>
+								<height>89</height>
+								<label>$VAR[list_right_var]</label>
+							</control>
+							<!-- Progress indicator /-->
+							<!-- This information has first priority /-->
+							<control type="image">
+								<right>11</right>
+								<height>89</height>
+								<width>889</width>
+								<aspectratio align="right">center</aspectratio>
+								<texture colordiffuse="text100">$VAR[list_right_image_var]</texture>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout height="89" width="1187">
+						<control type="image">
+							<left>11</left>
+							<top>-10</top>
+							<width>1165</width>
+							<height>109</height>
+							<texture border="15" colordiffuse="$VAR[list_focus_var]">shapes/white_rounded_shadow.png</texture>
+						</control>
+						<!-- Label case: /-->
+						<control type="label">
+							<font>common_list_2</font>
+							<textcolor>text800</textcolor>
+							<left>42</left>
+							<width>1187</width>
+							<height>89</height>
+							<label>$VAR[list_label_var]</label>
+						</control>
+						<!-- Right-aligned metadata /-->
+						<control type="group">
+							<!-- Rating, Enable/Disable /-->
+							<control type="label">
+								<font>common_list_2</font>
+								<align>right</align>
+								<right>42</right>
+								<width>889</width>
+								<height>89</height>
+								<label>$VAR[list_right_var]</label>
+								<textcolor>text800</textcolor>
+							</control>
+							<!-- Progress indicator /-->
+							<!-- This information has first priority /-->
+							<control type="image">
+								<right>11</right>
+								<height>89</height>
+								<width>889</width>
+								<aspectratio align="right">center</aspectratio>
+								<texture colordiffuse="text800">$VAR[list_right_image_var]</texture>
+							</control>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

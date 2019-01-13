@@ -9,21 +9,30 @@
 			<control type="group">
 				<include>default_background</include>
 				<include>clock</include>
-				<include content="specific_header_label">
-					<param name="label">$INFO[ListItem.Label]</param>
+				<include content="default_header_label">
+					<param name="label">$VAR[list_label_var]</param>
+					<param name="container_id">100</param>
 				</include>
 				<!-- Meta information /-->
 				<control type="group">
 					<top>165</top>
-					<left>589</left>
+					<left>590</left>
+					<!-- Panel background /-->
+					<control type="image">
+						<height>750</height>
+						<width>1276</width>
+						<texture border="5" colordiffuse="text800">shapes/white_rounded.png</texture>
+					</control>
 					<!-- Metadata /-->
 					<control type="grouplist">
+						<left>21</left>
+						<top>21</top>
 						<orientation>vertical</orientation>
 						<itemgap>8</itemgap>
 						<!-- Artist /-->
 						<control type="label">
 							<visible>!String.IsEmpty(ListItem.Artist)</visible>
-							<font>sourcesanspro_bold_42</font>
+							<font>medium_header</font>
 							<height>42</height>
 							<width>auto</width>
 							<label>$INFO[ListItem.Artist]</label>
@@ -31,7 +40,7 @@
 						<!-- Album /-->
 						<control type="label">
 							<visible>!String.IsEmpty(ListItem.Album)</visible>
-							<textcolor>grey200</textcolor>
+							<textcolor>text200</textcolor>
 							<height>26</height>
 							<width>auto</width>
 							<label>$INFO[ListItem.Album]</label>
@@ -39,7 +48,7 @@
 						<!-- Year /-->
 						<control type="label">
 							<visible>!String.IsEmpty(ListItem.Year)</visible>
-							<textcolor>grey200</textcolor>
+							<textcolor>text200</textcolor>
 							<height>26</height>
 							<width>auto</width>
 							<label>$INFO[ListItem.Year]</label>
@@ -71,29 +80,35 @@
 			<control type="grouplist" id="100">
 				<onup>50</onup>
 				<orientation>horizontal</orientation>
-				<top>826</top>
-				<left>589</left>
+				<top>805</top>
+				<left>610</left>
 				<itemgap>21</itemgap>
 				<!-- Refresh /-->
 				<include content="dialog_button">
 					<param name="height">89</param>
-					<param name="width">233</param>
+					<param name="width">230</param>
 					<param name="id">6</param>
 					<param name="label">$LOCALIZE[31056]</param>
+					<param name="texturecolor">main900</param>
+					<param name="disabledcolor">text900</param>
 				</include>
 				<!-- Connect to Last.fm /-->
 				<include content="dialog_button">
 					<param name="height">89</param>
-					<param name="width">233</param>
+					<param name="width">230</param>
 					<param name="id">11</param>
 					<param name="label">Last.fm</param>
+					<param name="texturecolor">main900</param>
+					<param name="disabledcolor">text900</param>
 				</include>
 				<!-- Art /-->
 				<include content="dialog_button">
 					<param name="height">89</param>
-					<param name="width">233</param>
+					<param name="width">230</param>
 					<param name="id">10</param>
 					<param name="label">$LOCALIZE[31057]</param>
+					<param name="texturecolor">main900</param>
+					<param name="disabledcolor">text900</param>
 				</include>
 			</control>
 		</control>

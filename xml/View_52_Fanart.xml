@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="view_52_fanart">
+		<control type="group">
+			<include>view_zoom_animation</include>
+			<include>window_zoom_animation</include>
+			<visible>Control.IsVisible(52)</visible>
+			<control type="image">
+				<top>0</top>
+				<right>0</right>
+				<include>common_window_animation</include>
+				<fadetime>300</fadetime>
+				<width>1188</width>
+				<height>668</height>
+				<texture diffuse="miscellaneous/diffuse_radial.png">$INFO[ListItem.Art(fanart)]</texture>
+			</control>
+			<!-- Posterview /-->
+			<control type="list" id="52">
+				<orientation>horizontal</orientation>
+				<preloaditems>2</preloaditems>
+				<pagecontrol>9001</pagecontrol>
+				<viewtype label="Fanart">bigicon</viewtype>
+				<onup>9000</onup>
+				<ondown>9001</ondown>
+				<visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows)</visible>
+				<width>1920</width>
+				<top>706</top>
+				<itemlayout width="241">
+					<control type="group">
+						<top>5</top>
+						<left>16</left>
+						<include content="common_poster">
+							<param name="width">230</param>
+							<param name="height">340</param>
+							<param name="fadetime">0</param>
+							<param name="bordersize">5</param>
+							<param name="bordertexture">shadows/shadow_5px.png</param>
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout width="241">
+					<control type="group">
+						<top>5</top>
+						<left>16</left>
+						<control type="image">
+							<animation type="Focus">
+								<effect type="fade" start="0" end="100" time="144" easing="out"/>
+							</animation>
+							<animation type="UnFocus">
+								<effect type="fade" start="100" end="0" time="144" easing="out"/>
+							</animation>
+							<width>230</width>
+							<height>340</height>
+							<texture border="10" colordiffuse="text100">shapes/white_rounded_semi.png</texture>
+						</control>
+						<include content="common_poster">
+							<param name="width">230</param>
+							<param name="height">340</param>
+							<param name="fadetime">0</param>
+							<param name="bordersize">5</param>
+							<param name="bordertexture">shadows/shadow_5px.png</param>
+						</include>
+					</control>
+				</focusedlayout>
+			</control>
+			<!-- Current item metadata /-->
+			<control type="grouplist">
+				<itemgap>13</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<top>34</top>
+				<left>34</left>
+				<width>892</width>
+				<height>600</height>
+				<!-- Title /-->
+				<control type="label">
+					<visible>!String.IsEmpty(ListItem.Title) + !ListItem.IsParentFolder</visible>
+					<height>55</height>
+					<width>892</width>
+					<label>$VAR[list_label_var]</label>
+					<font>common_header</font>
+				</control>
+				<control type="label">
+					<visible>!String.IsEmpty(ListItem.Genre)</visible>
+					<height>26</height>
+					<width>698</width>
+					<label>$INFO[ListItem.Genre]</label>
+					<textcolor>text200</textcolor>
+					<font>common_light</font>
+				</control>
+				<!-- Rating /-->
+				<control type="grouplist">
+					<orientation>horizontal</orientation>
+					<height>25</height>
+					<width>1129</width>
+					<itemgap>11</itemgap>
+					<control type="image">
+						<visible>!ListItem.IsParentFolder</visible>
+						<height>25</height>
+						<width>130</width>
+						<texture colordiffuse="selected500">$VAR[star_var]</texture>
+					</control>
+					<!-- Rating /-->
+					<control type="label">
+						<visible>!String.IsEmpty(ListItem.Rating)</visible>
+						<height>25</height>
+						<width>auto</width>
+						<label>$INFO[ListItem.Rating]</label>
+						<textcolor>text200</textcolor>
+						<font>common_light</font>
+					</control>
+					<!-- Duration/-->
+					<control type="label">
+						<visible>!String.IsEmpty(ListItem.Duration)</visible>
+						<height>25</height>
+						<width>auto</width>
+						<label>[COLOR text100]•[/COLOR]  $INFO[ListItem.Duration(mins)] $LOCALIZE[31070]</label>
+						<textcolor>text200</textcolor>
+						<font>common_light</font>
+					</control>
+					<!-- Duration/-->
+					<control type="label">
+						<visible>!String.IsEmpty(ListItem.Year)</visible>
+						<height>25</height>
+						<width>auto</width>
+						<label>[COLOR text100]•[/COLOR]  $INFO[ListItem.Year]</label>
+						<textcolor>text200</textcolor>
+						<font>common_light</font>
+					</control>
+				</control>
+				<!-- Plot /-->
+				<control type="textbox">
+					<visible>!String.IsEmpty(ListItem.Plot)</visible>
+					<height max="170">auto</height>
+					<width>698</width>
+					<label>$VAR[plot_var]</label>
+				</control>
+			</control>
+			<!-- Media flags /-->
+			<control type="grouplist" id="7000">
+				<top>635</top>
+				<left>21</left>
+				<height>55</height>
+				<orientation>horizontal</orientation>
+				<itemgap>34</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<include content="common_media_flag">
+					<param name="label">$INFO[ListItem.VideoResolution]</param>
+					<param name="visible">!String.IsEmpty(ListItem.VideoResolution)</param>
+					<param name="flag">media_flags/resolution.png</param>
+				</include>
+				<include content="common_media_flag">
+					<param name="label">$VAR[audio_channel_var]</param>
+					<param name="visible">!String.IsEmpty(ListItem.AudioChannels)</param>
+					<param name="flag">media_flags/ear.png</param>
+				</include>
+				<include content="common_media_flag">
+					<param name="label">$VAR[video_aspect_var]</param>
+					<param name="visible">!String.IsEmpty(ListItem.VideoAspect)</param>
+					<param name="flag">media_flags/fit.png</param>
+				</include>
+				<include content="common_media_flag">
+					<param name="visible">!String.IsEmpty(ListItem.Mpaa)</param>
+					<param name="label">$VAR[mpaa_var]</param>
+					<param name="flag">media_flags/information.png</param>
+				</include>
+				<include content="common_media_flag">
+					<param name="visible">!String.IsEmpty(ListItem.Studio) + !String.IsEqual(ListItem.DBtype,movie)</param>
+					<param name="label">$INFO[ListItem.Studio]</param>
+					<param name="flag">media_flags/studio.png</param>
+				</include>
+			</control>
+		</control>
+	</include>
+</includes>

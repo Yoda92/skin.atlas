@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="view_53_list">
+		<control type="group">
+			<visible>Control.IsVisible(53)</visible>
+			<include condition="!Window.IsActive(tvchannels)">view_zoom_animation</include>
+			<include condition="!Window.IsActive(tvchannels)">window_zoom_animation</include>
+			<!-- All metadata /-->
+			<control type="group">
+				<top>184</top>
+				<left>55</left>
+				<control type="group">
+					<top>-10</top>
+					<left>-10</left>
+					<include content="common_poster">
+						<param name="width">494</param>
+						<param name="height">732</param>
+						<param name="fadetime">300</param>
+						<param name="bordersize">10</param>
+						<param name="bordertexture">shadows/shadow_10px.png</param>
+						<param name="aspectratio">keep</param>
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<control type="fixedlist" id="53">
+					<focusposition>3</focusposition>
+					<movement>2</movement>
+					<top>184</top>
+					<orientation>vertical</orientation>
+					<preloaditems>2</preloaditems>
+					<viewtype label="List">info</viewtype>
+					<onup>9000</onup>
+					<onleft>9000</onleft>
+					<onright>9001</onright>
+					<pagecontrol>9001</pagecontrol>
+					<left>542</left>
+					<height>712</height>
+					<itemlayout height="89" width="1326">
+						<!-- Label case: /-->
+						<control type="label">
+							<font>common_list_2</font>
+							<left>42</left>
+							<width>1326</width>
+							<height>89</height>
+							<label>$VAR[list_label_var]</label>
+						</control>
+						<!-- Right-aligned metadata /-->
+						<control type="group">
+							<!-- Rating, Enable/Disable /-->
+							<control type="label">
+								<font>common_list_2</font>
+								<align>right</align>
+								<right>21</right>
+								<width>1060</width>
+								<height>89</height>
+								<label>$VAR[list_right_var]</label>
+							</control>
+							<!-- Progress indicator /-->
+							<!-- This information has first priority /-->
+							<control type="image">
+								<right>-11</right>
+								<aspectratio>center</aspectratio>
+								<height>89</height>
+								<width>89</width>
+								<texture colordiffuse="text100">$VAR[list_right_image_var]</texture>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout height="89" width="1326">
+						<control type="image">
+							<left>11</left>
+							<top>-10</top>
+							<width>1326</width>
+							<height>109</height>
+							<texture border="15" colordiffuse="$VAR[list_focus_var]">shapes/white_rounded_shadow.png</texture>
+						</control>
+						<!-- Label case: /-->
+						<control type="label">
+							<font>common_list_2</font>
+							<textcolor>text800</textcolor>
+							<left>42</left>
+							<width>1326</width>
+							<height>89</height>
+							<label>$VAR[list_label_var]</label>
+						</control>
+						<!-- Right-aligned metadata /-->
+						<control type="group">
+							<!-- Rating, Enable/Disable /-->
+							<control type="label">
+								<font>common_list_2</font>
+								<align>right</align>
+								<right>21</right>
+								<width>1326</width>
+								<height>89</height>
+								<label>$VAR[list_right_var]</label>
+								<textcolor>text800</textcolor>
+							</control>
+							<!-- Progress indicator /-->
+							<!-- This information has first priority /-->
+							<control type="image">
+								<right>-11</right>
+								<aspectratio>center</aspectratio>
+								<height>89</height>
+								<width>89</width>
+								<texture colordiffuse="text800">$VAR[list_right_image_var]</texture>
+							</control>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

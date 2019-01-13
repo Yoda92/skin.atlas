@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<shortcut>
+		<label>$LOCALIZE[31010]</label>
+		<label2>Common Shortcut</label2>
+		<action>ActivateWindow(Videos,videodb://movies/titles/,return)</action>
+		<icon>special://skin/media/icons/movie.png</icon>
+		<defaultID>movies_titles</defaultID>
+	</shortcut>
+	<shortcut>
+		<label>$LOCALIZE[31167]</label>
+		<label2>Common Shortcut</label2>
+		<action>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</action>
+		<icon>special://skin/media/icons/clock.png</icon>
+		<defaultID>movies_recently</defaultID>
+	</shortcut>
+	<shortcut>
+		<label>$LOCALIZE[31012]</label>
+		<label2>Common Shortcut</label2>
+		<action>ActivateWindow(Videos,videodb://movies/genres/,return)</action>
+		<icon>special://skin/media/icons/genre.png</icon>
+		<defaultID>movies_genres</defaultID>
+	</shortcut>
+	<shortcut>
+		<label>$LOCALIZE[31014]</label>
+		<label2>Common Shortcut</label2>
+		<action>ActivateWindow(Videos,videodb://movies/sets/,return)</action>
+		<icon>special://skin/media/icons/set.png</icon>
+		<defaultID>movies_sets</defaultID>
+	</shortcut>
+</shortcuts>

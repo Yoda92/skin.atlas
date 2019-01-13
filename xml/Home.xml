@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
+	<backgroundcolor>background</backgroundcolor>
 	<defaultcontrol always="true">1000</defaultcontrol>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=1000&amp;group=mainmenu|hub1101|hub1102|hub1103)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=1000&amp;group=mainmenu|powermenu)</onload>
 	<controls>
-		<include>default_background</include>
+		<include>default_background</include> 
+		<include condition="!Skin.HasSetting(toggleMultiImageBackground)">home_fanart</include>
+		<include condition="Skin.HasSetting(toggleMultiImageBackground)">multiimage_background</include>
+		<!-- Home menu /-->
 		<control type="group">
-			<include>common_window_animation</include>
-			<!-- Spotlight widget /-->
-			<include>home_widget_panel</include>
-			<include>home_widget</include>
-			<!-- Home menu /-->
+			<include>window_zoom_animation</include>
 			<include>default_menu</include>
+			<include condition="!Skin.HasSetting(toggleMultiImageBackground)">home_widget</include>
+			<include condition="!Skin.HasSetting(toggleMultiImageBackground)">clock</include>
+			<include condition="Skin.HasSetting(toggleMultiImageBackground)">home_clock</include>
+			<include>default_submenu</include>
 		</control>
 	</controls>
 </window>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<shortcut>
+		<label>$LOCALIZE[31168]</label>
+		<label2>Common Shortcut</label2>
+		<action>ActivateWindow(Videos,videodb://tvshows/titles/,return)</action>
+		<icon>special://skin/media/icons/tv.png</icon>
+	</shortcut>
+	<shortcut>
+		<label>$LOCALIZE[31167]</label>
+		<label2>Common Shortcut</label2>
+		<action>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</action>
+		<icon>special://skin/media/icons/clock.png</icon>
+	</shortcut>
+		<shortcut>
+		<label>$LOCALIZE[31169]</label>
+		<label2>Common Shortcut</label2>
+		<action>ActivateWindow(Videos,videodb://inprogresstvshows/,return)</action>
+		<icon>special://skin/media/icons/halfcircle.png</icon>
+	</shortcut>
+	<shortcut>
+		<label>$LOCALIZE[31012]</label>
+		<label2>Common Shortcut</label2>
+		<action>ActivateWindow(Videos,videodb://tvshows/genres/,return)</action>
+		<icon>special://skin/media/icons/genre.png</icon>
+	</shortcut>
+</shortcuts>

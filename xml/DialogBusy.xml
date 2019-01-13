@@ -11,7 +11,7 @@
 				<centerleft>50%</centerleft>
 				<width>255</width>
 				<height>255</height>
-				<texture colordiffuse="accent100">miscellaneous/spinner.png</texture>
+				<texture colordiffuse="text100">miscellaneous/spinner.png</texture>
 				<aspectratio>center</aspectratio>
 			</control>
 		</control>

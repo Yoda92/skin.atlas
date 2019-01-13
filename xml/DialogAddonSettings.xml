@@ -21,7 +21,7 @@
 				<control type="image">
 					<top>123</top>
 					<left>34</left>
-					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
 					<height>584</height>
 					<width>377</width>
 				</control>
@@ -41,7 +41,7 @@
 				<control type="image">
 					<top>123</top>
 					<left>435</left>
-					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
 					<height>584</height>
 					<width>618</width>
 				</control>
@@ -82,7 +82,6 @@
 					<width>618</width>
 					<textwidth>576</textwidth>
 					<height>73</height>
-					<font>sourcesanspro_bold_26</font>
 				</control>
 				<control type="sliderex" id="13">
 					<align>left</align>
@@ -90,33 +89,31 @@
 					<height>73</height>
 					<width>618</width>
 				</control>
-				<!-- Background third panel /-->
-				<control type="image">
-					<top>123</top>
-					<left>1074</left>
-					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
-					<height>584</height>
-					<width>377</width>
-				</control>
 				<!-- Third list /-->
 				<control type="grouplist" id="9000">
+					<itemgap>21</itemgap>
 					<onleft>5</onleft>
 					<top>123</top>
 					<left>1074</left>
-					<itemgap>0</itemgap>
 					<height>584</height>
 					<width>377</width>
 					<include content="dialog_button">
 						<param name="width">377</param>
 						<param name="id">28</param>
+						<param name="texturecolor">main900</param>
+						<param name="disabledcolor">text900</param>
 					</include>
 					<include content="dialog_button">
 						<param name="width">377</param>
 						<param name="id">29</param>
+						<param name="texturecolor">main900</param>
+						<param name="disabledcolor">text900</param>
 					</include>
 					<include content="dialog_button">
 						<param name="width">377</param>
 						<param name="id">30</param>
+						<param name="texturecolor">main900</param>
+						<param name="disabledcolor">text900</param>
 					</include>
 				</control>
 			</control>

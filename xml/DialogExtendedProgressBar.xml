@@ -8,7 +8,7 @@
 			<control type="image">
 				<height>144</height>
 				<width>610</width>
-				<texture border="5" colordiffuse="ccffffff">shapes/black_rounded.png</texture>
+				<texture border="5" colordiffuse="secondary300">shapes/black_rounded.png</texture>
 				<top>55</top>
 				<left>1255</left>
 			</control>
@@ -23,21 +23,21 @@
 					<align>center</align>
 					<height>26</height>
 					<width>568</width>
-					<font>sourcesanspro_bold_30</font>
+					<font>small_header</font>
 				</control>
 				<!-- Text /-->
 				<control type="label" id="31">
 					<align>center</align>
 					<height>26</height>
 					<width>568</width>
-					<textcolor>grey300</textcolor>
+					<textcolor>text300</textcolor>
 				</control>
 				<control type="progress" id="32">
 					<top>19</top>
 					<width>568</width>
 					<height>21</height>
-					<texturebg border="5" colordiffuse="accent300">shapes/white_rounded.png</texturebg>
-					<midtexture border="5" colordiffuse="accent100">shapes/white_rounded.png</midtexture>
+					<texturebg border="5" colordiffuse="text300">shapes/white_rounded.png</texturebg>
+					<midtexture border="5" colordiffuse="text100">shapes/white_rounded.png</midtexture>
 				</control>
 			</control>
 		</control>

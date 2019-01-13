@@ -8,29 +8,29 @@
 		<!-- Top panel /-->
 		<control type="group">
 			<animation type="WindowClose">
-				<effect type="slide" start="0,0" end="0,-79" time="144" delay="144" tween="quadratic" easing="out"/>
-				<effect type="fade" start="100" end="0" time="144" delay="144" tween="quadratic" easing="out"/>
+				<effect type="slide" start="0,0" end="0,-79" time="144" delay="144" tween="cubic" easing="out"/>
+				<effect type="fade" start="100" end="0" time="144" delay="144" tween="cubic" easing="out"/>
 			</animation>
 			<animation type="WindowOpen">
-				<effect type="slide" start="0,-79" end="0,0" time="144" tween="quadratic" easing="out"/>
-				<effect type="fade" start="0" end="100" time="144" tween="quadratic" easing="out"/>
+				<effect type="slide" start="0,-79" end="0,0" time="144" tween="cubic" easing="out"/>
+				<effect type="fade" start="0" end="100" time="144" tween="cubic" easing="out"/>
 			</animation>
 			<!-- Background panel /-->
 			<control type="image">
 				<height>79</height>
 				<width>1920</width>
-				<texture colordiffuse="80FFFFFF">colors/black.png</texture>
+				<texture colordiffuse="secondary300">colors/black.png</texture>
 			</control>
 			<control type="image">
 				<top>79</top>
 				<width>100%</width>
 				<height>5</height>
-				<texture colordiffuse="80FFFFFF">shadows/shadowline_5px_down.png</texture>
+				<texture colordiffuse="secondary300">shadows/shadowline_5px_down.png</texture>
 			</control>
 			<control type="label">
 				<left>55</left>
 				<height>79</height>
-				<font>raleway_bold_30</font>
+				<font>mediumsmall_header</font>
 				<label>$VAR[OSD_label_var]</label>
 			</control>
 			<control type="grouplist">
@@ -38,18 +38,17 @@
 				<right>55</right>
 				<height>79</height>
 				<align>center</align>
-				<itemgap>-5</itemgap>
 				<!-- Time /-->
 				<control type="label">
 					<align>right</align>
-					<height>42</height>
+					<height>25</height>
 					<label>$INFO[System.Time(hh:mm)]</label>
-					<font>sourcesanspro_bold_42</font>
+					<font>small_header</font>
 				</control>
 				<!-- Date /-->
 				<control type="label">
 					<align>right</align>
-					<height>26</height>
+					<height>25</height>
 					<textcolor>text300</textcolor>
 					<label>$LOCALIZE[31061]: $INFO[Player.FinishTime]</label>
 				</control>
@@ -58,25 +57,25 @@
 		<!-- Bottom panel /-->
 		<control type="group">
 			<animation type="WindowClose">
-				<effect type="slide" start="0,0" end="0,128" time="144" delay="144" tween="quadratic" easing="out"/>
-				<effect type="fade" start="100" end="0" time="144" delay="144" tween="quadratic" easing="out"/>
+				<effect type="slide" start="0,0" end="0,128" time="144" delay="144" tween="cubic" easing="out"/>
+				<effect type="fade" start="100" end="0" time="144" delay="144" tween="cubic" easing="out"/>
 			</animation>
 			<animation type="WindowOpen">
-				<effect type="slide" start="0,128" end="0,0" time="144" tween="quadratic" easing="out"/>
-				<effect type="fade" start="0" end="100" time="144" tween="quadratic" easing="out"/>
+				<effect type="slide" start="0,128" end="0,0" time="144" tween="cubic" easing="out"/>
+				<effect type="fade" start="0" end="100" time="144" tween="cubic" easing="out"/>
 			</animation>
 			<!-- Background panel /-->
 			<control type="image">
 				<bottom>0</bottom>
 				<height>128</height>
 				<width>1920</width>
-				<texture colordiffuse="80FFFFFF">colors/black.png</texture>
+				<texture colordiffuse="secondary300">colors/black.png</texture>
 			</control>
 			<control type="image">
 				<bottom>128</bottom>
 				<width>100%</width>
 				<height>5</height>
-				<texture flipy="true" colordiffuse="80FFFFFF">shadows/shadowline_5px_down.png</texture>
+				<texture flipy="true" colordiffuse="secondary300">shadows/shadowline_5px_down.png</texture>
 			</control>
 			<!-- Video time /-->
 			<control type="label">
@@ -84,23 +83,23 @@
 				<width>1920</width>
 				<height>107</height>
 				<align>center</align>
-				<font>sourcesanspro_bold_30</font>>
+				<font>small_header</font>
 				<label>$INFO[Player.Time(hh:mm:ss)] / $INFO[Player.Duration(hh:mm:ss)]</label>
 			</control>
 			<control type="label">
 				<bottom>162</bottom>
 				<left>55</left>
 				<width>1920</width>
-				<height>30</height>
-				<font>sourcesanspro_bold_30</font>>
+				<height>35</height>
+				<font>small_header</font>
 				<label>$INFO[Player.SeekStepSize]</label>
-				<shadowcolor>grey700</shadowcolor>
+				<shadowcolor>text700</shadowcolor>
 			</control>
 			<control type="progress" id="13">
 				<bottom>107</bottom>
 				<height>21</height>
 				<width>1920</width>
-				<texturebg colordiffuse="grey700">colors/white.png</texturebg>
+				<texturebg colordiffuse="text700">colors/white.png</texturebg>
 				<midtexture colordiffuse="red500">colors/white.png</midtexture>
 				<info>Player.Progress</info>
 			</control>

@@ -26,14 +26,13 @@
 					<width>377</width>
 					<align>center</align>
 					<label>$LOCALIZE[31044]</label>
-					<font>sourcesanspro_bold_26</font>
-					<textcolor>grey200</textcolor>
+					<font>small_header</font>
 				</control>
 				<!-- Left background /-->
 				<control type="image">
 					<top>178</top>
 					<left>34</left>
-					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
 					<height>511</height>
 					<width>377</width>
 				</control>
@@ -49,6 +48,8 @@
 				<include content="dialog_button">
 					<param name="id">10</param>
 					<param name="width">377</param>
+					<param name="texturecolor">main900</param>
+					<param name="disabledcolor">text900</param>
 				</include>
 				<!-- Center image /-->
 				<control type="gamecontroller" id="31">
@@ -67,13 +68,12 @@
 						<width>377</width>
 						<align>center</align>
 						<label>$LOCALIZE[31045]</label>
-						<font>sourcesanspro_bold_26</font>
-						<textcolor>text200</textcolor>
+						<font>small_header</font>
 					</control>
 					<!-- Right background /-->
 					<control type="image">
 						<top>89</top>
-						<texture border="5"colordiffuse="accent800">shapes/white_rounded.png</texture>
+						<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
 						<height>511</height>
 						<width>377</width>
 					</control>
@@ -92,7 +92,7 @@
 						<param name="width">377</param>
 					</include>
 					<!-- Default edit label /-->
-					<include content="dialog_label_regular">
+					<include content="dialog_label_bold">
 						<param name="id">8</param>
 						<param name="width">377</param>
 					</include>
@@ -105,9 +105,6 @@
 						<left>377</left>
 						<height>511</height>
 						<width>13</width>
-						<texturesliderbar border="5" colordiffuse="accent300">shapes/white_rounded.png</texturesliderbar>
-						<texturesliderbarfocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturesliderbarfocus>
-						<showonepage>false</showonepage>
 					</control>
 				</control>
 				<control type="grouplist" id="9001">
@@ -120,21 +117,29 @@
 						<param name="id">20</param>
 						<param name="width">377</param>
 						<param name="label">$LOCALIZE[31046]</param>
+						<param name="texturecolor">main900</param>
+						<param name="disabledcolor">text900</param>
 					</include>
 					<include content="dialog_button">
 						<param name="id">17</param>
 						<param name="width">377</param>
 						<param name="label">$LOCALIZE[31047]</param>
+						<param name="texturecolor">main900</param>
+						<param name="disabledcolor">text900</param>
 					</include>
 					<include content="dialog_button">
 						<param name="id">18</param>
 						<param name="width">377</param>
 						<param name="label">$LOCALIZE[31048]</param>
+						<param name="texturecolor">main900</param>
+						<param name="disabledcolor">text900</param>
 					</include>
 					<include content="dialog_button">
 						<param name="id">19</param>
 						<param name="width">377</param>
 						<param name="label">$LOCALIZE[31049]</param>
+						<param name="texturecolor">main900</param>
+						<param name="disabledcolor">text900</param>
 					</include>
 				</control>
 			</control>

@@ -4,19 +4,53 @@
 	<defaultcontrol always="true">10</defaultcontrol>
 	<controls>
 		<include>default_background</include>
-		<include>clock</include>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include content="specific_header_label">
-				<param name="label">$LOCALIZE[31009]</param>
-			</include>
-			<!-- Background panel /-->
-			<include>icon_view_panel</include>
-			<!-- Icon list /-->
-			<include content="icon_view_list">
-				<param name="id">10</param>
-				<param name="content">default_settings_content</param>
-			</include>
+			<control type="group">
+				<!-- Icon /-->
+				<control type="image">
+					<fadetime tween="cubic">300</fadetime>
+					<aspectratio>keep</aspectratio>
+					<top>412</top>
+					<width>1186</width>
+					<height>256</height>
+					<texture colordiffuse="main500">$INFO[Container(10).ListItem.Icon]</texture>
+				</control>
+				<!-- Panel /-->
+				<control type="image">
+					<left>1186</left>
+					<width>454</width>
+					<height>1080</height>
+					<texture colordiffuse="blue900">colors/white.png</texture>
+				</control>
+				<control type="image">
+					<left>1186</left>
+					<width>454</width>
+					<texture>miscellaneous/noise.png</texture>
+					<aspectratio>scale</aspectratio>
+				</control>	
+				<control type="image">
+					<left>1181</left>
+					<width>5</width>
+					<height>1080</height>
+					<texture flipx="true">shadows/shadowline_5px_right.png</texture>
+				</control>
+				<control type="image">
+					<left>1640</left>
+					<width>5</width>
+					<height>1080</height>
+					<texture>shadows/shadowline_5px_right.png</texture>
+				</control>
+				<!-- Settings list /-->
+				<include content="settings_list">
+					<param name="id">10</param>
+					<param name="content">default_settings_content</param>
+				</include>
+				<include content="default_header_label">
+					<param name="label">$LOCALIZE[31009]</param>
+				</include>
+				<include>clock</include>
+			</control>
 		</control>
 	</controls>
 </window>

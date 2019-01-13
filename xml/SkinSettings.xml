@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <window>
 	<defaultcontrol always="true">10</defaultcontrol>
-	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=1000&amp;group=mainmenu|hub1101|hub1102|hub1103)</onunload>
+	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=1000&amp;group=mainmenu|powermenu)</onunload>
 	<controls>
 		<include>default_background</include>
-		<include>clock</include>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include content="specific_header_label">
+			<include content="default_header_label">
 				<param name="label">$LOCALIZE[31139]</param>
 			</include>
+			<include>clock</include>
 			<include>common_settings_panel</include>
 			<control type="grouplist" id="10">
 				<onup>noop</onup>
 				<ondown>noop</ondown>
 				<onright condition="ControlGroup(10).HasFocus(101)">11</onright>
+				<onright condition="ControlGroup(10).HasFocus(102)">12</onright>
 				<top>164</top>
 				<left>164</left>
-				<width>598</width>
-				<height>754</height>
+				<width>560</width>
+				<height>752</height>
 				<itemgap>-42</itemgap>
+				<!-- Home -->
 				<include content="skin_settings_button_header">
 					<param name="id">101</param>
 					<param name="footer_id">11</param>
 					<param name="label">$LOCALIZE[31140]</param>
+				</include>
+				<!-- Background -->
+				<include content="skin_settings_button_header">
+					<param name="id">102</param>
+					<param name="footer_id">12</param>
+					<param name="label">$LOCALIZE[31197]</param>
 				</include>
 			</control>
 			<control type="grouplist" id="11">
@@ -32,36 +40,70 @@
 				<usecontrolcoords>true</usecontrolcoords>
 				<itemgap>-42</itemgap>
 				<top>164</top>
-				<left>783</left>
-				<width>973</width>
-				<height>754</height>
+				<left>744</left>
+				<width>1012</width>
+				<height>752</height>
 				<orientation>vertical</orientation>
+				<!-- Configure main menu -->
 				<include content="common_settings_button_footer">
 					<param name="id">111</param>
 					<param name="label">$LOCALIZE[31141]</param>
 					<param name="onclick">RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</param>
 				</include>
-				<control type="label" id="113">
-					<width>973</width>
+				<!-- Submenu focus -->
+				<include content="common_settings_radiobutton_footer">
+					<param name="id">112</param>
+					<param name="label">$LOCALIZE[31189] [COLOR text400][I]($LOCALIZE[31190])[/I][/COLOR]</param>
+					<param name="onclick">Skin.ToggleSetting(toggleNoSubmenu)</param>
+					<param name="selected">!Skin.HasSetting(toggleNoSubmenu)</param>
+				</include>
+				<!-- Widget type -->
+				<control type="button" id="113">
+					<onclick>$PARAM[onclick]</onclick>
+					<label>$LOCALIZE[31196]</label>
+					<label2>$VAR[widget_setting_var]</label2>
+					<onclick condition="Skin.HasSetting(toggleMultiImageBackground)">Skin.ToggleSetting(toggleMultiImageBackground)</onclick>
+					<onclick condition="Skin.HasSetting(toggleMultiImageBackground)">Skin.ToggleSetting(toggleHomeWidget)</onclick>
+					<onclick condition="Skin.HasSetting(toggleHomeWidget)">Skin.ToggleSetting(toggleMultiImageBackground)</onclick>
+					<onclick condition="Skin.HasSetting(toggleHomeWidget)">Skin.ToggleSetting(toggleHomeWidget)</onclick>
+					<onclick condition="!Skin.HasSetting(toggleHomeWidget) + !Skin.HasSetting(toggleMultiImageBackground)">Skin.ToggleSetting(toggleMultiImageBackground)</onclick>
+					<width>1012</width>
 					<height>131</height>
-					<align>center</align>
-					<font>sourcesanspro_bold_26</font>
-					<label>$LOCALIZE[31142]</label>
+					<align>left</align>
+					<textoffsetx>42</textoffsetx>
+					<textwidth>928</textwidth>
+					<texturefocus border="26" colordiffuse="main500">shapes/white_rounded_bar_shadow.png</texturefocus>
 				</control>
+				<!-- Powermenu -->
 				<include content="common_settings_button_footer">
 					<param name="id">114</param>
-					<param name="label">HUB#1 [COLOR text300][I]($LOCALIZE[31143])[/I][/COLOR]</param>
-					<param name="onclick">RunScript(script.skinshortcuts,type=manage&amp;group=hub1101)</param>
+					<param name="label">$LOCALIZE[31193]</param>
+					<param name="onclick">RunScript(script.skinshortcuts,type=manage&amp;group=powermenu)</param>
 				</include>
-				<include content="common_settings_button_footer">
-					<param name="id">115</param>
-					<param name="label">HUB#2 [COLOR text300][I]($LOCALIZE[31144])[/I][/COLOR]</param>
-					<param name="onclick">RunScript(script.skinshortcuts,type=manage&amp;group=hub1102)</param>
+			</control>
+			<control type="grouplist" id="12">
+				<visible>ControlGroup(10).HasFocus(102)</visible>
+				<onleft>10</onleft>
+				<usecontrolcoords>true</usecontrolcoords>
+				<itemgap>-42</itemgap>
+				<top>164</top>
+				<left>744</left>
+				<width>1012</width>
+				<height>752</height>
+				<orientation>vertical</orientation>
+				<!-- Enable noise -->
+				<include content="common_settings_radiobutton_footer">
+					<param name="id">121</param>
+					<param name="label">$LOCALIZE[31198]</param>
+					<param name="onclick">Skin.ToggleSetting(disableNoise)</param>
+					<param name="selected">!Skin.HasSetting(disableNoise)</param>
 				</include>
-				<include content="common_settings_button_footer">
-					<param name="id">116</param>
-					<param name="label">HUB#3</param>
-					<param name="onclick">RunScript(script.skinshortcuts,type=manage&amp;group=hub1103)</param>
+				<!-- Enable fanart in views -->
+				<include content="common_settings_radiobutton_footer">
+					<param name="id">122</param>
+					<param name="label">$LOCALIZE[31199]</param>
+					<param name="onclick">Skin.ToggleSetting(disableFanart)</param>
+					<param name="selected">!Skin.HasSetting(disableFanart)</param>
 				</include>
 			</control>
 		</control>

@@ -10,7 +10,7 @@
 				<control type="image">
 					<height>365</height>
 					<width>285</width>
-					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+					<texture border="5" colordiffuse="blue900">shapes/white_rounded.png</texture>
 				</control>
 				<control type="label">
 					<top>21</top>
@@ -18,14 +18,14 @@
 					<width>285</width>
 					<height>26</height>
 					<align>center</align>
-					<font>raleway_regular_26</font>
+					<font>common_text_2</font>
 				</control>
 				<control type="image">
 					<top>63</top>
 					<left>42</left>
 					<height>201</height>
 					<width>201</width>
-					<texture>$INFO[Window(weather).Property(Day$PARAM[day].OutlookIcon)]</texture>
+					<texture>$INFO[Window(weather).Property(Day0.OutlookIcon)]</texture>
 				</control>
 				<control type="label">
 					<visible>Weather.IsFetched</visible>
@@ -34,7 +34,7 @@
 					<width>285</width>
 					<height>26</height>
 					<align>center</align>
-					<textcolor>text300</textcolor>
+					<textcolor>text200</textcolor>
 				</control>
 				<control type="label">
 					<top>310</top>
@@ -42,7 +42,7 @@
 					<width>285</width>
 					<height>26</height>
 					<align>center</align>
-					<textcolor>text300</textcolor>
+					<textcolor>text150</textcolor>
 				</control>
 			</control>
 		</definition>

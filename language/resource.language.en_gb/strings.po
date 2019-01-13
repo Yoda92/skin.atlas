@@ -61,7 +61,7 @@ msgid "All Movies"
 msgstr ""
 
 msgctxt "#31011"
-msgid "Recently Added Movies"
+msgid "Recently Added"
 msgstr ""
 
 msgctxt "#31012"
@@ -185,7 +185,7 @@ msgid "Manage favourites"
 msgstr ""
 
 msgctxt "#31042"
-msgid "No favourites avaible."
+msgid "No favourites added."
 msgstr ""
 
 msgctxt "#31043"
@@ -297,7 +297,7 @@ msgid "Year"
 msgstr ""
 
 msgctxt "#31070"
-msgid "min"
+msgid "minutes"
 msgstr ""
 
 msgctxt "#31071"
@@ -345,7 +345,7 @@ msgid "Volume"
 msgstr ""
 
 msgctxt "#31082"
-msgid "Login"
+msgid "Select profile"
 msgstr ""
 
 msgctxt "#31083"
@@ -481,7 +481,7 @@ msgid "End"
 msgstr ""
 
 msgctxt "#31116"
-msgid "Configure Main Menu"
+msgid "Configure Menu"
 msgstr ""
 
 msgctxt "#31117"
@@ -577,7 +577,7 @@ msgid "Skin Settings"
 msgstr ""
 
 msgctxt "#31140"
-msgid "Home Menu"
+msgid "Home"
 msgstr ""
 
 msgctxt "#31141"
@@ -650,4 +650,168 @@ msgstr ""
 
 msgctxt "#31158"
 msgid "Browse"
+msgstr ""
+
+msgctxt "#31159"
+msgid "Episode"
+msgstr ""
+
+msgctxt "#31160"
+msgid "Season"
+msgstr ""
+
+msgctxt "#31161"
+msgid "Item"
+msgstr ""
+
+msgctxt "#31162"
+msgid "Information"
+msgstr ""
+
+msgctxt "#31163"
+msgid "View options"
+msgstr ""
+
+msgctxt "#31164"
+msgid "View"
+msgstr ""
+
+msgctxt "#31165"
+msgid "Sort Method"
+msgstr ""
+
+msgctxt "#31166"
+msgid "Sort Order"
+msgstr ""
+
+msgctxt "#31167"
+msgid "Recently Added"
+msgstr ""
+
+msgctxt "#31168"
+msgid "All Tv Shows"
+msgstr ""
+
+msgctxt "#31169"
+msgid "In Progress"
+msgstr ""
+
+msgctxt "#31170"
+msgid "Change skin specific settings. This includes skin menus, backgrounds, colors and animations."
+msgstr ""
+
+msgctxt "#31171"
+msgid "Change interface settings. This includes regional settings, screensavers and skin specific settings."
+msgstr ""
+
+msgctxt "#31172"
+msgid "Change media settings. This includes managing media libraries and adjusting how your media is displayed."
+msgstr ""
+
+msgctxt "#31173"
+msgid "Manage your favorite media and / or addons."
+msgstr ""
+
+msgctxt "#31174"
+msgid "Adjust playback of your media and set language defaults for audio and subtitles."
+msgstr ""
+
+msgctxt "#31175"
+msgid "Manage KODI services (Weather etc.)."
+msgstr ""
+
+msgctxt "#31176"
+msgid "Manage KODI profiles."
+msgstr ""
+
+msgctxt "#31177"
+msgid "Show system information (Network, Hardware etc.)."
+msgstr ""
+
+msgctxt "#31178"
+msgid "Maintain files and folders from within KODI."
+msgstr ""
+
+msgctxt "#31179"
+msgid "Change system specific settings. This includes displays, audio and input settings."
+msgstr ""
+
+msgctxt "#31180"
+msgid "Manage PVR settings. This includes playback, recording and guide settings."
+msgstr ""
+
+msgctxt "#31181"
+msgid "Change LibreELEC specific settings."
+msgstr ""
+
+msgctxt "#31182"
+msgid "Press up to show settings panel"
+msgstr ""
+
+msgctxt "#31183"
+msgid "Manual search"
+msgstr ""
+
+msgctxt "#31184"
+msgid "No information avaible"
+msgstr ""
+
+msgctxt "#31185"
+msgid "Manage subtitle service"
+msgstr ""
+
+msgctxt "#31186"
+msgid "Current service"
+msgstr ""
+
+msgctxt "#31187"
+msgid "None"
+msgstr ""
+
+msgctxt "#31188"
+msgid "Configure submenu"
+msgstr ""
+
+msgctxt "#31189"
+msgid "Focus submenu when clicking menu item"
+msgstr ""
+
+msgctxt "#31190"
+msgid "Overrules menu item action"
+msgstr ""
+
+msgctxt "#31191"
+msgid "Manage"
+msgstr ""
+
+msgctxt "#31192"
+msgid "Power menu"
+msgstr ""
+
+msgctxt "#31193"
+msgid "Configure Power Menu"
+msgstr ""
+
+msgctxt "#31194"
+msgid "Configure widget"
+msgstr ""
+
+msgctxt "#31195"
+msgid "Widget layout"
+msgstr ""
+
+msgctxt "#31196"
+msgid "Home widget type"
+msgstr ""
+
+msgctxt "#31197"
+msgid "Background"
+msgstr ""
+
+msgctxt "#31198"
+msgid "Enable background noise overlay"
+msgstr ""
+
+msgctxt "#31199"
+msgid "Enable fanart in media views"
 msgstr ""

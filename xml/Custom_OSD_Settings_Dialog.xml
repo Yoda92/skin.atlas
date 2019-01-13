@@ -23,7 +23,7 @@
 					<top>123</top>
 					<width>666</width>
 					<height>219</height>
-					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
 				</control>
 				<!-- List /-->
 				<control type="grouplist" id="10">
@@ -35,7 +35,7 @@
 						<onclick>ActivateWindow(osdaudiosettings)</onclick>
 						<width>666</width>
 						<height>73</height>
-						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 						<align>left</align>
 						<textoffsetx>21</textoffsetx>
 						<label>$LOCALIZE[31020]</label>
@@ -46,7 +46,7 @@
 						<onclick>ActivateWindow(osdvideosettings)</onclick>
 						<width>666</width>
 						<height>73</height>
-						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 						<align>left</align>
 						<textoffsetx>21</textoffsetx>
 						<label>$LOCALIZE[31021]</label>
@@ -57,11 +57,11 @@
 						<onclick>AudioNextLanguage</onclick>
 						<width>666</width>
 						<height>73</height>
-						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 						<align>left</align>
 						<textoffsetx>21</textoffsetx>
 						<label>$LOCALIZE[31022]</label>
-						<label2>[COLOR text200]$INFO[VideoPlayer.AudioLanguage][/COLOR]</label2>
+						<label2>$INFO[VideoPlayer.AudioLanguage]</label2>
 					</control>
 					<!-- Games: Video filter /-->
 					<control type="button" id="104">
@@ -69,7 +69,7 @@
 						<onclick>ActivateWindow(GameVideoFilter)</onclick>
 						<width>666</width>
 						<height>73</height>
-						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 						<align>left</align>
 						<textoffsetx>21</textoffsetx>
 						<label>$LOCALIZE[31023]</label>
@@ -80,7 +80,7 @@
 						<onclick>ActivateWindow(GameViewMode)</onclick>
 						<width>666</width>
 						<height>73</height>
-						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 						<align>left</align>
 						<textoffsetx>21</textoffsetx>
 						<label>$LOCALIZE[31024]</label>
@@ -91,7 +91,7 @@
 						<onclick>ActivateWindow(GameControllers)</onclick>
 						<width>666</width>
 						<height>73</height>
-						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 						<align>left</align>
 						<textoffsetx>21</textoffsetx>
 						<label>$LOCALIZE[31025]</label>

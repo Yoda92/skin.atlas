@@ -4,45 +4,56 @@
 	<controls>
 		<control type="group">
 			<animation type="WindowClose">
-				<effect type="fade" start="100" end="0" time="144" delay="377" tween="quadratic" easing="out"/>
+				<effect type="fade" start="100" end="0" time="144" delay="377" easing="out"/>
 			</animation>
 			<animation type="WindowOpen">
-				<effect type="fade" start="0" end="100" time="144" tween="quadratic" easing="out"/>
+				<effect type="fade" start="0" end="100" time="144" easing="out"/>
 			</animation>
 			<control type="group">
-				<height>377</height>
-				<width>377</width>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
+				<top>55</top>
+				<left>1255</left>
+				<!-- Background panel /-->
 				<control type="image">
-					<height>377</height>
-					<width>377</width>
-					<texture colordiffuse="E6FFFFFF" border="21">shapes/black_rounded_large.png</texture>
+					<height>144</height>
+					<width>610</width>
+					<texture border="5" colordiffuse="secondary300">shapes/black_rounded.png</texture>
+				</control>
+				<control type="grouplist">
+					<usecontrolcoords>true</usecontrolcoords>
+					<top>21</top>
+					<itemgap>5</itemgap>
+					<!-- Header /-->
+					<control type="label">
+						<left>120</left>
+						<height>26</height>
+						<width>568</width>
+						<font>small_header</font>
+						<label>$LOCALIZE[31081]</label>
+					</control>
+					<!-- Text /-->
+					<control type="label">
+						<left>120</left>
+						<height>26</height>
+						<width>568</width>
+						<textcolor>text200</textcolor>
+						<info>Player.Volume</info>
+					</control>
+					<control type="progress">
+						<left>21</left>
+						<top>19</top>
+						<width>568</width>
+						<height>21</height>
+						<texturebg border="5" colordiffuse="text300">shapes/white_rounded.png</texturebg>
+						<midtexture border="5" colordiffuse="text100">shapes/white_rounded.png</midtexture>
+						<info>Player.Volume</info>
+					</control>
 				</control>
 				<control type="image">
-					<top>63</top>
-					<left>63</left>
-					<height>251</height>
-					<width>251</width>
-					<texture colordiffuse="grey100">icons/volume.png</texture>
-				</control>
-				<control type="label">
-					<top>34</top>
-					<height>34</height>
-					<width>377</width>
-					<align>center</align>
-					<font>sourcesanspro_bold_34</font>
-					<label>$LOCALIZE[31081]</label>
-					<textcolor>grey100</textcolor>
-				</control>
-				<control type="progress">
-					<left>34</left>
-					<top>322</top>
-					<texturebg colordiffuse="E61e1e1b">colors/white.png</texturebg>
-					<midtexture colordiffuse="accent100">colors/white.png</midtexture>
-					<height>21</height>
-					<width>309</width>
-					<info>Player.Volume</info>
+					<left>21</left>
+					<height>99</height>
+					<width>55</width>
+					<texture colordiffuse="text100">icons/volume.png</texture>
+					<aspectratio>keep</aspectratio>
 				</control>
 			</control>
 		</control>

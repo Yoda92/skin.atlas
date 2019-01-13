@@ -3,16 +3,17 @@
 	<defaultcontrol always="true">211</defaultcontrol>
 	<controls>
 		<control type="group">
+			<control type="button" id="404"><visible allowhiddenfocus="true">false</visible></control>
 			<include>common_window_animation</include>
 			<include>dialog_background</include>
 			<control type="group">
 				<width>1482</width>
-				<height>741</height>
+				<height>691</height>
 				<centertop>50%</centertop>
 				<centerleft>50%</centerleft>
 				<include content="dialog_panel">
 					<param name="width">1482</param>
-					<param name="height">741</param>
+					<param name="height">691</param>
 					<param name="label">$LOCALIZE[31116]</param>
 				</include>
 				<!-- Background first panel /-->
@@ -20,51 +21,58 @@
 					<top>123</top>
 					<left>34</left>
 					<width>566</width>
-					<height>584</height>
-					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+					<height>534</height>
+					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
 				</control>
 				<control type="list" id="211">
 					<onright>9000</onright>
 					<top>123</top>
 					<left>34</left>
 					<width>566</width>
-					<height>584</height>
-					<itemlayout width="566" height="73">
+					<height>534</height>
+					<itemlayout width="566" height="89">
 						<control type="label">
-							<height>73</height>
-							<left>34</left>
+							<font>common_text_2</font>
+							<height>89</height>
+							<left>21</left>
+							<width>404</width>
 							<label fallback="[I]$LOCALIZE[31117][/I]">$INFO[ListItem.Label]</label>
 						</control>
 						<control type="image">
-							<right>34</right>
-							<height>73</height>
-							<width>73</width>
+							<right>21</right>
+							<height>89</height>
+							<width>30</width>
 							<texture colordiffuse="text100">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
 						</control>
 					</itemlayout>
-					<focusedlayout width="566" height="73">
+					<focusedlayout width="566" height="89">
 						<control type="image">
 							<visible>ControlGroup(9000).HasFocus()</visible>
-							<height>73</height>
+							<height>89</height>
 							<width>566</width>
-							<texture border="5" colordiffuse="accent600">shapes/white_rounded.png</texture>
+							<texture border="5" colordiffuse="main700">shapes/white_rounded.png</texture>
 						</control>
 						<control type="image">
 							<visible>!ControlGroup(9000).HasFocus()</visible>
-							<height>73</height>
+							<height>89</height>
 							<width>566</width>
-							<texture border="5" colordiffuse="accent500">shapes/white_rounded.png</texture>
+							<texture border="5" colordiffuse="main500">shapes/white_rounded.png</texture>
 						</control>
 						<control type="label">
-							<height>73</height>
-							<left>34</left>
-							<label fallback="[I]$LOCALIZE[31117][/I]">$INFO[ListItem.label]</label>
+							<font>common_text_2</font>
+							<height>89</height>
+							<left>21</left>
+							<width>404</width>
+							<label fallback="[I]$LOCALIZE[31117][/I]">$INFO[ListItem.Label]</label>
+							<textcolor>text900</textcolor>
 						</control>
 						<control type="image">
-							<right>34</right>
-							<height>73</height>
-							<width>73</width>
-							<texture colordiffuse="text100">$INFO[ListItem.Icon]</texture>
+							<right>21</right>
+							<height>89</height>
+							<width>30</width>
+							<texture colordiffuse="text900">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
 						</control>
 					</focusedlayout>
 				</control>
@@ -73,8 +81,8 @@
 					<top>123</top>
 					<left>621</left>
 					<width>827</width>
-					<height>584</height>
-					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+					<height>534</height>
+					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
 				</control>
 				<!-- Options /-->
 				<control type="grouplist" id="9000">
@@ -83,47 +91,106 @@
 					<top>123</top>
 					<left>621</left>
 					<width>827</width>
-					<height>584</height>
+					<height>534</height>
 					<!-- Buttons for managing shortcuts /-->
 					<!-- Add /-->
 					<include content="dialog_button">
 						<param name="id">301</param>
 						<param name="label">$LOCALIZE[31118]</param>
+						<param name="height">89</param>
+						<param name="align">left</param>
+						<param name="textoffset">21</param>
 					</include>
 					<!-- Remove /-->
 					<include content="dialog_button">
 						<param name="id">302</param>
 						<param name="label">$LOCALIZE[31119]</param>
+						<param name="height">89</param>
+						<param name="align">left</param>
+						<param name="textoffset">21</param>
 					</include>
+					<!-- Configure submenu /-->
+					<include content="dialog_button">
+						<param name="id">405</param>
+						<param name="label">$LOCALIZE[31188]</param>
+						<param name="height">89</param>
+						<param name="align">left</param>
+						<param name="textoffset">21</param>
+					</include>
+					<!-- Configure widget /-->
+					<include content="dialog_button">
+						<param name="id">312</param>
+						<param name="label">$LOCALIZE[31194]</param>
+						<param name="height">89</param>
+						<param name="align">left</param>
+						<param name="textoffset">21</param>
+					</include>
+					<!-- Configure widget layout /-->
+					<!-- Will be implemented later
+					<control type="button" id="9401">
+						<disabledcolor>text500</disabledcolor>
+						<width>827</width>
+						<height>89</height>
+						<texturenofocus border="5" colordiffuse="00ffffff">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31195]</label>
+						<label2>$VAR[widget_layout_var]</label2>
+						<align>left</align>
+						<aligny>center</aligny>
+						<onclick>SetProperty(customProperty,widgetLayout)</onclick>
+						<onclick condition="String.IsEmpty(Container(211).ListItem.Property(widgetLayout)) | String.IsEqual(Container(211).ListItem.Property(widgetLayout),Poster)">SetProperty(customValue,Square)</onclick>
+						<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetLayout),Square)">SetProperty(customValue,Poster)</onclick>
+						<onclick>SendClick(404)</onclick>
+					</control>
+					/-->
 					<!-- Move Up /-->
 					<include content="dialog_button">
 						<param name="id">303</param>
 						<param name="label">$LOCALIZE[31120]</param>
+						<param name="height">89</param>
+						<param name="align">left</param>
+						<param name="textoffset">21</param>
 					</include>
 					<!-- Move Down /-->
 					<include content="dialog_button">
 						<param name="id">304</param>
 						<param name="label">$LOCALIZE[31121]</param>
+						<param name="height">89</param>
+						<param name="align">left</param>
+						<param name="textoffset">21</param>
 					</include>
 					<!-- Change Label /-->
 					<include content="dialog_button">
 						<param name="id">305</param>
 						<param name="label">$LOCALIZE[31122]</param>
+						<param name="height">89</param>
+						<param name="align">left</param>
+						<param name="textoffset">21</param>
 					</include>
 					<!-- Change Icon /-->
 					<include content="dialog_button">
 						<param name="id">306</param>
 						<param name="label">$LOCALIZE[31123]</param>
+						<param name="height">89</param>
+						<param name="align">left</param>
+						<param name="textoffset">21</param>
 					</include>
 					<!-- Change Action /-->
 					<include content="dialog_button">
 						<param name="id">307</param>
 						<param name="label">$LOCALIZE[31124]</param>
+						<param name="height">89</param>
+						<param name="align">left</param>
+						<param name="textoffset">21</param>
 					</include>
 					<!-- Restore to defaults /-->
 					<include content="dialog_button">
 						<param name="id">308</param>
 						<param name="label">$LOCALIZE[31125]</param>
+						<param name="height">89</param>
+						<param name="align">left</param>
+						<param name="textoffset">21</param>
 					</include>
 				</control>
 			</control>

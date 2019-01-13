@@ -3,45 +3,42 @@
 	<include name="DefaultDialogSelect">
 		<control type="group">
 			<width>1482</width>
-			<height>741</height>
+			<height>691</height>
 			<centertop>50%</centertop>
 			<centerleft>50%</centerleft>
 			<include content="dialog_panel">
 				<param name="width">1482</param>
-				<param name="height">741</param>
+				<param name="height">691</param>
 				<param name="label_id">1</param>
 			</include>
 			<!-- Background second panel /-->
 			<control type="image">
 				<top>123</top>
 				<left>34</left>
-				<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
-				<height>584</height>
+				<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
+				<height>534</height>
 				<width>1003</width>
 			</control>
 			<!-- List image /-->
-			<control type="image">
-				<bottom>34</bottom>
-				<right>34</right>
-				<texture>colors/black.png</texture>
-				<height>396</height>
-				<width>390</width>
-			</control>
-			<control type="image">
-				<fadetime>400</fadetime>
-				<aspectratio>keep</aspectratio>
-				<bottom>34</bottom>
-				<right>34</right>
-				<texture fallback="icons/hidden.png">$VAR[dialogselect_image_var]</texture>
-				<height>396</height>
-				<width>390</width>
+			<control type="group">
+				<top>311</top>
+				<left>1053</left>
+				<include content="common_poster">
+					<param name="texture_var">$VAR[dialogselect_image_var]</param>
+					<param name="fadetime">300</param>
+					<param name="width">400</param>
+					<param name="height">351</param>
+					<param name="bordersize">5</param>
+					<param name="bordertexture">shadows/shadow_5px.png</param>
+					<param name="aspectratio">keep</param>
+				</include>
 			</control>
 			<!-- File list /-->
 			<include content="dialog_list">
 				<param name="id">3</param>
 				<param name="onright">9001</param>
 				<param name="width">1003</param>
-				<param name="height">584</param>
+				<param name="height">534</param>
 				<param name="top">123</param>
 				<param name="left">34</param>
 				<param name="label_width">961</param>
@@ -50,7 +47,7 @@
 				<param name="id">6</param>
 				<param name="onright">9001</param>
 				<param name="width">1003</param>
-				<param name="height">584</param>
+				<param name="height">534</param>
 				<param name="top">123</param>
 				<param name="left">34</param>
 				<param name="label_width">961</param>
@@ -66,12 +63,16 @@
 					<param name="id">5</param>
 					<param name="width">390</param>
 					<param name="label">$LOCALIZE[31062]</param>
+					<param name="texturecolor">main900</param>
+					<param name="disabledcolor">text900</param>
 				</include>
 				<!-- Cancel /-->
 				<include content="dialog_button">
 					<param name="id">7</param>
 					<param name="width">390</param>
 					<param name="label">$LOCALIZE[31055]</param>
+					<param name="texturecolor">main900</param>
+					<param name="disabledcolor">text900</param>
 				</include>
 			</control>
 		</control>
@@ -92,7 +93,7 @@
 			<control type="image">
 				<top>123</top>
 				<left>34</left>
-				<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
 				<height>220</height>
 				<width>1329</width>
 			</control>
@@ -125,7 +126,7 @@
 							<top>144</top>
 							<height>34</height>
 							<width>306</width>
-							<texture colordiffuse="80ffffff">colors/black.png</texture>
+							<texture colordiffuse="secondary500">colors/black.png</texture>
 						</control>
 						<control type="label">
 							<top>144</top>
@@ -157,7 +158,7 @@
 							</animation>
 							<width>316</width>
 							<height>188</height>
-							<texture border="5" colordiffuse="accent100">shapes/white_rounded.png</texture>
+							<texture border="5" colordiffuse="text100">shapes/white_rounded.png</texture>
 						</control>
 						<control type="image">
 							<top>-5</top>
@@ -178,7 +179,7 @@
 							<top>144</top>
 							<height>34</height>
 							<width>306</width>
-							<texture colordiffuse="80ffffff">colors/black.png</texture>
+							<texture colordiffuse="secondary500">colors/black.png</texture>
 						</control>
 						<control type="label">
 							<top>144</top>
@@ -208,7 +209,7 @@
 			<control type="image">
 				<top>123</top>
 				<left>34</left>
-				<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+				<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
 				<height>220</height>
 				<width>1329</width>
 			</control>
@@ -241,7 +242,7 @@
 							<top>144</top>
 							<height>34</height>
 							<width>306</width>
-							<texture colordiffuse="80ffffff">colors/black.png</texture>
+							<texture colordiffuse="secondary500">colors/black.png</texture>
 						</control>
 						<control type="label">
 							<top>144</top>
@@ -273,7 +274,7 @@
 							</animation>
 							<width>316</width>
 							<height>188</height>
-							<texture border="5" colordiffuse="accent100">shapes/white_rounded.png</texture>
+							<texture border="5" colordiffuse="text100">shapes/white_rounded.png</texture>
 						</control>
 						<control type="image">
 							<top>-5</top>
@@ -294,7 +295,7 @@
 							<top>144</top>
 							<height>34</height>
 							<width>306</width>
-							<texture colordiffuse="80ffffff">colors/black.png</texture>
+							<texture colordiffuse="secondary500">colors/black.png</texture>
 						</control>
 						<control type="label">
 							<top>144</top>

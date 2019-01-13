@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
-	<!-- Additional Common Items -->
-	<shortcut label="Hub #1" type="Hub" grouping="common">ActivateWindow(1101)</shortcut>
-	<shortcut label="Hub #2" type="Hub" grouping="common">ActivateWindow(1102)</shortcut>
-	<shortcut label="Hub #3" type="Hub" grouping="common">ActivateWindow(1103)</shortcut>
-
 	<!-- Default thumbnail location -->
 	<thumbnailBrowseDefault>special://skin/media/icons/</thumbnailBrowseDefault>
 
 	<!-- Warning -->
 	<warn heading="$LOCALIZE[31015]" message="$LOCALIZE[31016]">ActivateWindow(Settings)</warn>
 
-	<doNotShareMenu />
+	<!-- Adds an action where submenu gets focus, if it is not empty -->
+	<groupoverride group="mainmenu" condition="String.IsEqual(ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(toggleNoSubmenu)">Control.SetFocus(2000)</groupoverride>
+
+	<!-- Takes every shortcut action, and adds a condition -->
+	<override action="globaloverride" group="mainmenu">
+		<condition>!String.IsEqual(ListItem.Property(hasSubmenu),True) | Skin.HasSetting(toggleNoSubmenu)</condition>
+		<action>::ACTION::</action>
+	</override>
+	
+	<!-- Widget Defaults -->
+	<widgetdefaultnode defaultID="movies" group="mainmenu" label="Featured Movies" path="special://skin/playlists/featuredmovies.xsp" target="videos">FeaturedMovies</widgetdefaultnode>	
+	<widgetdefaultnode defaultID="tvshows" group="mainmenu" label="Featured Tv Shows" path="special://skin/playlists/featuredtvshows.xsp" target="videos">FeaturedTvShows</widgetdefaultnode>
 </overrides>

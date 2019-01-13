@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<shortcut>
+		<label>31035</label>
+		<label2>Power Shortcut</label2>
+		<defaultID>powerdown</defaultID>
+		<action>PowerDown()</action>
+		<icon>special://skin/media/icons/power.png</icon>
+		<visible>System.CanPowerDown</visible>
+	</shortcut>
+	<shortcut>
+		<label>31036</label>
+		<label2>Power Shortcut</label2>
+		<defaultID>suspend</defaultID>
+		<action>Suspend()</action>
+		<icon>special://skin/media/icons/suspend.png</icon>
+		<visible>System.CanSuspend</visible>
+	</shortcut>
+	<shortcut>
+		<label>31037</label>
+		<label2>Power Shortcut</label2>
+		<defaultID>suspend</defaultID>
+		<action>Hibernate()</action>
+		<icon>special://skin/media/icons/hibernate.png</icon>
+		<visible>System.CanHibernate</visible>
+	</shortcut>
+	<shortcut>
+		<label>31038</label>
+		<label2>Power Shortcut</label2>
+		<defaultID>reset</defaultID>
+		<action>Reset()</action>
+		<icon>special://skin/media/icons/reset.png</icon>
+		<visible>System.CanReboot</visible>
+	</shortcut>
+	<shortcut>
+		<label>31009</label>
+		<label2>Power Shortcut</label2>
+		<defaultID>settings</defaultID>
+		<action>ActivateWindow(Settings,return)</action>
+		<icon>special://skin/media/icons/settings.png</icon>
+	</shortcut>
+</shortcuts>

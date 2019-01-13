@@ -2,15 +2,13 @@
 <includes>
 	<include file="Includes_Animations.xml"/>
 	<include file="Custom_Configure_Menu.xml"/>
-	<include file="Custom_Hub_1101.xml"/>
-	<include file="Custom_Hub_1102.xml"/>
-	<include file="Custom_Hub_1103.xml"/>
 	<include file="Custom_Subtitles_Dialog.xml"/>
 	<include file="Custom_OSD_Settings_Dialog.xml"/>
 	<include file="Custom_NowPlayingOverlay.xml"/>
+	<include file="Custom_Hub_Movies"/>
 	<include file="Variables.xml"/>
 	<include file="VideoOSD.xml"/>
-	<include file="Includes_Views.xml"/>
+	<include file="Includes_Media_Flags.xml"/>
 	<include file="Includes_Dialogs.xml"/>
 	<include file="Includes_DialogSelect.xml"/>
 	<include file="Includes_Settings.xml"/>
@@ -18,8 +16,12 @@
 	<include file="Includes_Home.xml"/>
 	<include file="Includes_OSD.xml"/>
 	<include file="Includes_Weather.xml"/>
-	<include file="View_50_List.xml"/>
+	<include file="View_50_Widelist.xml"/>
 	<include file="View_51_Poster.xml"/>
+	<include file="View_52_Fanart.xml"/>
+	<include file="View_53_List.xml"/>
+	<include file="View_54_Episode_Vertical.xml"/>
+	<include file="View_55_Panel.xml"/>
 	<include file="PVR_Channels.xml"/>
 	<include file="PVR_Guide.xml"/>
 	<include file="Defaults.xml"/>
@@ -29,42 +31,50 @@
 		<control type="image">
 			<width>100%</width>
 			<height>100%</height>
-			<texture>miscellaneous/default_background.png</texture>
+			<texture colordiffuse="blue1000">colors/white.png</texture>
+		</control>
+		<include condition="!Skin.HasSetting(disableNoise)">noise</include>
+	</include>
+
+	<include name="noise">
+		<control type="image">
+			<width>100%</width>
+			<height>100%</height>
+			<texture>miscellaneous/noise.png</texture>
 		</control>
 	</include>
 
 	<include name="default_fanart">
+		<include condition="!Skin.HasSetting(disableFanart)">fanart</include>
+	</include>
+
+	<include name="fanart">
 		<control type="image">
-			<fadetime tween="sine">400</fadetime>
+			<include>common_window_animation</include>
+			<fadetime>300</fadetime>
 			<width>100%</width>
 			<height>100%</height>
-			<texture colordiffuse="1Affffff">$INFO[ListItem.Art(fanart)]</texture>
+			<texture colordiffuse="0Bffffff">$INFO[ListItem.Art(fanart)]</texture>
 		</control>
 	</include>
 
 	<include name="clock">
 		<control type="group">
-			<!-- No animation unless previous- or next window is home. /-->
-			<animation type="WindowOpen" condition="Window.Previous(home)">
-				<effect type="fade" start="0" end="100" time="144" tween="quadratic" easing="out"/>
-			</animation>
-			<animation type="WindowClose" condition="Window.Next(home)">
-				<effect type="fade" start="100" end="0" time="144" tween="quadratic" easing="out"/>
-			</animation>
 			<!-- Time /-->
 			<control type="label">
 				<bottom>55</bottom>
 				<left>55</left>
 				<height>55</height>
 				<label>$INFO[System.Time(hh:mm)]</label>
-				<font>sourcesanspro_bold_42</font>
+				<font>medium_header</font>
 			</control>
 			<!-- Date /-->
 			<control type="label">
-				<bottom>24</bottom>
+				<font>medium_footer</font>
+				<bottom>38</bottom>
 				<left>55</left>
-				<height>55</height>
-				<textcolor>text300</textcolor>
+				<height>25</height>
+				<textcolor>text200</textcolor>
 				<label>$INFO[System.Date]</label>
 			</control>
 		</control>
@@ -105,62 +115,44 @@
 				<aspectratio align="right">center</aspectratio>
 				<top>-8</top>
 				<left>8</left>
-				<texture colordiffuse="text100">$VAR[progress_var]</texture>
+				<texture colordiffuse="text100">$VAR[list_right_image_var]</texture>
 			</control>
 		</definition>
 	</include>
 
 	<include name="default_header_label">
-		<control type="group">
-			<top>55</top>
-			<!-- header label /-->
-			<control type="label">
-				<left>55</left>
-				<height>55</height>
-				<label>$VAR[default_header_var]</label>
-				<font>raleway_bold_42</font>
-			</control>
-			<!-- Item counter /-->
-			<control type="label">
-				<visible>!String.IsEmpty(Container().NumItems) + !String.IsEmpty(Container().CurrentItem)</visible>
-				<right>55</right>
-				<align>right</align>
-				<height>55</height>
-				<label>$INFO[Container().CurrentItem] | [COLOR text300]$INFO[Container.NumItems][/COLOR]</label>
-				<font>sourcesanspro_bold_42</font>
-			</control>
-		</control>
-	</include>
-
-	<include name="specific_header_label">
-		<param name="label"/>
-		<param name="id"/>
+		<param name="label">$VAR[default_header_var]</param>
+		<param name="container_id">50</param>
+		<param name="width">1810</param>
 		<definition>
 			<control type="group">
-				<top>55</top>
-				<!-- Header label /-->
+				<top>24</top>
+				<!-- header label /-->
 				<control type="label" id="$PARAM[id]">
+					<width>$PARAM[width]</width>
 					<left>55</left>
 					<height>55</height>
 					<label>$PARAM[label]</label>
-					<font>raleway_bold_42</font>
+					<font>medium_header</font>
 				</control>
-				<!-- Item counter /-->
 				<control type="label">
-					<visible>!String.IsEmpty(Container().NumItems) + !String.IsEmpty(Container().CurrentItem)</visible>
-					<right>55</right>
-					<align>right</align>
-					<height>55</height>
-					<label>$INFO[Container().CurrentItem] | [COLOR text300]$INFO[Container.NumItems][/COLOR]</label>
-					<font>sourcesanspro_bold_42</font>
+					<font>medium_footer</font>
+					<visible>!String.IsEmpty(Container($PARAM[container_id]).CurrentItem)</visible>
+					<width>$PARAM[width]</width>
+					<top>48</top>
+					<left>55</left>
+					<height>25</height>
+					<textcolor>text200</textcolor>
+					<label>$LOCALIZE[31161]: [COLOR text100]$INFO[Container($PARAM[container_id]).CurrentItem][/COLOR] | [COLOR text300]$INFO[Container($PARAM[container_id]).NumItems][/COLOR]</label>
 				</control>
 			</control>
 		</definition>
 	</include>
 
-	<include name="common_scrollbar">
-		<param name="id"/>
+	<include name="common_vertical_scrollbar">
+		<param name="id">9001</param>
 		<param name="view_id"/>
+		<param name="height">1080</param>
 		<definition>
 			<control type="scrollbar" id="$PARAM[id]">
 				<include>common_window_animation</include>
@@ -169,7 +161,23 @@
 				<orientation>vertical</orientation>
 				<right>0</right>
 				<width>13</width>
-				<height>1080</height>
+				<height>$PARAM[height]</height>
+			</control>
+		</definition>
+	</include>
+
+	<include name="common_horizontal_scrollbar">
+		<param name="id">9001</param>
+		<param name="view_id"/>
+		<definition>
+			<control type="scrollbar" id="$PARAM[id]">
+				<include>common_window_animation</include>
+				<visible>Control.IsVisible($PARAM[view_id])</visible>
+				<onup>$PARAM[view_id]</onup>
+				<orientation>horizontal</orientation>
+				<bottom>0</bottom>
+				<width>1920</width>
+				<height>13</height>
 			</control>
 		</definition>
 	</include>
