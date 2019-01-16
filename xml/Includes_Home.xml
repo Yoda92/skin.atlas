@@ -194,7 +194,7 @@
 			</control>
 		</control>
 	</include>
-	
+
 	<include name="submenu_list_position">
 		<animation type="Conditional" condition="Container(1000).Position(1)">
 			<effect type="slide" end="115,0" time="0"/>
