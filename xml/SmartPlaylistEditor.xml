@@ -32,6 +32,8 @@
 							<param name="textoffset">21</param>
 							<param name="label">$LOCALIZE[31145]</param>
 							<param name="align">left</param>
+							<param name="texturecolor">main900</param>
+							<param name="disabledcolor">text900</param>
 						</include>
 						<!-- Name /-->
 						<include content="dialog_button">
@@ -40,6 +42,8 @@
 							<param name="width">600</param>
 							<param name="textoffset">21</param>
 							<param name="align">left</param>
+							<param name="texturecolor">main900</param>
+							<param name="disabledcolor">text900</param>
 						</include>
 						<!-- Playlist Options /-->
 						<include content="dialog_label_bold">
@@ -48,6 +52,8 @@
 							<param name="width">600</param>
 							<param name="label">$LOCALIZE[31147]</param>
 							<param name="align">left</param>
+							<param name="texturecolor">main900</param>
+							<param name="disabledcolor">text900</param>
 						</include>
 						<!-- Items Must Match /-->
 						<include content="dialog_button">
@@ -56,6 +62,8 @@
 							<param name="textoffset">21</param>
 							<param name="label">$LOCALIZE[31148]</param>
 							<param name="align">left</param>
+							<param name="texturecolor">main900</param>
+							<param name="disabledcolor">text900</param>
 						</include>
 						<!-- Limit To /-->
 						<include content="dialog_button">
@@ -64,6 +72,8 @@
 							<param name="textoffset">21</param>
 							<param name="label">$LOCALIZE[31149]</param>
 							<param name="align">left</param>
+							<param name="texturecolor">main900</param>
+							<param name="disabledcolor">text900</param>
 						</include>
 						<!-- Order By /-->
 						<include content="dialog_button">
@@ -72,6 +82,8 @@
 							<param name="textoffset">21</param>
 							<param name="label">$LOCALIZE[31150]</param>
 							<param name="align">left</param>
+							<param name="texturecolor">main900</param>
+							<param name="disabledcolor">text900</param>
 						</include>
 						<!-- Sort Direction /-->
 						<include content="dialog_button">
@@ -80,6 +92,8 @@
 							<param name="textoffset">21</param>
 							<param name="label">$LOCALIZE[31151]</param>
 							<param name="align">left</param>
+							<param name="texturecolor">main900</param>
+							<param name="disabledcolor">text900</param>
 						</include>
 						<!-- Group By /-->
 						<include content="dialog_button">
@@ -88,6 +102,8 @@
 							<param name="textoffset">21</param>
 							<param name="label">$LOCALIZE[31152]</param>
 							<param name="align">left</param>
+							<param name="texturecolor">main900</param>
+							<param name="disabledcolor">text900</param>
 						</include>
 						<!-- Mixed /-->
 						<include content="dialog_radiobutton">
@@ -96,6 +112,8 @@
 							<param name="textoffset">21</param>
 							<param name="label">$LOCALIZE[31153]</param>
 							<param name="align">left</param>
+							<param name="texturecolor">main900</param>
+							<param name="disabledcolor">text900</param>
 						</include>
 					</control>
 					<control type="grouplist" id="9002">
@@ -111,12 +129,16 @@
 							<param name="id">20</param>
 							<param name="width">233</param>
 							<param name="label">$LOCALIZE[31048]</param>
+							<param name="texturecolor">main900</param>
+							<param name="disabledcolor">text900</param>
 						</include>
 						<!-- Cancel /-->
 						<include content="dialog_button">
 							<param name="id">21</param>
 							<param name="width">233</param>
 							<param name="label">$LOCALIZE[31055]</param>
+							<param name="texturecolor">main900</param>
+							<param name="disabledcolor">text900</param>
 						</include>
 					</control>
 					<control type="group">
@@ -124,7 +146,7 @@
 						<control type="image">
 							<height>417</height>
 							<width>600</width>
-							<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+							<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
 						</control>
 						<control type="list" id="10">
 							<onleft>9001</onleft>
@@ -144,7 +166,7 @@
 									<visible>Control.HasFocus(10)</visible>
 									<height>73</height>
 									<width>600</width>
-									<texture border="5" colordiffuse="accent500">shapes/white_rounded.png</texture>
+									<texture border="5" colordiffuse="main700">shapes/white_rounded.png</texture>
 								</control>
 								<control type="group">
 									<left>21</left>

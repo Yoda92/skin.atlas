@@ -12,7 +12,7 @@
 				<control type="image">
 					<height>144</height>
 					<width>610</width>
-					<texture border="5" colordiffuse="ccffffff">shapes/black_rounded.png</texture>
+					<texture border="5" colordiffuse="secondary300">shapes/black_rounded.png</texture>
 				</control>
 				<control type="grouplist">
 					<left>21</left>
@@ -23,28 +23,27 @@
 					<control type="label">
 						<height>26</height>
 						<width>568</width>
-						<font>sourcesanspro_bold_30</font>
+						<font>small_header</font>
 						<label>$INFO[MusicPlayer.Artist]</label>
 					</control>
 					<!-- Title /-->
 					<control type="label">
 						<height>26</height>
 						<width>568</width>
-						<textcolor>text300</textcolor>
+						<textcolor>text200</textcolor>
 						<label>$INFO[MusicPlayer.Title]</label>
 					</control>
 					<!-- Duration /-->
 					<control type="label">
 						<height>26</height>
 						<width>568</width>
-						<textcolor>text200</textcolor>
-						<label>$INFO[MusicPlayer.Time] [COLOR text100] / [/COLOR] $INFO[MusicPlayer.Duration]</label>
+						<label>$INFO[MusicPlayer.Time]  /  $INFO[MusicPlayer.Duration]</label>
 					</control>
 				</control>
 				<control type="image">
-					<left>466</left>
+					<left>500</left>
 					<height>144</height>
-					<width>144</width>
+					<width>100</width>
 					<texture colordiffuse="text100">DefaultAudio.png</texture>
 					<aspectratio>keep</aspectratio>
 				</control>

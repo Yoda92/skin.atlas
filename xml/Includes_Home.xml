@@ -1,337 +1,544 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="default_menu">
-		<!-- Dummy control to fix animations in main list /-->
-		<control type="group" id="4000">
-			<visible>Control.HasFocus(2000) | Control.HasFocus(3001)</visible>
-			<animation type="Hidden">
-				<effect type="fade" time="89" start="100" end="0"/>
+		<control type="group">
+			<animation type="Conditional" condition="Control.HasFocus(3000)">
+				<effect type="slide" start="0,0" end="0,-100" time="200" tween="sine" easing="out"/>
 			</animation>
-		</control>
-		<!-- Top panel /-->
-		<control type="image">
-			<height>131</height>
-			<width>100%</width>
-			<texture colordiffuse="accent800">colors/white.png</texture>
-		</control>	
-		<control type="image">
-			<top>131</top>
-			<width>100%</width>
-			<height>10</height>
-			<texture>shadows/shadowline_10px_down.png</texture>
-		</control>
-		<!-- Default list /-->
-		<control type="list" id="1000">
-			<preloaditems>2</preloaditems>
-			<scrolltime tween="sine">300</scrolltime>
-			<ondown condition="!Integer.IsGreater(Container(2000).NumItems,0)">3000</ondown>
-			<ondown condition="Integer.IsGreater(Container(2000).NumItems,0)">2000</ondown>
-			<orientation>horizontal</orientation>
-			<width>100%</width>
-			<height>131</height>
-			<itemlayout width="240">
-				<control type="label">
-					<top>70</top>
-					<width>240</width>
-					<height>131</height>
-					<label>$PARAM[label]</label>
-					<font>raleway_regular_26</font>
-					<textcolor>text300</textcolor>
-					<align>center</align>
-					<aligny>top</aligny>
-				</control>
-				<control type="image">
-					<top>18</top>
-					<width>240</width>
-					<height>55</height>
-					<texture colordiffuse="text300" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
-					<aspectratio>keep</aspectratio>
-				</control>
-			</itemlayout>
-			<focusedlayout width="240">
-				<control type="group">
-					<animation type="Focus">
-						<effect type="zoom" start="100" end="103" time="89" center="auto"/>
-					</animation>
-					<animation type="UnFocus">
-						<effect type="zoom" start="103" end="100" time="89" center="auto"/>
-					</animation>
-					<control type="image">
-						<animation type="Focus" condition="!Control.IsVisible(4000)">
-							<effect type="fade" start="0" end="100" time="89"/>
-						</animation>
-						<animation type="UnFocus" condition="!Control.IsVisible(4000)">
-							<effect type="fade" start="100" end="0" time="89"/>
-						</animation>
-						<texture border="5" colordiffuse="$VAR[home_color_var]">shapes/white_rounded.png</texture>
-						<width>240</width>
-						<height>131</height>
-					</control>
+			<!-- Top panel /-->
+			<control type="image">
+				<height>131</height>
+				<width>100%</width>
+				<texture colordiffuse="blue900">colors/white.png</texture>
+			</control>	
+			<control type="image">
+				<height>131</height>
+				<width>100%</width>
+				<texture>miscellaneous/noise.png</texture>
+				<aspectratio>scale</aspectratio>
+			</control>	
+			<control type="image">
+				<top>131</top>
+				<width>100%</width>
+				<height>10</height>
+				<texture>shadows/shadowline_10px_down.png</texture>
+			</control>
+			<!-- Default list /-->
+			<control type="list" id="1000">
+				<preloaditems>2</preloaditems>
+				<scrolltime tween="sine">300</scrolltime>
+				<onup condition="Integer.IsGreater(Container(2000).NumItems,0)">2000</onup>
+				<ondown condition="Integer.IsGreater(Container(3000).NumItems,0)">3000</ondown>
+				<orientation>horizontal</orientation>
+				<width>100%</width>
+				<height>200</height>
+				<itemlayout width="240">
 					<control type="label">
 						<top>70</top>
 						<width>240</width>
 						<height>131</height>
-						<label>$PARAM[label]</label>
-						<font>raleway_regular_26</font>
-						<textcolor>text100</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<font>home_header</font>
+						<textcolor>text200</textcolor>
 						<align>center</align>
 						<aligny>top</aligny>
 					</control>
 					<control type="image">
-						<top>18</top>
+						<top>28</top>
 						<width>240</width>
-						<height>55</height>
-						<texture colordiffuse="text100" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+						<height>34</height>
+						<texture colordiffuse="text200" fallback="icons/folder.png">$INFO[ListItem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
-				</control>
-			</focusedlayout>
-			<!-- Default menu items /-->
-			<content>
-				<include>skinshortcuts-mainmenu</include>
-			</content>
-		</control>
-		<!-- Menu arrows /-->
-		<include content="default_menu_arrow">
-			<param name="left">0</param>
-			<param name="flipx">true</param>
-			<param name="visible">Container(1000).HasPrevious</param>
-		</include>
-		<include content="default_menu_arrow">
-			<param name="left">1856</param>
-			<param name="flipx">false</param>
-			<param name="visible">Container(1000).HasNext</param>
-		</include>
-	</include>
-
-	<include name="default_menu_arrow">
-		<param name="left"/>
-		<param name="flipx"/>
-		<param name="visible"/>
-		<definition>
-			<control type="group">
-				<visible>$PARAM[visible]</visible>
-				<include>common_visible_animation</include>
-				<top>0</top>
-				<left>$PARAM[left]</left>
-				<control type="image">
-					<height>131</height>
-					<width>64</width>
-					<texture colordiffuse="40ffffff" flipx="$PARAM[flipx]">icons/arrow.png</texture>
-					<aspectratio>keep</aspectratio>
-				</control>
-			</control>
-		</definition>
-	</include>
-
-	<include name="home_widget_panel">
-		<control type="group">
-			<top>131</top>
-			<height>949</height>
-			<width>1920</width>
-			<!-- Widget panel /-->
-			<control type="image">
-				<right>0</right>
-				<height>540</height>
-				<width>100%</width>
-				<texture colordiffuse="accent600">colors/white.png</texture>
-			</control>
-			<!-- Panel clock /-->
-			<control type="label">
-				<left>34</left>
-				<top>480</top>
-				<width>926</width>
-				<height>26</height>
-				<font>sourcesanspro_regular_26</font>
-				<label>$INFO[System.Time]  [COLOR text100]•[/COLOR]  $INFO[System.Date]</label>
-				<textcolor>text200</textcolor>
-			</control>
-			<!-- Widget metadata /-->
-			<control type="group">
-				<visible>Integer.IsGreater(Container(2000).NumItems,0) | Container(2000).IsUpdating</visible>
-				<left>34</left>
-				<top>34</top>
-				<control type="grouplist">
-					<orientation>vertical</orientation>
-					<itemgap>15</itemgap>
-					<usecontrolcoords>true</usecontrolcoords>
-					<control type="label">
-						<width>926</width>
-						<height>30</height>
-						<font>raleway_bold_30</font>
-						<label>$LOCALIZE[31088]:</label>
-						<textcolor>yellow500</textcolor>
+				</itemlayout>
+				<focusedlayout width="240">
+					<control type="group">
+						<control type="image">
+							<animation type="Hidden">
+								<effect type="fade" start="100" end="0" time="89"/>
+							</animation>
+							<visible>Control.HasFocus(2000) | Control.HasFocus(3000)</visible>
+							<top>-5</top>
+							<left>-5</left>
+							<texture border="5" colordiffuse="blue200">shapes/white_rounded.png</texture>
+							<width>250</width>
+							<height>141</height>
+							<bordersize>5</bordersize>
+							<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+						</control>
+						<control type="label">
+							<top>70</top>
+							<width>240</width>
+							<height>131</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>home_header</font>
+							<textcolor>text200</textcolor>
+							<align>center</align>
+							<aligny>top</aligny>
+						</control>
+						<control type="image">
+							<top>28</top>
+							<width>240</width>
+							<height>34</height>
+							<texture colordiffuse="text200" fallback="icons/folder.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
 					</control>
-					<control type="label">
-						<visible>!String.IsEmpty(Container(2000).ListItem.Title)</visible>
-						<width>926</width>
-						<height>42</height>
-						<font>raleway_bold_42</font>
-						<label>$INFO[Container(2000).ListItem.Title]</label>
-					</control>
-					<!-- Genre /-->
-					<control type="label">
-						<visible>!String.IsEmpty(Container(2000).ListItem.Genre)</visible>
-						<height>26</height>
-						<width>1129</width>
-						<label>$INFO[Container(2000).ListItem.Genre]</label>
-						<textcolor>text200</textcolor>
-						<font>sourcesanspro_regular_26</font>
-					</control>
-					<!-- Rating /-->
-					<control type="image">
-						<visible>!String.IsEmpty(Container(2000).ListItem.Rating) + !String.IsEmpty(Container(2000).ListItem.Duration) + !String.IsEmpty(Container(2000).ListItem.Year)</visible>
-						<height>26</height>
-						<width>130</width>
-						<texture>$VAR[home_star_var]</texture>
-					</control>
-					<!-- Rating /-->
-					<control type="label">
-						<visible>!String.IsEmpty(Container(2000).ListItem.Rating) + !String.IsEmpty(Container(2000).ListItem.Duration) + !String.IsEmpty(Container(2000).ListItem.Year)</visible>
-						<top>-38</top>
-						<left>135</left>
-						<height>26</height>
-						<width>1129</width>
-						<aligny>center</aligny>
-						<label>$INFO[Container(2000).ListItem.Rating]  [COLOR grey100]•[/COLOR]  $INFO[Container(2000).ListItem.Duration] min  [COLOR grey100]•[/COLOR]  $INFO[Container(2000).ListItem.Year]</label>
-						<textcolor>text200</textcolor>
-					</control>
-					<!-- Plot /-->
-					<control type="textbox">
-						<visible>!String.IsEmpty(Container(2000).ListItem.Plot)</visible>
-						<height>98</height>
-						<width>926</width>
-						<label>$INFO[Container(2000).ListItem.Plot]</label>
-					</control>
-				</control>
-			</control>
-			<!-- Loading spinner /-->
-			<control type="image">
-				<include>common_visible_animation</include>
-				<visible>Container(2000).IsUpdating + !Integer.IsGreater(Container(2000).NumItems,0)</visible>
-				<animation effect="rotate" start="360" end="0" center="auto" time="720" loop="true" condition="true">Conditional</animation>
-				<width>1920</width>
-				<height>540</height>
-				<texture colordiffuse="accent100">miscellaneous/spinner.png</texture>
-				<aspectratio>center</aspectratio>
-			</control>
-			<!-- Widget fanart /-->
-			<control type="image">
-				<right>0</right>
-				<height>540</height>
-				<width>960</width>
-				<texture diffuse="miscellaneous/home_diffuse.png">$INFO[container(2000).ListItem.Art(fanart)]</texture>
-				<fadetime tween="sine">400</fadetime>
-			</control>
-			<!-- Empty library fallback /-->
-			<include>home_widget_fallback</include>
-			<!-- Panel shadow /-->
-			<control type="image">
-				<top>540</top>
-				<height>10</height>
-				<width>100%</width>
-				<texture>shadows/shadowline_10px_down.png</texture>
-			</control>
-		</control>
-	</include>
-
-	<include name="home_widget_fallback">
-		<control type="group">
-			<top>-100</top>
-			<visible>!Integer.IsGreater(Container(2000).NumItems,0) + !Container(2000).IsUpdating</visible>
-			<control type="image">
-				<aspectratio>center</aspectratio>
-				<height>540</height>
-				<width>1920</width>
-				<texture colordiffuse="text300">icons/hidden.png</texture>
-			</control>
-			<control type="textbox">
-				<left>480</left>
-				<top>300</top>
-				<height>200</height>
-				<textcolor>text300</textcolor>
-				<label>$LOCALIZE[31089]</label>
-				<width>960</width>
-				<align>center</align>
-			</control>
-			<control type="grouplist" id="3000">
-				<onup>1000</onup>
-				<align>center</align>
-				<top>412</top>
-				<width>1920</width>
-				<height>89</height>
-				<orientation>horizontal</orientation>
-				<itemgap>21</itemgap>
-				<control type="button" id="3001">
-					<textcolor>text100</textcolor>
-					<width>233</width>
-					<height>89</height>
-					<texturenofocus border="5" colordiffuse="accent700">shapes/white_rounded.png</texturenofocus>
-					<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
-					<label>$LOCALIZE[31090]</label>
-					<align>center</align>
-					<aligny>center</aligny>
-					<onclick>ActivateWindow(Videos,sources://video/,return)</onclick>
-				</control>
-			</control>
-		</control>
-	</include>
-
-	<include name="home_widget">
-		<!-- Widget/-->
-		<control type="panel" id="2000">
-			<preloaditems>2</preloaditems>
-			<top>705</top>
-			<onup>1000</onup>
-			<onback>1000</onback>
-			<height>340</height>
-			<width>1920</width>
-			<orientation>horizontal</orientation>
-			<itemlayout width="254" height="340">
-				<control type="group">
-					<left>29</left>
-					<include content="common_poster">
-						<param name="width">230</param>
-						<param name="height">340</param>
-						<param name="fadetime">200</param>
-						<param name="bordersize">5</param>
-						<param name="bordertexture">shadows/shadow_5px.png</param>
-						<param name="aspectratio">keep</param>
-					</include>
-				</control>
-			</itemlayout>
-			<focusedlayout width="254" height="340">
-				<control type="group">
-					<left>29</left>
-					<animation type="Focus">
-						<effect type="zoom" start="100" end="103" time="89" center="auto"/>
-					</animation>
-					<animation type="UnFocus">
-						<effect type="zoom" start="103" end="100" time="89" center="auto"/>
-					</animation>
-					<control type="image">
+					<control type="group">
 						<animation type="Focus">
 							<effect type="fade" start="0" end="100" time="89"/>
 						</animation>
 						<animation type="UnFocus">
 							<effect type="fade" start="100" end="0" time="89"/>
 						</animation>
-						<width>230</width>
-						<height>340</height>
-						<texture border="5" colordiffuse="accent100">shapes/white_rounded.png</texture>
+						<control type="image">
+							<top>-5</top>
+							<left>-5</left>
+							<texture border="5" colordiffuse="blue100">shapes/white_rounded.png</texture>
+							<width>250</width>
+							<height>141</height>
+							<bordersize>5</bordersize>
+							<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+						</control>
+						<control type="label">
+							<top>70</top>
+							<width>240</width>
+							<height>131</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>home_header</font>
+							<textcolor>text800</textcolor>
+							<align>center</align>
+							<aligny>top</aligny>
+						</control>
+						<control type="image">
+							<top>28</top>
+							<width>240</width>
+							<height>34</height>
+							<texture colordiffuse="text800" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
 					</control>
+				</focusedlayout>
+				<!-- Default menu items /-->
+				<content>
+					<include>skinshortcuts-mainmenu</include>
+				</content>
+			</control>
+			<!-- Menu arrows /-->
+			<include>left_menu_arrow</include>
+			<include>right_menu_arrow</include>
+		</control> 
+	</include> 
+
+	<include name="left_menu_arrow">
+		<param name="left"/>
+		<param name="flipx"/>
+		<param name="visible"/>
+		<definition>
+			<control type="group">
+				<visible>Container(1000).HasPrevious</visible>
+				<include>common_visible_animation</include>
+				<top>55</top>
+				<left>0</left>
+				<control type="image">
+					<fadetime>300</fadetime>
+					<height>21</height>
+					<width>64</width>
+					<texture colordiffuse="main500" flipx="true">$VAR[left_arrow_var]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</control>
+		</definition>
+	</include>
+
+	<include name="right_menu_arrow">
+		<param name="left"/>
+		<param name="flipx"/>
+		<param name="visible"/>
+		<definition>
+			<control type="group">
+				<visible>Container(1000).HasNext</visible>
+				<include>common_visible_animation</include>
+				<top>55</top>
+				<left>1856</left>
+				<control type="image">
+					<fadetime>300</fadetime>
+					<height>21</height>
+					<width>64</width>
+					<texture colordiffuse="main500" flipx="false">$VAR[right_arrow_var]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</control>
+		</definition>
+	</include>
+
+	<include name="home_clock">
+		<control type="grouplist">
+			<top>849</top>
+			<orientation>vertical</orientation>
+			<control type="label">
+				<width>100%</width>
+				<height>150</height>
+				<align>center</align>
+				<label>$INFO[System.Time]</label>
+				<font>home_clock_header</font>
+			</control>
+			<control type="label">
+				<textcolor>text200</textcolor>
+				<width>100%</width>
+				<height>26</height>
+				<align>center</align>
+				<label>$INFO[System.Date]</label>
+				<font>home_clock_footer</font>
+				<shadowcolor>text700</shadowcolor>
+			</control>
+		</control>
+	</include>
+	
+	<include name="submenu_list_position">
+		<animation type="Conditional" condition="Container(1000).Position(1)">
+			<effect type="slide" end="115,0" time="0"/>
+		</animation>	
+		<animation type="Conditional" condition="Container(1000).Position(2)">
+			<effect type="slide" end="355,0" time="0"/>
+		</animation>
+		<animation type="Conditional" condition="Container(1000).Position(3)">
+			<effect type="slide" end="595,0" time="0"/>
+		</animation>		
+		<animation type="Conditional" condition="Container(1000).Position(4)">
+			<effect type="slide" end="835,0" time="0"/>
+		</animation>	
+		<animation type="Conditional" condition="Container(1000).Position(5)">
+			<effect type="slide" end="1075,0" time="0"/>
+		</animation>	
+		<animation type="Conditional" condition="Container(1000).Position(6)">
+			<effect type="slide" end="1315,0" time="0"/>
+		</animation>		
+		<animation type="Conditional" condition="Container(1000).Position(7)">
+			<effect type="slide" end="1555,0" time="0"/>
+		</animation>			
+	</include>
+
+	<include name="default_submenu">
+		<control type="image">
+			<width>100%</width>
+			<height>100%</height>
+			<texture colordiffuse="main500">colors/black.png</texture>
+			<include>common_visible_animation</include>
+			<visible>Control.HasFocus(2000)</visible>
+		</control>
+		<control type="group">	
+			<!-- Moves submenu according to list focus -->
+			<include>submenu_list_position</include>	
+			<top>186</top>
+			<left>55</left>
+			<control type="image">
+				<top>-40</top>
+				<visible>Container(2000).HasPrevious + Control.HasFocus(2000)</visible>
+				<animation type="Visible">
+					<effect type="fade" start="0" end="100" time="144" easing="out" delay="233"/>
+				</animation>
+				<animation type="Hidden">
+					<effect type="fade" start="100" end="0" time="233" easing="out"/>
+				</animation>
+				<left>-10</left>
+				<height>26</height>
+				<width>400</width>
+				<texture colordiffuse="main500">icons/up.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="image">
+				<top>368</top>
+				<visible>Container(2000).HasNext + Control.HasFocus(2000)</visible>
+				<animation type="Visible">
+					<effect type="fade" start="0" end="100" time="144" easing="out" delay="233"/>
+				</animation>
+				<animation type="Hidden">
+					<effect type="fade" start="100" end="0" time="233" easing="out"/>
+				</animation>
+				<left>-10</left>
+				<height>26</height>
+				<width>400</width>
+				<texture colordiffuse="main500" flipy="true">icons/up.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="image">
+				<animation type="Visible">
+					<effect type="fade" start="0" end="100" time="144" tween="cubic"/>
+					<effect type="slide" start="0,-34" end="0,0" time="233" tween="back" easing="out"/>
+				</animation>
+				<animation type="Hidden">
+					<effect type="fade" start="100" end="0" time="144" tween="cubic"/>
+				</animation>
+				<visible>Control.HasFocus(2000)</visible>
+				<left>-10</left>
+				<top>-10</top>
+				<height>376</height>
+				<width>400</width>				
+				<texture colordiffuse="accent850" border="15">shapes/white_rounded_shadow.png</texture>
+			</control>
+			<control type="list" id="2000">
+				<pagecontrol>9001</pagecontrol>
+				<animation type="Visible">
+					<effect type="fade" start="0" end="100" time="144" tween="cubic" delay="89"/>
+					<effect type="slide" start="0,-34" end="0,0" time="233" tween="back" easing="out"/>
+				</animation>
+				<animation type="Hidden">
+					<effect type="fade" start="100" end="0" time="144" tween="cubic"/>
+				</animation>
+				<onback>1000</onback>
+				<scrolltime tween="sine">233</scrolltime>
+				<top>0</top>
+				<visible allowhiddenfocus="true">Control.HasFocus(2000)</visible>
+				<orientation>vertical</orientation>
+				<height>356</height>
+				<itemlayout height="89" width="400">
+					<control type="image">
+						<left>30</left>
+						<height>89</height>
+						<width>30</width>
+						<aspectratio>keep</aspectratio>
+						<texture colordiffuse="text100" fallback="icons/folder.png">$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="label">
+						<width>270</width>
+						<font>common_list</font>
+						<left>89</left>
+						<height>89</height>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="89" width="400">
+					<control type="image">
+						<top>-10</top>
+						<left>-10</left>
+						<height>109</height>
+						<width>400</width>
+						<texture border="15" colordiffuse="text100">shapes/white_rounded_shadow.png</texture>
+					</control>
+					<control type="image">
+						<left>30</left>
+						<height>89</height>
+						<width>30</width>
+						<aspectratio>keep</aspectratio>
+						<texture colordiffuse="text800" fallback="icons/folder.png">$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="label">
+						<width>270</width>
+						<textcolor>text800</textcolor>
+						<font>common_list</font>
+						<left>89</left>
+						<height>89</height>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<include>skinshortcuts-submenu</include>
+				</content>
+			</control>
+		</control>
+	</include>
+
+	<include name="home_widget">
+		<control type="group">
+			<animation type="Conditional" condition="Control.HasFocus(3000)">
+				<effect type="slide" start="0,0" end="0,-50" time="200" tween="sine" easing="out"/>
+			</animation>
+			<!-- Top Info /-->
+			<control type="grouplist">
+				<include>common_visible_animation</include>
+				<visible>Integer.IsGreater(Container(3000).NumItems,0)</visible>
+				<animation type="Conditional" condition="!Control.HasFocus(3000)">
+					<effect type="fade" start="100" end="33" time="200"/>
+				</animation>
+				<left>34</left>
+				<top>338</top>
+				<width>1852</width>	
+				<itemgap>8</itemgap>
+				<control type="label">
+					<visible>true</visible>
+					<label>$INFO[Container(1000).ListItem.Property(widgetName)]</label>
+					<font>small_header</font>
+					<height>25</height>
+					<width>1852</width>
+					<textcolor>selected500</textcolor>
+				</control>
+				<control type="label">
+					<visible>true</visible>
+					<label>$VAR[widget_header_var]</label>
+					<font>medium_header</font>
+					<height>42</height>
+					<width>1852</width>
+				</control>
+			</control>
+			<!-- Bottom Info /-->
+			<control type="grouplist">
+				<include>common_visible_animation</include>
+				<visible>Integer.IsGreater(Container(3000).NumItems,0)</visible>
+				<animation type="Conditional" condition="!Control.HasFocus(3000)">
+					<effect type="fade" start="100" end="33" time="200"/>
+				</animation>
+				<left>34</left>
+				<top>795</top>
+				<width>1852</width>	
+				<itemgap>11</itemgap>
+				<control type="textbox">
+					<label>$VAR[widget_plot_var]</label>
+					<height max="66">auto</height>
+					<width>1852</width>
+					<textcolor>text150</textcolor>
+				</control>
+				<!-- Rating /-->
+				<control type="grouplist">
+					<visible>Integer.IsGreater(Container(4000).NumItems,0)</visible>
+					<orientation>horizontal</orientation>
+					<height>25</height>
+					<width>1129</width>
+					<itemgap>8</itemgap>
+					<control type="image">
+						<visible>String.IsEqual(Container(3000).ListItem.DBTYPE,movie) | String.IsEqual(Container(3000).ListItem.DBTYPE,set) | String.IsEqual(Container(3000).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(3000).ListItem.DBTYPE,season) | String.IsEqual(Container(3000).ListItem.DBTYPE,episode)</visible>
+						<height>25</height>
+						<width>130</width>
+						<texture colordiffuse="selected500">$VAR[widget_star_var]</texture>
+					</control>
+					<!-- Rating /-->
+					<control type="label">
+						<visible>!String.IsEmpty(Container(3000).ListItem.Rating)</visible>
+						<height>25</height>
+						<width>auto</width>
+						<label>$INFO[Container(3000).ListItem.Rating]</label>
+						<textcolor>text200</textcolor>
+						<font>common_light</font>
+					</control>
+					<!-- Duration/-->
+					<control type="label">
+						<visible>!String.IsEmpty(Container(3000).ListItem.Duration)</visible>
+						<height>25</height>
+						<width>auto</width>
+						<label>[COLOR text100]•[/COLOR]  $INFO[Container(3000).ListItem.Duration(mins)] $LOCALIZE[31070]</label>
+						<textcolor>text200</textcolor>
+						<font>common_light</font>
+					</control>
+					<!-- Duration/-->
+					<control type="label">
+						<visible>!String.IsEmpty(Container(3000).ListItem.Year)</visible>
+						<height>25</height>
+						<width>auto</width>
+						<label>[COLOR text100]•[/COLOR]  $INFO[Container(3000).ListItem.Year]</label>
+						<textcolor>text200</textcolor>
+						<font>common_light</font>
+					</control>
+				</control>
+			</control>
+			<!-- Dummy list, for animations in widget panel /-->
+			<control type="list" id="4000">
+				<itemlayout width="1"/>
+				<focusedlayout width="1"/>
+				<content target="$INFO[Container(1000).ListItem.Property(widgetTarget)]" limit="10">$INFO[Container(1000).ListItem.Property(widgetPath)]</content>
+			</control>
+			<!-- Widget /-->
+			<control type="panel" id="3000">
+				<visible>Integer.IsGreater(Container(4000).NumItems,0)</visible>
+				<animation type="Visible">
+					<effect type="fade" start="0" end="100" time="300" delay="300"/>
+				</animation>
+				<animation type="Hidden">
+					<effect type="fade" start="100" end="0" time="300"/>
+				</animation>
+				<animation type="Conditional" condition="!Control.HasFocus(3000)">
+					<effect type="fade" start="100" end="66" time="200"/>
+				</animation>
+				<preloaditems>2</preloaditems>
+				<top>436</top>
+				<onup>1000</onup>
+				<onback>1000</onback>
+				<height>340</height>
+				<width>1920</width>
+				<orientation>horizontal</orientation>
+				<itemlayout width="254" height="340">
 					<control type="group">
+						<left>29</left>
 						<include content="common_poster">
+							<param name="fadetime">200</param>
 							<param name="width">230</param>
 							<param name="height">340</param>
 							<param name="bordersize">5</param>
 							<param name="bordertexture">shadows/shadow_5px.png</param>
-							<param name="aspectratio">keep</param>
 						</include>
 					</control>
-				</control>
-			</focusedlayout>
-			<content target="videos" sortby="random" sortorder="ascending" limit="10">videodb://movies/titles/</content>
+				</itemlayout>
+				<focusedlayout width="254" height="340">
+					<control type="group">
+						<left>29</left>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="103" time="89" center="auto"/>
+						</animation>
+						<animation type="UnFocus">
+							<effect type="zoom" start="103" end="100" time="89" center="auto"/>
+						</animation>
+						<control type="image">
+							<animation type="Focus">
+								<effect type="fade" start="0" end="100" time="89"/>
+							</animation>
+							<animation type="UnFocus">
+								<effect type="fade" start="100" end="0" time="89"/>
+							</animation>
+							<width>230</width>
+							<height>340</height>
+							<texture border="5" colordiffuse="blue100">shapes/white_rounded.png</texture>
+						</control>
+						<control type="group">
+							<include content="common_poster">
+								<param name="width">230</param>
+								<param name="height">340</param>
+								<param name="bordersize">5</param>
+								<param name="bordertexture">shadows/shadow_5px.png</param>
+							</include>
+						</control>
+					</control>
+				</focusedlayout>
+				<content target="$INFO[Container(1000).ListItem.Property(widgetTarget)]" limit="10">$INFO[Container(1000).ListItem.Property(widgetPath)]</content>
+			</control>	
+		</control>
+	</include>
+
+	<include name="multiimage_background">
+		<control type="multiimage">
+			<include>window_zoom_animation</include>
+			<width>100%</width>
+			<height>100%</height>
+			<loop>yes</loop>
+			<timeperimage>35000</timeperimage>
+			<fadetime>2500</fadetime>
+			<imagepath background="true">special://skin/resources/backgrounds/</imagepath>
+			<randomize>true</randomize>
+		</control> 
+	</include>
+
+	<include name="home_fanart">´
+		<control type="image">
+			<visible>String.IsEmpty(Container(1000).ListItem.Property(widget))</visible>
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="300" delay="300"/>
+			</animation>
+			<animation type="Hidden">
+				<effect type="fade" start="100" end="0" time="300"/>
+			</animation>
+			<left>832</left>
+			<include>window_zoom_animation</include>
+			<top>478</top>
+			<aspectratio>scale</aspectratio>
+			<fadetime tween="cubic">300</fadetime>
+			<width>256</width>
+			<height>256</height>
+			<texture colordiffuse="main500">$VAR[home_icon_var]</texture>
+		</control>
+		<control type="image">
+			<include>common_window_animation</include>
+			<fadetime tween="cubic">300</fadetime>
+			<width>100%</width>
+			<height>100%</height>
+			<texture colordiffuse="0Dffffff">$INFO[Container(3000).ListItem.Art(fanart)]</texture>
 		</control>
 	</include>
 </includes>

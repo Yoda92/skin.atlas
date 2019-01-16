@@ -24,7 +24,7 @@
 						<height>30</height>
 						<width>734</width>
 						<left>34</left>
-						<font>sourcesanspro_bold_30</font>
+						<font>small_header</font>
 					</control>
 					<control type="image">
 						<visible>Control.IsVisible(11)</visible>
@@ -32,7 +32,7 @@
 						<left>34</left>
 						<width>666</width>
 						<height>21</height>
-						<texture colordiffuse="accent500" border="5">shapes/white_rounded.png</texture>
+						<texture colordiffuse="secondary700" border="5">shapes/white_rounded.png</texture>
 					</control>
 					<control type="slider" id="11">
 						<top>44</top>
@@ -42,7 +42,7 @@
 						<height>35</height>
 						<texturesliderbar colordiffuse="00ffffff">osd/seeker.png</texturesliderbar>
 						<textureslidernib>osd/seeker.png</textureslidernib>
-						<textureslidernibfocus colordiffuse="accent100">osd/seeker.png</textureslidernibfocus>
+						<textureslidernibfocus colordiffuse="text100">osd/seeker.png</textureslidernibfocus>
 					</control>
 				</control>
 			</control>

@@ -3,41 +3,44 @@
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<controls>
+		<include>default_background</include>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include>dialog_background</include>
-			<control type="group">
-				<width>734</width>
-				<height>412</height>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
-				<include content="dialog_panel">
-					<param name="width">734</param>
-					<param name="height">412</param>
-					<param name="label_id">1</param>
-					<param name="label_offset">21</param>
-				</include>
+			<!-- Dialog labels /-->
+			<control type="grouplist">
+				<height>1080</height>
+				<align>center</align>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<itemgap>18</itemgap>
+				<control type="label" id="1">
+					<height>24</height>
+					<align>center</align>
+					<font>small_header</font>
+				</control>
 				<!-- Dialog text /-->
 				<control type="textbox" id="9">
-					<top>110</top>
-					<left>21</left>
+					<left>613</left>
+					<align>center</align>
 					<width>692</width>
-					<height>161</height>
+					<height max="300">auto</height>
 				</control>
 				<control type="grouplist" id="9000">
+					<height>73</height>
 					<align>center</align>
 					<orientation>horizontal</orientation>
-					<top>318</top>
 					<itemgap>21</itemgap>
 					<include content="dialog_button">
 						<param name="id">11</param>
-						<param name="width">233</param>
+						<param name="width">243</param>
 						<param name="label">$LOCALIZE[31039]</param>
+						<param name="texturecolor">main900</param>
 					</include>
 					<include content="dialog_button">
 						<param name="id">10</param>
-						<param name="width">233</param>
+						<param name="width">243</param>
 						<param name="label">$LOCALIZE[31040]</param>
+						<param name="texturecolor">main900</param>
 					</include>
 				</control>
 			</control>

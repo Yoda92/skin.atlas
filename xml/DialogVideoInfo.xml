@@ -4,27 +4,30 @@
 	<defaultcontrol always="true">100</defaultcontrol>
 	<controls>
 		<include>default_background</include>
-		<include>clock</include>
 		<control type="group">
 			<include>common_window_animation</include>
 			<!-- Dialog items /-->
 			<control type="group">
 				<include>default_fanart</include>
-				<include content="specific_header_label">
-					<param name="label">$INFO[ListItem.Title]</param>
+				<include content="default_header_label">
+					<param name="label">$VAR[list_label_var]</param>
+					<param name="container_id">100</param>
 				</include>
+				<include>clock</include>
 				<!-- Meta information /-->
 				<control type="group">
 					<top>165</top>
-					<left>589</left>
+					<left>590</left>
 					<!-- Panel background /-->
 					<control type="image">
-						<height>444</height>
+						<height>750</height>
 						<width>1276</width>
-						<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+						<texture border="5" colordiffuse="text800">shapes/white_rounded.png</texture>
 					</control>
 					<!-- Metadata /-->
 					<control type="grouplist">
+						<left>21</left>
+						<width>1234</width>
 						<orientation>horizontal</orientation>
 						<usecontrolcoords>true</usecontrolcoords>
 						<top>465</top>
@@ -32,29 +35,47 @@
 						<control type="label">
 							<visible>!String.IsEmpty(ListItem.Director) | !String.IsEmpty(ListItem.Writer)</visible>
 							<height>26</height>
+							<width max="500">auto</width>
+							<label>[B]$LOCALIZE[31067]:[/B] $VAR[director_var]</label>
+						</control>
+						<control type="label">
 							<width>auto</width>
-							<label>[B]$LOCALIZE[31067]:[/B] $VAR[director_var]    •   </label>
+							<height>26</height>
+							<visible>[ !String.IsEmpty(ListItem.Director) | !String.IsEmpty(ListItem.Writer) ] + !String.IsEmpty(ListItem.Duration)</visible>
+							<label>    •    </label>
 						</control>
 						<!-- Duration /-->
 						<control type="label">
 							<visible>!String.IsEmpty(ListItem.Duration)</visible>
 							<height>26</height>
 							<width>auto</width>
-							<label>[B]$LOCALIZE[31068]:[/B] $INFO[ListItem.Duration] $LOCALIZE[31070]   •   </label>
+							<label>[B]$LOCALIZE[31068]:[/B] $INFO[ListItem.Duration(mins)] $LOCALIZE[31070]</label>
+						</control>
+						<control type="label">
+							<visible>!String.IsEmpty(ListItem.Year) + !String.IsEmpty(ListItem.Duration)</visible>
+							<label>    •    </label>
+							<height>26</height>
+							<width>auto</width>
 						</control>
 						<!-- Year /-->
 						<control type="label">
 							<visible>!String.IsEmpty(ListItem.Year)</visible>
 							<height>26</height>
 							<width>auto</width>
-							<label>[B]$LOCALIZE[31069]:[/B] $INFO[ListItem.Year]   •   </label>
+							<label>[B]$LOCALIZE[31069]:[/B] $INFO[ListItem.Year]</label>
+						</control>
+						<control type="label">
+							<visible>!String.IsEmpty(ListItem.Year) + !String.IsEmpty(ListItem.Rating)</visible>
+							<label>    •    </label>
+							<height>26</height>
+							<width>auto</width>
 						</control>
 						<!-- Rating /-->
 						<control type="image">
 							<visible>!String.IsEmpty(ListItem.Rating)</visible>
 							<height>26</height>
 							<width>130</width>
-							<texture>$VAR[star_var]</texture>
+							<texture colordiffuse="selected500">$VAR[star_var]</texture>
 						</control>
 						<!-- Rating /-->
 						<control type="label">
@@ -66,23 +87,33 @@
 					</control>
 					<!-- Plot /-->
 					<control type="textbox">
+						<left>21</left>
 						<top>499</top>
 						<visible>!String.IsEmpty(ListItem.Plot)</visible>
 						<height>96</height>
-						<width>1276</width>
-						<label>[COLOR text100][B]$LOCALIZE[31071]:[/B][/COLOR] $VAR[plot_var]</label>
+						<width>1234</width>
+						<label>[B]$LOCALIZE[31071]:[/B] $VAR[plot_var]</label>
 					</control>
 					<!-- No actors avaible /-->
-					<control type="group">
+					<control type="grouplist">
+						<top>113</top>
+						<left>445</left>
+						<usecontrolcoords>true</usecontrolcoords>
+						<orientation>vertical</orientation>
+						<width>1276</width>
+						<height>444</height>
+						<align>center</align>
+						<itemgap>-21</itemgap>
 						<visible>!Integer.IsGreater(Container(50).NumItems,0)</visible>
+						<include>common_visible_animation</include>
 						<control type="image">
-							<aspectratio>center</aspectratio>
-							<height>444</height>
+							<top>-21</top>
+							<aspectratio>keep</aspectratio>
+							<height>144</height>
 							<width>1276</width>
-							<texture colordiffuse="accent300">icons/hidden.png</texture>
+							<texture colordiffuse="text300">icons/hidden.png</texture>
 						</control>
 						<control type="label">
-							<top>300</top>
 							<height>26</height>
 							<textcolor>text300</textcolor>
 							<label>$LOCALIZE[31072]</label>
@@ -99,7 +130,7 @@
 						<top>21</top>
 						<itemlayout width="251" height="330">
 							<control type="group">
-								<left>21</left>
+								<left>16</left>
 								<include content="common_poster">
 									<param name="width">240</param>
 									<param name="height">355</param>
@@ -120,7 +151,6 @@
 										<align>center</align>
 										<height>26</height>
 										<label>$INFO[ListItem.Label2]</label>
-										<font>sourcesanspro_regular_21</font>
 										<textcolor>text300</textcolor>
 									</control>
 								</control>
@@ -128,7 +158,7 @@
 						</itemlayout>
 						<focusedlayout width="251" height="330">
 							<control type="group">
-								<left>21</left>
+								<left>16</left>
 								<control type="image">
 									<top>-5</top>
 									<left>-5</left>
@@ -158,7 +188,6 @@
 										<align>center</align>
 										<height>26</height>
 										<label>$INFO[ListItem.Label2]</label>
-										<font>sourcesanspro_regular_21</font>
 										<textcolor>text300</textcolor>
 									</control>
 								</control>
@@ -182,44 +211,54 @@
 			<control type="grouplist" id="100">
 				<onup>50</onup>
 				<orientation>horizontal</orientation>
-				<top>826</top>
-				<left>589</left>
+				<top>805</top>
+				<left>610</left>
 				<itemgap>21</itemgap>
 				<!-- Play /-->
 				<include content="dialog_button">
 					<param name="height">89</param>
-					<param name="width">233</param>
+					<param name="width">230</param>
 					<param name="id">8</param>
 					<param name="label">$LOCALIZE[31073]</param>
+					<param name="texturecolor">main900</param>
+					<param name="disabledcolor">text900</param>
 				</include>
 				<!-- Refresh /-->
 				<include content="dialog_button">
 					<param name="height">89</param>
-					<param name="width">233</param>
+					<param name="width">230</param>
 					<param name="id">6</param>
 					<param name="label">$LOCALIZE[31074]</param>
+					<param name="texturecolor">main900</param>
+					<param name="disabledcolor">text900</param>
 				</include>
 				<!-- Trailer /-->
 				<include content="dialog_button">
 					<param name="visible">!String.IsEmpty(ListItem.Trailer)</param>
 					<param name="height">89</param>
-					<param name="width">233</param>
+					<param name="width">230</param>
 					<param name="id">11</param>
 					<param name="label">$LOCALIZE[31075]</param>
+					<param name="texturecolor">main900</param>
+					<param name="disabledcolor">text900</param>
 				</include>
 				<!-- Choose Art /-->
 				<include content="dialog_button">
 					<param name="height">89</param>
-					<param name="width">233</param>
+					<param name="width">230</param>
 					<param name="id">10</param>
 					<param name="label">$LOCALIZE[31076]</param>
+					<param name="texturecolor">main900</param>
+					<param name="disabledcolor">text900</param>
 				</include>
 				<!-- Director Filmography /-->
 				<include content="dialog_button">
 					<param name="height">89</param>
-					<param name="width">233</param>
+					<param name="width">230</param>
 					<param name="id">13</param>
 					<param name="label">$LOCALIZE[31077]</param>
+					<param name="texturecolor">main900</param>
+					<param name="disabledcolor">text900</param>
 				</include>
 			</control>
 		</control>

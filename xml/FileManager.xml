@@ -3,12 +3,13 @@
 	<defaultcontrol always="true">20</defaultcontrol>
 	<controls>
 		<include>default_background</include>
-		<include>clock</include>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include content="specific_header_label">
+			<include content="default_header_label">
 				<param name="label">$LOCALIZE[31080]</param>
+				<param name="container_id">20</param>
 			</include>
+			<include>clock</include>
 			<!-- Panel -->
 			<control type="group">
 				<control type="image">
@@ -16,7 +17,7 @@
 					<left>159</left>
 					<width>789</width>
 					<height>764</height>
-					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+					<texture border="5" colordiffuse="blue900">shapes/white_rounded.png</texture>
 					<bordersize>5</bordersize>
 					<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
 				</control>
@@ -25,7 +26,7 @@
 					<left>972</left>
 					<width>789</width>
 					<height>764</height>
-					<texture border="5" colordiffuse="accent800">shapes/white_rounded.png</texture>
+					<texture border="5" colordiffuse="blue900">shapes/white_rounded.png</texture>
 					<bordersize>5</bordersize>
 					<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
 				</control>
@@ -47,6 +48,7 @@
 								<label>$INFO[ListItem.Label]</label>
 								<height>89</height>
 								<width>695</width>
+								<font>common_text_2</font>
 							</control>
 						</control>
 					</itemlayout>
@@ -71,6 +73,7 @@
 								<label>$INFO[ListItem.Label]</label>
 								<height>89</height>
 								<width>695</width>
+								<font>common_text_2</font>
 							</control>
 						</control>
 					</focusedlayout>
@@ -90,6 +93,7 @@
 								<label>$INFO[ListItem.Label]</label>
 								<height>89</height>
 								<width>695</width>
+								<font>common_text_2</font>
 							</control>
 						</control>
 					</itemlayout>
@@ -114,6 +118,7 @@
 								<label>$INFO[ListItem.Label]</label>
 								<height>89</height>
 								<width>695</width>
+								<font>common_text_2</font>
 							</control>
 						</control>
 					</focusedlayout>
@@ -122,29 +127,18 @@
 			<!-- Path label -->
 			<control type="group">
 				<control type="label" id="101">
-					<right>977</right>
+					<left>164</left>
 					<top>113</top>
-					<font>sourcesanspro_bold_30</font>
-					<align>right</align>
+					<font>small_header</font>
 					<height>30</height>
 				</control>
 				<control type="label" id="102">
-					<right>164</right>
+					<left>972</left>
 					<top>113</top>
-					<font>sourcesanspro_bold_30</font>
-					<align>right</align>
+					<font>small_header</font>
 					<height>30</height>
 				</control>
 			</control>		
-			<!-- Overlay -->
-			<include content="view_list_overlay">
-				<param name="left">164</param>
-				<param name="width">779</param>
-			</include>
-			<include content="view_list_overlay">
-				<param name="left">977</param>
-				<param name="width">779</param>
-			</include>
 		</control>
 	</controls>
 </window>

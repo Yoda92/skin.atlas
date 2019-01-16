@@ -2,40 +2,42 @@
 <includes>
 	<include name="view_51_poster">
 		<control type="group">
+			<include>window_zoom_animation</include>
+			<include>view_zoom_animation</include>
 			<visible>Control.IsVisible(51)</visible>
+			<include>default_fanart</include>
 			<!-- Background panel /-->
 			<control type="image">
 				<top>354</top>
 				<width>1920</width>
 				<height>372</height>
-				<texture colordiffuse="accent800">colors/white.png</texture>
+				<texture colordiffuse="main1000">colors/white.png</texture>
 			</control>
 			<!-- Shadow /-->
 			<control type="image">
 				<top>349</top>
 				<height>5</height>
 				<width>1920</width>
-				<texture flipy="true">shadows/shadowline_5px_down.png</texture>
+				<texture colordiffuse="main300" flipy="true">shadows/shadowline_5px_down.png</texture>
 			</control>
 			<control type="image">
 				<top>726</top>
 				<height>5</height>
 				<width>1920</width>
-				<texture>shadows/shadowline_5px_down.png</texture>
+				<texture colordiffuse="main300">shadows/shadowline_5px_down.png</texture>
 			</control>
 			<!-- Posterview /-->
 			<control type="fixedlist" id="51">
 				<preloaditems>2</preloaditems>
 				<pagecontrol>9001</pagecontrol>
-				<viewtype label="Poster">biglist</viewtype>
+				<viewtype label="Poster">icon</viewtype>
 				<onup>9000</onup>
 				<ondown>9001</ondown>
 				<visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows)</visible>
 				<width>1920</width>
-				<top>375</top>
+				<top>370</top>
 				<itemlayout width="241">
 					<control type="group">
-						<top>-5</top>
 						<left>16</left>
 						<include content="common_poster">
 							<param name="width">230</param>
@@ -51,7 +53,6 @@
 					<control type="group">
 						<visible>Container.OnScrollPrevious</visible>
 						<animation effect="fade" start="100" end="0" time="400">Hidden</animation>
-						<top>-5</top>
 						<left>16</left>
 						<include content="common_poster">
 							<param name="width">230</param>
@@ -64,7 +65,6 @@
 						<visible>Container.OnScrollNext</visible>
 						<animation effect="fade" start="100" end="0" time="400">Hidden</animation>
 						<left>278</left>
-						<top>-5</top>
 						<include content="common_poster">
 							<param name="width">230</param>
 							<param name="height">340</param>
@@ -97,7 +97,7 @@
 			</control>
 			<!-- Current item metadata /-->
 			<control type="grouplist">
-				<itemgap>8</itemgap>
+				<itemgap>11</itemgap>
 				<usecontrolcoords>true</usecontrolcoords>
 				<top>726</top>
 				<left>770</left>
@@ -107,8 +107,8 @@
 					<top>21</top>
 					<height>55</height>
 					<width>1129</width>
-					<label>$INFO[ListItem.Title]</label>
-					<font>sourcesanspro_bold_55</font>
+					<label>$VAR[list_label_var]</label>
+					<font>common_header</font>
 				</control>
 				<!-- Genre /-->
 				<control type="label">
@@ -116,26 +116,48 @@
 					<height>26</height>
 					<width>1129</width>
 					<label>$INFO[ListItem.Genre]</label>
-					<textcolor>grey200</textcolor>
-					<font>sourcesanspro_regular_26</font>
+					<textcolor>text150</textcolor>
+					<font>common_light</font>
 				</control>
 				<!-- Rating /-->
-				<control type="image">
-					<visible>!String.IsEmpty(ListItem.Rating) + !String.IsEmpty(ListItem.Duration) + !String.IsEmpty(ListItem.Year)</visible>
-					<height>26</height>
-					<width>130</width>
-					<texture>$VAR[star_var]</texture>
-				</control>
-				<!-- Rating /-->
-				<control type="label">
-					<visible>!String.IsEmpty(ListItem.Rating) + !String.IsEmpty(ListItem.Duration) + !String.IsEmpty(ListItem.Year)</visible>
-					<top>-34</top>
-					<left>135</left>
-					<height>26</height>
+				<control type="grouplist">
+					<orientation>horizontal</orientation>
+					<height>25</height>
 					<width>1129</width>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Rating]  [COLOR grey300]•[/COLOR]  $INFO[ListItem.Duration] min  [COLOR grey300]•[/COLOR]  $INFO[ListItem.Year]</label>
-					<textcolor>grey200</textcolor>
+					<itemgap>11</itemgap>
+					<control type="image">
+						<visible>!ListItem.IsParentFolder</visible>
+						<height>25</height>
+						<width>130</width>
+						<texture colordiffuse="selected500">$VAR[star_var]</texture>
+					</control>
+					<!-- Rating /-->
+					<control type="label">
+						<visible>!String.IsEmpty(ListItem.Rating)</visible>
+						<height>25</height>
+						<width>auto</width>
+						<label>$INFO[ListItem.Rating]</label>
+						<textcolor>text200</textcolor>
+						<font>common_light</font>
+					</control>
+					<!-- Duration/-->
+					<control type="label">
+						<visible>!String.IsEmpty(ListItem.Duration)</visible>
+						<height>25</height>
+						<width>auto</width>
+						<label>[COLOR text100]•[/COLOR]  $INFO[ListItem.Duration(mins)] $LOCALIZE[31070]</label>
+						<textcolor>text200</textcolor>
+						<font>common_light</font>
+					</control>
+					<!-- Duration/-->
+					<control type="label">
+						<visible>!String.IsEmpty(ListItem.Year)</visible>
+						<height>25</height>
+						<width>auto</width>
+						<label>[COLOR text100]•[/COLOR]  $INFO[ListItem.Year]</label>
+						<textcolor>text200</textcolor>
+						<font>common_light</font>
+					</control>
 				</control>
 				<!-- Plot /-->
 				<control type="textbox">

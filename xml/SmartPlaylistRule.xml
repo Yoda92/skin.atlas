@@ -25,8 +25,8 @@
 						<ondown>16</ondown>
 						<width>666</width>
 						<height>73</height>
-						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
-						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturenofocus border="5" colordiffuse="main900">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 						<textoffsetx>21</textoffsetx>
 						<label>$LOCALIZE[31155]</label>
 						<align>left</align>
@@ -39,8 +39,8 @@
 						<top>86</top>
 						<width>666</width>
 						<height>73</height>
-						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
-						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturenofocus border="5" colordiffuse="main900">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 						<textoffsetx>21</textoffsetx>
 						<label>$LOCALIZE[31156]</label>
 						<align>left</align>
@@ -54,8 +54,8 @@
 						<top>172</top>
 						<width>420</width>
 						<height>73</height>
-						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
-						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturenofocus border="5" colordiffuse="secondary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 						<textoffsetx>21</textoffsetx>
 						<hinttext>$LOCALIZE[31157]</hinttext>
 						<align>left</align>
@@ -70,8 +70,8 @@
 						<left>433</left>
 						<width>233</width>
 						<height>73</height>
-						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
-						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
+						<texturenofocus border="5" colordiffuse="main900">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 						<label>$LOCALIZE[31158]</label>
 						<align>center</align>
 						<aligny>center</aligny>
@@ -90,12 +90,16 @@
 							<param name="id">18</param>
 							<param name="width">233</param>
 							<param name="label">$LOCALIZE[31048]</param>
+							<param name="texturecolor">main900</param>
+							<param name="disabledcolor">text900</param>
 						</include>
 						<!-- Cancel /-->
 						<include content="dialog_button">
 							<param name="id">19</param>
 							<param name="width">233</param>
 							<param name="label">$LOCALIZE[31055]</param>
+							<param name="texturecolor">main900</param>
+							<param name="disabledcolor">text900</param>
 						</include>
 					</control>
 				</control>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<onload>AlarmClock(HomeAlarm,ReplaceWindow(home),00:03,silent,false)</onload>
+	<controls>
+		<include>default_background</include>
+		<control type="image">
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="300" tween="quadratic"/>
+			</animation>
+			<width>100%</width>
+			<height>100%</height>
+			<texture>miscellaneous/splash.png</texture>
+		</control>
+	</controls>
+</window>

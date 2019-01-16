@@ -3,31 +3,56 @@
 	<defaultcontrol>50</defaultcontrol>
 	<menucontrol>9000</menucontrol>
 	<backgroundcolor>0</backgroundcolor>
-	<views>50</views>
+	<views>50,53</views>
 	<controls>
 		<include>default_background</include>
-		<include>clock</include>
 		<control type="group">
-			<include>common_window_animation</include>
-			<include>default_header_label</include>
+			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
+			</animation>
 			<include>view_50_list</include>
+			<include>view_53_list</include>
+		</control>
+		<!-- Header + Clock /-->
+		<control type="group">
+			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
+			</animation>
+			<visible>Control.IsVisible(50)</visible>
+			<include>delayed_zoom_animation</include>
+			<include>view_zoom_animation</include>
+			<include content="default_header_label">
+				<param name="container_id">50</param>
+				<param name="width">623</param>
+			</include>
+			<include>clock</include>	
+		</control>
+		<control type="group">
+			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
+			</animation>
+			<visible>Control.IsVisible(53)</visible>
+			<include>delayed_zoom_animation</include>
+			<include>view_zoom_animation</include>
+			<include content="default_header_label">
+				<param name="container_id">53</param>
+			</include>
+			<include>clock</include>	
 		</control>
 		<!-- Options panel /-->
 		<include content="common_options_menu">
 			<param name="list_id">50</param>
 			<param name="content">myprograms_options_content</param>
 		</include>
-		<control type="scrollbar" id="9001">
+		<!-- Scrollbar /-->
+		<control type="group">
 			<include>common_window_animation</include>
-			<visible>Control.IsVisible(50)</visible>
-			<showonepage>false</showonepage>
-			<onleft>50</onleft>
-			<orientation>vertical</orientation>
-			<right>0</right>
-			<width>13</width>
-			<height>1080</height>
-			<texturesliderbar border="5" colordiffuse="accent300">shapes/white_rounded.png</texturesliderbar>
-			<texturesliderbarfocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturesliderbarfocus>
+			<include content="common_vertical_scrollbar">
+				<param name="view_id">50</param>
+			</include>
+			<include content="common_vertical_scrollbar">
+				<param name="view_id">53</param>
+			</include>
 		</control>
 	</controls>
 </window>

@@ -42,6 +42,8 @@
 						<param name="width">233</param>
 						<param name="height">89</param>
 						<param name="label">Done</param>
+						<param name="texturecolor">main900</param>
+						<param name="disabledcolor">text900</param>
 					</include>
 					<!-- Cancel /-->
 					<include content="dialog_button">
@@ -49,6 +51,8 @@
 						<param name="width">233</param>
 						<param name="height">89</param>
 						<param name="label">Cancel</param>
+						<param name="texturecolor">main900</param>
+						<param name="disabledcolor">text900</param>
 					</include>
 					<!-- IP Address /-->
 					<include content="dialog_button">
@@ -56,6 +60,8 @@
 						<param name="width">233</param>
 						<param name="height">89</param>
 						<param name="label">IP Address</param>
+						<param name="texturecolor">main900</param>
+						<param name="disabledcolor">text900</param>
 					</include>
 					<!-- Layout /-->
 					<include content="dialog_button">
@@ -63,6 +69,8 @@
 						<param name="width">233</param>
 						<param name="height">89</param>
 						<param name="label">Layout</param>
+						<param name="texturecolor">main900</param>
+						<param name="disabledcolor">text900</param>
 					</include>
 				</control>
 				<!-- 1st row (0-9) /-->
@@ -371,11 +379,11 @@
 						<height>89</height>
 						<radiowidth>380</radiowidth>
 						<radioheight>89</radioheight>
-						<texturenofocus border="5" colordiffuse="accent800">shapes/white_rounded.png</texturenofocus>
-						<texturefocus border="5" colordiffuse="accent500">shapes/white_rounded.png</texturefocus>
-						<textureradioonnofocus colordiffuse="text300">icons/keyboard/space.png</textureradioonnofocus>
+						<texturenofocus border="5" colordiffuse="main800">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
+						<textureradioonnofocus colordiffuse="text100">icons/keyboard/space.png</textureradioonnofocus>
 						<textureradioonfocus colordiffuse="text100">icons/keyboard/space.png</textureradioonfocus>
-						<textureradiooffnofocus colordiffuse="text300">icons/keyboard/space.png</textureradiooffnofocus>
+						<textureradiooffnofocus colordiffuse="text100">icons/keyboard/space.png</textureradiooffnofocus>
 						<textureradioofffocus colordiffuse="text100">icons/keyboard/space.png</textureradioofffocus>
 						<textureradioondisabled colordiffuse="text500">icons/keyboard/space.png</textureradioondisabled>
 						<textureradiooffdisabled colordiffuse="text500">icons/keyboard/space.png</textureradiooffdisabled>

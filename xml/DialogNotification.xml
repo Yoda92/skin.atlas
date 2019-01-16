@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<window>
+<window type="dialog">
 	<backgroundcolor>0</backgroundcolor>
 	<controls>
 		<control type="group">
@@ -11,7 +11,7 @@
 				<control type="image">
 					<height>144</height>
 					<width>610</width>
-					<texture border="5" colordiffuse="ccffffff">shapes/black_rounded.png</texture>
+					<texture border="5" colordiffuse="secondary300">shapes/black_rounded.png</texture>
 				</control>
 				<control type="grouplist">
 					<left>21</left>
@@ -23,14 +23,14 @@
 						<align>center</align>
 						<height>26</height>
 						<width>568</width>
-						<font>sourcesanspro_bold_30</font>
+						<font>small_header</font>
 					</control>
 					<!-- Message /-->
 					<control type="label" id="402">
 						<align>center</align>
 						<height>26</height>
 						<width>568</width>
-						<textcolor>text300</textcolor>
+						<textcolor>text200</textcolor>
 					</control>
 				</control>
 			</control>

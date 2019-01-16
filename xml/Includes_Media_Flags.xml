@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="common_media_flag">
+		<param name="width">144</param>
+		<param name="label"/>
+		<param name="flag"/>
+		<param name="flag_diffuse">text100</param>
+		<param name="visible"/>
+		<definition>
+			<control type="image">
+				<top>15</top>
+				<aspectratio>keep</aspectratio>
+				<visible>$PARAM[visible]</visible>
+				<width>34</width>
+				<height>34</height>
+				<texture border="5" colordiffuse="$PARAM[flag_diffuse]">$PARAM[flag]</texture>
+			</control>
+			<control type="label">
+				<left>-26</left>
+				<visible>$PARAM[visible]</visible>
+				<textcolor>text100</textcolor>
+				<height>64</height>
+				<width>auto</width>
+				<label>$PARAM[label]</label>
+			</control>
+		</definition>
+	</include>
+</includes>

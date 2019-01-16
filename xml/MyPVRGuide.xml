@@ -6,20 +6,22 @@
 	<views>10</views>
 	<controls>
 		<include>default_background</include>
-		<include>clock</include>
 		<control type="group">
-			<include>pvr_window_animation</include>
-			<include content="specific_header_label">
-				<param name="label">$LOCALIZE[31112]</param>
-			</include>
+			<include>common_window_animation</include>
+			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
+			</animation>
 			<include>view_pvr_guide</include>
+			<include content="default_header_label">
+				<param name="label">$LOCALIZE[31112]</param>
+				<param name="container_id">10</param>
+			</include>
+			<include>clock</include>
 		</control>
 		<control type="group">
-			<include>pvr_settings_window_animation</include>
 			<!-- Options panel /-->
 			<include content="common_options_menu">
 				<param name="list_id">10</param>
-				<param name="include_animation">false</param>
 				<param name="content">mypvrguide_options_content</param>
 			</include>
 		</control>
