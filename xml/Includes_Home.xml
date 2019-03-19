@@ -560,7 +560,7 @@
 
 	<include name="home_background">
 		<include>default_background</include>
-		<include condition="!Skin.HasSetting(toggleSpotlightWidget)">default_home_fanart</include>
+		<include condition="Skin.HasSetting(toggleSingleRowWidget) | Skin.HasSetting(toggleNoWidget) | Skin.HasSetting(toggleMultiRowWidget) | Skin.HasSetting(toggleMultiImageBackground)">default_home_fanart</include>
 	</include>
 
 	<include name="default_home_fanart">
