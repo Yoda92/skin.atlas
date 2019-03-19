@@ -130,7 +130,7 @@
 					<onclick condition="Skin.HasSetting(toggleNoSubmenu)">Skin.ToggleSetting(toggleSubmenu)</onclick>
 					<onclick condition="Skin.HasSetting(toggleSubmenu)">Skin.ToggleSetting(toggleSubmenu)</onclick>
 					<onclick condition="Skin.HasSetting(toggleSubmenu)">Skin.ToggleSetting(toggleCategories)</onclick>
-					<onclick condition="!Skin.HasSetting(toggleSubmenu) + !Skin.HasSetting(toggleCategories) + !Skin.HasSetting(toggleNoSubmenu)">Skin.ToggleSetting(toggleNoSubmenu)</onclick>
+					<onclick condition="!Skin.HasSetting(toggleSubmenu) + !Skin.HasSetting(toggleCategories) + !Skin.HasSetting(toggleNoSubmenu)">Skin.ToggleSetting(toggleCategories)</onclick>
 					<width>930</width>
 					<height>80</height>
 					<align>left</align>

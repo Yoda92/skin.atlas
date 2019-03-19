@@ -9,10 +9,10 @@
 		<property name="name">$VAR[spotlight_name_var]</property>
 		<controls>
 			<control type="image">
-				<animation type="Conditional" condition="Control.HasFocus(3000) + [Skin.HasSetting(toggleSpotlightWidget) | Skin.HasSetting(toggleSingleRowWidget)]" reversible="false">
+				<animation type="Conditional" condition="Control.HasFocus(3000)" reversible="false">
 					<effect type="slide" start="0,0" end="0,-100" time="400" tween="back" easing="out"/>
 				</animation>
-				<animation type="Conditional" condition="!Control.HasFocus(3000) + [Skin.HasSetting(toggleSpotlightWidget) | Skin.HasSetting(toggleSingleRowWidget)]" reversible="false">
+				<animation type="Conditional" condition="!Control.HasFocus(3000)" reversible="false">
 					<effect type="slide" start="0,-100" end="0,0" time="400" tween="back" easing="out"/>
 				</animation>
 				<right>0</right>
@@ -24,10 +24,10 @@
 				<aspectratio>scale</aspectratio>
 			</control>
 			<control type="group">
-				<animation type="Conditional" condition="Control.HasFocus(3000) + [Skin.HasSetting(toggleSpotlightWidget) | Skin.HasSetting(toggleSingleRowWidget)]" reversible="false">
+				<animation type="Conditional" condition="Control.HasFocus(3000)" reversible="false">
 					<effect type="slide" start="0,0" end="0,-45" time="400" tween="back" easing="out"/>
 				</animation>
-				<animation type="Conditional" condition="!Control.HasFocus(3000) + [Skin.HasSetting(toggleSpotlightWidget) | Skin.HasSetting(toggleSingleRowWidget)]" reversible="false">
+				<animation type="Conditional" condition="!Control.HasFocus(3000)" reversible="false">
 					<effect type="slide" start="0,-45" end="0,0" time="400" tween="back" easing="out"/>
 				</animation>
 				<control type="grouplist">
@@ -81,10 +81,10 @@
 			</control>
 			<!-- Widget /-->
 			<control type="list" id="3000">
-				<animation type="Conditional" condition="Control.HasFocus(3000) + [Skin.HasSetting(toggleSpotlightWidget) | Skin.HasSetting(toggleSingleRowWidget)]" reversible="false">
+				<animation type="Conditional" condition="Control.HasFocus(3000)" reversible="false">
 					<effect type="slide" start="0,0" end="0,55" time="400" tween="back" easing="out"/>
 				</animation>
-				<animation type="Conditional" condition="!Control.HasFocus(3000) + [Skin.HasSetting(toggleSpotlightWidget) | Skin.HasSetting(toggleSingleRowWidget)]" reversible="false">
+				<animation type="Conditional" condition="!Control.HasFocus(3000)" reversible="false">
 					<effect type="slide" start="0,55" end="0,0" time="400" tween="back" easing="out"/>
 				</animation>
 				<preloaditems>2</preloaditems>

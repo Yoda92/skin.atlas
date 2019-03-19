@@ -9,11 +9,11 @@
 	<warn heading="$LOCALIZE[31015]" message="$LOCALIZE[31016]">ActivateWindow(Settings)</warn>
 
 	<!-- Adds an action where submenu gets focus, if it is not empty -->
-	<groupoverride group="mainmenu" condition="String.IsEqual(ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(toggleNoSubmenuFocus) + Skin.HasSetting(toggleSubmenu)">Control.SetFocus(2000)</groupoverride>
+	<groupoverride group="mainmenu" condition="String.IsEqual(ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(toggleNoSubmenuFocus) + !Skin.HasSetting(toggleCategories) + !Skin.HasSetting(toggleNoSubmenu)">Control.SetFocus(2000)</groupoverride>
 
 	<!-- Takes every shortcut action, and adds a condition -->
 	<override action="globaloverride" group="mainmenu">
-		<condition>!String.IsEqual(ListItem.Property(hasSubmenu),True) | Skin.HasSetting(toggleNoSubmenuFocus) | !Skin.HasSetting(toggleSubmenu)</condition>
+		<condition>!String.IsEqual(ListItem.Property(hasSubmenu),True) | Skin.HasSetting(toggleNoSubmenuFocus) | Skin.HasSetting(toggleNoSubmenu) | Skin.HasSetting(toggleCategories)</condition>
 		<action>::ACTION::</action>
 	</override>
 	

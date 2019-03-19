@@ -44,7 +44,7 @@
 		<label>$LOCALIZE[31005]</label>
 		<label2>Common Shortcut</label2>
 		<defaultID>music</defaultID>
-		<action>ReloadSkin()</action>
+		<action>ActivateWindow(Music,return)</action>
 		<icon>special://skin/media/icons/music.png</icon>
 	</shortcut>
 

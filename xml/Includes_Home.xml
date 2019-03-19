@@ -25,7 +25,7 @@
 			<control type="list" id="1000">
 				<preloaditems>2</preloaditems>
 				<scrolltime tween="sine">300</scrolltime>
-				<onup condition="Integer.IsGreater(Container(2000).NumItems,0) + Skin.HasSetting(toggleSubmenu)">2000</onup>
+				<onup condition="Integer.IsGreater(Container(2000).NumItems,0) + !Skin.HasSetting(toggleCategories) + !Skin.HasSetting(toggleNoSubmenu)">2000</onup>
 				<ondown condition="Integer.IsGreater(Container(3000).NumItems,0)">3000</ondown>
 				<orientation>horizontal</orientation>
 				<width>100%</width>
@@ -99,7 +99,7 @@
 							<top>30</top>
 							<width>240</width>
 							<height>34</height>
-							<texture colordiffuse="text100" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+							<texture colordiffuse="text100" fallback="icons/folder.png">$INFO[ListItem.Icon]</texture>
 							<aspectratio>keep</aspectratio>
 						</control>
 					</control>
@@ -595,7 +595,7 @@
 			<control type="group" id="3500">
 				<height>76</height>
 			</control>
-			<include content="category_widget" condition="!Skin.HasSetting(toggleSubmenu) + !Skin.HasSetting(toggleNoSubmenu)">
+			<include content="category_widget" condition="Skin.HasSetting(toggleCategories)">
 				<param name="id">3100</param>
 			</include>
 			<include content="common_widget">

@@ -208,9 +208,9 @@
 	</variable>
 
 	<variable name="submenu_setting_var">
-		<value condition="Skin.HasSetting(toggleSubmenu)">Classic submenu</value>
+		<value condition="Skin.HasSetting(toggleCategories)">Category widget</value>
 		<value condition="Skin.HasSetting(toggleNoSubmenu)">No submenu</value>
-		<value>Category widget</value>
+		<value>Classic submenu</value>
 	</variable>
 
 	<variable name="genre_icon_var">
