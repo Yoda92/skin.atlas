@@ -130,6 +130,7 @@
 	</variable>
 
 	<variable name="genre_icon_var">
+		<value condition="ListItem.IsParentFolder">icons/back.png</value>
 		<value condition="String.IsEqual(listitem.dbtype,genre)">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
