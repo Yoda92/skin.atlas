@@ -19,7 +19,7 @@
 			<control type="image">
 				<height>79</height>
 				<width>1920</width>
-				<texture colordiffuse="black900">colors/black.png</texture>
+				<texture colordiffuse="black900">colors/white.png</texture>
 			</control>
 			<control type="image">
 				<top>79</top>
@@ -58,7 +58,7 @@
 				<bottom>0</bottom>
 				<height>128</height>
 				<width>1920</width>
-				<texture colordiffuse="black900">colors/black.png</texture>
+				<texture colordiffuse="black900">colors/white.png</texture>
 			</control>
 			<control type="image">
 				<bottom>128</bottom>
