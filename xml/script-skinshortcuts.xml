@@ -3,195 +3,279 @@
 	<defaultcontrol always="true">211</defaultcontrol>
 	<controls>
 		<control type="group">
-			<control type="button" id="404"><visible allowhiddenfocus="true">false</visible></control>
-			<include>common_window_animation</include>
-			<include>dialog_background</include>
+			<control type="button" id="404">
+				<visible allowhiddenfocus="true">false</visible>
+			</control>
 			<control type="group">
-				<width>1482</width>
+				<include>common_window_animation</include>
+				<include>dialog_fade</include>
+			</control>
+			<!-- Dialog items /-->
+			<control type="group">
+				<include>common_dialog_window_animation</include>
+				<width>1456</width>
 				<height>691</height>
 				<centertop>50%</centertop>
 				<centerleft>50%</centerleft>
 				<include content="dialog_panel">
-					<param name="width">1482</param>
+					<param name="width">1456</param>
 					<param name="height">691</param>
 					<param name="label">$LOCALIZE[31116]</param>
 				</include>
-				<!-- Background first panel /-->
+				<!-- Background panels /-->
 				<control type="image">
-					<top>123</top>
-					<left>34</left>
-					<width>566</width>
-					<height>534</height>
-					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
+					<top>110</top>
+					<left>21</left>
+					<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+					<height>560</height>
+					<width>464</width>
+				</control>
+				<control type="image">
+					<top>110</top>
+					<left>505</left>
+					<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+					<height>560</height>
+					<width>930</width>
 				</control>
 				<control type="list" id="211">
-					<onright>9000</onright>
-					<top>123</top>
-					<left>34</left>
-					<width>566</width>
-					<height>534</height>
-					<itemlayout width="566" height="89">
+					<onright condition="String.IsEmpty(Window().Property(SetWidgets))">9000</onright>
+					<onright condition="!String.IsEmpty(Window().Property(SetWidgets))">8000</onright>
+					<top>110</top>
+					<left>21</left>
+					<height>560</height>
+					<width>464</width>
+					<itemlayout width="464" height="80">
 						<control type="label">
-							<font>common_text_2</font>
-							<height>89</height>
+							<font>montserrat_semibold_22</font>
+							<height>80</height>
 							<left>21</left>
-							<width>404</width>
+							<width>371</width>
+							<label fallback="[I]$LOCALIZE[31117][/I]">$INFO[ListItem.Label]</label>
+							<textcolor>text200</textcolor>
+						</control>
+						<control type="image">	
+							<visible>!String.IsEqual(Window.Property(groupname),powermenu)</visible>
+							<right>21</right>
+							<height>80</height>
+							<width>30</width>
+							<texture colordiffuse="text200">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+					</itemlayout>
+					<focusedlayout width="464" height="80">
+						<control type="image">
+							<visible>ControlGroup(9000).HasFocus() | ControlGroup(8000).HasFocus()</visible>
+							<height>80</height>
+							<width>464</width>
+							<texture border="5" colordiffuse="unfocus">shapes/white_rounded.png</texture>
+						</control>
+						<control type="image">
+							<visible>!ControlGroup(9000).HasFocus() + !ControlGroup(8000).HasFocus()</visible>
+							<height>80</height>
+							<width>464</width>
+							<texture border="5" colordiffuse="focus">shapes/white_rounded.png</texture>
+						</control>
+						<control type="label">
+							<font>montserrat_semibold_22</font>
+							<height>80</height>
+							<left>21</left>
+							<width>371</width>
 							<label fallback="[I]$LOCALIZE[31117][/I]">$INFO[ListItem.Label]</label>
 						</control>
 						<control type="image">
+							<visible>!String.IsEqual(Window.Property(groupname),powermenu)</visible>
 							<right>21</right>
-							<height>89</height>
+							<height>80</height>
 							<width>30</width>
 							<texture colordiffuse="text100">$INFO[ListItem.Icon]</texture>
 							<aspectratio>keep</aspectratio>
 						</control>
-					</itemlayout>
-					<focusedlayout width="566" height="89">
-						<control type="image">
-							<visible>ControlGroup(9000).HasFocus()</visible>
-							<height>89</height>
-							<width>566</width>
-							<texture border="5" colordiffuse="main700">shapes/white_rounded.png</texture>
-						</control>
-						<control type="image">
-							<visible>!ControlGroup(9000).HasFocus()</visible>
-							<height>89</height>
-							<width>566</width>
-							<texture border="5" colordiffuse="main500">shapes/white_rounded.png</texture>
-						</control>
-						<control type="label">
-							<font>common_text_2</font>
-							<height>89</height>
-							<left>21</left>
-							<width>404</width>
-							<label fallback="[I]$LOCALIZE[31117][/I]">$INFO[ListItem.Label]</label>
-							<textcolor>text900</textcolor>
-						</control>
-						<control type="image">
-							<right>21</right>
-							<height>89</height>
-							<width>30</width>
-							<texture colordiffuse="text900">$INFO[ListItem.Icon]</texture>
-							<aspectratio>keep</aspectratio>
-						</control>
 					</focusedlayout>
 				</control>
-				<!-- Background second panel /-->
-				<control type="image">
-					<top>123</top>
-					<left>621</left>
-					<width>827</width>
-					<height>534</height>
-					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
+				<!-- Widgets /-->
+				<control type="grouplist" id="8000">
+					<onback>ClearProperty(SetWidgets)</onback>
+					<onunfocus>ClearProperty(SetWidgets)</onunfocus>
+					<onleft>ClearProperty(SetWidgets)</onleft>
+					<onleft>noop</onleft>
+					<usecontrolcoords>true</usecontrolcoords>
+					<visible allowhiddenfocus="true">!String.IsEmpty(Window().Property(SetWidgets))</visible>
+					<orientation>vertical</orientation>
+					<onleft>211</onleft>
+					<top>110</top>
+					<left>505</left>
+					<height>560</height>
+					<width>930</width>
+					<!-- Widgets /-->
+					<control type="button" id="8001">
+						<label>Widget #1   |   $INFO[Container(211).ListItem.Property(widgetName.widget1)]</label>
+						<onclick>SetProperty(widgetID,widget1)</onclick>
+						<onclick>SendClick(312)</onclick>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
+					<control type="button" id="8002">
+						<label>Widget #2   |   $INFO[Container(211).ListItem.Property(widgetName.widget2)]</label>
+						<onclick>SetProperty(widgetID,widget2)</onclick>
+						<onclick>SendClick(312)</onclick>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
+					<control type="button" id="8003">
+						<label>Widget #3   |   $INFO[Container(211).ListItem.Property(widgetName.widget3)]</label>
+						<onclick>SetProperty(widgetID,widget3)</onclick>
+						<onclick>SendClick(312)</onclick>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
+					<control type="button" id="8004">
+						<label>Widget #4   |   $INFO[Container(211).ListItem.Property(widgetName.widget4)]</label>
+						<onclick>SetProperty(widgetID,widget4)</onclick>
+						<onclick>SendClick(312)</onclick>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
+					<control type="button" id="8005">
+						<label>Widget #5   |   $INFO[Container(211).ListItem.Property(widgetName.widget5)]</label>
+						<onclick>SetProperty(widgetID,widget5)</onclick>
+						<onclick>SendClick(312)</onclick>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
 				</control>
 				<!-- Options /-->
 				<control type="grouplist" id="9000">
+					<visible allowhiddenfocus="true">String.IsEmpty(Window().Property(SetWidgets))</visible>
 					<orientation>vertical</orientation>
 					<onleft>211</onleft>
-					<top>123</top>
-					<left>621</left>
-					<width>827</width>
-					<height>534</height>
+					<top>110</top>
+					<left>505</left>
+					<height>560</height>
+					<width>930</width>
 					<!-- Buttons for managing shortcuts /-->
 					<!-- Add /-->
-					<include content="dialog_button">
-						<param name="id">301</param>
-						<param name="label">$LOCALIZE[31118]</param>
-						<param name="height">89</param>
-						<param name="align">left</param>
-						<param name="textoffset">21</param>
-					</include>
-					<!-- Remove /-->
-					<include content="dialog_button">
-						<param name="id">302</param>
-						<param name="label">$LOCALIZE[31119]</param>
-						<param name="height">89</param>
-						<param name="align">left</param>
-						<param name="textoffset">21</param>
-					</include>
-					<!-- Configure submenu /-->
-					<include content="dialog_button">
-						<param name="id">405</param>
-						<param name="label">$LOCALIZE[31188]</param>
-						<param name="height">89</param>
-						<param name="align">left</param>
-						<param name="textoffset">21</param>
-					</include>
-					<!-- Configure widget /-->
-					<include content="dialog_button">
-						<param name="id">312</param>
-						<param name="label">$LOCALIZE[31194]</param>
-						<param name="height">89</param>
-						<param name="align">left</param>
-						<param name="textoffset">21</param>
-					</include>
-					<!-- Configure widget layout /-->
-					<!-- Will be implemented later
-					<control type="button" id="9401">
-						<disabledcolor>text500</disabledcolor>
-						<width>827</width>
-						<height>89</height>
-						<texturenofocus border="5" colordiffuse="00ffffff">shapes/white_rounded.png</texturenofocus>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-						<textoffsetx>21</textoffsetx>
-						<label>$LOCALIZE[31195]</label>
-						<label2>$VAR[widget_layout_var]</label2>
+					<control type="button" id="301">
+						<visible>!Integer.IsGreater(Container(211).NumItems,10) | !String.IsEqual(Window.Property(groupname),powermenu)</visible>
+						<label>$LOCALIZE[31118]</label>
+						<height>80</height>
 						<align>left</align>
-						<aligny>center</aligny>
-						<onclick>SetProperty(customProperty,widgetLayout)</onclick>
-						<onclick condition="String.IsEmpty(Container(211).ListItem.Property(widgetLayout)) | String.IsEqual(Container(211).ListItem.Property(widgetLayout),Poster)">SetProperty(customValue,Square)</onclick>
-						<onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetLayout),Square)">SetProperty(customValue,Poster)</onclick>
-						<onclick>SendClick(404)</onclick>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
 					</control>
-					/-->
+					<!-- Remove /-->
+					<control type="button" id="302">
+						<label>$LOCALIZE[31119]</label>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
+					<!-- Configure submenu /-->
+					<control type="button" id="405">
+						<visible>!String.IsEqual(Window.Property(groupname),submenu)</visible>
+						<visible>!String.IsEqual(Window.Property(groupname),powermenu)</visible>
+						<label>$LOCALIZE[31188]</label>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
+					<!-- Configure widget /-->
+					<control type="button" id="312">
+						<visible>!String.IsEqual(Window.Property(groupname),powermenu)</visible>
+						<visible>Skin.HasSetting(toggleSingleRowWidget)</visible>
+						<label>$LOCALIZE[31194]</label>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
+					<!-- Configure widgets (Opens custom window) /-->
+					<control type="button" id="9002">
+						<visible>!String.IsEqual(Window.Property(groupname),powermenu)</visible>
+						<visible>Skin.HasSetting(toggleMultiRowWidget)</visible>
+						<height>80</height>
+						<width>930</width>
+						<align>left</align>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31204]</label>
+						<onclick>Control.SetFocus(8000)</onclick>
+						<onclick>SetProperty(SetWidgets,true)</onclick>
+					</control>
 					<!-- Move Up /-->
-					<include content="dialog_button">
-						<param name="id">303</param>
-						<param name="label">$LOCALIZE[31120]</param>
-						<param name="height">89</param>
-						<param name="align">left</param>
-						<param name="textoffset">21</param>
-					</include>
+					<control type="button" id="303">
+						<label>$LOCALIZE[31120]</label>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
 					<!-- Move Down /-->
-					<include content="dialog_button">
-						<param name="id">304</param>
-						<param name="label">$LOCALIZE[31121]</param>
-						<param name="height">89</param>
-						<param name="align">left</param>
-						<param name="textoffset">21</param>
-					</include>
+					<control type="button" id="304">
+						<label>$LOCALIZE[31121]</label>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
 					<!-- Change Label /-->
-					<include content="dialog_button">
-						<param name="id">305</param>
-						<param name="label">$LOCALIZE[31122]</param>
-						<param name="height">89</param>
-						<param name="align">left</param>
-						<param name="textoffset">21</param>
-					</include>
+					<control type="button" id="305">
+						<label>$LOCALIZE[31122]</label>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
 					<!-- Change Icon /-->
-					<include content="dialog_button">
-						<param name="id">306</param>
-						<param name="label">$LOCALIZE[31123]</param>
-						<param name="height">89</param>
-						<param name="align">left</param>
-						<param name="textoffset">21</param>
-					</include>
+					<control type="button" id="306">
+						<label>$LOCALIZE[31123]</label>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
 					<!-- Change Action /-->
-					<include content="dialog_button">
-						<param name="id">307</param>
-						<param name="label">$LOCALIZE[31124]</param>
-						<param name="height">89</param>
-						<param name="align">left</param>
-						<param name="textoffset">21</param>
-					</include>
+					<control type="button" id="307">
+						<label>$LOCALIZE[31124]</label>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
 					<!-- Restore to defaults /-->
-					<include content="dialog_button">
-						<param name="id">308</param>
-						<param name="label">$LOCALIZE[31125]</param>
-						<param name="height">89</param>
-						<param name="align">left</param>
-						<param name="textoffset">21</param>
-					</include>
+					<control type="button" id="308">
+						<label>$LOCALIZE[31125]</label>
+						<height>80</height>
+						<align>left</align>
+						<textoffsetx>21</textoffsetx>
+						<width>930</width>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					</control>
 				</control>
 			</control>
 		</control>

@@ -5,196 +5,220 @@
 	<controls>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include>dialog_background</include>
-			<!-- Dialog items /-->
+			<include>dialog_fade</include>
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>1545</width>
+			<height>715</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="label">$LOCALIZE[31030]</param>
+				<param name="width">1545</param>
+				<param name="height">715</param>
+			</include>
+			<!-- Addon information /-->
 			<control type="group">
-				<width>1571</width>
-				<height>741</height>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
-				<include content="dialog_panel">
-					<param name="label">$LOCALIZE[31030]</param>
-					<param name="width">1571</param>
-					<param name="height">741</param>
-				</include>
-				<!-- Addon information /-->
-				<control type="group">
-					<top>123</top>
-					<left>529</left>
-					<!-- Screenshot panel /-->
+				<top>110</top>
+				<left>516</left>
+				<!-- Screenshot panel /-->
+				<control type="image">
+					<height>228</height>
+					<width>1008</width>
+					<texture colordiffuse="primary900">colors/white.png</texture>
+				</control>
+				<!-- No screenshots avaible error message/-->
+				<control type="grouplist">
+					<usecontrolcoords>true</usecontrolcoords>
+					<orientation>vertical</orientation>
+					<height>228</height>
+					<width>1008</width>
+					<align>center</align>
+					<itemgap>-13</itemgap>
+					<visible>!Integer.IsGreater(Container(50).NumItems,0)</visible>
 					<control type="image">
-						<height>228</height>
+						<top>-21</top>
+						<aspectratio>keep</aspectratio>
+						<height>144</height>
 						<width>1008</width>
-						<texture colordiffuse="secondary700">colors/white.png</texture>
+						<texture colordiffuse="text300">icons/hidden.png</texture>
 					</control>
-					<!-- No screenshots avaible error message/-->
-					<control type="grouplist">
-						<usecontrolcoords>true</usecontrolcoords>
-						<orientation>vertical</orientation>
-						<height>228</height>
+					<control type="label">
+						<height>26</height>
+						<textcolor>text300</textcolor>
+						<label>$LOCALIZE[31031]</label>
 						<width>1008</width>
 						<align>center</align>
-						<itemgap>-21</itemgap>
-						<visible>!Integer.IsGreater(Container(50).NumItems,0)</visible>
-						<control type="image">
-							<top>-21</top>
-							<aspectratio>keep</aspectratio>
-							<height>144</height>
-							<width>1008</width>
-							<texture colordiffuse="text300">icons/hidden.png</texture>
-						</control>
-						<control type="label">
-							<height>26</height>
-							<textcolor>text300</textcolor>
-							<label>$LOCALIZE[31031]</label>
-							<width>1008</width>
-							<align>center</align>
-						</control>
 					</control>
-					<!-- Addon metadata /-->
-					<control type="grouplist">
-						<top>249</top>
-						<orientation>vertical</orientation>
-						<itemgap>8</itemgap>
-						<usecontrolcoords>true</usecontrolcoords>
-						<control type="label">
-							<height>25</height>
-							<label>$INFO[ListItem.AddonName]</label>
-							<font>small_header</font>
-							<width>1008</width>
-						</control>
-						<control type="label">
-							<visible>!String.IsEmpty(ListItem.AddonVersion) + !String.IsEmpty(ListItem.AddonCreator)</visible>
-							<height>25</height>
-							<label>$LOCALIZE[31032] $INFO[ListItem.AddonVersion], $LOCALIZE[31033] $INFO[ListItem.AddonCreator]</label>
-							<font>common_light</font>
-							<textcolor>text200</textcolor>
-							<width>1008</width>
-						</control>
-						<control type="textbox">
-							<top>-5</top>
-							<height>100</height>
-							<label>$INFO[ListItem.AddonSummary]</label>
-							<width>1008</width>
-						</control>
-					</control>
-					<!-- Addon images /-->
-					<!-- At this point, not focusable /-->
-					<control type="list" id="50">
-						<top>21</top>
-						<height>186</height>
+				</control>
+				<!-- Addon metadata /-->
+				<control type="grouplist">
+					<top>249</top>
+					<orientation>vertical</orientation>
+					<itemgap>13</itemgap>
+					<usecontrolcoords>true</usecontrolcoords>
+					<control type="label">
+						<height>25</height>
+						<label>$INFO[ListItem.AddonName]</label>
+						<font>montserrat_bold_23</font>
 						<width>1008</width>
-						<orientation>horizontal</orientation>
-						<itemlayout width="329" height="186">
-							<control type="group">
-								<left>21</left>
-								<control type="image">
-									<top>-5</top>
-									<left>-5</left>
-									<height>196</height>
-									<width>318</width>
-									<texture>$INFO[ListItem.Icon]</texture>
-									<aspectratio>scale</aspectratio>
-									<bordersize>5</bordersize>
-									<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
-								</control>
-							</control>
-						</itemlayout>
-						<focusedlayout width="329" height="186">
-							<control type="group">
-								<left>21</left>
-								<control type="image">
-									<top>-5</top>
-									<left>-5</left>
-									<height>196</height>
-									<width>318</width>
-									<texture>$INFO[ListItem.Icon]</texture>
-									<aspectratio>scale</aspectratio>
-									<bordersize>5</bordersize>
-									<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
-								</control>
-							</control>
-						</focusedlayout>
+					</control>
+					<control type="label">
+						<visible>!String.IsEmpty(ListItem.AddonVersion) + !String.IsEmpty(ListItem.AddonCreator)</visible>
+						<height>23</height>
+						<label>$LOCALIZE[31032] $INFO[ListItem.AddonVersion], $LOCALIZE[31033] $INFO[ListItem.AddonCreator]</label>
+						<textcolor>text300</textcolor>
+						<width>1008</width>
+						<font>opensans_regular_23</font>
+					</control>
+					<control type="textbox">
+						<font>opensans_regular_23</font>
+						<textcolor>text200</textcolor>
+						<top>-5</top>
+						<height>100</height>
+						<label>$INFO[ListItem.AddonSummary]</label>
+						<width>1008</width>
 					</control>
 				</control>
-				<control type="group">
-					<top>118</top>
-					<left>29</left>
-					<include content="common_poster">
-						<param name="height">484</param>
-						<param name="width">484</param>
-						<param name="bordersize">5</param>
-						<param name="bordertexture">shadows/shadow_5px.png</param>
-						<param name="texture_var">$INFO[ListItem.Icon]</param>
-					</include>
-				</control>
-				<!-- Main list /-->
-				<control type="grouplist" id="100">
+				<!-- Addon images /-->
+				<!-- At this point, not focusable /-->
+				<control type="list" id="50">
+					<top>21</top>
+					<height>186</height>
+					<width>1008</width>
 					<orientation>horizontal</orientation>
-					<top>618</top>
-					<left>34</left>
-					<itemgap>21</itemgap>
-					<!-- Run /-->
-					<include content="dialog_button">
-						<param name="height">89</param>
-						<param name="width">233</param>
-						<param name="id">12</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
-					<!-- Install /-->
-					<include content="dialog_button">
-						<param name="height">89</param>
-						<param name="width">233</param>
-						<param name="id">6</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
-					<!-- Enable / Disable /-->
-					<control type="radiobutton" id="7">
-						<disabledcolor>text900</disabledcolor>
-						<selected>!String.StartsWith(Control.GetLabel(7),Enable)</selected>
-						<width>233</width>
-						<height>89</height>
-						<texturenofocus border="5" colordiffuse="main900">shapes/white_rounded.png</texturenofocus>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-						<align>left</align>
-						<radiowidth>73</radiowidth>
-						<radioheight>73</radioheight>
-						<radioposy>11</radioposy>
-						<radioposx>170</radioposx>
-					</control>
-					<!-- Update /-->
-					<include content="dialog_button">
-						<param name="height">89</param>
-						<param name="width">233</param>
-						<param name="id">8</param>
-						<param name="label">$LOCALIZE[31034]</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
-					<!-- Auto-Update /-->
-					<control type="radiobutton" id="13">
-						<disabledcolor>text900</disabledcolor>
-						<width>233</width>
-						<height>89</height>
-						<texturenofocus border="5" colordiffuse="main900">shapes/white_rounded.png</texturenofocus>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-						<align>left</align>
-						<radiowidth>73</radiowidth>
-						<radioheight>73</radioheight>
-						<radioposy>11</radioposy>
-						<radioposx>170</radioposx>
-					</control>
-					<!-- Settings /-->
-					<include content="dialog_button">
-						<param name="height">89</param>
-						<param name="width">233</param>
-						<param name="id">9</param>
-						<param name="label">$LOCALIZE[31009]</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
+					<itemlayout width="329" height="186">
+						<control type="group">
+							<left>21</left>
+							<control type="image">
+								<top>-5</top>
+								<left>-5</left>
+								<height>196</height>
+								<width>318</width>
+								<texture>$INFO[ListItem.Icon]</texture>
+								<aspectratio>scale</aspectratio>
+								<bordersize>5</bordersize>
+								<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout width="329" height="186">
+						<control type="group">
+							<left>21</left>
+							<control type="image">
+								<top>-5</top>
+								<left>-5</left>
+								<height>196</height>
+								<width>318</width>
+								<texture>$INFO[ListItem.Icon]</texture>
+								<aspectratio>scale</aspectratio>
+								<bordersize>5</bordersize>
+								<bordertexture border="5">shadows/shadow_5px.png</bordertexture>
+							</control>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="group">
+				<top>105</top>
+				<left>16</left>
+				<include content="common_poster">
+					<param name="height">484</param>
+					<param name="width">484</param>
+					<param name="bordersize">5</param>
+					<param name="bordertexture">shadows/shadow_5px.png</param>
+					<param name="texture_var">$INFO[ListItem.Icon]</param>
+				</include>
+			</control>
+			<!-- Main list /-->
+			<control type="grouplist" id="100">
+				<orientation>horizontal</orientation>
+				<top>605</top>
+				<left>21</left>
+				<itemgap>21</itemgap>
+				<!-- Run /-->
+				<control type="button" id="12">
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>233</width>
+					<height>89</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<!-- Install /-->
+				<control type="button" id="6">
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>233</width>
+					<height>89</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<!-- Enable / Disable /-->
+				<control type="radiobutton" id="7">
+					<visible>false</visible>
+				</control>
+				<control type="radiobutton" id="70">
+					<label>$VAR[addon_enable_var]</label>
+					<disabledcolor>text400</disabledcolor>
+					<selected>!String.StartsWith(Control.GetLabel(7),Enable)</selected>
+					<onclick>SendClick(7)</onclick>
+					<width>233</width>
+					<height>89</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>left</align>
+					<radiowidth>73</radiowidth>
+					<radioheight>73</radioheight>
+					<radioposy>11</radioposy>
+					<radioposx>170</radioposx>
+				</control>
+				<!-- Update /-->
+				<control type="button" id="8">
+					<label>$LOCALIZE[31034]</label>
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>233</width>
+					<height>89</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<!-- Auto-Update /-->
+				<control type="radiobutton" id="13">
+					<disabledcolor>text400</disabledcolor>
+					<width>233</width>
+					<height>89</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>left</align>
+					<radiowidth>73</radiowidth>
+					<radioheight>73</radioheight>
+					<radioposy>11</radioposy>
+					<radioposx>170</radioposx>
+				</control>
+				<!-- Settings /-->
+				<control type="button" id="9">
+					<label>$LOCALIZE[31009]</label>
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>233</width>
+					<height>89</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
 				</control>
 			</control>
 		</control>

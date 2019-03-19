@@ -2,46 +2,60 @@
 <window>
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">9000</defaultcontrol>
+	<onunload condition="String.IsEmpty(Window(Home).Property(SkinInitAtlas))">ActivateWindow(Startup.xml)</onunload>
 	<controls>
-		<include>default_background</include>
 		<control type="group">
 			<include>common_window_animation</include>
+			<include>dialog_background</include>
 			<!-- Dialog labels /-->
 			<control type="grouplist">
 				<height>1080</height>
 				<align>center</align>
 				<orientation>vertical</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
-				<itemgap>18</itemgap>
+				<itemgap>21</itemgap>
 				<control type="label" id="1">
-					<height>24</height>
+					<height>23</height>
 					<align>center</align>
-					<font>small_header</font>
+					<font>montserrat_bold_23</font>
 				</control>
 				<!-- Dialog text /-->
 				<control type="textbox" id="9">
 					<left>613</left>
 					<align>center</align>
 					<width>692</width>
-					<height max="300">auto</height>
+					<height min="24" max="300">auto</height>
+					<textcolor>text300</textcolor>
 				</control>
 				<control type="grouplist" id="9000">
-					<height>73</height>
+					<height>80</height>
 					<align>center</align>
 					<orientation>horizontal</orientation>
 					<itemgap>21</itemgap>
-					<include content="dialog_button">
-						<param name="id">11</param>
-						<param name="width">243</param>
-						<param name="label">$LOCALIZE[31039]</param>
-						<param name="texturecolor">main900</param>
-					</include>
-					<include content="dialog_button">
-						<param name="id">10</param>
-						<param name="width">243</param>
-						<param name="label">$LOCALIZE[31040]</param>
-						<param name="texturecolor">main900</param>
-					</include>
+					<control type="button" id="11">
+						<label>$LOCALIZE[31039]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>233</width>
+						<height>80</height>
+						<texturenofocus border="10" colordiffuse="primary700">shapes/white_rounded_10.png</texturenofocus>
+						<texturefocus border="10" colordiffuse="focus">shapes/white_rounded_10.png</texturefocus>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="button" id="10">
+						<label>$LOCALIZE[31040]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>233</width>
+						<height>80</height>
+						<texturenofocus border="10" colordiffuse="primary700">shapes/white_rounded_10.png</texturenofocus>
+						<texturefocus border="10" colordiffuse="focus">shapes/white_rounded_10.png</texturefocus>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
 				</control>
 			</control>
 		</control>

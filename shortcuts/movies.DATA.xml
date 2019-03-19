@@ -15,6 +15,13 @@
 		<defaultID>movies_recently</defaultID>
 	</shortcut>
 	<shortcut>
+		<label>$LOCALIZE[31219]</label>
+		<label2>Common Shortcut</label2>
+		<action>ActivateWindow(VideoLibrary,special://skin/playlists/randommovies.xsp,return)</action>
+		<icon>special://skin/media/icons/question.png</icon>
+		<defaultID>movies_random</defaultID>
+	</shortcut>
+	<shortcut>
 		<label>$LOCALIZE[31012]</label>
 		<label2>Common Shortcut</label2>
 		<action>ActivateWindow(Videos,videodb://movies/genres/,return)</action>

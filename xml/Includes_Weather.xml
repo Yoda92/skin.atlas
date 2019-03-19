@@ -10,7 +10,7 @@
 				<control type="image">
 					<height>365</height>
 					<width>285</width>
-					<texture border="5" colordiffuse="blue900">shapes/white_rounded.png</texture>
+					<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
 				</control>
 				<control type="label">
 					<top>21</top>
@@ -18,7 +18,7 @@
 					<width>285</width>
 					<height>26</height>
 					<align>center</align>
-					<font>common_text_2</font>
+					<font>opensans_semibold_24</font>
 				</control>
 				<control type="image">
 					<top>63</top>
@@ -42,7 +42,7 @@
 					<width>285</width>
 					<height>26</height>
 					<align>center</align>
-					<textcolor>text150</textcolor>
+					<textcolor>text200</textcolor>
 				</control>
 			</control>
 		</definition>

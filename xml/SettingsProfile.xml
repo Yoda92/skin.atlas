@@ -1,113 +1,119 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
-	<defaultcontrol>10</defaultcontrol>
+	<defaultcontrol always="true">10</defaultcontrol>
+	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=1000&amp;group=mainmenu|powermenu)</onunload>
 	<controls>
 		<include>default_background</include>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include content="default_header_label">
-				<param name="label">$LOCALIZE[31126]</param>
+			<include>dialog_fade</include>
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>1456</width>
+			<height>691</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">1456</param>
+				<param name="height">691</param>
+				<param name="label">$LOCALIZE[31139]</param>
 			</include>
-			<include>clock</include>
-			<include>common_settings_panel</include>
-			<control type="group">
-				<!-- Left list /-->
-				<control type="grouplist" id="10">
-					<onright>2</onright>
-					<usecontrolcoords>true</usecontrolcoords>
-					<itemgap>-42</itemgap>
-					<top>164</top>
-					<left>164</left>
-					<width>560</width>
-					<height>752</height>
-					<control type="group" id="110">
-						<height>42</height>
-						<control type="image">
-							<visible>ControlGroup(10).HasFocus(11) + ControlGroup(2).HasFocus()</visible>
-							<width>560</width>
-							<height>131</height>
-							<texture border="26" colordiffuse="main700">shapes/white_rounded_bar.png</texture>
-						</control>
+			<!-- Background panels /-->
+			<control type="image">
+				<top>110</top>
+				<left>21</left>
+				<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+				<height>560</height>
+				<width>464</width>
+			</control>
+			<control type="image">
+				<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+				<top>110</top>
+				<left>505</left>
+				<height>560</height>
+				<width>930</width>
+			</control>
+			<control type="grouplist" id="10">
+				<onright condition="ControlGroup(10).HasFocus(11)">3</onright>
+				<onright condition="ControlGroup(10).HasFocus(12)">2</onright>
+				<top>110</top>
+				<left>21</left>
+				<height>560</height>
+				<width>464</width>
+				<usecontrolcoords>true</usecontrolcoords>
+				<include content="skin_settings_button_header">
+					<param name="id">11</param>
+					<param name="footer_id">3</param>
+					<param name="label">$LOCALIZE[31127]</param>
+				</include>
+				<include content="skin_settings_button_header">
+					<param name="id">12</param>
+					<param name="footer_id">2</param>
+					<param name="label">$LOCALIZE[31128]</param>
+				</include>
+			</control>
+			<control type="grouplist" id="3">
+				<usecontrolcoords>true</usecontrolcoords>
+				<visible>ControlGroup(10).HasFocus(11)</visible>
+				<onleft>10</onleft>
+				<top>110</top>
+				<left>505</left>
+				<height>560</height>
+				<width>930</width>
+				<orientation>vertical</orientation>
+				<control type="button" id="5">
+					<label>$LOCALIZE[31129]</label>
+					<width>930</width>
+					<height>80</height>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<textwidth>888</textwidth>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				</control>
+				<control type="radiobutton" id="4">
+					<label>$LOCALIZE[31130]</label>
+					<width>930</width>
+					<height>80</height>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<textwidth>888</textwidth>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<radiowidth>80</radiowidth>
+					<radioheight>80</radioheight>
+					<radioposx>856</radioposx>
+				</control>
+			</control>
+			<control type="panel" id="2">
+				<visible>ControlGroup(10).HasFocus(12)</visible>
+				<onleft>10</onleft>
+				<top>110</top>
+				<left>505</left>
+				<height>560</height>
+				<width>930</width>
+				<orientation>vertical</orientation>
+				<itemlayout height="80" width="930">
+					<control type="label">
+						<left>21</left>
+						<width>888</width>
+						<height>80</height>
+						<label>$INFO[ListItem.Label]</label>
 					</control>
-					<include content="common_settings_button_header">
-						<param name="id">11</param>
-						<param name="label">$LOCALIZE[31127]</param>
-					</include>
-					<control type="group" id="120">
-						<height>42</height>
-						<control type="image">
-							<visible>ControlGroup(10).HasFocus(12) + Control.HasFocus(2)</visible>
-							<width>560</width>
-							<height>131</height>
-							<texture border="26" colordiffuse="main700">shapes/white_rounded_bar.png</texture>
-						</control>
+				</itemlayout>
+				<focusedlayout height="80" width="930">
+					<control type="image">
+						<height>80</height>
+						<width>930</width>
+						<texture border="5" colordiffuse="focus">shapes/white_rounded.png</texture>
 					</control>
-					<include content="common_settings_button_header">
-						<param name="id">12</param>
-						<param name="label">$LOCALIZE[31128]</param>
-					</include>
-				</control>
-				<!-- Right list(1) /-->
-				<!-- Right list (1) and (2) are bound to each individual left list item /-->
-				<control type="list" id="2">
-					<visible>ControlGroup(10).HasFocus(12)</visible>
-					<onleft>10</onleft>
-					<top>164</top>
-					<left>744</left>
-					<width>1012</width>
-					<height>752</height>
-					<itemlayout height="89" width="973">
-						<control type="group">
-							<top>21</top>
-							<left>21</left>
-							<control type="label">
-								<left>21</left>
-								<width>889</width>
-								<height>89</height>
-								<label>$INFO[ListItem.Label]</label>
-							</control>
-						</control>
-					</itemlayout>
-					<focusedlayout height="89" width="973">
-						<control type="group">
-							<top>21</top>
-							<left>21</left>
-							<control type="image">
-								<visible>Control.HasFocus(2)</visible>
-								<width>931</width>
-								<height>89</height>
-								<texture border="5" colordiffuse="main500">shapes/white_rounded.png</texture>
-							</control>
-							<control type="label">
-								<left>21</left>
-								<width>889</width>
-								<height>89</height>
-								<align>left</align>
-								<label>$INFO[ListItem.Label]</label>
-							</control>
-						</control>
-					</focusedlayout>
-				</control>
-				<!-- Right list(2) /-->
-				<control type="grouplist" id="2">
-					<visible>ControlGroup(10).HasFocus(11)</visible>
-					<onleft>10</onleft>
-					<usecontrolcoords>true</usecontrolcoords>
-					<itemgap>-42</itemgap>
-					<top>164</top>
-					<left>744</left>
-					<width>1012</width>
-					<height>752</height>
-					<include content="common_settings_button_footer">
-						<param name="id">5</param>
-						<param name="label">$LOCALIZE[31129]</param>
-					</include>
-					<include content="common_settings_radiobutton_footer">
-						<param name="id">4</param>
-						<param name="label">$LOCALIZE[31130]</param>
-					</include>
-				</control>
+					<control type="label">
+						<left>21</left>
+						<width>888</width>
+						<height>80</height>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
 			</control>
 		</control>
 	</controls>

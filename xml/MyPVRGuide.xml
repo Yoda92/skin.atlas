@@ -8,9 +8,6 @@
 		<include>default_background</include>
 		<control type="group">
 			<include>common_window_animation</include>
-			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
-				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
-			</animation>
 			<include>view_pvr_guide</include>
 			<include content="default_header_label">
 				<param name="label">$LOCALIZE[31112]</param>

@@ -5,75 +5,76 @@
 	<controls>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include>dialog_background</include>
-			<!-- Dialog items /-->
+			<include>dialog_fade</include>
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>1456</width>
+			<height>611</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">1456</param>
+				<param name="height">611</param>
+				<param name="label_id">1</param>
+				<param name="label">$LOCALIZE[31041]</param>
+			</include>
+			<!-- Background second panel /-->
+			<control type="image">
+				<top>110</top>
+				<left>432</left>
+				<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+				<height>480</height>
+				<width>1003</width>
+			</control>
+			<!-- List image /-->
 			<control type="group">
-				<width>1482</width>
-				<height>691</height>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
-				<include content="dialog_panel">
-					<param name="width">1482</param>
-					<param name="height">691</param>
-					<param name="label_id">1</param>
-					<param name="label">$LOCALIZE[31041]</param>
+				<top>105</top>
+				<left>16</left>
+				<include content="common_poster">
+					<param name="fadetime">200</param>
+					<param name="height">490</param>
+					<param name="width">400</param>
+					<param name="bordersize">5</param>
+					<param name="texture_var">$INFO[Container(450).ListItem.Icon]</param>
+					<param name="aspectratio">keep</param>
 				</include>
-				<!-- Background second panel /-->
+			</control>
+			<!-- File list /-->
+			<include content="dialog_list">
+				<param name="id">450</param>
+				<param name="width">1003</param>
+				<param name="height">480</param>
+				<param name="top">123</param>
+				<param name="left">445</param>
+				<param name="label_width">1011</param>
+			</include>
+			<!-- No Favourites /-->
+			<control type="grouplist">
+				<top>100</top>
+				<left>432</left>
+				<usecontrolcoords>true</usecontrolcoords>
+				<orientation>vertical</orientation>
+				<width>1003</width>
+				<height>480</height>
+				<align>center</align>
+				<itemgap>-5</itemgap>
+				<visible>!Integer.IsGreater(Container(450).NumItems,0)</visible>
+				<include>common_visible_animation</include>
 				<control type="image">
-					<top>123</top>
-					<left>445</left>
-					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
-					<height>534</height>
-					<width>1003</width>
+					<top>-21</top>
+					<aspectratio>keep</aspectratio>
+					<height>144</height>
+					<width>1008</width>
+					<texture colordiffuse="text300">icons/hidden.png</texture>
 				</control>
-				<!-- List image /-->
-				<control type="group">
-					<top>118</top>
-					<left>29</left>
-					<include content="common_poster">
-						<param name="fadetime">200</param>
-						<param name="height">544</param>
-						<param name="width">400</param>
-						<param name="bordersize">5</param>
-						<param name="bordertexture">shadows/shadow_5px.png</param>
-						<param name="texture_var">$INFO[Container(450).ListItem.Icon]</param>
-					</include>
-				</control>
-				<!-- File list /-->
-				<include content="dialog_list">
-					<param name="id">450</param>
-					<param name="width">1003</param>
-					<param name="height">534</param>
-					<param name="top">123</param>
-					<param name="left">445</param>
-					<param name="label_width">1011</param>
-				</include>
-				<!-- No Favourites /-->
-				<control type="grouplist">
-					<top>113</top>
-					<left>445</left>
-					<usecontrolcoords>true</usecontrolcoords>
-					<orientation>vertical</orientation>
-					<width>1003</width>
-					<height>534</height>
+				<control type="label">
+					<height>26</height>
+					<textcolor>text300</textcolor>
+					<label>$LOCALIZE[31042]</label>
+					<width>1008</width>
 					<align>center</align>
-					<itemgap>-21</itemgap>
-					<visible>!Integer.IsGreater(Container(450).NumItems,0)</visible>
-					<include>common_visible_animation</include>
-					<control type="image">
-						<top>-21</top>
-						<aspectratio>keep</aspectratio>
-						<height>144</height>
-						<width>1008</width>
-						<texture colordiffuse="text300">icons/hidden.png</texture>
-					</control>
-					<control type="label">
-						<height>26</height>
-						<textcolor>text300</textcolor>
-						<label>$LOCALIZE[31042]</label>
-						<width>1008</width>
-						<align>center</align>
-					</control>
 				</control>
 			</control>
 		</control>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="view_54_alt_landscape_list">
+		<control type="group">
+			<include>window_zoom_animation</include>
+			<include>view_zoom_animation</include>
+			<visible>Control.IsVisible(54)</visible>
+			<!-- Poster /-->
+			<control type="image">
+				<aspectratio align="left" scalediffuse="false">scale</aspectratio>
+				<fadetime>300</fadetime>
+				<height>1080</height>
+				<width>720</width>
+				<texture colordiffuse="white500" diffuse="miscellaneous/home_diffuse.png">$INFO[Container().ListItem.Art(fanart)]</texture>
+			</control>
+			<!-- Vertical /-->
+			<control type="list" id="54">
+				<left>734</left>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+				<pagecontrol>9001</pagecontrol>
+				<viewtype label="Alt. Landscape">wide</viewtype>
+				<onleft>9000</onleft>
+				<onright>9001</onright>
+				<visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+				<height>1080</height>
+				<itemlayout height="271" width="687">
+					<control type="group">
+						<top>16</top>
+						<left>5</left>
+						<include content="common_poster">
+							<param name="width">444</param>
+							<param name="height">250</param>
+							<param name="fadetime">0</param>
+							<param name="bordersize">5</param>
+							<param name="bordertexture">shadows/shadow_5px.png</param>
+							<param name="texture_var">$VAR[common_landscape_var]</param>
+							<param name="aspectratio">scale</param>
+						</include>
+						<control type="group">
+							<left>460</left>
+							<height>250</height>
+							<width>687</width>
+							<!-- Title /-->
+							<control type="label">
+								<top>21</top>
+								<visible>!String.IsEmpty(ListItem.Title) + !ListItem.IsParentFolder</visible>
+								<height>25</height>
+								<width>687</width>
+								<label>$VAR[list_label_var]</label>
+								<font>montserrat_bold_23</font>
+							</control>
+							<!-- Plot /-->
+							<control type="textbox">
+								<textcolor>text300</textcolor>
+								<top>57</top>
+								<visible>!String.IsEmpty(ListItem.Plot)</visible>
+								<height max="100">auto</height>
+								<width>687</width>
+								<label>$VAR[plot_var]</label>
+							</control>
+							<control type="label">
+								<textcolor>text200</textcolor>
+								<top>204</top>
+								<top>21</top>
+								<visible>!String.IsEmpty(ListItem.Episode) + !String.IsEmpty(ListItem.Season) + !ListItem.IsParentFolder</visible>
+								<height>25</height>
+								<width>687</width>
+								<label>S$INFO[ListItem.Season]: E$INFO[ListItem.Episode]</label>
+								<font>opensans_semibold_23</font>
+							</control>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout height="271" width="687">
+					<control type="group">
+						<top>16</top>
+						<left>5</left>
+						<control type="group">
+							<width>444</width>
+							<height>250</height>
+							<animation type="Focus">
+								<effect type="zoom" start="100" end="103" time="89" center="auto"/>
+							</animation>
+							<animation type="UnFocus">
+								<effect type="zoom" start="103" end="100" time="89" center="auto"/>
+							</animation>
+							<control type="image">
+								<animation type="Focus">
+									<effect type="fade" start="0" end="100" time="144" easing="out"/>
+								</animation>
+								<animation type="UnFocus">
+									<effect type="fade" start="100" end="0" time="144" easing="out"/>
+								</animation>
+								<width>444</width>
+								<height>250</height>
+								<texture border="10" colordiffuse="focus_amplified">shapes/white_rounded_semi.png</texture>
+							</control>
+							<include content="common_poster">
+								<param name="width">444</param>
+								<param name="height">250</param>
+								<param name="fadetime">0</param>
+								<param name="bordersize">5</param>
+								<param name="bordertexture">shadows/shadow_5px.png</param>
+								<param name="texture_var">$VAR[common_landscape_var]</param>
+								<param name="aspectratio">scale</param>
+							</include>
+						</control>
+						<control type="group">
+							<left>460</left>
+							<height>250</height>
+							<width>687</width>
+							<!-- Title /-->
+							<control type="label">
+								<top>21</top>
+								<visible>!String.IsEmpty(ListItem.Title) + !ListItem.IsParentFolder</visible>
+								<height>25</height>
+								<width>687</width>
+								<label>$VAR[list_label_var]</label>
+								<font>montserrat_bold_23</font>
+							</control>
+							<!-- Plot /-->
+							<control type="textbox">
+								<textcolor>text300</textcolor>
+								<top>57</top>
+								<visible>!String.IsEmpty(ListItem.Plot)</visible>
+								<height max="100">auto</height>
+								<width>687</width>
+								<label>$VAR[plot_var]</label>
+							</control>
+							<control type="label">
+								<textcolor>text200</textcolor>
+								<top>204</top>
+								<top>21</top>
+								<visible>!String.IsEmpty(ListItem.Episode) + !String.IsEmpty(ListItem.Season) + !ListItem.IsParentFolder</visible>
+								<height>25</height>
+								<width>687</width>
+								<label>S$INFO[ListItem.Season]: E$INFO[ListItem.Episode]</label>
+								<font>opensans_semibold_23</font>
+							</control>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+</includes>

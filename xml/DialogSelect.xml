@@ -2,14 +2,19 @@
 <window type="dialog">
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">3</defaultcontrol>
+	<zorder>5</zorder>
 	<controls>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include>dialog_background</include>
+			<include>dialog_fade</include>
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
 			<!-- Dialog items /-->
 			<include condition="Window.IsActive(gameviewmode)">GameDialogSelectView</include>
 			<include condition="Window.IsActive(gamevideofilter)">GameDialogSelectFilter</include>
-			<include condition="!Window.IsActive(gamevideofilter)+!Window.IsActive(gameviewmode)">DefaultDialogSelect</include>
+			<include condition="!Window.IsActive(gamevideofilter) + !Window.IsActive(gameviewmode)">DefaultDialogSelect</include>
 		</control>
 	</controls>
 </window>

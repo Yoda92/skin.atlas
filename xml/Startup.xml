@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<onload>AlarmClock(HomeAlarm,ReplaceWindow(home),00:03,silent,false)</onload>
+	<onload>AlarmClock(HomeAlarm,ReplaceWindow(home),00:05,silent,false)</onload>
+	<onload>SetProperty(SkinInitAtlas,1,home)</onload>
 	<controls>
 		<include>default_background</include>
-		<control type="image">
+		<control type="group">
 			<animation type="WindowClose">
-				<effect type="fade" start="100" end="0" time="300" tween="quadratic"/>
+				<effect type="fade" start="100" end="0" time="200" easing="out"/>
 			</animation>
-			<width>100%</width>
-			<height>100%</height>
-			<texture>miscellaneous/splash.png</texture>
+			<include>dialog_background</include>
+			<control type="image">
+				<aspectratio>center</aspectratio>
+				<width>100%</width>
+				<height>100%</height>
+				<texture>miscellaneous/splash.png</texture>
+			</control>
 		</control>
 	</controls>
 </window>

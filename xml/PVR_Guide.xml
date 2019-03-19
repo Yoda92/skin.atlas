@@ -7,20 +7,20 @@
 				<top>224</top>
 				<width>1920</width>
 				<height>623</height>
-				<texture colordiffuse="blue900">colors/white.png</texture>
+				<texture colordiffuse="primary1000">colors/white.png</texture>
 			</control>
 			<!-- Shadow /-->
 			<control type="image">
 				<top>219</top>
 				<height>5</height>
 				<width>1920</width>
-				<texture flipy="true">shadows/shadowline_5px_down.png</texture>
+				<texture flipy="true" colordiffuse="white300">shadows/shadowline_5px_down.png</texture>
 			</control>
 			<control type="image">
 				<top>847</top>
 				<height>5</height>
 				<width>1920</width>
-				<texture>shadows/shadowline_5px_down.png</texture>
+				<texture colordiffuse="white300">shadows/shadowline_5px_down.png</texture>
 			</control>
 			<control type="group">
 				<top>873</top>
@@ -33,13 +33,13 @@
 						<visible>!String.IsEmpty(ListItem.StartTime) + !String.IsEmpty(ListItem.EndTime)</visible>
 						<label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
 						<textcolor>text300</textcolor>
-						<font>small_header</font>
+						<font>montserrat_bold_24</font>
 						<height>30</height>
 						<width>auto</width>
 					</control>
 					<control type="label">
 						<label>$INFO[ListItem.Title]</label>
-						<font>small_header</font>
+						<font>montserrat_bold_24</font>
 						<height>30</height>
 						<width>auto</width>
 					</control>
@@ -66,14 +66,14 @@
 				<orientation>vertical</orientation>
 				<timeblocks>34</timeblocks>
 				<rulerunit>6</rulerunit>
-				<progresstexture border="5" colordiffuse="main900">shapes/white_rounded.png</progresstexture>
+				<progresstexture border="5" colordiffuse="white100">shapes/white_rounded.png</progresstexture>
 				<rulerlayout height="89" width="1810">
 					<control type="label">
 						<height>89</height>
 						<width>233</width>
 						<label>$INFO[ListItem.Label]</label>
 						<textoffsetx>21</textoffsetx>
-						<font>small_header</font>
+						<font>montserrat_bold_24</font>
 					</control>
 				</rulerlayout>
 				<channellayout height="89" width="377">
@@ -82,8 +82,8 @@
 						<width>300</width>
 						<label>[COLOR text300][B]$INFO[ListItem.ChannelNumberLabel][/B][/COLOR]     $INFO[ListItem.ChannelName]</label>
 						<textoffsetx>21</textoffsetx>
-						<font>common_text_2</font>
-						<textcolor>text150</textcolor>
+						<font>opensans_semibold_24</font>
+						<textcolor>text100</textcolor>
 					</control>
 					<control type="image">
 						<right>21</right>
@@ -99,7 +99,7 @@
 						<width>300</width>
 						<label>[COLOR text300][B]$INFO[ListItem.ChannelNumberLabel][/B][/COLOR]     $INFO[ListItem.ChannelName]</label>
 						<textoffsetx>21</textoffsetx>
-						<font>common_text_2</font>
+						<font>opensans_semibold_24</font>
 					</control>
 					<control type="image">
 						<right>21</right>
@@ -113,21 +113,21 @@
 					<control type="image" id="2">
 						<height>85</height>
 						<width>85</width>
-						<texture border="5" colordiffuse="blue800">shapes/white_rounded.png</texture>
+						<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
 					</control>
 					<control type="label" id="1">
 						<height>85</height>
 						<width>auto</width>
 						<label>$INFO[ListItem.Label]</label>
 						<textoffsetx>21</textoffsetx>
-						<textcolor>text150</textcolor>
+						<textcolor>text100</textcolor>
 					</control>
 				</itemlayout>
 				<focusedlayout height="89" width="89">
 					<control type="image" id="2">
 						<height>85</height>
 						<width>85</width>
-						<texture border="5" colordiffuse="main500">shapes/white_rounded.png</texture>
+						<texture border="5" colordiffuse="focus">shapes/white_rounded.png</texture>
 					</control>
 					<control type="label" id="1">
 						<height>85</height>

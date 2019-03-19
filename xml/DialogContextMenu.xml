@@ -5,25 +5,27 @@
 	<controls>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include>dialog_background</include>
+			<include>dialog_fade</include>
+		</control>
+		<control type="group">
+			<include>common_dialog_window_animation</include>
 			<!-- Button template /-->
 			<control type="button" id="1000">
-				<width>412</width>
+				<left>21</left>
+				<width>404</width>
 				<height>73</height>
-				<texturefocus border="5" colordiffuse="text200">shapes/white_rounded.png</texturefocus>
-				<texturenofocus border="5" colordiffuse="text800">colors/white.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				<texturenofocus colordiffuse="primary800">colors/white.png</texturenofocus>
 			</control>
-			<control type="group">
-				<width>412</width>
-				<height>734</height>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
-				<!-- Grouplist containing context menu /-->
-				<control type="grouplist" id="996">
-					<width>412</width>
-					<height max="734">auto</height>
-					<itemgap>0</itemgap>
-				</control>
+			<!-- Grouplist containing context menu /-->
+			<control type="grouplist" id="996">
+				<left>737</left>
+				<align>center</align>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+				<width>446</width>
+				<height>1080</height>
+				<itemgap>0</itemgap>
 			</control>
 		</control>
 	</controls>

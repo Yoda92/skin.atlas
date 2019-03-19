@@ -6,21 +6,43 @@
 		<include>default_background</include>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include content="default_header_label">
+			<include>dialog_fade</include>
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>1456</width>
+			<height>691</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">1456</param>
+				<param name="height">691</param>
 				<param name="label">$LOCALIZE[31139]</param>
 			</include>
-			<include>clock</include>
-			<include>common_settings_panel</include>
+			<!-- Background panels /-->
+			<control type="image">
+				<top>110</top>
+				<left>21</left>
+				<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+				<height>560</height>
+				<width>464</width>
+			</control>
+			<control type="image">
+				<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+				<top>110</top>
+				<left>505</left>
+				<height>560</height>
+				<width>930</width>
+			</control>
 			<control type="grouplist" id="10">
-				<onup>noop</onup>
-				<ondown>noop</ondown>
 				<onright condition="ControlGroup(10).HasFocus(101)">11</onright>
 				<onright condition="ControlGroup(10).HasFocus(102)">12</onright>
-				<top>164</top>
-				<left>164</left>
-				<width>560</width>
-				<height>752</height>
-				<itemgap>-42</itemgap>
+				<top>110</top>
+				<left>21</left>
+				<height>560</height>
+				<width>464</width>
+				<usecontrolcoords>true</usecontrolcoords>
 				<!-- Home -->
 				<include content="skin_settings_button_header">
 					<param name="id">101</param>
@@ -35,76 +57,166 @@
 				</include>
 			</control>
 			<control type="grouplist" id="11">
+				<usecontrolcoords>true</usecontrolcoords>
 				<visible>ControlGroup(10).HasFocus(101)</visible>
 				<onleft>10</onleft>
-				<usecontrolcoords>true</usecontrolcoords>
-				<itemgap>-42</itemgap>
-				<top>164</top>
-				<left>744</left>
-				<width>1012</width>
-				<height>752</height>
+				<top>110</top>
+				<left>505</left>
+				<height>560</height>
+				<width>930</width>
 				<orientation>vertical</orientation>
 				<!-- Configure main menu -->
-				<include content="common_settings_button_footer">
-					<param name="id">111</param>
-					<param name="label">$LOCALIZE[31141]</param>
-					<param name="onclick">RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</param>
-				</include>
-				<!-- Submenu focus -->
-				<include content="common_settings_radiobutton_footer">
-					<param name="id">112</param>
-					<param name="label">$LOCALIZE[31189] [COLOR text400][I]($LOCALIZE[31190])[/I][/COLOR]</param>
-					<param name="onclick">Skin.ToggleSetting(toggleNoSubmenu)</param>
-					<param name="selected">!Skin.HasSetting(toggleNoSubmenu)</param>
-				</include>
+				<control type="label" id="1100">
+					<textcolor>text500</textcolor>
+					<width>930</width>
+					<height>80</height>
+					<align>center</align>
+					<font>opensans_semibold_24</font>
+					<label>$LOCALIZE[31201]</label>
+				</control>
+				<!-- Configure main menu -->
+				<control type="button" id="111">
+					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+					<label>$LOCALIZE[31141]</label>
+					<width>930</width>
+					<height>80</height>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<textwidth>888</textwidth>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				</control>
+				<!-- Configure spotlight widget -->
+				<!-- Sets skin strings according to user input /-->
+				<control type="button" id="112">
+					<enable>!Skin.HasSetting(toggleSingleRowWidget) + !Skin.HasSetting(toggleNoWidget) + !Skin.HasSetting(toggleMultiRowWidget)</enable>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;grouping=widget&amp;skinWidgetPath=home.widget.content&amp;skinWidgetName=home.widget.name&amp;skinWidgetTarget=home.widget.target)</onclick>
+					<label>$LOCALIZE[31218]</label>
+					<width>930</width>
+					<height>80</height>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<textwidth>888</textwidth>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				</control>
 				<!-- Widget type -->
 				<control type="button" id="113">
-					<onclick>$PARAM[onclick]</onclick>
 					<label>$LOCALIZE[31196]</label>
 					<label2>$VAR[widget_setting_var]</label2>
-					<onclick condition="Skin.HasSetting(toggleMultiImageBackground)">Skin.ToggleSetting(toggleMultiImageBackground)</onclick>
-					<onclick condition="Skin.HasSetting(toggleMultiImageBackground)">Skin.ToggleSetting(toggleHomeWidget)</onclick>
-					<onclick condition="Skin.HasSetting(toggleHomeWidget)">Skin.ToggleSetting(toggleMultiImageBackground)</onclick>
-					<onclick condition="Skin.HasSetting(toggleHomeWidget)">Skin.ToggleSetting(toggleHomeWidget)</onclick>
-					<onclick condition="!Skin.HasSetting(toggleHomeWidget) + !Skin.HasSetting(toggleMultiImageBackground)">Skin.ToggleSetting(toggleMultiImageBackground)</onclick>
-					<width>1012</width>
-					<height>131</height>
+					<onclick condition="Skin.HasSetting(toggleNoWidget)">Skin.ToggleSetting(toggleNoWidget)</onclick>
+					<onclick condition="Skin.HasSetting(toggleNoWidget)">Skin.ToggleSetting(toggleMultiImageBackground)</onclick>
+					<onclick condition="Skin.HasSetting(toggleMultiImageBackground">Skin.ToggleSetting(toggleMultiImageBackground)</onclick>
+					<onclick condition="Skin.HasSetting(toggleMultiImageBackground)">Skin.ToggleSetting(toggleSingleRowWidget)</onclick>
+					<onclick condition="Skin.HasSetting(toggleSingleRowWidget)">Skin.ToggleSetting(toggleMultiRowWidget)</onclick>
+					<onclick condition="Skin.HasSetting(toggleSingleRowWidget)">Skin.ToggleSetting(toggleSingleRowWidget)</onclick>
+					<onclick condition="Skin.HasSetting(toggleMultiRowWidget)">Skin.ToggleSetting(toggleSpotlightWidget)</onclick>
+					<onclick condition="Skin.HasSetting(toggleMultiRowWidget)">Skin.ToggleSetting(toggleMultiRowWidget)</onclick>
+					<onclick condition="Skin.HasSetting(toggleSpotlightWidget)">Skin.ToggleSetting(toggleNoWidget)</onclick>
+					<onclick condition="Skin.HasSetting(toggleSpotlightWidget)">Skin.ToggleSetting(toggleSpotlightWidget)</onclick>
+					<onclick condition="!Skin.HasSetting(toggleSingleRowWidget) + !Skin.HasSetting(toggleNoWidget) + !Skin.HasSetting(toggleMultiRowWidget) +  !Skin.HasSetting(toggleSpotlightWidget) + !Skin.HasSetting(toggleMultiImageBackground)">Skin.ToggleSetting(toggleNoWidget)</onclick>
+					<width>930</width>
+					<height>80</height>
 					<align>left</align>
-					<textoffsetx>42</textoffsetx>
-					<textwidth>928</textwidth>
-					<texturefocus border="26" colordiffuse="main500">shapes/white_rounded_bar_shadow.png</texturefocus>
+					<textoffsetx>21</textoffsetx>
+					<textwidth>888</textwidth>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				</control>
+				<!-- Submenu type -->
+				<control type="button" id="114">
+					<label>$LOCALIZE[31206]</label>
+					<label2>$VAR[submenu_setting_var]</label2>
+					<onclick condition="Skin.HasSetting(toggleCategories)">Skin.ToggleSetting(toggleNoSubmenu)</onclick>
+					<onclick condition="Skin.HasSetting(toggleCategories)">Skin.ToggleSetting(toggleCategories)</onclick>
+					<onclick condition="Skin.HasSetting(toggleNoSubmenu)">Skin.ToggleSetting(toggleNoSubmenu)</onclick>
+					<onclick condition="Skin.HasSetting(toggleNoSubmenu)">Skin.ToggleSetting(toggleSubmenu)</onclick>
+					<onclick condition="Skin.HasSetting(toggleSubmenu)">Skin.ToggleSetting(toggleSubmenu)</onclick>
+					<onclick condition="Skin.HasSetting(toggleSubmenu)">Skin.ToggleSetting(toggleCategories)</onclick>
+					<onclick condition="!Skin.HasSetting(toggleSubmenu) + !Skin.HasSetting(toggleCategories) + !Skin.HasSetting(toggleNoSubmenu)">Skin.ToggleSetting(toggleNoSubmenu)</onclick>
+					<width>930</width>
+					<height>80</height>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<textwidth>888</textwidth>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				</control>
+				<!-- Submenu focus -->
+				<control type="radiobutton" id="115">
+					<onclick>Skin.ToggleSetting(toggleNoSubmenuFocus)</onclick>
+					<selected>!Skin.HasSetting(toggleNoSubmenuFocus)</selected>
+					<enable>Skin.HasSetting(toggleSubmenu)</enable>
+					<label>$LOCALIZE[31189] [COLOR text500][I]($LOCALIZE[31190])[/I][/COLOR]</label>
+					<width>930</width>
+					<height>80</height>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<textwidth>888</textwidth>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<radiowidth>80</radiowidth>
+					<radioheight>80</radioheight>
+					<radioposx>856</radioposx>
+				</control>
+				<control type="label" id="1101">
+					<textcolor>text500</textcolor>
+					<width>930</width>
+					<height>80</height>
+					<align>center</align>
+					<font>opensans_semibold_24</font>
+					<label>$LOCALIZE[31202]</label>
 				</control>
 				<!-- Powermenu -->
-				<include content="common_settings_button_footer">
-					<param name="id">114</param>
-					<param name="label">$LOCALIZE[31193]</param>
-					<param name="onclick">RunScript(script.skinshortcuts,type=manage&amp;group=powermenu)</param>
-				</include>
+				<control type="button" id="116">
+					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=powermenu)</onclick>
+					<label>$LOCALIZE[31193]</label>
+					<width>930</width>
+					<height>80</height>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<textwidth>888</textwidth>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				</control>
 			</control>
 			<control type="grouplist" id="12">
 				<visible>ControlGroup(10).HasFocus(102)</visible>
 				<onleft>10</onleft>
 				<usecontrolcoords>true</usecontrolcoords>
-				<itemgap>-42</itemgap>
-				<top>164</top>
-				<left>744</left>
-				<width>1012</width>
-				<height>752</height>
+				<top>110</top>
+				<left>505</left>
+				<height>560</height>
+				<width>930</width>
 				<orientation>vertical</orientation>
 				<!-- Enable noise -->
-				<include content="common_settings_radiobutton_footer">
-					<param name="id">121</param>
-					<param name="label">$LOCALIZE[31198]</param>
-					<param name="onclick">Skin.ToggleSetting(disableNoise)</param>
-					<param name="selected">!Skin.HasSetting(disableNoise)</param>
-				</include>
+				<control type="radiobutton" id="121">
+					<onclick>Skin.ToggleSetting(disableNoise)</onclick>
+					<selected>!Skin.HasSetting(disableNoise)</selected>
+					<label>$LOCALIZE[31198]</label>
+					<width>930</width>
+					<height>80</height>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<textwidth>888</textwidth>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<radiowidth>80</radiowidth>
+					<radioheight>80</radioheight>
+					<radioposx>856</radioposx>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+				</control>
 				<!-- Enable fanart in views -->
-				<include content="common_settings_radiobutton_footer">
-					<param name="id">122</param>
-					<param name="label">$LOCALIZE[31199]</param>
-					<param name="onclick">Skin.ToggleSetting(disableFanart)</param>
-					<param name="selected">!Skin.HasSetting(disableFanart)</param>
-				</include>
+				<control type="radiobutton" id="122">
+					<onclick>Skin.ToggleSetting(disableFanart)</onclick>
+					<selected>!Skin.HasSetting(disableFanart)</selected>
+					<label>$LOCALIZE[31199]</label>
+					<width>930</width>
+					<height>80</height>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<textwidth>888</textwidth>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<radiowidth>80</radiowidth>
+					<radioheight>80</radioheight>
+					<radioposx>856</radioposx>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+				</control>
 			</control>
 		</control>
 	</controls>

@@ -5,178 +5,225 @@
 	<controls>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include>dialog_background</include>
-			<!-- Dialog items /-->
+			<include>dialog_fade</include>
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>1263</width>
+			<height>968</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="label_id">2</param>
+				<param name="width">1263</param>
+				<param name="height">968</param>
+			</include>
 			<control type="group">
-				<width>1289</width>
-				<height>994</height>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
-				<include content="dialog_panel">
-					<param name="label_id">2</param>
-					<param name="width">1289</param>
-					<param name="height">994</param>
-				</include>
-				<control type="group">
-					<top>123</top>
-					<left>34</left>
-					<control type="grouplist" id="9001">
-						<onright>10</onright>
-						<ondown>9002</ondown>
-						<usecontrolcoords>true</usecontrolcoords>
-						<itemgap>13</itemgap>
-						<!-- Type /-->
-						<include content="dialog_button">
-							<param name="id">22</param>
-							<param name="width">600</param>
-							<param name="textoffset">21</param>
-							<param name="label">$LOCALIZE[31145]</param>
-							<param name="align">left</param>
-							<param name="texturecolor">main900</param>
-							<param name="disabledcolor">text900</param>
-						</include>
-						<!-- Name /-->
-						<include content="dialog_button">
-							<param name="id">12</param>
-							<param name="label">$LOCALIZE[31146]</param>
-							<param name="width">600</param>
-							<param name="textoffset">21</param>
-							<param name="align">left</param>
-							<param name="texturecolor">main900</param>
-							<param name="disabledcolor">text900</param>
-						</include>
-						<!-- Playlist Options /-->
-						<include content="dialog_label_bold">
-							<param name="id">102</param>
-							<param name="height">55</param>
-							<param name="width">600</param>
-							<param name="label">$LOCALIZE[31147]</param>
-							<param name="align">left</param>
-							<param name="texturecolor">main900</param>
-							<param name="disabledcolor">text900</param>
-						</include>
-						<!-- Items Must Match /-->
-						<include content="dialog_button">
-							<param name="id">16</param>
-							<param name="width">600</param>
-							<param name="textoffset">21</param>
-							<param name="label">$LOCALIZE[31148]</param>
-							<param name="align">left</param>
-							<param name="texturecolor">main900</param>
-							<param name="disabledcolor">text900</param>
-						</include>
-						<!-- Limit To /-->
-						<include content="dialog_button">
-							<param name="id">17</param>
-							<param name="width">600</param>
-							<param name="textoffset">21</param>
-							<param name="label">$LOCALIZE[31149]</param>
-							<param name="align">left</param>
-							<param name="texturecolor">main900</param>
-							<param name="disabledcolor">text900</param>
-						</include>
-						<!-- Order By /-->
-						<include content="dialog_button">
-							<param name="id">18</param>
-							<param name="width">600</param>
-							<param name="textoffset">21</param>
-							<param name="label">$LOCALIZE[31150]</param>
-							<param name="align">left</param>
-							<param name="texturecolor">main900</param>
-							<param name="disabledcolor">text900</param>
-						</include>
-						<!-- Sort Direction /-->
-						<include content="dialog_button">
-							<param name="id">19</param>
-							<param name="width">600</param>
-							<param name="textoffset">21</param>
-							<param name="label">$LOCALIZE[31151]</param>
-							<param name="align">left</param>
-							<param name="texturecolor">main900</param>
-							<param name="disabledcolor">text900</param>
-						</include>
-						<!-- Group By /-->
-						<include content="dialog_button">
-							<param name="id">23</param>
-							<param name="width">600</param>
-							<param name="textoffset">21</param>
-							<param name="label">$LOCALIZE[31152]</param>
-							<param name="align">left</param>
-							<param name="texturecolor">main900</param>
-							<param name="disabledcolor">text900</param>
-						</include>
-						<!-- Mixed /-->
-						<include content="dialog_radiobutton">
-							<param name="id">24</param>
-							<param name="width">600</param>
-							<param name="textoffset">21</param>
-							<param name="label">$LOCALIZE[31153]</param>
-							<param name="align">left</param>
-							<param name="texturecolor">main900</param>
-							<param name="disabledcolor">text900</param>
-						</include>
-					</control>
-					<control type="grouplist" id="9002">
-						<onup>9001</onup>
-						<orientation>horizontal</orientation>
-						<top>764</top>
-						<align>center</align>
+				<top>110</top>
+				<left>21</left>
+				<control type="grouplist" id="9001">
+					<onright>10</onright>
+					<ondown>9002</ondown>
+					<usecontrolcoords>true</usecontrolcoords>
+					<itemgap>13</itemgap>
+					<!-- Type /-->
+					<control type="button" id="22">
+						<label>$LOCALIZE[31145]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>600</width>
 						<height>73</height>
-						<width>1221</width>
-						<itemgap>13</itemgap>
-						<!-- OK /-->
-						<include content="dialog_button">
-							<param name="id">20</param>
-							<param name="width">233</param>
-							<param name="label">$LOCALIZE[31048]</param>
-							<param name="texturecolor">main900</param>
-							<param name="disabledcolor">text900</param>
-						</include>
-						<!-- Cancel /-->
-						<include content="dialog_button">
-							<param name="id">21</param>
-							<param name="width">233</param>
-							<param name="label">$LOCALIZE[31055]</param>
-							<param name="texturecolor">main900</param>
-							<param name="disabledcolor">text900</param>
-						</include>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>21</textoffsetx>
 					</control>
-					<control type="group">
-						<left>621</left>
-						<control type="image">
-							<height>417</height>
-							<width>600</width>
-							<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
-						</control>
-						<control type="list" id="10">
-							<onleft>9001</onleft>
-							<height>430</height>
-							<width>600</width>
-							<itemlayout height="86" width="600">
-								<control type="group">
-									<left>21</left>
-									<include content="dialog_label_regular">
-										<param name="width">558</param>
-										<param name="label">$INFO[ListItem.Label]</param>
-									</include>
-								</control>
-							</itemlayout>
-							<focusedlayout height="86" width="600">
-								<control type="image">
-									<visible>Control.HasFocus(10)</visible>
+					<!-- Name /-->
+					<control type="button" id="12">
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31146]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>600</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Playlist Options /-->
+					<control type="label" id="102">
+						<height>55</height>
+						<width>600</width>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31147]</label>
+						<font>montserrat_semibold_22</font>
+						<textcolor>text400</textcolor>
+					</control>
+					<!-- Items Must Match /-->
+					<control type="button" id="16">
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31148]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>600</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Limit To /-->
+					<control type="button" id="17">
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31149]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>600</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Order By /-->
+					<control type="button" id="18">
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31150]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>600</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Sort Direction /-->
+					<control type="button" id="19">
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31151]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>600</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Group By /-->
+					<control type="button" id="23">
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31152]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>600</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Mixed /-->
+					<control type="button" id="24">
+						<textoffsetx>21</textoffsetx>
+						<label>$LOCALIZE[31153]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>600</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+				</control>
+				<control type="grouplist" id="9002">
+					<onup>9001</onup>
+					<orientation>horizontal</orientation>
+					<top>764</top>
+					<align>center</align>
+					<height>73</height>
+					<width>1221</width>
+					<itemgap>13</itemgap>
+					<!-- OK /-->
+					<control type="button" id="20">
+						<label>$LOCALIZE[31048]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>233</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Cancel /-->
+					<control type="button" id="21">
+						<label>$LOCALIZE[31055]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>233</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+				</control>
+				<control type="group">
+					<left>621</left>
+					<control type="image">
+						<height>409</height>
+						<width>600</width>
+						<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+					</control>
+					<control type="list" id="10">
+						<onleft>9001</onleft>
+						<height>430</height>
+						<width>600</width>
+						<itemlayout height="86" width="600">
+							<control type="group">
+								<left>21</left>
+								<control type="label">
 									<height>73</height>
-									<width>600</width>
-									<texture border="5" colordiffuse="main700">shapes/white_rounded.png</texture>
+									<width>558</width>
+									<align>center</align>
+									<label>$INFO[ListItem.Label]</label>
 								</control>
-								<control type="group">
-									<left>21</left>
-									<include content="dialog_label_regular">
-										<param name="width">558</param>
-										<param name="label">$INFO[ListItem.Label]</param>
-									</include>
+							</control>
+						</itemlayout>
+						<focusedlayout height="86" width="600">
+							<control type="image">
+								<visible>Control.HasFocus(10)</visible>
+								<height>73</height>
+								<width>600</width>
+								<texture border="5" colordiffuse="focus">shapes/white_rounded.png</texture>
+							</control>
+							<control type="group">
+								<left>21</left>
+								<control type="label">
+									<height>73</height>
+									<width>558</width>
+									<align>center</align>
+									<label>$INFO[ListItem.Label]</label>
 								</control>
-							</focusedlayout>
-						</control>
+							</control>
+						</focusedlayout>
 					</control>
 				</control>
 			</control>

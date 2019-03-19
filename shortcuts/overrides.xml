@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
+	<!-- Do not share menu -->
+	<doNotShareMenu />
 	<!-- Default thumbnail location -->
 	<thumbnailBrowseDefault>special://skin/media/icons/</thumbnailBrowseDefault>
 
@@ -7,13 +9,16 @@
 	<warn heading="$LOCALIZE[31015]" message="$LOCALIZE[31016]">ActivateWindow(Settings)</warn>
 
 	<!-- Adds an action where submenu gets focus, if it is not empty -->
-	<groupoverride group="mainmenu" condition="String.IsEqual(ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(toggleNoSubmenu)">Control.SetFocus(2000)</groupoverride>
+	<groupoverride group="mainmenu" condition="String.IsEqual(ListItem.Property(hasSubmenu),True) + !Skin.HasSetting(toggleNoSubmenuFocus) + Skin.HasSetting(toggleSubmenu)">Control.SetFocus(2000)</groupoverride>
 
 	<!-- Takes every shortcut action, and adds a condition -->
 	<override action="globaloverride" group="mainmenu">
-		<condition>!String.IsEqual(ListItem.Property(hasSubmenu),True) | Skin.HasSetting(toggleNoSubmenu)</condition>
+		<condition>!String.IsEqual(ListItem.Property(hasSubmenu),True) | Skin.HasSetting(toggleNoSubmenuFocus) | !Skin.HasSetting(toggleSubmenu)</condition>
 		<action>::ACTION::</action>
 	</override>
+	
+	<!-- Takes every shortcut action, and closes the dialog -->
+	<groupoverride group="powermenu" condition="true">Dialog.Close(shutdownmenu)</groupoverride>
 	
 	<!-- Widget Defaults -->
 	<widgetdefaultnode defaultID="movies" group="mainmenu" label="Featured Movies" path="special://skin/playlists/featuredmovies.xsp" target="videos">FeaturedMovies</widgetdefaultnode>	

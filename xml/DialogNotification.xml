@@ -1,36 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <window type="dialog">
 	<backgroundcolor>0</backgroundcolor>
+	<zorder>3</zorder>
 	<controls>
 		<control type="group">
-			<include>common_window_animation</include>
+			<include>common_dialog_window_animation</include>
 			<control type="group">
+				<animation type="Conditional" condition="true">
+					<effect type="fade" start="0" end="66" time="0"/>
+				</animation>
 				<top>55</top>
 				<left>1255</left>
 				<!-- Background panel /-->
 				<control type="image">
 					<height>144</height>
 					<width>610</width>
-					<texture border="5" colordiffuse="secondary300">shapes/black_rounded.png</texture>
+					<texture border="10" colordiffuse="primary100">shapes/white_rounded_10.png</texture>
+				</control>
+				<control type="image">
+					<left>21</left>
+					<height>144</height>
+					<width>55</width>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="text900">icons/information.png</texture>
 				</control>
 				<control type="grouplist">
-					<left>21</left>
+					<left>97</left>
 					<itemgap>5</itemgap>
 					<height>144</height>
 					<align>center</align>
 					<!-- Heading /-->
 					<control type="label" id="401">
-						<align>center</align>
 						<height>26</height>
-						<width>568</width>
-						<font>small_header</font>
+						<width>492</width>
+						<font>montserrat_bold_23</font>
+						<textcolor>text900</textcolor>
 					</control>
 					<!-- Message /-->
 					<control type="label" id="402">
-						<align>center</align>
 						<height>26</height>
-						<width>568</width>
-						<textcolor>text200</textcolor>
+						<width>492</width>
+						<textcolor>text800</textcolor>
 					</control>
 				</control>
 			</control>

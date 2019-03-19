@@ -1,94 +1,125 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <window>
-	<backgroundcolor>0</backgroundcolor>
-	<defaultcontrol>9000</defaultcontrol>
+	<defaultcontrol always="true">10</defaultcontrol>
+	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=1000&amp;group=mainmenu|powermenu)</onunload>
 	<controls>
 		<include>default_background</include>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include content="default_header_label">
-				<param name="label">$LOCALIZE[31132]</param>
+			<include>dialog_fade</include>
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>1456</width>
+			<height>691</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">1456</param>
+				<param name="height">691</param>
+				<param name="label">$LOCALIZE[31139]</param>
 			</include>
-			<include>clock</include>
-			<include>common_settings_panel</include>
-			<control type="group">
-				<control type="grouplist" id="9000">
-					<usecontrolcoords>true</usecontrolcoords>
-					<itemgap>-42</itemgap>
-					<top>164</top>
-					<left>164</left>
-					<width>560</width>
-					<height>752</height>
-					<include content="common_settings_button_header">
-						<param name="id">95</param>
-						<param name="label">$LOCALIZE[31133]</param>
-					</include>
-					<include content="common_settings_button_header">
-						<param name="id">94</param>
-						<param name="label">$LOCALIZE[31134]</param>
-					</include>
-					<include content="common_settings_button_header">
-						<param name="id">96</param>
-						<param name="label">$LOCALIZE[31135]</param>
-					</include>
-					<include content="common_settings_button_header">
-						<param name="id">97</param>
-						<param name="label">$LOCALIZE[31136]</param>
-					</include>
-					<include content="common_settings_button_header">
-						<param name="id">98</param>
-						<param name="label">$LOCALIZE[31137]</param>
-					</include>
-					<include content="common_settings_button_header">
-						<param name="id">99</param>
-						<param name="label">$LOCALIZE[31138]</param>
-					</include>
+			<!-- Background panels /-->
+			<control type="image">
+				<top>110</top>
+				<left>21</left>
+				<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+				<height>560</height>
+				<width>464</width>
+			</control>
+			<control type="image">
+				<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+				<top>110</top>
+				<left>505</left>
+				<height>560</height>
+				<width>930</width>
+			</control>
+			<control type="grouplist" id="10">
+				<top>110</top>
+				<left>21</left>
+				<height>560</height>
+				<width>464</width>
+				<usecontrolcoords>true</usecontrolcoords>
+				<include content="skin_settings_button_header">
+					<param name="id">95</param>
+					<param name="label">$LOCALIZE[31133]</param>
+				</include>
+				<include content="skin_settings_button_header">
+					<param name="id">94</param>
+					<param name="label">$LOCALIZE[31134]</param>
+				</include>
+				<include content="skin_settings_button_header">
+					<param name="id">96</param>
+					<param name="label">$LOCALIZE[31135]</param>
+				</include>
+				<include content="skin_settings_button_header">
+					<param name="id">97</param>
+					<param name="label">$LOCALIZE[31136]</param>
+				</include>
+				<include content="skin_settings_button_header">
+					<param name="id">98</param>
+					<param name="label">$LOCALIZE[31137]</param>
+				</include>
+				<include content="skin_settings_button_header">
+					<param name="id">99</param>
+					<param name="label">$LOCALIZE[31138]</param>
+				</include>
+			</control>
+			<control type="grouplist" id="9001">
+				<top>110</top>
+				<left>526</left>
+				<height>560</height>
+				<width>930</width>
+				<control type="label" id="2">
+					<textcolor>text200</textcolor>
+					<width>888</width>
+					<height>56</height>
 				</control>
-				<control type="grouplist" id="9001">
-					<top>164</top>
-					<left>765</left>
-					<width>1012</width>
-					<height>752</height>
-					<control type="label" id="2">
-						<width>994</width>
-						<height>55</height>
-					</control>
-					<control type="label" id="3">
-						<width>994</width>
-						<height>55</height>
-					</control>
-					<control type="label" id="4">
-						<width>994</width>
-						<height>55</height>
-					</control>
-					<control type="label" id="5">
-						<width>994</width>
-						<height>55</height>
-					</control>
-					<control type="label" id="6">
-						<width>994</width>
-						<height>55</height>
-					</control>
-					<control type="label" id="7">
-						<width>994</width>
-						<height>55</height>
-					</control>
-					<control type="label" id="8">
-						<width>994</width>
-						<height>55</height>
-					</control>
-					<control type="label" id="9">
-						<width>994</width>
-						<height>55</height>
-					</control>
-					<control type="label" id="10">
-						<width>994</width>
-						<height>55</height>
-					</control>
-					<control type="label" id="11">
-						<width>994</width>
-						<height>55</height>
-					</control>
+				<control type="label" id="3">
+					<textcolor>text200</textcolor>
+					<width>888</width>
+					<height>56</height>
+				</control>
+				<control type="label" id="4">
+					<textcolor>text200</textcolor>
+					<width>888</width>
+					<height>56</height>
+				</control>
+				<control type="label" id="56">
+					<textcolor>text200</textcolor>
+					<width>888</width>
+					<height>56</height>
+				</control>
+				<control type="label" id="6">
+					<textcolor>text200</textcolor>
+					<width>888</width>
+					<height>56</height>
+				</control>
+				<control type="label" id="7">
+					<textcolor>text200</textcolor>
+					<width>888</width>
+					<height>56</height>
+				</control>
+				<control type="label" id="8">
+					<textcolor>text200</textcolor>
+					<width>888</width>
+					<height>56</height>
+				</control>
+				<control type="label" id="9">
+					<textcolor>text200</textcolor>
+					<width>888</width>
+					<height>56</height>
+				</control>
+				<control type="label" id="10">
+					<textcolor>text200</textcolor>
+					<width>888</width>
+					<height>56</height>
+				</control>
+				<control type="label" id="11">
+					<textcolor>text200</textcolor>
+					<width>888</width>
+					<height>56</height>
 				</control>
 			</control>
 		</control>

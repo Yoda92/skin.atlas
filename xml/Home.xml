@@ -4,17 +4,48 @@
 	<defaultcontrol always="true">1000</defaultcontrol>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=1000&amp;group=mainmenu|powermenu)</onload>
 	<controls>
-		<include>default_background</include> 
-		<include condition="!Skin.HasSetting(toggleMultiImageBackground)">home_fanart</include>
-		<include condition="Skin.HasSetting(toggleMultiImageBackground)">multiimage_background</include>
+		<include>home_background</include>
 		<!-- Home menu /-->
 		<control type="group">
-			<include>window_zoom_animation</include>
-			<include>default_menu</include>
-			<include condition="!Skin.HasSetting(toggleMultiImageBackground)">home_widget</include>
-			<include condition="!Skin.HasSetting(toggleMultiImageBackground)">clock</include>
-			<include condition="Skin.HasSetting(toggleMultiImageBackground)">home_clock</include>
-			<include>default_submenu</include>
+			<!-- Widget /-->
+			<control type="group">
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="200"/>
+				</animation>
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="200" delay="400"/>
+				</animation>
+				<include condition="Skin.HasSetting(toggleSingleRowWidget)">singlerow_widget</include>
+				<include condition="Skin.HasSetting(toggleMultiRowWidget">multirow_widget</include>
+				<include condition="Skin.HasSetting(toggleMultiImageBackground)">multi_image_background</include>
+				<include condition="!Skin.HasSetting(toggleSingleRowWidget) + !Skin.HasSetting(toggleNoWidget) + !Skin.HasSetting(toggleMultiRowWidget) + !Skin.HasSetting(toggleMultiImageBackground)">skinshortcuts-template-spotlight_widget</include>
+			</control>
+			<!-- Top menu /-->
+			<control type="group">
+				<animation type="WindowClose">
+					<effect type="slide" start="0,0" end="0,-131" time="200" tween="sine" easing="out" delay="200"/>
+				</animation>
+				<animation type="WindowOpen">
+					<effect type="slide" start="0,-131" end="0,0" time="400" tween="back" easing="out" delay="200"/>
+				</animation>
+				<include>default_menu</include>
+			</control>
+			<!-- Bottom panel /-->
+			<control type="group">
+				<animation type="WindowClose">
+					<effect type="slide" start="0,0" end="0,55" time="200" tween="sine" easing="out" delay="200"/>
+				</animation>
+				<animation type="WindowOpen">
+					<effect type="slide" start="0,55" end="0,0" time="400" tween="back" easing="out" delay="200"/>
+				</animation>
+				<include>default_bottom_panel</include>
+			</control>
+			<control type="group">
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="200"/>
+				</animation>
+				<include>default_submenu</include>
+			</control>
 		</control>
 	</controls>
 </window>

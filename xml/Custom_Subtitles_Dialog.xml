@@ -2,83 +2,81 @@
 <window type="dialog" id="1105">
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">10</defaultcontrol>
+	<zorder>4</zorder>
 	<controls>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include>dialog_background</include>
-			<!-- Dialog items /-->
-			<control type="group">
-				<width>734</width>
-				<height>449</height>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
-				<include content="dialog_panel">
-					<param name="width">734</param>
-					<param name="height">449</param>
-					<param name="label_id"/>
-					<param name="label">$LOCALIZE[31026]</param>
-				</include>
-				<!-- Buttons background panel /-->
-				<control type="image">
-					<left>34</left>
-					<top>123</top>
-					<width>666</width>
-					<height>292</height>
-					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
+			<include>dialog_fade</include>
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>734</width>
+			<height>456</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">734</param>
+				<param name="height">456</param>
+				<param name="label_id"/>
+				<param name="label">$LOCALIZE[31026]</param>
+			</include>
+			<!-- List /-->
+			<control type="grouplist" id="10">
+				<left>21</left>
+				<top>110</top>
+				<itemgap>11</itemgap>
+				<!--Download /-->
+				<control type="button" id="101">
+					<onclick>ActivateWindow(subtitlesearch)</onclick>
+					<width>692</width>
+					<height>73</height>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<label>$LOCALIZE[31027]</label>
 				</control>
-				<!-- List /-->
-				<control type="grouplist" id="10">
-					<left>34</left>
-					<top>123</top>
-					<!--Download /-->
-					<control type="button" id="101">
-						<onclick>ActivateWindow(subtitlesearch)</onclick>
-						<width>666</width>
-						<height>73</height>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-						<align>left</align>
-						<textoffsetx>21</textoffsetx>
-						<label>$LOCALIZE[31027]</label>
-					</control>
-					<!-- Enable /-->
-					<control type="radiobutton" id="102">
-						<onclick>ShowSubtitles</onclick>
-						<selected>VideoPlayer.SubtitlesEnabled</selected>
-						<enable>VideoPlayer.HasSubtitles</enable>
-						<label>$LOCALIZE[31028]</label>
-						<width>666</width>
-						<height>73</height>
-						<textoffsetx>21</textoffsetx>
-						<align>left</align>
-						<textwidth>931</textwidth>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-						<radioposx>598</radioposx>
-						<radiowidth>73</radiowidth>
-						<radioheight>73</radioheight>
-					</control>
-					<!-- Offset /-->
-					<control type="button" id="103">
-						<onclick>SubtitleDelay</onclick>
-						<width>666</width>
-						<height>73</height>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-						<textoffsetx>21</textoffsetx>
-						<align>left</align>
-						<label>$LOCALIZE[31029]</label>
-						<enable>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled</enable>
-					</control>
-					<!-- Toggle language /-->
-					<control type="button" id="104">
-						<onclick>CycleSubtitle</onclick>
-						<width>666</width>
-						<height>73</height>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-						<textoffsetx>21</textoffsetx>
-						<align>left</align>
-						<label>$LOCALIZE[31022]</label>
-						<label2>$INFO[VideoPlayer.SubtitlesLanguage]</label2>
-						<enable>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled</enable>
-					</control>
+				<!-- Enable /-->
+				<control type="radiobutton" id="102">
+					<onclick>ShowSubtitles</onclick>
+					<selected>VideoPlayer.SubtitlesEnabled</selected>
+					<enable>VideoPlayer.HasSubtitles</enable>
+					<label>$LOCALIZE[31028]</label>
+					<width>692</width>
+					<height>73</height>
+					<textoffsetx>21</textoffsetx>
+					<align>left</align>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<radioposx>619</radioposx>
+					<radiowidth>73</radiowidth>
+					<radioheight>73</radioheight>
+				</control>
+				<!-- Offset /-->
+				<control type="button" id="103">
+					<onclick>SubtitleDelay</onclick>
+					<width>692</width>
+					<height>73</height>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<textoffsetx>21</textoffsetx>
+					<align>left</align>
+					<label>$LOCALIZE[31029]</label>
+					<enable>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled</enable>
+				</control>
+				<!-- Toggle language /-->
+				<control type="button" id="104">
+					<onclick>CycleSubtitle</onclick>
+					<width>692</width>
+					<height>73</height>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<textoffsetx>21</textoffsetx>
+					<align>left</align>
+					<label>$LOCALIZE[31022]</label>
+					<label2>$INFO[VideoPlayer.SubtitlesLanguage]</label2>
+					<enable>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled</enable>
 				</control>
 			</control>
 		</control>

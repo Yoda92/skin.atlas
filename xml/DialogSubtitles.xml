@@ -2,154 +2,158 @@
 <window type="dialog">
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">150</defaultcontrol>
+	<zorder>5</zorder>
 	<controls>
 		<control type="group">
 			<include>common_window_animation</include>
 			<include>dialog_background</include>
-			<!-- Dialog items /-->
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>1456</width>
+			<height>691</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">1456</param>
+				<param name="height">691</param>
+				<param name="label_id"/>
+				<param name="label">$LOCALIZE[31026]</param>
+			</include>
+			<!-- Subtitles list /-->
 			<control type="group">
-				<width>1482</width>
-				<height>780</height>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
-				<include content="dialog_panel">
-					<param name="width">1482</param>
-					<param name="height">780</param>
-					<param name="label_id"/>
-					<param name="label">$LOCALIZE[31026]</param>
-				</include>
-				<!-- Subtitles list /-->
+				<top>89</top>
+				<left>21</left>
 				<control type="group">
-					<top>89</top>
-					<left>34</left>
-					<control type="group">
-						<top>34</top>
-						<control type="image">
-							<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
-							<height>623</height>
-							<width>1003</width>
-						</control>
-						<include content="dialog_list">
-							<param name="id">120</param>
-							<param name="label">$INFO[ListItem.Label2]</param>
-							<param name="label2">$INFO[ListItem.Label]</param>
-							<param name="onright">9999</param>
-							<param name="width">1003</param>
-							<param name="height">623</param>
-							<param name="top">0</param>
-							<param name="left">0</param>
-							<param name="label_width">961</param>
-							<param name="visible_label2">true</param>
-						</include>
-					</control>
-					<!-- No subtitle addon installed /-->
-					<control type="group">
-						<visible>!Integer.IsGreater(Container(150).NumItems,0)</visible>
-						<include>common_visible_animation</include>
+					<top>21</top>
+					<control type="image">
+						<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+						<height>560</height>
 						<width>1003</width>
-						<height>584</height>
-						<control type="image">
-							<aspectratio>keep</aspectratio>
-							<top>192</top>
-							<width>1003</width>
-							<height>200</height>
-							<texture colordiffuse="text300">icons/hidden.png</texture>
-						</control>
-						<control type="label">
-							<top>100</top>
-							<height>584</height>
-							<textcolor>text300</textcolor>
-							<label>$LOCALIZE[31066]</label>
-							<width>1003</width>
-							<align>center</align>
-						</control>
+					</control>
+					<include content="dialog_list">
+						<param name="id">120</param>
+						<param name="label">$INFO[ListItem.Label2]</param>
+						<param name="label2">$INFO[ListItem.Label]</param>
+						<param name="onright">9999</param>
+						<param name="width">1003</param>
+						<param name="height">560</param>
+						<param name="top">0</param>
+						<param name="left">0</param>
+						<param name="label_width">961</param>
+						<param name="visible_label2">true</param>
+					</include>
+				</control>
+				<!-- No subtitle addon installed /-->
+				<control type="grouplist">
+					<top>21</top>
+					<visible>!Integer.IsGreater(Container(150).NumItems,0)</visible>
+					<include>common_visible_animation</include>
+					<width>1003</width>
+					<height>560</height>
+					<align>center</align>
+					<control type="image">
+						<aspectratio>keep</aspectratio>
+						<width>1003</width>
+						<height>140</height>
+						<texture colordiffuse="text300">icons/hidden.png</texture>
+					</control>
+					<control type="label">
+						<height>24</height>
+						<textcolor>text300</textcolor>
+						<label>$LOCALIZE[31066]</label>
+						<width>1003</width>
+						<align>center</align>
 					</control>
 				</control>
-				<!-- Right aligned buttons /-->
-				<control type="group">
-					<top>123</top>
-					<left>1071</left>
-					<control type="image">
-						<top>94</top>
-						<height>292</height>
+			</control>
+			<!-- Right aligned buttons /-->
+			<control type="group">
+				<top>110</top>
+				<left>1058</left>
+				<control type="image">
+					<top>101</top>
+					<height>320</height>
+					<width>377</width>
+					<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+				</control>
+				<control type="grouplist" id="9999">
+					<orientation>vertical</orientation>
+					<itemgap>21</itemgap>
+					<onleft>120</onleft>
+					<usecontrolcoords>true</usecontrolcoords>
+					<control type="button" id="160">
+						<label>$LOCALIZE[31183]</label>
 						<width>377</width>
-						<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
+						<height>80</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
 					</control>
-					<control type="grouplist" id="9999">
-						<orientation>vertical</orientation>
-						<itemgap>21</itemgap>
+					<control type="panel" id="150">
 						<onleft>120</onleft>
-						<usecontrolcoords>true</usecontrolcoords>
-						<control type="button" id="160">
-							<label>$LOCALIZE[31183]</label>
-							<width>377</width>
-							<height>73</height>
-							<texturenofocus border="5" colordiffuse="main900">shapes/white_rounded.png</texturenofocus>
-							<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-						</control>
-						<control type="panel" id="150">
-							<onleft>120</onleft>
-							<orientation>vertical</orientation>
-							<width>377</width>	
-							<height>292</height>
-							<itemlayout height="73" width="377">
-								<control type="image">
-									<visible>ListItem.IsSelected</visible>
-									<height>73</height>
-									<width>55</width>
-									<aspectratio>keep</aspectratio>
-									<texture colordiffuse="selected500">icons/arrow_right.png</texture>
-								</control>
-								<control type="label">
-									<left>55</left>
-									<height>73</height>
-									<width>301</width>
-									<label>$INFO[ListItem.Label]</label>
-									<textcolor>text100</textcolor>
-								</control>
-							</itemlayout>
-							<focusedlayout height="73" width="377">
-								<control type="image">
-									<height>73</height>
-									<width>377</width>
-									<texture border="5" colordiffuse="main500">shapes/white_rounded.png</texture>
-								</control>
-								<control type="image">
-									<visible>ListItem.IsSelected</visible>
-									<height>73</height>
-									<width>55</width>
-									<aspectratio>keep</aspectratio>
-									<texture colordiffuse="selected500">icons/arrow_right.png</texture>
-								</control>
-								<control type="label">
-									<left>55</left>
-									<height>73</height>
-									<width>301</width>
-									<label>$INFO[ListItem.Label]</label>
-									<textcolor>text900</textcolor>
-								</control>
-							</focusedlayout>
-						</control>
+						<orientation>vertical</orientation>
+						<width>377</width>	
+						<height>320</height>
+						<itemlayout height="80" width="377">
+							<control type="image">
+								<left>21</left>
+								<visible>ListItem.IsSelected</visible>
+								<height>80</height>
+								<width>24</width>
+								<aspectratio>keep</aspectratio>
+								<texture colordiffuse="selected500">icons/arrow.png</texture>
+							</control>
+							<control type="label">
+								<left>55</left>
+								<height>80</height>
+								<width>301</width>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>text200</textcolor>
+							</control>
+						</itemlayout>
+						<focusedlayout height="80" width="377">
+							<control type="image">
+								<height>80</height>
+								<width>377</width>
+								<texture border="5" colordiffuse="focus">shapes/white_rounded.png</texture>
+							</control>
+							<control type="image">
+								<left>21</left>
+								<visible>ListItem.IsSelected</visible>
+								<height>80</height>
+								<width>24</width>
+								<aspectratio>keep</aspectratio>
+								<texture colordiffuse="selected500">icons/arrow.png</texture>
+							</control>
+							<control type="label">
+								<left>55</left>
+								<height>80</height>
+								<width>301</width>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>text100</textcolor>
+							</control>
+						</focusedlayout>
 					</control>
-					<!-- Local subtitle warning /-->
-					<control type="grouplist" id="130">
-						<visible>VideoPlayer.HasSubtitles</visible>
+				</control>
+				<!-- Local subtitle warning /-->
+				<control type="grouplist" id="130">
+					<visible>VideoPlayer.HasSubtitles</visible>
+					<width>377</width>
+					<top>492</top>
+					<usecontrolcoords>true</usecontrolcoords>
+					<itemgap>11</itemgap>
+					<control type="image">
+						<height>30</height>
 						<width>377</width>
-						<top>547</top>
-						<usecontrolcoords>true</usecontrolcoords>
-						<itemgap>11</itemgap>
-						<control type="image">
-							<height>30</height>
-							<width>377</width>
-							<texture colordiffuse="text100">icons/information.png</texture>
-							<aspectratio>keep</aspectratio>
-						</control>
-						<control type="label">
-							<align>center</align>
-							<label>$LOCALIZE[31065]</label>
-							<width>377</width>
-							<height>26</height>
-						</control>
+						<texture colordiffuse="text100">icons/information.png</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<align>center</align>
+						<label>$LOCALIZE[31065]</label>
+						<width>377</width>
+						<height>26</height>
 					</control>
 				</control>
 			</control>

@@ -3,89 +3,87 @@
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">52</defaultcontrol>
 	<controls>
-		<include>default_background</include>
+		<include>dialog_background</include>
 		<control type="group">
 			<include>common_window_animation</include>
 			<include content="default_header_label">
 				<param name="label">$LOCALIZE[31082]</param>
+				<param name="container_id">52</param>
 			</include>
 			<include>clock</include>
 			<control type="image">
-				<top>379</top>
-				<height>322</height>
+				<top>365</top>
+				<height>350</height>
 				<width>1920</width>
-				<texture colordiffuse="blue900">colors/white.png</texture>
+				<texture colordiffuse="background">colors/white.png</texture>
 			</control>
 			<control type="image">
-				<top>374</top>
+				<top>360</top>
 				<height>5</height>
 				<width>1920</width>
 				<texture flipy="true">shadows/shadowline_5px_down.png</texture>
 			</control>
 			<control type="image">
-				<top>701</top>
+				<top>715</top>
 				<height>5</height>
 				<width>1920</width>
 				<texture>shadows/shadowline_5px_down.png</texture>
 			</control>
 			<control type="list" id="52">
 				<orientation>horizontal</orientation>
-				<top>400</top>
-				<width>1878</width>
-				<left>24</left>
-				<itemlayout width="301">
+				<top>386</top>
+				<width>1920</width>
+				<itemlayout width="329">
 					<control type="group">
 						<left>21</left>
 						<control type="image">
-							<height>280</height>
-							<width>280</width>
-							<texture colordiffuse="secondary500">shapes/white_circle_large.png</texture>
+							<height>308</height>
+							<width>308</width>
+							<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
 						</control>
 						<control type="image">
-							<top>50</top>
-							<left>50</left>
-							<height>180</height>
-							<width>180</width>
+							<top>54</top>
+							<left>54</left>
+							<height>200</height>
+							<width>200</width>
 							<texture colordiffuse="text100" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
 							<aspectratio>scale</aspectratio>
 						</control>
 						<control type="label">
 							<label>$INFO[ListItem.Label]</label>
-							<font>common_text_3</font>
 							<textcolor>text100</textcolor>
-							<top>265</top>
+							<top>260</top>
 							<aligny>center</aligny>
 							<align>center</align>
 							<height>26</height>
-							<width>280</width>
+							<width>308</width>
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout width="301">
+				<focusedlayout width="329">
 					<control type="group">
 						<left>21</left>
 						<control type="image">
-							<height>280</height>
-							<width>280</width>
-							<texture colordiffuse="main500">shapes/white_circle_large.png</texture>
+							<height>308</height>
+							<width>308</width>
+							<texture border="5" colordiffuse="focus">shapes/white_rounded.png</texture>
 						</control>
 						<control type="image">
-							<top>50</top>
-							<left>50</left>
-							<height>180</height>
-							<width>180</width>
+							<top>54</top>
+							<left>54</left>
+							<height>200</height>
+							<width>200</width>
 							<texture colordiffuse="text100" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
 							<aspectratio>scale</aspectratio>
 						</control>
 						<control type="label">
 							<label>$INFO[ListItem.Label]</label>
-							<font>common_text_3</font>
 							<textcolor>text100</textcolor>
-							<top>265</top>
+							<top>260</top>
 							<aligny>center</aligny>
 							<align>center</align>
 							<height>26</height>
-							<width>280</width>
+							<width>308</width>
 						</control>
 					</control>
 				</focusedlayout>

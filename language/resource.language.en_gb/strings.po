@@ -815,3 +815,83 @@ msgstr ""
 msgctxt "#31199"
 msgid "Enable fanart in media views"
 msgstr ""
+
+msgctxt "#31200"
+msgid "Content is loading..."
+msgstr ""
+
+msgctxt "#31201"
+msgid "Main menu"
+msgstr ""
+
+msgctxt "#31202"
+msgid "Power menu"
+msgstr ""
+
+msgctxt "#31203"
+msgid "Display icon when widget is empty"
+msgstr ""
+
+msgctxt "#31204"
+msgid "Customize widgets"
+msgstr ""
+
+msgctxt "#31205"
+msgid "Enable category widget"
+msgstr ""
+
+msgctxt "#31206"
+msgid "Submenu type"
+msgstr ""
+
+msgctxt "#31207"
+msgid "Categories"
+msgstr ""
+
+msgctxt "#31208"
+msgid "Video Information"
+msgstr ""
+
+msgctxt "#31209"
+msgid "User rating"
+msgstr ""
+
+msgctxt "#31210"
+msgid "Music Information"
+msgstr ""
+
+msgctxt "#31211"
+msgid "Artist thumb"
+msgstr ""
+
+msgctxt "#31212"
+msgid "Artist fanart"
+msgstr ""
+
+msgctxt "#31213"
+msgid "Song thumb"
+msgstr ""
+
+msgctxt "#31214"
+msgid "Artist"
+msgstr ""
+
+msgctxt "#31215"
+msgid "Album"
+msgstr ""
+
+msgctxt "#31216"
+msgid "Title"
+msgstr ""
+
+msgctxt "#31217"
+msgid "Picture Information"
+msgstr ""
+
+msgctxt "#31218"
+msgid "Configure spotlight widget"
+msgstr ""
+
+msgctxt "#31219"
+msgid "Random movies"
+msgstr ""

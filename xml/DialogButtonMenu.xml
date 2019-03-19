@@ -5,46 +5,124 @@
 	<controls>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include>dialog_background</include>
-			<control type="group">
-				<width>412</width>
-				<height>734</height>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
-				<!-- List /-->
-				<control type="list" id="9000">
-					<width>412</width>
-					<orientation>vertical</orientation>
-					<itemlayout width="412" height="73">
-						<control type="image">
-							<width>412</width>
-							<height>73</height>
-							<texture colordiffuse="text800">colors/white.png</texture>
-						</control>
-						<control type="label">
-							<align>center</align>
-							<width>412</width>
-							<height>73</height>
-							<font>common_text_2</font>
-							<label>$INFO[ListItem.Label]</label>
-						</control>
-					</itemlayout>
-					<focusedlayout width="412" height="73">
-						<control type="image">
-							<width>412</width>
-							<height>73</height>
-							<texture colordiffuse="text200">colors/white.png</texture>
-						</control>
-						<control type="label">
-							<textcolor>text900</textcolor>
-							<align>center</align>
-							<width>412</width>
-							<height>73</height>
-							<font>common_text_2</font>
-							<label>$INFO[ListItem.Label]</label>
-						</control>
-					</focusedlayout>
-					<content><include>skinshortcuts-group-powermenu</include></content>
+			<include>dialog_fade</include>
+		</control>
+		<!-- Dummy List /-->
+		<control type="list" id="8000">
+			<orientation>vertical</orientation>
+			<itemlayout>
+			</itemlayout>
+			<focusedlayout >
+			</focusedlayout>
+			<content>
+				<include>skinshortcuts-group-powermenu</include>
+			</content>
+		</control>
+		<!-- List /-->
+		<control type="grouplist" id="9000">
+			<left>737</left>
+			<include>common_dialog_window_animation</include>
+			<orientation>vertical</orientation>
+			<height>1080</height>
+			<align>center</align>
+			<usecontrolcoords>true</usecontrolcoords>
+			<width>446</width>
+			<itemgap>0</itemgap>
+			<control type="group" id="300">
+				<height>110</height>
+				<width>446</width>
+				<control type="image">
+					<width>446</width>
+					<height>110</height>
+					<texture border="10" colordiffuse="primary800">shapes/white_rounded_10_top.png</texture>
+				</control>
+			</control>
+			<control type="group" id="301">
+				<top>-110</top>
+				<left>34</left>
+				<height>110</height>
+				<control type="image">
+					<height>89</height>
+					<width>25</width>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="text200">icons/list2.png</texture>
+				</control>
+				<control type="label">
+					<left>36</left>
+					<label>$LOCALIZE[31192]</label>
+					<height>89</height>
+					<textcolor>text200</textcolor>
+					<font>montserrat_bold_24</font>
+				</control>
+			</control>
+			<include content="common_options_button">
+				<param name="id">9001</param>
+				<param name="visible">Integer.IsGreater(Container(8000).NumItems,0)</param>
+				<param name="label">$INFO[Container(8000).ListItemAbsolute(0).Label]</param>
+				<param name="onclick">$INFO[Container(8000).ListItemAbsolute(0).Property(path)]</param>
+			</include>
+			<include content="common_options_button">
+				<param name="id">9002</param>
+				<param name="visible">Integer.IsGreater(Container(8000).NumItems,1)</param>
+				<param name="label">$INFO[Container(8000).ListItemAbsolute(1).Label]</param>
+				<param name="onclick">$INFO[Container(8000).ListItemAbsolute(1).Property(path)]</param>
+			</include>
+			<include content="common_options_button">
+				<param name="id">9003</param>
+				<param name="visible">Integer.IsGreater(Container(8000).NumItems,2)</param>
+				<param name="label">$INFO[Container(8000).ListItemAbsolute(2).Label]</param>
+				<param name="onclick">$INFO[Container(8000).ListItemAbsolute(2).Property(path)]</param>
+			</include>
+			<include content="common_options_button">
+				<param name="id">9004</param>
+				<param name="visible">Integer.IsGreater(Container(8000).NumItems,3)</param>
+				<param name="label">$INFO[Container(8000).ListItemAbsolute(3).Label]</param>
+				<param name="onclick">$INFO[Container(8000).ListItemAbsolute(3).Property(path)]</param>
+			</include>
+			<include content="common_options_button">
+				<param name="id">9005</param>
+				<param name="visible">Integer.IsGreater(Container(8000).NumItems,4)</param>
+				<param name="label">$INFO[Container(8000).ListItemAbsolute(4).Label]</param>
+				<param name="onclick">$INFO[Container(8000).ListItemAbsolute(4).Property(path)]</param>
+			</include>
+			<include content="common_options_button">
+				<param name="id">9006</param>
+				<param name="visible">Integer.IsGreater(Container(8000).NumItems,5)</param>
+				<param name="label">$INFO[Container(8000).ListItemAbsolute(5).Label]</param>
+				<param name="onclick">$INFO[Container(8000).ListItemAbsolute(5).Property(path)]</param>
+			</include>
+			<include content="common_options_button">
+				<param name="id">9007</param>
+				<param name="visible">Integer.IsGreater(Container(8000).NumItems,6)</param>
+				<param name="label">$INFO[Container(8000).ListItemAbsolute(6).Label]</param>
+				<param name="onclick">$INFO[Container(8000).ListItemAbsolute(6).Property(path)]</param>
+			</include>
+			<include content="common_options_button">
+				<param name="id">9008</param>
+				<param name="visible">Integer.IsGreater(Container(8000).NumItems,7)</param>
+				<param name="label">$INFO[Container(8000).ListItemAbsolute(7).Label]</param>
+				<param name="onclick">$INFO[Container(8000).ListItemAbsolute(7).Property(path)]</param>
+			</include>
+			<include content="common_options_button">
+				<param name="id">9009</param>
+				<param name="visible">Integer.IsGreater(Container(8000).NumItems,8)</param>
+				<param name="label">$INFO[Container(8000).ListItemAbsolute(8).Label]</param>
+				<param name="onclick">$INFO[Container(8000).ListItemAbsolute(8).Property(path)]</param>
+			</include>
+			<include content="common_options_button">
+				<param name="id">9010</param>
+				<param name="visible">Integer.IsGreater(Container(8000).NumItems,9)</param>
+				<param name="label">$INFO[Container(8000).ListItemAbsolute(9).Label]</param>
+				<param name="onclick">$INFO[Container(8000).ListItemAbsolute(9).Property(path)]</param>
+			</include>
+			<control type="group" id="302">
+				<top>-11</top>
+				<height>21</height>
+				<width>446</width>
+				<control type="image">
+					<width>446</width>
+					<height>21</height>
+					<texture flipy="true" border="10" colordiffuse="primary800">shapes/white_rounded_10_top.png</texture>
 				</control>
 			</control>
 		</control>

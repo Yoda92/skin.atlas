@@ -6,9 +6,9 @@
 	</variable>
 
 	<variable name="list_right_image_var">
-		<value condition="Integer.IsGreater(ListItem.PlayCount,0)">miscellaneous/checkmark.png</value>
-		<value condition="Integer.IsGreater(ListItem.PercentPlayed,0)">miscellaneous/halfcircle.png</value>
-		<value condition="String.IsEqual(ListItem.dbtype,set)">miscellaneous/set.png</value>
+		<value condition="Integer.IsGreater(ListItem.PlayCount,0)">icons/checkmark.png</value>
+		<value condition="Integer.IsGreater(ListItem.PercentPlayed,0)">icons/halfcircle.png</value>
+		<value condition="String.IsEqual(ListItem.dbtype,set)">icons/set.png</value>
 	</variable>
 
 	<variable name="list_right_var">
@@ -29,17 +29,16 @@
 	</variable>
 
 	<variable name="list_focus_var">
-		<value condition="ControlGroup(9000).HasFocus() | Control.HasFocus(9001)">main700</value>
-		<value>80ffffff</value>
+		<value condition="ControlGroup(9000).HasFocus() | Control.HasFocus(9001)">unfocus</value>
+		<value>focus</value>
+	</variable>
+	
+	<variable name="home_focus_var">
+		<value condition="!Control.HasFocus(3000)">unfocus</value>
+		<value>focus</value>
 	</variable>
 
 	<variable name="list_label_var">
-		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
-		<value>$INFO[ListItem.Label]</value>
-	</variable>
-
-	<variable name="list_label_year_var">
-		<value condition="!String.IsEmpty(ListItem.Year) + !String.IsEmpty(ListItem.Title">$INFO[ListItem.Title] [COLOR text200]($INFO[ListItem.Year])[/COLOR]</value>
 		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
@@ -74,7 +73,7 @@
 		<value condition="String.IsEqual(ListItem.Dbtype,movie) | String.IsEqual(ListItem.Dbtype,set) | String.IsEqual(ListItem.Dbtype,tvshow) | String.IsEqual(ListItem.Dbtype,season)">$INFO[ListItem.Art(fanart)]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
-
+	
 	<variable name="star_var">
 		<value condition="Integer.IsGreaterOrEqual(ListItem.Rating,9)">rating/5.png</value>
 		<value condition="Integer.IsGreaterOrEqual(ListItem.Rating,8)">rating/4.5.png</value>
@@ -108,18 +107,13 @@
 		<value>$INFO[Container(6).ListItem.Icon]</value>
 	</variable>
 
-	<variable name="shortcuts_list_focus_var">
-		<value condition="ControlGroup(9000).HasFocus()">shapes/grey600_rounded.png</value>
-		<value>shapes/grey500_rounded.png</value>
-	</variable>
-
 	<variable name="director_var">
 		<value condition="!String.IsEmpty(ListItem.Writer)">$INFO[ListItem.Writer]</value>
 		<value>$INFO[ListItem.Director]</value>
 	</variable>
 
 	<variable name="osd_nib_var">
-		<value condition="Control.HasFocus(12)">text100</value>
+		<value condition="Control.HasFocus(12)">focus_amplified</value>
 		<value>text200</value>
 	</variable>
 
@@ -135,20 +129,9 @@
 		<value>DefaultAudio.png</value>
 	</variable>
 
-	<variable name="home_color_var">
-		<value condition="!Control.HasFocus(1000)">main700</value>
-		<value>main500</value>
-	</variable>
-
-	<variable name="category_icon_var">
-		<value condition="String.IsEqual(listitem.dbtype,genre)">$INFO[ListItem.Label,resource://resource.images.genres.atlas/,.png]</value>
+	<variable name="genre_icon_var">
+		<value condition="String.IsEqual(listitem.dbtype,genre)">$INFO[ListItem.Label,resource://resource.images.moviegenreicons.transparent/,.png]</value>
 		<value>$INFO[ListItem.Icon]</value>
-	</variable>
-
-	<variable name="settings_icon_var">
-		<value condition="Window.Is(interfacesettings)">icons/settings/paintbrush.png</value>
-		<value condition="Window.Is(mediasettings)">icons/settings/media.png</value>
-		<value>icons/settings/settings.png</value>
 	</variable>
 
 	<variable name="subtitle_service_var">
@@ -196,19 +179,9 @@
 	</variable>
 
 	<variable name="episode_poster_var">
-	<value condition="!String.IsEmpty(Container.Art(tvshow.fanart) )">$INFO[Container.Art(tvshow.fanart)]</value>
+		<value condition="!String.IsEmpty(Container.Art(tvshow.fanart) )">$INFO[Container.Art(tvshow.fanart)]</value>
 		<value condition="!String.IsEmpty(Container.Art(season.poster))">$INFO[Container.Art(season.poster)]</value>
 		<value>$INFO[ListItem.Art(tvshow.poster)]</value>
-	</variable>
-
-	<variable name="left_arrow_var">
-		<value condition="!Container(1000).Position(0)">icons/arrow.png</value>
-		<value>miscellaneous/arrow_black.png</value>
-	</variable>
-
-	<variable name="right_arrow_var">
-		<value condition="!Container(1000).Position(7)">icons/arrow.png</value>
-		<value>miscellaneous/arrow_black.png</value>
 	</variable>
 
 	<variable name="widget_header_var">
@@ -227,18 +200,59 @@
 	</variable>
 
 	<variable name="widget_setting_var">
-		<value condition="Skin.HasSetting(toggleMultiImageBackground)">Multi-Image background</value>
-		<value>Default widget</value>
+		<value condition="Skin.HasSetting(toggleMultiImageBackground">Multi-Image background</value>
+		<value condition="Skin.HasSetting(toggleMultiRowWidget)">Multi-Row widget</value>
+		<value condition="Skin.HasSetting(toggleSingleRowWidget)">Singe-Row widget</value>
+		<value condition="Skin.HasSetting(toggleNoWidget)">No Widget</value>
+		<value>Spotlight widget (Default)</value>
 	</variable>
-	
-	<variable name="home_icon_var">
-		<value condition="!String.IsEmpty(Container(1000).ListItem.Property(widget))"></value>
-		<value>$INFO[Container(1000).ListItem.Icon]</value>
+
+	<variable name="submenu_setting_var">
+		<value condition="Skin.HasSetting(toggleSubmenu)">Classic submenu</value>
+		<value condition="Skin.HasSetting(toggleNoSubmenu)">No submenu</value>
+		<value>Category widget</value>
 	</variable>
-	
-	<variable name="genre_image_var">
+
+	<variable name="genre_icon_var">
 		<value condition="ListItem.IsParentFolder">icons/back.png</value>
 		<value>resource://resource.images.moviegenreicons.transparent/$INFO[ListItem.Label,,.png]</value>
+	</variable>
+
+	<variable name="home_fanart_var">
+		<value condition="String.IsEmpty(Container(1000).ListItem.Property(widget))"/>
+		<value condition="!Control.HasFocus(3000) + !ControlGroup(3000).HasFocus()"/>
+		<value>$INFO[Container().ListItem.Art(fanart)]</value>
+	</variable>
+
+	<variable name="overlay_var">
+		<value condition="[ Integer.IsGreater(ListItem.PercentPlayed,0) + !Integer.IsGreater(ListItem.PlayCount,0) ]">banners/overlaywatching.png</value>
+		<value condition="ListItem.IsCollection">banners/overlayset.png</value>
+		<value/>
+	</variable>
+	
+	<variable name="settings_header_button_var">
+		<value condition="Control.HasFocus(100)">00FFFFFF</value>
+		<value>focus</value>
+	</variable>
+	
+	<variable name="addon_enable_var">
+		<value condition="!String.StartsWith(Control.GetLabel(7),Enable)">Enabled</value>
+		<value>Disabled</value>
+	</variable>
+	
+	<variable name="spotlight_content_var">
+		<value condition="!String.IsEmpty(Skin.String(home.widgetc.ontent))">$INFO[Skin.String(home.widget.content)]</value>
+		<value>special://skin/playlists/randommovies.xsp</value>
+	</variable>
+	
+	<variable name="spotlight_target_var">
+		<value condition="!String.IsEmpty(Skin.String(home.widget.target))">$INFO[Skin.String(home.widget.target)]</value>
+		<value>videos</value>
+	</variable>
+	
+	<variable name="spotlight_name_var">
+		<value condition="!String.IsEmpty(Skin.String(home.widget.name))">$INFO[Skin.String(home.widget.name)]</value>
+		<value>Spotlight Movies</value>
 	</variable>
 </includes>
 

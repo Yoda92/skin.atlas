@@ -14,6 +14,19 @@
 				<height>668</height>
 				<texture diffuse="miscellaneous/diffuse_radial.png">$INFO[ListItem.Art(fanart)]</texture>
 			</control>
+			<!-- Background panel -->
+			<control type="image">
+				<bottom>0</bottom>
+				<width>1920</width>
+				<height>372</height>
+				<texture colordiffuse="primary1000">colors/white.png</texture>
+			</control>
+			<control type="image">
+				<bottom>372</bottom>
+				<height>5</height>
+				<width>1920</width>
+				<texture colordiffuse="white500" flipy="true">shadows/shadowline_5px_down.png</texture>
+			</control>
 			<!-- Posterview /-->
 			<control type="list" id="52">
 				<orientation>horizontal</orientation>
@@ -24,7 +37,7 @@
 				<ondown>9001</ondown>
 				<visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows)</visible>
 				<width>1920</width>
-				<top>706</top>
+				<top>719</top>
 				<itemlayout width="241">
 					<control type="group">
 						<top>5</top>
@@ -42,6 +55,12 @@
 					<control type="group">
 						<top>5</top>
 						<left>16</left>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="103" time="89" center="auto"/>
+						</animation>
+						<animation type="UnFocus">
+							<effect type="zoom" start="103" end="100" time="89" center="auto"/>
+						</animation>
 						<control type="image">
 							<animation type="Focus">
 								<effect type="fade" start="0" end="100" time="144" easing="out"/>
@@ -51,7 +70,7 @@
 							</animation>
 							<width>230</width>
 							<height>340</height>
-							<texture border="10" colordiffuse="text100">shapes/white_rounded_semi.png</texture>
+							<texture border="10" colordiffuse="focus_amplified">shapes/white_rounded_semi.png</texture>
 						</control>
 						<include content="common_poster">
 							<param name="width">230</param>
@@ -74,10 +93,10 @@
 				<!-- Title /-->
 				<control type="label">
 					<visible>!String.IsEmpty(ListItem.Title) + !ListItem.IsParentFolder</visible>
-					<height>55</height>
+					<height>50</height>
 					<width>892</width>
 					<label>$VAR[list_label_var]</label>
-					<font>common_header</font>
+					<font>montserrat_bold_50</font>
 				</control>
 				<control type="label">
 					<visible>!String.IsEmpty(ListItem.Genre)</visible>
@@ -85,7 +104,7 @@
 					<width>698</width>
 					<label>$INFO[ListItem.Genre]</label>
 					<textcolor>text200</textcolor>
-					<font>common_light</font>
+					<font>montserrat_light_24</font>
 				</control>
 				<!-- Rating /-->
 				<control type="grouplist">
@@ -106,7 +125,7 @@
 						<width>auto</width>
 						<label>$INFO[ListItem.Rating]</label>
 						<textcolor>text200</textcolor>
-						<font>common_light</font>
+						<font>montserrat_light_24</font>
 					</control>
 					<!-- Duration/-->
 					<control type="label">
@@ -115,7 +134,7 @@
 						<width>auto</width>
 						<label>[COLOR text100]•[/COLOR]  $INFO[ListItem.Duration(mins)] $LOCALIZE[31070]</label>
 						<textcolor>text200</textcolor>
-						<font>common_light</font>
+						<font>montserrat_light_24</font>
 					</control>
 					<!-- Duration/-->
 					<control type="label">
@@ -124,20 +143,20 @@
 						<width>auto</width>
 						<label>[COLOR text100]•[/COLOR]  $INFO[ListItem.Year]</label>
 						<textcolor>text200</textcolor>
-						<font>common_light</font>
+						<font>montserrat_light_24</font>
 					</control>
 				</control>
 				<!-- Plot /-->
 				<control type="textbox">
 					<visible>!String.IsEmpty(ListItem.Plot)</visible>
-					<height max="170">auto</height>
+					<height max="218">auto</height>
 					<width>698</width>
 					<label>$VAR[plot_var]</label>
 				</control>
 			</control>
 			<!-- Media flags /-->
 			<control type="grouplist" id="7000">
-				<top>635</top>
+				<top>641</top>
 				<left>21</left>
 				<height>55</height>
 				<orientation>horizontal</orientation>

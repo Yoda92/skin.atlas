@@ -6,40 +6,36 @@
 		<include>default_background</include>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include content="default_header_label">
-				<param name="label">$LOCALIZE[31131]</param>
-			</include>
-			<include>clock</include>
 			<control type="group">
 				<control type="mover" id="8">
 					<left>0</left>
 					<top>0</top>
 					<width>256</width>
 					<height>256</height>
-					<texturefocus colordiffuse="main500">calibrate/topleft.png</texturefocus>
-					<texturenofocus colordiffuse="secondary700">calibrate/topleft.png</texturenofocus>
+					<texturefocus colordiffuse="white500">calibrate/topleft.png</texturefocus>
+					<texturenofocus colordiffuse="primary900">calibrate/topleft.png</texturenofocus>
 				</control>
 				<control type="mover" id="9">
 					<left>1664</left>
 					<top>824</top>
 					<width>256</width>
 					<height>256</height>
-					<texturefocus colordiffuse="main500">calibrate/bottomright.png</texturefocus>
-					<texturenofocus colordiffuse="secondary700">calibrate/bottomright.png</texturenofocus>
+					<texturefocus colordiffuse="white500">calibrate/bottomright.png</texturefocus>
+					<texturenofocus colordiffuse="primary900">calibrate/bottomright.png</texturenofocus>
 				</control>
 				<control type="mover" id="10">
 					<top>660</top>
 					<width>256</width>
 					<height>256</height>
-					<texturefocus colordiffuse="main500">calibrate/subtitle.png</texturefocus>
-					<texturenofocus colordiffuse="secondary700">calibrate/subtitle.png</texturenofocus>
+					<texturefocus colordiffuse="white500">calibrate/subtitle.png</texturefocus>
+					<texturenofocus colordiffuse="primary900">calibrate/subtitle.png</texturenofocus>
 					<aspectratio>keep</aspectratio>
 				</control>
 				<control type="resize" id="11">
 					<width>1920</width>
 					<height>1080</height>
-					<texturefocus colordiffuse="main500">calibrate/square.png</texturefocus>
-					<texturenofocus colordiffuse="secondary700">calibrate/square.png</texturenofocus>
+					<texturefocus colordiffuse="white500">calibrate/square.png</texturefocus>
+					<texturenofocus colordiffuse="primary900">calibrate/square.png</texturenofocus>
 					<aspectratio>keep</aspectratio>
 				</control>
 				<control type="grouplist">
@@ -50,7 +46,7 @@
 						<width>1920</width>
 						<height>34</height>
 						<align>center</align>
-						<font>small_header</font>
+						<font>montserrat_bold_24</font>
 					</control>
 					<control type="label" id="2">
 						<width>1920</width>

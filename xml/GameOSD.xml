@@ -5,76 +5,74 @@
 	<controls>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include>dialog_background</include>
-			<!-- Dialog items /-->
-			<control type="group">
-				<width>734</width>
-				<height>449</height>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
-				<include content="dialog_panel">
-					<param name="width">734</param>
-					<param name="height">449</param>
-					<param name="label_id">1</param>
-					<param name="label">$LOCALIZE[31083]</param>
-				</include>
-				<!-- Second background panel /-->
-				<control type="image">
-					<left>34</left>
-					<top>123</top>
+			<include>dialog_fade</include>
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>708</width>
+			<height>456</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">708</param>
+				<param name="height">456</param>
+				<param name="label_id">1</param>
+				<param name="label">$LOCALIZE[31083]</param>
+			</include>
+			<!-- List /-->
+			<control type="grouplist" id="100">
+				<left>21</left>
+				<top>110</top>
+				<defaultcontrol always="true">101</defaultcontrol>
+				<itemgap>11</itemgap>
+				<!--Download /-->
+				<!-- Play /-->
+				<control type="button" id="101">
+					<onclick>Play</onclick>
 					<width>666</width>
-					<height>292</height>
-					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
+					<height>73</height>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<label>$LOCALIZE[31084]</label>
+					<label2>[COLOR text200]$LOCALIZE[31085] + X[/COLOR]</label2>
 				</control>
-				<!-- List /-->
-				<control type="grouplist" id="100">
-					<left>34</left>
-					<top>123</top>
-					<defaultcontrol always="true">101</defaultcontrol>
-					<!--Download /-->
-					<!-- Play /-->
-					<control type="button" id="101">
-						<onclick>Play</onclick>
-						<width>666</width>
-						<height>73</height>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-						<align>left</align>
-						<textoffsetx>21</textoffsetx>
-						<label>$LOCALIZE[31084]</label>
-						<label2>[COLOR text200]$LOCALIZE[31085] + X[/COLOR]</label2>
-					</control>
-					<!-- Reset /-->
-					<control type="button" id="102">
-						<onclick>PlayerControl(Reset)</onclick>
-						<width>666</width>
-						<height>73</height>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-						<align>left</align>
-						<textoffsetx>21</textoffsetx>
-						<label>$LOCALIZE[31086]</label>
-						<label2>[COLOR text200]$LOCALIZE[31085] + B[/COLOR]</label2>
-					</control>
-					<!-- Stop /-->
-					<control type="button" id="103">
-						<onclick>Stop</onclick>
-						<width>666</width>
-						<height>73</height>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-						<align>left</align>
-						<textoffsetx>21</textoffsetx>
-						<label>Exit</label>
-						<label2>[COLOR text200]$LOCALIZE[31085] + $LOCALIZE[31087][/COLOR]</label2>
-					</control>
-					<!-- Settings /-->
-					<control type="button" id="104">
-						<onclick>ActivateWindow(1106)</onclick>
-						<width>666</width>
-						<height>73</height>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-						<align>left</align>
-						<textoffsetx>21</textoffsetx>
-						<label>$LOCALIZE[31009]</label>
-					</control>
+				<!-- Reset /-->
+				<control type="button" id="102">
+					<onclick>PlayerControl(Reset)</onclick>
+					<width>666</width>
+					<height>73</height>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<label>$LOCALIZE[31086]</label>
+					<label2>[COLOR text200]$LOCALIZE[31085] + B[/COLOR]</label2>
+				</control>
+				<!-- Stop /-->
+				<control type="button" id="103">
+					<onclick>Stop</onclick>
+					<width>666</width>
+					<height>73</height>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<label>Exit</label>
+					<label2>[COLOR text200]$LOCALIZE[31085] + $LOCALIZE[31087][/COLOR]</label2>
+				</control>
+				<!-- Settings /-->
+				<control type="button" id="104">
+					<onclick>ActivateWindow(1106)</onclick>
+					<width>666</width>
+					<height>73</height>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<label>$LOCALIZE[31009]</label>
 				</control>
 			</control>
 		</control>

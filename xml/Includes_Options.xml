@@ -2,7 +2,6 @@
 <includes>
 	<include name="common_options_menu">
 		<param name="header_label">$LOCALIZE[31163]</param>
-		<param name="header_icon">icons/set.png</param>
 		<param name="list_id"/>
 		<param name="content"/>
 		<definition>
@@ -11,74 +10,68 @@
 				<!-- Background fade /-->
 				<control type="group">
 					<control type="image">
-						<visible>ControlGroup(9000).HasFocus() | Control.HasFocus(9001)</visible>
+						<visible>Control.HasFocus(9001) | ControlGroup(9000).HasFocus()</visible>
 						<include>common_visible_animation</include>
-						<width>1920</width>
-						<height>1080</height>
-						<texture colordiffuse="80ffffff">colors/black.png</texture>
+						<width>100%</width>
+						<height>100%</height>
+						<texture colordiffuse="black700">colors/white.png</texture>
 					</control>
 				</control>
 				<!-- Options /-->
 				<control type="group">
-					<left>-455</left>
-					<!-- Background panel /-->
-					<animation type="Conditional" condition="ControlGroup(9000).HasFocus() + [ !Window.Next(tvchannels) + !Window.Next(tvguide) ]">
-						<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
-					</animation>
-					<control type="image">
-						<width>455</width>
-						<height>1080</height>
-						<texture colordiffuse="blue900">colors/white.png</texture>
-					</control>
-					<control type="image">
-						<width>455</width>
-						<height>144</height>
-						<texture colordiffuse="blue800">colors/white.png</texture>
-					</control>
-					<control type="image">
-						<top>144</top>
-						<width>455</width>
-						<height>5</height>
-						<texture>shadows/shadowline_5px_down.png</texture>
-					</control>
-					<control type="image">
-						<left>455</left>
-						<width>10</width>
-						<height>1080</height>
-						<texture>shadows/shadowline_10px_right.png</texture>
-					</control>
-					<!-- Header /-->
-					<control type="grouplist">
-						<align>center</align>
-						<width>455</width>
-						<height>144</height>
-						<orientation>horizontal</orientation>
-						<itemgap>11</itemgap>
-						<control type="image">
-							<height>144</height>
-							<width>30</width>
-							<aspectratio>keep</aspectratio>
-							<texture colordiffuse="main300">$PARAM[header_icon]</texture>
-						</control>
-						<control type="label">
-							<label>$PARAM[header_label]</label>
-							<width>auto</width>
-							<height>144</height>
-							<textcolor>text100</textcolor>
-							<font>small_header</font>
-						</control>
-					</control>
+					<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
+					<include>common_dialog_visible_animation</include>
 					<!-- Settings list /-->
+					<!-- Terrible solution. But kodi does not allow dynamic height /-->
 					<control type="grouplist" id="9000">
-						<left>21</left>
-						<top>165</top>
-						<width>413</width>
-						<height>970</height>
+						<left>737</left>
+						<height>1080</height>
+						<width>446</width>
+						<align>center</align>
+						<itemgap>0</itemgap>
 						<usecontrolcoords>true</usecontrolcoords>
 						<orientation>vertical</orientation>
 						<onright>$PARAM[list_id]</onright>
+						<onleft>$PARAM[list_id]</onleft>
 						<onback>$PARAM[list_id]</onback>
+						<control type="group" id="300">
+							<height>110</height>
+							<width>446</width>
+							<control type="image">
+								<width>446</width>
+								<height>110</height>
+								<texture border="10" colordiffuse="primary800">shapes/white_rounded_10_top.png</texture>
+							</control>
+						</control>
+						<control type="group" id="301">
+							<top>-110</top>
+							<left>34</left>
+							<height>110</height>
+							<control type="image">
+								<height>89</height>
+								<width>25</width>
+								<aspectratio>keep</aspectratio>
+								<texture colordiffuse="text200">icons/list2.png</texture>
+							</control>
+							<control type="label">
+								<left>36</left>
+								<label>$PARAM[header_label]</label>
+								<height>89</height>
+								<textcolor>text200</textcolor>
+								<font>montserrat_bold_24</font>
+							</control>
+						</control>
 						<include>$PARAM[content]</include>
+						<control type="group" id="302">
+							<top>-11</top>
+							<height>21</height>
+							<width>446</width>
+							<control type="image">
+								<width>446</width>
+								<height>21</height>
+								<texture flipy="true" border="10" colordiffuse="primary800">shapes/white_rounded_10_top.png</texture>
+							</control>
+						</control>
 					</control>
 				</control>
 			</control>
@@ -284,10 +277,6 @@
 		<control type="button" id="4">
 			<visible>false</visible>
 		</control>
-		<!-- View options label /-->
-		<include content="common_options_header">
-			<param name="label">$LOCALIZE[31163]</param>
-		</include>
 		<!-- View type /-->
 		<include content="common_options_button">
 			<param name="id">200</param>
@@ -322,10 +311,6 @@
 		<control type="button" id="4">
 			<visible>false</visible>
 		</control>
-		<!-- View options label /-->
-		<include content="common_options_header">
-			<param name="label">$LOCALIZE[31163]</param>
-		</include>
 		<!-- View type /-->
 		<include content="common_options_button">
 			<param name="id">200</param>
@@ -371,10 +356,6 @@
 		<control type="button" id="4">
 			<visible>false</visible>
 		</control>
-		<!-- View options label /-->
-		<include content="common_options_header">
-			<param name="label">$LOCALIZE[31163]</param>
-		</include>
 		<!-- View type /-->
 		<include content="common_options_button">
 			<param name="id">200</param>
@@ -413,10 +394,6 @@
 	</include>
 
 	<include name="settingscategory_options_content">
-		<!-- View options label /-->
-		<include content="common_options_header">
-			<param name="label">$LOCALIZE[31163]</param>
-		</include>
 		<!-- Settings Level /-->
 		<include content="common_options_button">
 			<param name="id">20</param>
@@ -432,10 +409,6 @@
 		<control type="button" id="4">
 			<visible>false</visible>
 		</control>
-		<!-- View options label /-->
-		<include content="common_options_header">
-			<param name="label">$LOCALIZE[31163]</param>
-		</include>
 		<!-- View type /-->
 		<include content="common_options_button">
 			<param name="id">200</param>
@@ -476,10 +449,6 @@
 		<control type="button" id="4">
 			<visible>false</visible>
 		</control>
-		<!-- View options label /-->
-		<include content="common_options_header">
-			<param name="label">$LOCALIZE[31163]</param>
-		</include>
 		<!-- View type /-->
 		<include content="common_options_button">
 			<param name="id">200</param>
@@ -510,10 +479,6 @@
 		<control type="button" id="4">
 			<visible>false</visible>
 		</control>
-		<!-- View options label /-->
-		<include content="common_options_header">
-			<param name="label">$LOCALIZE[31163]</param>
-		</include>
 		<!-- Sort mode /-->
 		<include content="common_options_button">
 			<param name="id">202</param>
@@ -536,10 +501,6 @@
 	</include>
 
 	<include name="mymusicplaylisteditor_options_content">
-		<!-- View options label /-->
-		<include content="common_options_header">
-			<param name="label">$LOCALIZE[31163]</param>
-		</include>
 		<!-- Load /-->
 		<include content="common_options_button">
 			<param name="id">6</param>
@@ -568,10 +529,6 @@
 		<control type="button" id="4">
 			<visible>false</visible>
 		</control>
-		<!-- View options label /-->
-		<include content="common_options_header">
-			<param name="label">$LOCALIZE[31163]</param>
-		</include>
 		<!-- View type /-->
 		<include content="common_options_button">
 			<param name="id">200</param>
@@ -615,16 +572,39 @@
 		<param name="visible"/>
 		<param name="label"/>
 		<definition>
+			<control type="image" id="$PARAM[id]01">
+				<visible>$PARAM[visible]</visible>
+				<width>446</width>
+				<height>73</height>
+				<texture colordiffuse="primary800">colors/white.png</texture>
+			</control>
 			<control type="radiobutton" id="$PARAM[id]">
-				<font>medium_footer</font>
-				<textwidth>371</textwidth>
+				<top>-73</top>
+				<left>21</left>
+				<font>opensans_semibold_23</font>
+				<textwidth>362</textwidth>
 				<textoffsetx>21</textoffsetx>
+				<textcolor>text200</textcolor>
+				<focusedcolor>text100</focusedcolor>
 				<align>left</align>
 				<visible>$PARAM[visible]</visible>
-				<label>[COLOR text200]$PARAM[label][/COLOR]</label>
-				<width>413</width>
-				<height>89</height>
-				<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
+				<label>$PARAM[label]</label>
+				<width>404</width>
+				<height>73</height>
+				<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+				<textureradioonnofocus/>
+				<textureradioonfocus/>
+				<textureradiooffnofocus/>
+				<textureradioofffocus/>
+				<textureradioondisabled/>
+				<textureradiooffdisabled/>
+			</control>
+			<control type="image" id="$PARAM[id]00">
+				<visible>$PARAM[visible]</visible>
+				<width>446</width>
+				<height>11</height>
+				<texture colordiffuse="primary800">colors/white.png</texture>
 			</control>
 		</definition>
 	</include>
@@ -636,46 +616,64 @@
 		<param name="label2"/>
 		<param name="onclick"/>
 		<param name="onclick2"/>
+		<param name="align">left</param>
 		<definition>
+			<control type="image" id="$PARAM[id]03">
+				<visible>$PARAM[visible]</visible>
+				<width>446</width>
+				<height>73</height>
+				<texture colordiffuse="primary800">colors/white.png</texture>
+			</control>
 			<control type="button" id="$PARAM[id]">
-				<font>medium_footer</font>
-				<textwidth>371</textwidth>
+				<font>opensans_semibold_23</font>
+				<top>-73</top>
+				<left>21</left>
+				<textwidth>362</textwidth>
 				<textoffsetx>21</textoffsetx>
-				<align>left</align>
+				<align>$PARAM[align]</align>
 				<label>$PARAM[label]</label>
-				<textcolor>text100</textcolor>
-				<focusedcolor>text700</focusedcolor>
+				<textcolor>text200</textcolor>
+				<focusedcolor>text100</focusedcolor>
 				<visible>$PARAM[visible]</visible>
 				<onclick>$PARAM[onclick2]</onclick>
 				<onclick>$PARAM[onclick]</onclick>
-				<width>413</width>
-				<height>89</height>
-				<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-				<alttexturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</alttexturefocus>
+				<width>404</width>
+				<height>73</height>
+				<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				<alttexturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</alttexturefocus>
 			</control>
 			<control type="label" id="$PARAM[id]00">
-				<visible>!Control.HasFocus($PARAM[id])</visible>
-				<right>21</right>
 				<visible>$PARAM[visible]</visible>
-				<height>89</height>
-				<width>413</width>
-				<top>-89</top>
+				<visible>!Control.HasFocus($PARAM[id])</visible>
+				<right>42</right>
+				<visible>$PARAM[visible]</visible>
+				<height>73</height>
+				<width>404</width>
+				<top>-73</top>
 				<label>$PARAM[label2]</label>
 				<align>right</align>
-				<textcolor>text200</textcolor>
-				<font>medium_footer</font>
+				<textcolor>text300</textcolor>
+				<font>opensans_semibold_23</font>
 			</control>
 			<control type="label" id="$PARAM[id]01">
-				<visible>Control.HasFocus($PARAM[id])</visible>
-				<right>21</right>
 				<visible>$PARAM[visible]</visible>
-				<height>89</height>
-				<width>413</width>
-				<top>-89</top>
+				<visible>Control.HasFocus($PARAM[id])</visible>
+				<right>42</right>
+				<visible>$PARAM[visible]</visible>
+				<height>73</height>
+				<width>404</width>
+				<top>-73</top>
 				<label>$PARAM[label2]</label>
 				<align>right</align>
-				<textcolor>text700</textcolor>
-				<font>medium_footer</font>
+				<font>opensans_semibold_23</font>
+				<textcolor>text100</textcolor>
+			</control>
+			<control type="image" id="$PARAM[id]02">
+				<visible>$PARAM[visible]</visible>
+				<width>446</width>
+				<height>11</height>
+				<texture colordiffuse="primary800">colors/white.png</texture>
 			</control>
 		</definition>
 	</include>
@@ -688,33 +686,10 @@
 				<visible>$PARAM[visible]</visible>
 				<label>$PARAM[label]</label>
 				<width>413</width>
-				<height>89</height>
+				<height>73</height>
 				<textcolor>text100</textcolor>
-				<font>small_header</font>
+				<font>montserrat_bold_24</font>
 			</control>
 		</definition>
 	</include>
-
-	<include name="common_options_togglebutton">
-		<param name="id">4</param>
-		<param name="visible">Control.IsEnabled(4)</param>
-		<param name="label">$LOCALIZE[31018]: $INFO[Container.SortOrder]</param>
-		<param name="onclick"/>
-		<definition>
-			<control type="togglebutton" id="$PARAM[id]">
-				<textwidth>371</textwidth>
-				<textoffsetx>21</textoffsetx>
-				<align>left</align>
-				<label>$PARAM[label]</label>
-				<visible>$PARAM[visible]</visible>
-				<onclick>$PARAM[onclick]</onclick>
-				<font>medium_footer</font>
-				<width>413</width>
-				<height>89</height>
-				<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-				<alttexturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</alttexturefocus>
-			</control>
-		</definition>
-	</include>
-
 </includes>

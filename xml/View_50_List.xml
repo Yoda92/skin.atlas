@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="view_50_list">
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+			<include>default_fanart</include>
+			<!-- All metadata /-->
+			<control type="group">
+				<include>view_slide_animation_left</include>
+				<include>window_slide_animation_left</include>
+				<control type="image">
+					<height>1080</height>
+					<width>640</width>
+					<texture colordiffuse="black">colors/white.png</texture>
+				</control>
+				<control type="image">
+					<left>640</left>
+					<width>5</width>
+					<height>1080</height>
+					<texture colordiffuse="white300">shadows/shadowline_5px_right.png</texture>
+				</control>
+				<control type="group">
+					<control type="group">
+						<top>145</top>
+						<left>55</left>
+						<control type="group">
+							<top>-10</top>
+							<left>-10</left>
+							<visible>[!Container.Content(movies) + !Container.Content(seasons) + !Container.Content(sets) + !Container.Content(tvshows)]</visible>
+							<include content="common_poster">
+								<param name="width">550</param>
+								<param name="height">318</param>
+								<param name="fadetime">300</param>
+								<param name="bordersize">10</param>
+								<param name="bordertexture">shadows/shadow_10px.png</param>
+								<param name="texture_var">$VAR[common_landscape_var]</param>
+								<param name="aspectratio">keep</param>
+							</include>
+						</control>
+						<control type="group">
+							<top>-10</top>
+							<left>-10</left>
+							<visible>[Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows)]</visible>
+							<include content="common_poster">
+								<param name="width">550</param>
+								<param name="height">318</param>
+								<param name="fadetime">300</param>
+								<param name="bordersize">10</param>
+								<param name="bordertexture">shadows/shadow_10px.png</param>
+								<param name="texture_var">$VAR[common_landscape_var]</param>
+							</include>
+						</control>
+					</control>
+					<!-- Current item metadata /-->
+					<control type="group">
+						<top>464</top>
+						<left>55</left>
+						<control type="grouplist">
+							<usecontrolcoords>true</usecontrolcoords>
+							<width>530</width>
+							<height>376</height>
+							<itemgap>11</itemgap>
+							<!-- 1. label (title etc.) /-->
+							<control type="label">
+								<height>34</height>
+								<width>530</width>
+								<label>$VAR[list_label_var]</label>
+								<font>montserrat_bold_32</font>
+							</control>
+							<!-- 2. label (genre etc.) /-->
+							<control type="label">
+								<visible>!String.IsEqual(ListItem.dbtype,set) + [ !String.IsEmpty(ListItem.Label2) | !String.IsEmpty(ListItem.ChannelName)]</visible>
+								<height>25</height>
+								<width>530</width>
+								<label>$VAR[list_label_var2]</label>
+								<textcolor>text200</textcolor>
+								<font>montserrat_light_24</font>
+							</control>
+							<!-- Horizontal labels /-->
+							<control type="grouplist">
+								<visible>!String.IsEmpty(ListItem.Rating) + !String.IsEmpty(ListItem.Duration) + !String.IsEmpty(ListItem.Year)</visible>
+								<orientation>horizontal</orientation>
+								<height>25</height>
+								<width>530</width>
+								<itemgap>11</itemgap>
+								<control type="image">
+									<visible>!String.IsEmpty(ListItem.Rating)</visible>
+									<height>25</height>
+									<width>130</width>
+									<texture colordiffuse="selected500">$VAR[star_var]</texture>
+								</control>
+								<!-- Rating /-->
+								<control type="label">
+									<visible>!String.IsEmpty(ListItem.Rating)</visible>
+									<height>25</height>
+									<width>auto</width>
+									<label>$INFO[ListItem.Rating]</label>
+									<textcolor>text200</textcolor>
+									<font>montserrat_light_24</font>
+								</control>
+								<!-- Duration/-->
+								<control type="label">
+									<visible>!String.IsEmpty(ListItem.Duration)</visible>
+									<height>25</height>
+									<width>auto</width>
+									<label>[COLOR text100]•[/COLOR]  $INFO[ListItem.Duration(mins)] $LOCALIZE[31070]</label>
+									<textcolor>text200</textcolor>
+									<font>montserrat_light_24</font>
+								</control>
+								<!-- Duration/-->
+								<control type="label">
+									<visible>!String.IsEmpty(ListItem.Year)</visible>
+									<height>25</height>
+									<width>auto</width>
+									<label>[COLOR text100]•[/COLOR]  $INFO[ListItem.Year]</label>
+									<textcolor>text200</textcolor>
+									<font>montserrat_light_24</font>
+								</control>
+							</control>
+							<!-- 3. label (plot etc.) /-->
+							<control type="textbox">
+								<height>218</height>
+								<width>530</width>
+								<label>$VAR[list_label_var3]</label>
+							</control>
+						</control>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<include>view_slide_animation_right</include>
+				<include>window_slide_animation_right</include>
+				<left>640</left>
+				<control type="fixedlist" id="50">
+					<focusposition>5</focusposition>
+					<movement>4</movement>
+					<orientation>vertical</orientation>
+					<preloaditems>2</preloaditems>
+					<viewtype label="Widelist">info</viewtype>
+					<onup/>
+					<ondown/>
+					<onleft>9000</onleft>
+					<onright>9001</onright>
+					<pagecontrol>9001</pagecontrol>
+					<width>1280</width>
+					<height>1080</height>
+					<itemlayout height="89" width="1280">
+						<!-- Label case: /-->
+						<control type="label">
+							<font>montserrat_semibold_22</font>
+							<left>42</left>
+							<width>1196</width>
+							<height>89</height>
+							<label>$VAR[list_label_var]</label>
+							<textcolor>text200</textcolor>
+						</control>
+						<!-- Right-aligned metadata /-->
+						<control type="group">
+							<!-- Rating, Enable/Disable /-->
+							<control type="label">
+								<font>montserrat_semibold_22</font>
+								<align>right</align>
+								<right>42</right>
+								<width>1196</width>
+								<height>89</height>
+								<label>$VAR[list_right_var]</label>
+								<textcolor>text200</textcolor>
+							</control>
+							<!-- Progress indicator /-->
+							<!-- This information has first priority /-->
+							<control type="image">
+								<right>42</right>
+								<height>89</height>
+								<width>25</width>
+								<aspectratio>keep</aspectratio>
+								<texture colordiffuse="text200">$VAR[list_right_image_var]</texture>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout height="89" width="1280">
+						<control type="image">
+							<top>-5</top>
+							<left>16</left>
+							<width>1248</width>
+							<height>99</height>
+							<texture border="5" colordiffuse="$VAR[list_focus_var]">shapes/white_rounded.png</texture>
+							<bordersize>5</bordersize>
+							<bordertexture border="5" colordiffuse="white500">shadows/shadow_5px_rounded.png</bordertexture>
+						</control>
+						<!-- Label case: /-->
+						<control type="label">
+							<font>montserrat_semibold_22</font>
+							<textcolor>text100</textcolor>
+							<left>42</left>
+							<width>1196</width>
+							<height>89</height>
+							<label>$VAR[list_label_var]</label>
+						</control>
+						<!-- Right-aligned metadata /-->
+						<control type="group">
+							<!-- Rating, Enable/Disable /-->
+							<control type="label">
+								<font>montserrat_semibold_22</font>
+								<align>right</align>
+								<right>42</right>
+								<width>1196</width>
+								<height>89</height>
+								<label>$VAR[list_right_var]</label>
+								<textcolor>text100</textcolor>
+							</control>
+							<!-- Progress indicator /-->
+							<!-- This information has first priority /-->
+							<control type="image">
+								<right>42</right>
+								<height>89</height>
+								<width>25</width>
+								<aspectratio>keep</aspectratio>
+								<texture colordiffuse="text100">$VAR[list_right_image_var]</texture>
+							</control>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

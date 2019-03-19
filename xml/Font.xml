@@ -6,139 +6,6 @@
 			<size>26</size>
 			<filename>sourcesanspro-regular.ttf</filename>
 		</font>
-		<!-- Questrial (kodi logo) /-->
-		<font>
-			<name>questrial_regular_30</name>
-			<size>30</size>
-			<filename>questrial-regular.ttf</filename>
-		</font>
-		<!-- FontAwesome (icons) /-->
-		<font>
-			<name>symbol</name>
-			<size>26</size>
-			<filename>fontawesome-webfont.ttf</filename>
-		</font>
-		<font>
-			<name>symbol_34</name>
-			<size>34</size>
-			<filename>fontawesome-webfont.ttf</filename>
-		</font>
-		<!-- Raleway /-->
-		<!-- Regular /-->
-		<font>
-			<name>raleway_regular_42</name>
-			<size>42</size>
-			<filename>Raleway-Regular.ttf</filename>
-		</font>
-		<font>
-			<name>raleway_regular_30</name>
-			<size>30</size>
-			<filename>Raleway-Regular.ttf</filename>
-		</font>
-		<font>
-			<name>raleway_regular_26</name>
-			<size>26</size>
-			<filename>Raleway-Regular.ttf</filename>
-		</font>
-		<!-- Bold /-->
-		<font>
-			<name>raleway_bold_30</name>
-			<size>30</size>
-			<filename>Raleway-Bold.ttf</filename>
-		</font>
-		<font>
-			<name>raleway_bold_42</name>
-			<size>42</size>
-			<filename>Raleway-Bold.ttf</filename>
-		</font>
-		<font>
-			<name>raleway_bold_55</name>
-			<size>55</size>
-			<filename>Raleway-Bold.ttf</filename>
-		</font>
-		<!-- Source Sans Pro /-->
-		<!-- Regular /-->
-		<font>
-			<name>sourcesanspro_regular_21</name>
-			<size>21</size>
-			<filename>sourcesanspro-regular.ttf</filename>
-		</font>
-		<font>
-			<name>sourcesanspro_regular_24</name>
-			<size>24</size>
-			<filename>sourcesanspro-regular.ttf</filename>
-		</font>
-		<font>
-			<name>sourcesanspro_regular_26</name>
-			<size>26</size>
-			<filename>sourcesanspro-regular.ttf</filename>
-		</font>
-		<font>
-			<name>sourcesanspro_regular_28</name>
-			<size>28</size>
-			<filename>sourcesanspro-regular.ttf</filename>
-		</font>
-		<font>
-			<name>sourcesanspro_regular_30</name>
-			<size>30</size>
-			<filename>sourcesanspro-regular.ttf</filename>
-		</font>
-		<font>
-			<name>sourcesanspro_regular_34</name>
-			<size>34</size>
-			<filename>sourcesanspro-regular.ttf</filename>
-		</font>
-		<font>
-			<name>sourcesanspro_regular_128</name>
-			<size>128</size>
-			<filename>sourcesanspro-regular.ttf</filename>
-		</font>
-		<!-- Bold /-->
-		<font>
-			<name>sourcesanspro_bold_26</name>
-			<size>26</size>
-			<filename>sourcesanspro-bold.ttf</filename>
-		</font>
-		<font>
-			<name>sourcesanspro_bold_30</name>
-			<size>30</size>
-			<filename>sourcesanspro-bold.ttf</filename>
-		</font>
-		<font>
-			<name>sourcesanspro_bold_34</name>
-			<size>34</size>
-			<filename>sourcesanspro-bold.ttf</filename>
-		</font>
-		<font>
-			<name>sourcesanspro_semibold_34</name>
-			<size>34</size>
-			<filename>sourcesanspro-semibold.ttf</filename>
-		</font>
-		<font>
-			<name>sourcesanspro_bold_42</name>
-			<size>42</size>
-			<filename>sourcesanspro-bold.ttf</filename>
-		</font>
-		<font>
-			<name>sourcesanspro_bold_55</name>
-			<size>55</size>
-			<filename>sourcesanspro-bold.ttf</filename>
-		</font>
-		<font>
-			<name>sourcesanspro_bold_164</name>
-			<size>164</size>
-			<filename>sourcesanspro-bold.ttf</filename>
-		</font>
-		<font>
-			<name>opensans_condensed_bold_26</name>
-			<size>26</size>
-			<filename>OpenSansCondensed-Bold.ttf</filename>
-		</font>
-		<font>
-			<name>oswald_bold_28</name>
-			<size>28</size>
-			<filename>Oswald-Bold.ttf</filename>
-		</font>
 		<font>
 			<name>montserrat_bold_26</name>
 			<size>26</size>
@@ -160,11 +27,6 @@
 			<filename>OpenSans-SemiBold.ttf</filename>
 		</font>
 		<font>
-			<name>oswald_regular_26</name>
-			<size>26</size>
-			<filename>Oswald-Bold.ttf</filename>
-		</font>
-		<font>
 			<name>montserrat_regular_24</name>
 			<size>24</size>
 			<filename>Montserrat-Regular.ttf</filename>
@@ -175,110 +37,94 @@
 			<filename>Montserrat-Regular.ttf</filename>
 		</font>
 		<font>
-			<name>test2</name>
-			<size>30</size>
-			<filename>Montserrat-Bold.ttf</filename>
-		</font>
-
-		<font>
-			<name>home_header</name>
-			<size>24</size>
-			<filename>Montserrat-Regular.ttf</filename>
-		</font>
-		<font>
-			<name>common_header</name>
-			<size>55</size>
-			<filename>Montserrat-Bold.ttf</filename>
-		</font>
-		<font>
-			<name>common_text</name>
-			<size>24</size>
-			<filename>OpenSans-Regular.ttf</filename>
-		</font>
-		<font>
-			<name>common_text_2</name>
-			<size>24</size>
-			<filename>OpenSans-SemiBold.ttf</filename>
-		</font>
-		<font>
-			<name>common_text_3</name>
-			<size>24</size>
-			<filename>Montserrat-Regular.ttf</filename>
-		</font>
-		<font>
-			<name>common_light</name>
-			<size>25</size>
-			<filename>Montserrat-Light.ttf</filename>
-		</font>
-		<font>
-			<name>common_italic</name>
-			<size>24</size>
-			<filename>Montserrat-Italic.ttf</filename>
-		</font>
-		<font>
-			<name>common_condensed_light</name>
-			<size>25</size>
-			<filename>Oswald-Regular.ttf</filename>
-		</font>
-		<font>
-			<name>common_list</name>
-			<size>24</size>
-			<filename>OpenSans-Regular.ttf</filename>
-		</font>
-		<font>
-			<name>common_list_2</name>
-			<size>24</size>
-			<filename>Montserrat-SemiBold.ttf</filename>
-		</font>
-		<font>
-			<name>home_clock_header</name>
-			<size>164</size>
-			<filename>Montserrat-Bold.ttf</filename>
-		</font>
-		<font>
-			<name>large_header</name>
+			<name>montserrat_black_128</name>
 			<size>128</size>
-			<filename>Montserrat-Bold.ttf</filename>
+			<filename>Montserrat-Black.ttf</filename>
 		</font>
 		<font>
-			<name>home_clock_footer</name>
+			<name>opensans_regular_23</name>
+			<size>23</size>
+			<filename>OpenSans-Regular.ttf</filename>
+		</font>
+		<font>
+			<name>opensans_regular_24</name>
 			<size>24</size>
-			<filename>OpenSans-SemiBold.ttf</filename>
+			<filename>OpenSans-Regular.ttf</filename>
 		</font>
 		<font>
-			<name>small_header</name>
-			<size>24</size>
-			<filename>Montserrat-Bold.ttf</filename>
-		</font>
-		<font>
-			<name>small_header_2</name>
-			<size>30</size>
-			<filename>Montserrat-Bold.ttf</filename>
-		</font>
-		<font>
-			<name>medium_header</name>
-			<size>44</size>
-			<filename>Montserrat-Bold.ttf</filename>
-		</font>
-		<font>
-			<name>medium_header_2</name>
-			<size>40</size>
-			<filename>Montserrat-SemiBold.ttf</filename>
-		</font>
-		<font>
-			<name>mediumsmall_header</name>
-			<size>34</size>
-			<filename>Montserrat-Bold.ttf</filename>
-		</font>
-		<font>
-			<name>medium_footer</name>
+			<name>opensans_semibold_23</name>
 			<size>23</size>
 			<filename>OpenSans-SemiBold.ttf</filename>
 		</font>
 		<font>
-			<name>splash</name>
-			<size>144</size>
-			<filename>Elianto-Regular.ttf</filename>
+			<name>opensans_semibold_24</name>
+			<size>24</size>
+			<filename>OpenSans-SemiBold.ttf</filename>
+		</font>
+		<font>
+			<name>opensans_bold_24</name>
+			<size>24</size>
+			<filename>OpenSans-Bold.ttf</filename>
+		</font>
+		<font>
+			<name>montserrat_regular_24</name>
+			<size>24</size>
+			<filename>Montserrat-Regular.ttf</filename>
+		</font>
+		<font>
+			<name>montserrat_bold_23</name>
+			<size>23</size>
+			<filename>Montserrat-Bold.ttf</filename>
+		</font>
+		<font>
+			<name>montserrat_bold_24</name>
+			<size>24</size>
+			<filename>Montserrat-Bold.ttf</filename>
+		</font>
+		<font>
+			<name>montserrat_bold_32</name>
+			<size>32</size>
+			<filename>Montserrat-Bold.ttf</filename>
+		</font>
+		<font>
+			<name>montserrat_bold_34</name>
+			<size>34</size>
+			<filename>Montserrat-Bold.ttf</filename>
+		</font>
+		<font>
+			<name>montserrat_semibold_22</name>
+			<size>22</size>
+			<filename>Montserrat-SemiBold.ttf</filename>
+		</font>
+		<font>
+			<name>montserrat_semibold_24</name>
+			<size>24</size>
+			<filename>Montserrat-SemiBold.ttf</filename>
+		</font>
+		<font>
+			<name>montserrat_light_23</name>
+			<size>23</size>
+			<filename>Montserrat-Light.ttf</filename>
+		</font>	
+		<font>
+			<name>montserrat_light_24</name>
+			<size>24</size>
+			<filename>Montserrat-Light.ttf</filename>
+		</font>		
+		<font>
+			<name>montserrat_bold_44</name>
+			<size>44</size>
+			<filename>Montserrat-Bold.ttf</filename>
+		</font>
+		<font>
+			<name>montserrat_bold_30</name>
+			<size>30</size>
+			<filename>Montserrat-Bold.ttf</filename>
+		</font>
+		<font>
+			<name>montserrat_bold_50</name>
+			<size>50</size>
+			<filename>Montserrat-Bold.ttf</filename>
 		</font>
 	</fontset>
 </fonts>

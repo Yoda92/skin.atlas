@@ -48,31 +48,6 @@
 		</animation>
 	</include>
 
-	<include name="pvr_window_animation">
-		<animation type="WindowClose" condition="ControlGroup(9000).HasFocus()">
-			<effect type="fade" start="100" end="0" time="144" delay="100" easing="out"/>
-		</animation>
-		<animation type="WindowClose" condition="!ControlGroup(9000).HasFocus()">
-			<effect type="fade" start="100" end="0" time="144" easing="out"/>
-		</animation>
-		<animation type="WindowOpen">
-			<effect type="fade" start="0" end="100" time="144" easing="out"/>
-		</animation>
-	</include>
-
-	<include name="pvr_settings_window_animation">
-		<animation type="WindowClose" condition="ControlGroup(9000).HasFocus()">
-			<effect type="fade" start="100" end="0" time="144" delay="101" tween="sine" easing="out"/>
-			<effect type="slide" time="144" end="0,-144"/>
-		</animation>
-		<animation type="WindowClose" condition="!ControlGroup(9000).HasFocus()">
-			<effect type="fade" start="100" end="0" time="144" tween="sine" easing="out"/>
-		</animation>
-		<animation type="WindowOpen">
-			<effect type="fade" start="0" end="100" time="144" tween="sine" easing="out"/>
-		</animation>
-	</include>
-
 	<include name="common_visible_animation">
 		<animation type="Visible">
 			<effect type="fade" start="0" end="100" time="144" easing="out"/>
@@ -102,23 +77,23 @@
 
 	<include name="window_slide_animation_left">
 		<animation type="WindowClose">
-			<effect type="fade" start="100" end="0" time="233" tween="cubic" easing="out"/>
-			<effect type="slide" start="0,0" end="-144,0" time="233" tween="cubic" easing="out"/>
+			<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out"/>
+			<effect type="slide" start="0,0" end="-144,0" time="200" tween="sine" easing="out"/>
 		</animation>
 		<animation type="WindowOpen">
-			<effect type="fade" start="0" end="100" time="233" tween="cubic" easing="out"/>
-			<effect type="slide" start="-144,0" end="0,0" time="233" tween="cubic" easing="out"/>
+			<effect type="fade" start="0" end="100" time="200" tween="sine" easing="out"/>
+			<effect type="slide" start="-144,0" end="0,0" time="200" tween="sine" easing="out"/>
 		</animation>
 	</include>
 
 	<include name="window_slide_animation_right">
 		<animation type="WindowClose">
-			<effect type="fade" start="100" end="0" time="233" tween="cubic" easing="out"/>
-			<effect type="slide" start="0,0" end="144,0" time="233" tween="cubic" easing="out"/>
+			<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out"/>
+			<effect type="slide" start="0,0" end="144,0" time="200" tween="sine" easing="out"/>
 		</animation>
 		<animation type="WindowOpen">
-			<effect type="fade" start="0" end="100" time="233" tween="cubic" easing="out"/>
-			<effect type="slide" start="144,0" end="0,0" time="233" tween="cubic" easing="out"/>
+			<effect type="fade" start="0" end="100" time="200" tween="sine" easing="out"/>
+			<effect type="slide" start="144,0" end="0,0" time="200" tween="sine" easing="out"/>
 		</animation>	
 	</include>
 
@@ -134,20 +109,16 @@
 	</include>
 
 	<include name="view_slide_animation_left">
-		<animation type="Hidden">
-			<effect type="fade" start="100" end="0" time="233" tween="cubic" easing="out"/>
-			<effect type="slide" start="0,0" end="-144,0" time="233" tween="cubic" easing="out"/>
-		</animation>
-		<animation type="Visible">
-			<effect type="fade" start="0" end="100" time="233" tween="cubic" easing="out" delay="300"/>
-			<effect type="slide" start="-144,0" end="0,0" time="233" tween="cubic" easing="out" delay="300"/>
+		<animation type="Visible" reversible="false">
+			<effect type="fade" start="0" end="100" time="200" tween="sine" easing="out" delay="300"/>
+			<effect type="slide" start="-144,0" end="0,0" time="200" tween="sine" easing="out" delay="300"/>
 		</animation>
 	</include>
 
 	<include name="view_slide_animation_right">
-		<animation type="Visible">
-			<effect type="fade" start="0" end="100" time="233" tween="cubic" easing="out" delay="300"/>
-			<effect type="slide" start="144,0" end="0,0" time="233" tween="cubic" easing="out" delay="300"/>
+		<animation type="Visible" reversible="false">
+			<effect type="fade" start="0" end="100" time="200" tween="sine" easing="out" delay="300"/>
+			<effect type="slide" start="144,0" end="0,0" time="20" tween="sine" easing="out" delay="300"/>
 		</animation>	
 	</include>
 
@@ -155,6 +126,41 @@
 		<animation type="Visible" reversible="false">
 			<effect type="fade" start="0" end="100" time="200" tween="cubic" delay="300"/>
 			<effect type="zoom" start="110,110" end="100,100" time="200" tween="cubic" center="960,540" delay="300"/>
+		</animation>
+	</include>
+
+	<include name="view_fade_animation">
+		<animation type="Visible" reversible="false">
+			<effect type="fade" start="0" end="100" time="200" tween="sine" delay="300"/>
+		</animation>
+	</include>
+
+	<include name="common_dialog_window_animation">
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="200" easing="out"/>
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="200" easing="out" delay="200"/>
+			<effect type="slide" start="0,34" end="0,0" time="300" tween="back" easing="out" delay="200"/>
+		</animation>
+	</include>
+	
+	<include name="common_dialog_visible_animation">
+		<animation type="Hidden">
+			<effect type="fade" start="100" end="0" time="200" easing="out"/>
+		</animation>
+		<animation type="Visible">
+			<effect type="fade" start="0" end="100" time="200" easing="out" delay="200"/>
+			<effect type="slide" start="0,34" end="0,0" time="300" tween="back" easing="out" delay="200"/>
+		</animation>
+	</include>
+	
+	<include name="dialog_background_window_animation">
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="200" easing="out" delay="200"/>
+		</animation>
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="200" easing="out"/>
 		</animation>
 	</include>
 </includes>

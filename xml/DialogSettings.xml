@@ -2,104 +2,140 @@
 <window type="dialog">
 	<defaultcontrol always="true">5</defaultcontrol>
 	<backgroundcolor>0</backgroundcolor>
+	<zorder>5</zorder>
 	<controls>
 		<control type="group">
 			<include>common_window_animation</include>
 			<include>dialog_background</include>
-			<!-- Dialog items /-->
-			<control type="group">
-				<width>1482</width>
-				<height>741</height>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
-				<include content="dialog_panel">
-					<param name="width">1482</param>
-					<param name="height">741</param>
-					<param name="label_id">2</param>
-				</include>
-				<!-- Background second panel /-->
-				<control type="image">
-					<top>123</top>
-					<left>34</left>
-					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
-					<height>584</height>
-					<width>1003</width>
-				</control>
-				<!-- List /-->
-				<control type="grouplist" id="5">
-					<onright>9000</onright>
-					<top>123</top>
-					<left>34</left>
-					<height>584</height>
-					<width>1003</width>
-				</control>
-				<!-- Right aligned buttons /-->
-				<control type="grouplist" id="9000">
-					<onleft>5</onleft>
-					<itemgap>21</itemgap>
-					<top>123</top>
-					<left>1058</left>
-					<!-- OK /-->
-					<include content="dialog_button">
-						<param name="id">28</param>
-						<param name="width">390</param>
-						<param name="label">$LOCALIZE[31048]</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
-					<!-- Cancel /-->
-					<include content="dialog_button">
-						<param name="id">29</param>
-						<param name="width">390</param>
-						<param name="label">$LOCALIZE[31055]</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
-					<!-- Defaults /-->
-					<include content="dialog_button">
-						<param name="id">30</param>
-						<param name="width">390</param>
-						<param name="label">$LOCALIZE[31063]</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
-				</control>
-			</control>
-			<!-- List item templates /-->
-			<include content="dialog_button">
-				<param name="width">1003</param>
-				<param name="textoffset">21</param>
-				<param name="align">left</param>
-				<param name="id">7</param>
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>1456</width>
+			<height>666</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">1456</param>
+				<param name="height">666</param>
+				<param name="label_id">2</param>
 			</include>
-			<include content="dialog_radiobutton">
-				<param name="width">1003</param>
-				<param name="textoffset">21</param>
-				<param name="align">left</param>
-				<param name="id">8</param>
-				<param name="textwidth">961</param>
-			</include>
-			<include content="dialog_label_bold">
-				<param name="width">1003</param>
-				<param name="id">14</param>
-				<param name="height">73</param>
-			</include>
-			<include content="dialog_spincontrolex">
-				<param name="width">1003</param>
-				<param name="textoffset">21</param>
-				<param name="align">left</param>
-				<param name="id">9</param>
-			</include>
-			<control type="sliderex" id="13">
+			<!-- Background second panel /-->
+			<control type="image">
+				<top>110</top>
+				<left>21</left>
+				<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+				<height>535</height>
 				<width>1003</width>
-				<height>73</height>
-				<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 			</control>
-			<control type="edit" id="12">
+			<!-- List /-->
+			<control type="grouplist" id="5">
+				<onright>9000</onright>
+				<top>110</top>
+				<left>21</left>
+				<height>535</height>
 				<width>1003</width>
-				<height>73</height>
-				<textoffsetx>21</textoffsetx>
+				<itemgap>11</itemgap>
 			</control>
+			<!-- Right aligned buttons /-->
+			<control type="grouplist" id="9000">
+				<onleft>5</onleft>
+				<itemgap>21</itemgap>
+				<top>110</top>
+				<left>1045</left>
+				<!-- OK /-->
+				<control type="button" id="28">
+					<label>$LOCALIZE[31048]</label>
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>390</width>
+					<height>80</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<!-- Cancel /-->
+				<control type="button" id="29">
+					<label>$LOCALIZE[31055]</label>
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>390</width>
+					<height>80</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<!-- Defaults /-->
+				<control type="button" id="30">
+					<label>$LOCALIZE[31063]</label>
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>390</width>
+					<height>80</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+			</control>
+		</control>
+		<!-- List item templates /-->
+		<control type="button" id="7">
+			<disabledcolor>text400</disabledcolor>
+			<textcolor>text200</textcolor>
+			<focusedcolor>text100</focusedcolor>
+			<width>1003</width>
+			<height>80</height>
+			<texturenofocus border="5" colordiffuse="00FFFFFF">shapes/white_rounded.png</texturenofocus>
+			<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+			<align>left</align>
+			<textoffsetx>21</textoffsetx>
+			<aligny>center</aligny>
+		</control>
+		<control type="radiobutton" id="8">
+			<disabledcolor>text400</disabledcolor>
+			<width>1003</width>
+			<textwidth>903</textwidth>
+			<height>80</height>
+			<texturenofocus border="5" colordiffuse="00FFFFFF">shapes/white_rounded.png</texturenofocus>
+			<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+			<align>left</align>
+			<radiowidth>80</radiowidth>
+			<radioheight>80</radioheight>
+			<radioposx>928</radioposx>
+		</control>
+		<control type="label" id="14">
+			<height>80</height>
+			<font>montserrat_semibold_22</font>
+			<width>1003</width>
+			<label>[COLOR text100]$LOCALIZE[31214]:[/COLOR] </label>
+			<textcolor>text400</textcolor>
+			<align>center</align>
+		</control>
+		<control type="spincontrolex" id="9">
+			<disabledcolor>text400</disabledcolor>
+			<textcolor>text200</textcolor>
+			<width>1003</width>
+			<height>80</height>
+			<align>left</align>
+			<textoffsetx>21</textoffsetx>
+			<texturenofocus border="5" colordiffuse="00FFFFFF">shapes/white_rounded.png</texturenofocus>
+			<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+		</control>
+		<control type="sliderex" id="13">
+			<width>1003</width>
+			<height>80</height>
+			<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+		</control>
+		<control type="edit" id="12">
+			<width>1003</width>
+			<height>80</height>
+			<textoffsetx>21</textoffsetx>
 		</control>
 	</controls>
 </window>

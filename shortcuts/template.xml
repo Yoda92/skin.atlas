@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<other include="spotlight_widget">
+		<property name="content" tag="property" attribute="widgetPath" />
+		<property name="target" tag="property" attribute="widgetTarget" />
+		<property name="name" tag="property" attribute="widgetName" />
+		<property name="content">$VAR[spotlight_content_var]</property>
+		<property name="target">$VAR[spotlight_target_var]</property>
+		<property name="name">$VAR[spotlight_name_var]</property>
+		<controls>
+			<control type="image">
+				<animation type="Conditional" condition="Control.HasFocus(3000) + [Skin.HasSetting(toggleSpotlightWidget) | Skin.HasSetting(toggleSingleRowWidget)]" reversible="false">
+					<effect type="slide" start="0,0" end="0,-100" time="400" tween="back" easing="out"/>
+				</animation>
+				<animation type="Conditional" condition="!Control.HasFocus(3000) + [Skin.HasSetting(toggleSpotlightWidget) | Skin.HasSetting(toggleSingleRowWidget)]" reversible="false">
+					<effect type="slide" start="0,-100" end="0,0" time="400" tween="back" easing="out"/>
+				</animation>
+				<right>0</right>
+				<top>131</top>
+				<fadetime tween="cubic">300</fadetime>
+				<width>1188</width>
+				<height>668</height>
+				<texture diffuse="miscellaneous/diffuse_radial.png">$INFO[Container(3000).ListItem.Art(fanart)]</texture>
+				<aspectratio>scale</aspectratio>
+			</control>
+			<control type="group">
+				<animation type="Conditional" condition="Control.HasFocus(3000) + [Skin.HasSetting(toggleSpotlightWidget) | Skin.HasSetting(toggleSingleRowWidget)]" reversible="false">
+					<effect type="slide" start="0,0" end="0,-45" time="400" tween="back" easing="out"/>
+				</animation>
+				<animation type="Conditional" condition="!Control.HasFocus(3000) + [Skin.HasSetting(toggleSpotlightWidget) | Skin.HasSetting(toggleSingleRowWidget)]" reversible="false">
+					<effect type="slide" start="0,-45" end="0,0" time="400" tween="back" easing="out"/>
+				</animation>
+				<control type="grouplist">
+					<top>131</top>
+					<left>34</left>
+					<height>538</height>
+					<width>698</width>
+					<orientation>vertical</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					<itemgap>16</itemgap>
+					<align>center</align>
+					<!-- Spotlight /-->
+					<control type="label">
+						<label>$SKINSHORTCUTS[name]</label>
+						<font>montserrat_bold_24</font>
+						<height>24</height>
+						<width>698</width>
+						<textcolor>selected500</textcolor>
+						<align>center</align>
+					</control>	
+					<!-- Title /-->
+					<control type="label">
+						<align>center</align>
+						<visible>!String.IsEmpty(Container(3000).ListItem.Label)</visible>
+						<height>42</height>
+						<width>698</width>
+						<label>$INFO[Container(3000).ListItem.Label]</label>
+						<font>montserrat_bold_44</font>
+					</control>
+					<!-- Genre /-->
+					<control type="label">
+						<visible>!String.IsEmpty(Container(3000).ListItem.Genre)</visible>
+						<height>26</height>
+						<width>698</width>
+						<label>$INFO[Container(3000).ListItem.Genre]</label>
+						<textcolor>text200</textcolor>
+						<font>montserrat_light_24</font>
+						<align>center</align>
+					</control>
+					<!-- Tagline /-->
+					<control type="label">
+						<visible>!String.IsEmpty(Container(3000).ListItem.Tagline)</visible>
+						<height>26</height>
+						<width>698</width>
+						<label>$INFO[Container(3000).ListItem.Tagline]</label>
+						<textcolor>text200</textcolor>
+						<font>montserrat_light_24</font>
+						<align>center</align>
+					</control>
+				</control>
+			</control>
+			<!-- Widget /-->
+			<control type="list" id="3000">
+				<animation type="Conditional" condition="Control.HasFocus(3000) + [Skin.HasSetting(toggleSpotlightWidget) | Skin.HasSetting(toggleSingleRowWidget)]" reversible="false">
+					<effect type="slide" start="0,0" end="0,55" time="400" tween="back" easing="out"/>
+				</animation>
+				<animation type="Conditional" condition="!Control.HasFocus(3000) + [Skin.HasSetting(toggleSpotlightWidget) | Skin.HasSetting(toggleSingleRowWidget)]" reversible="false">
+					<effect type="slide" start="0,55" end="0,0" time="400" tween="back" easing="out"/>
+				</animation>
+				<preloaditems>2</preloaditems>
+				<autoscroll time="16000">!Control.HasFocus(3000)</autoscroll>
+				<top>700</top>
+				<onup>1000</onup>
+				<onback>1000</onback>
+				<height>310</height>
+				<width>1920</width>
+				<orientation>horizontal</orientation>
+				<itemlayout width="221" height="310">
+					<control type="group">
+						<left>16</left>
+						<include content="common_poster">
+							<param name="fadetime">0</param>
+							<param name="width">210</param>
+							<param name="height">310</param>
+							<param name="bordersize">5</param>
+							<param name="bordertexture">shadows/shadow_5px.png</param>
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout width="221" height="310">
+					<control type="group">
+						<left>16</left>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="103" time="89" center="auto"/>
+						</animation>
+						<animation type="UnFocus">
+							<effect type="zoom" start="103" end="100" time="89" center="auto"/>
+						</animation>
+						<control type="image">
+							<animation type="UnFocus">
+								<effect type="fade" start="100" end="0" time="89"/>
+							</animation>
+							<width>210</width>
+							<height>310</height>
+							<texture border="5" colordiffuse="$VAR[home_focus_var]">shapes/white_rounded.png</texture>
+						</control>
+						<control type="group">
+							<include content="common_poster">
+								<param name="width">210</param>
+								<param name="height">310</param>
+								<param name="bordersize">5</param>
+								<param name="bordertexture">shadows/shadow_5px.png</param>
+							</include>
+						</control>
+					</control>
+				</focusedlayout>
+				<content target="$SKINSHORTCUTS[target]" limit="10">$SKINSHORTCUTS[content]</content>
+			</control>	
+		</controls>
+	</other>
+</template>

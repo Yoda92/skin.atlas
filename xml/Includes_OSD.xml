@@ -10,23 +10,48 @@
 			<height>89</height>
 			<width>1920</width>
 			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+			<itemgap>0</itemgap>
+			<!-- Step back /-->
+			<include content="osd_button">
+				<param name="texture">osd/step_back.png</param>
+				<param name="onclick">PlayerControl(Previous)</param>
+				<param name="id">7001</param>
+			</include>
+			<!-- Rewind /-->
+			<include content="osd_button">
+				<param name="texture">osd/rewind.png</param>
+				<param name="onclick">PlayerControl(Rewind)</param>
+				<param name="id">7002</param>
+			</include>
 			<!-- Play / Pause /-->
 			<control type="togglebutton" id="1">
 				<height>89</height>
 				<width>89</width>
-				<texturefocus colordiffuse="text100">osd/play_focus.png</texturefocus>
+				<texturefocus colordiffuse="focus">osd/play.png</texturefocus>
 				<texturenofocus colordiffuse="text100">osd/play.png</texturenofocus>
-				<alttexturefocus colordiffuse="text100">osd/pause_focus.png</alttexturefocus>
+				<alttexturefocus colordiffuse="focus">osd/pause.png</alttexturefocus>
 				<alttexturenofocus colordiffuse="text100">osd/pause.png</alttexturenofocus>
 				<usealttexture>!Player.Paused</usealttexture>
 				<onclick>PlayerControl(Play)</onclick>
 			</control>
 			<!-- Stop /-->
 			<include content="osd_button">
-				<param name="texturefocus">osd/stop_focus.png</param>
-				<param name="texturenofocus">osd/stop.png</param>
+				<param name="texture">osd/stop.png</param>
 				<param name="onclick">PlayerControl(Stop)</param>
-				<param name="id">2</param>
+				<param name="id">7003</param>
+			</include>
+			<!-- Forward /-->
+			<include content="osd_button">
+				<param name="texture">osd/forward.png</param>
+				<param name="onclick">PlayerControl(Forward)</param>
+				<param name="id">7004</param>
+			</include>
+			<!-- Step Forward /-->
+			<include content="osd_button">
+				<param name="texture">osd/step_forward.png</param>
+				<param name="onclick">PlayerControl(Next)</param>
+				<param name="id">7005</param>
 			</include>
 		</control>	
 	</include>
@@ -40,44 +65,44 @@
 			<height>89</height>
 			<width>1920</width>
 			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+			<itemgap>0</itemgap>
 			<align>right</align>
 			<!-- Subtitles /-->
 			<include content="osd_button">
 				<param name="visible">Player.HasVideo</param>
-				<param name="texturefocus">osd/subtitles_focus.png</param>
-				<param name="texturenofocus">osd/subtitles.png</param>
+				<param name="texture">osd/subtitles.png</param>
 				<param name="onclick">ActivateWindow(1105,return)</param>
 				<param name="id">3</param>
 			</include>
 			<!-- Settings /-->
 			<include content="osd_button">
 				<param name="visible">Player.HasVideo</param>
-				<param name="texturefocus">osd/settings_focus.png</param>
-				<param name="texturenofocus">osd/settings.png</param>
+				<param name="texture">osd/settings.png</param>
 				<param name="onclick">ActivateWindow(1106,return)</param>
 				<param name="id">5</param>
 			</include>
 			<!-- Audio Settings /-->
 			<include content="osd_button">
 				<param name="visible">Player.HasAudio</param>
-				<param name="texturefocus">osd/settings_focus.png</param>
-				<param name="texturenofocus">osd/settings.png</param>
+				<param name="texture">osd/settings.png</param>
 				<param name="onclick">ActivateWindow(osdaudiosettings,return)</param>
 				<param name="id">6</param>
 			</include>
 			<!-- Visualization /-->
 			<include content="osd_button">
 				<param name="visible">Player.HasAudio</param>
-				<param name="texturefocus">osd/visualization_focus.png</param>
-				<param name="texturenofocus">osd/visualization.png</param>
+				<param name="texture">icons/visualization.png</param>
 				<param name="id">500</param>
 			</include>
+			<control type="group" id="777">
+				<width>6</width>
+			</control>
 		</control>
 	</include>
 
 	<include name="osd_button">
-		<param name="texturenofocus"/>
-		<param name="texturefocus"/>
+		<param name="texture"/>
 		<param name="visible">true</param>
 		<param name="onclick"/>
 		<param name="id"/>
@@ -86,8 +111,8 @@
 				<visible>$PARAM[visible]</visible>
 				<height>89</height>
 				<width>89</width>
-				<texturefocus colordiffuse="text100">$PARAM[texturefocus]</texturefocus>
-				<texturenofocus colordiffuse="text100">$PARAM[texturenofocus]</texturenofocus>
+				<texturefocus colordiffuse="focus">$PARAM[texture]</texturefocus>
+				<texturenofocus colordiffuse="text100">$PARAM[texture]</texturenofocus>
 				<onclick>$PARAM[onclick]</onclick>
 			</control>
 		</definition>

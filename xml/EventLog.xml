@@ -6,22 +6,14 @@
 	<views>50</views>
 	<controls>
 		<include>default_background</include>
-		<control type="group">
-			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
-				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
-			</animation>
-			<include>view_50_list</include>
-		</control>
+		<include>view_50_list</include>
 		<!-- Header + Clock /-->
 		<control type="group">
-			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
-				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
-			</animation>
 			<visible>Control.IsVisible(50)</visible>
 			<include>delayed_slide_left_animation</include>
+			<include>view_fade_animation</include>
 			<include content="default_header_label">
 				<param name="container_id">50</param>
-				<param name="label">$LOCALIZE[31078]</param>
 				<param name="width">623</param>
 			</include>
 			<include>clock</include>	
@@ -31,6 +23,7 @@
 			<param name="list_id">50</param>
 			<param name="content">eventlog_options_content</param>
 		</include>
+		<!-- Scrollbar /-->
 		<control type="group">
 			<include>common_window_animation</include>
 			<include content="common_vertical_scrollbar">

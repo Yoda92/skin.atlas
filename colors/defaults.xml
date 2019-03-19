@@ -1,56 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <colors>	
-	<color name="main300">ccffffff</color> 
-	<color name="main500">80ffffff</color> 
-	<color name="main600">60ffffff</color>
-	<color name="main700">40ffffff</color>
-	<color name="main800">33ffffff</color>
-	<color name="main900">20ffffff</color>
-	<color name="main1000">10ffffff</color>
-	<color name="main1100">08ffffff</color>
+	<color name="background">FF191919</color>
 
-	<color name="secondary300">B3000000</color>
-	<color name="secondary500">80000000</color>
-	<color name="secondary700">60000000</color>
-	<color name="secondary800">30000000</color>
-	<color name="secondary900">20000000</color>
+	<color name="white">FFFFFFFF</color>
+	<color name="white100">0FFFFFFF</color>
+	<color name="white200">16E5E5FF</color>
+	<color name="white300">40EEEEFF</color>
+	<color name="white400">50FFFFFF</color>
+	<color name="white500">80FFFFFF</color>
+	<color name="white700">AAFFFFFF</color>
+	<color name="white900">CCFFFFFF</color>
 
-	<color name="accent100">FFF0F0F0</color> 
-	<color name="accent200">FFD0D0D0</color>
-	<color name="accent300">FFA0A0A0</color>
-	<color name="accent500">FF282828</color> 
-	<color name="accent600">FF232323</color> 
-	<color name="accent650">FF202020</color> 
-	<color name="accent700">FF191919</color> 
-	<color name="accent800">FF111111</color> 
-	<color name="accent850">FF2d3436</color>
-	<color name="accent900">FF080808</color> 
+	<color name="black">FF000000</color>
+	<color name="black100">33000000</color>
+	<color name="black300">33000000</color>
+	<color name="black500">80000000</color>
+	<color name="black700">AA000000</color>
+	<color name="black900">CC000000</color>
 
+	<color name="primary100">FFE0E0E0</color>
+	<color name="primary500">FF424242</color>
+	<color name="primary700">FF232323</color> 
+	<color name="primary800">FF191919</color>
+	<color name="primary900">FF111111</color>
+	<color name="primary1000">FF000000</color>
+
+	<color name="focus_amplified">FF00a8ff</color>
+	<color name="focus">FF487eb0</color>
+	<color name="unfocus">FF1C2833</color>
 
 	<color name="text100">FFF0F0F0</color> 
-	<color name="text150">FFE0E0E0</color> 
-	<color name="text200">FFC8C8C8</color>
-	<color name="text300">FFA0A0A0</color>
-	<color name="text400">FF606060</color>
+	<color name="text200">FFD8D8D8</color>
+	<color name="text300">FFA5A5A9</color>
+	<color name="text400">FF808080</color>
 	<color name="text500">FF404040</color> 
 	<color name="text600">FF303030</color> 
 	<color name="text650">FF181818</color> 
-	<color name="text700">FF252525</color> 
-	<color name="text800">FF222222</color> 
-	<color name="text850">FF111111</color>
-	<color name="text900">FF080808</color> 
+	<color name="text700">FF3C3C3C</color> 
+	<color name="text800">FF2C2C2C</color> 
+	<color name="text900">FF1C1C1C</color> 
 
 	<color name="selected500">FFfdcb6e</color>
-	<color name="red500">FFe74c3c</color>
-	<color name="blue100">FFbdc3c7</color>
-	<color name="blue150">FF487eb0</color>
-	<color name="blue200">ff485460</color>
-	<color name="blue300">FF3c6382</color>
-	<color name="blue500">FF34495e</color>
-	<color name="blue700">FF2c3e50</color>
-	<color name="blue800">FF38444D</color>
-	<color name="blue900">FF1e272e</color>
-	<color name="blue1000">FF111112</color>
-
-	<color name="background">FF000000</color>
 </colors>

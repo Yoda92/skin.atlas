@@ -4,7 +4,15 @@
 		<control type="image">
 			<width>100%</width>
 			<height>100%</height>
-			<texture colordiffuse="A6ffffff">colors/black.png</texture>
+			<texture colordiffuse="black">colors/white.png</texture>
+		</control>
+	</include>
+
+	<include name="dialog_fade">
+		<control type="image">
+			<width>100%</width>
+			<height>100%</height>
+			<texture colordiffuse="black700">colors/white.png</texture>
 		</control>
 	</include>
 
@@ -18,127 +26,23 @@
 			<control type="image">
 				<width>$PARAM[width]</width>
 				<height>$PARAM[height]</height>
-				<texture border="5" colordiffuse="text700">shapes/white_rounded.png</texture>
+				<texture border="10" colordiffuse="primary800">shapes/white_rounded_10.png</texture>
 			</control>
-			<control type="image">
-				<width>$PARAM[width]</width>
-				<height>89</height>
-				<texture border="5" colordiffuse="blue700" flipy="true">shapes/white_rounded_top.png</texture>
-			</control>
-			<control type="image">
-				<top>89</top>
-				<width>$PARAM[width]</width>
-				<height>5</height>
-				<texture>shadows/shadowline_5px_down.png</texture>
-			</control>
-			<control type="label" id="$PARAM[label_id]">
-				<height>89</height>
-				<label>$PARAM[label]</label>
+			<control type="group">
 				<left>$PARAM[label_offset]</left>
-				<font>small_header</font>
-			</control>
-		</definition>
-	</include>
-
-	<include name="dialog_button">
-		<param name="visible">true</param>
-		<param name="width"/>
-		<param name="id"/>
-		<param name="align">center</param>
-		<param name="textoffset"/>
-		<param name="label"/>
-		<param name="height">73</param>
-		<param name="texturecolor">00ffffff</param>
-		<param name="textcolor">text100</param>
-		<param name="disabledcolor">text500</param>
-		<definition>
-			<control type="button" id="$PARAM[id]">
-				<disabledcolor>$PARAM[disabledcolor]</disabledcolor>
-				<textcolor>$PARAM[textcolor]</textcolor>
-				<visible>$PARAM[visible]</visible>
-				<width>$PARAM[width]</width>
-				<height>$PARAM[height]</height>
-				<texturenofocus border="5" colordiffuse="$PARAM[texturecolor]">shapes/white_rounded.png</texturenofocus>
-				<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-				<textoffsetx>$PARAM[textoffset]</textoffsetx>
-				<label>$PARAM[label]</label>
-				<align>$PARAM[align]</align>
-				<aligny>center</aligny>
-			</control>
-		</definition>
-	</include>
-
-	<include name="dialog_spincontrolex">
-		<param name="width"/>
-		<param name="id"/>
-		<param name="align">center</param>
-		<param name="textoffset"/>
-		<param name="label"/>
-		<param name="height">73</param>
-		<param name="visible">true</param>
-		<param name="texturecolor">00ffffff</param>
-		<param name="textcolor">text100</param>
-		<param name="disabledcolor">text500</param>
-		<definition>
-			<control type="spincontrolex" id="$PARAM[id]">
-				<disabledcolor>$PARAM[disabledcolor]</disabledcolor>
-				<textcolor>$PARAM[textcolor]</textcolor>
-				<visible>$PARAM[visible]</visible>
-				<label>$PARAM[label]</label>
-				<width>$PARAM[width]</width>
-				<height>$PARAM[height]</height>
-				<align>$PARAM[align]</align>
-				<textoffsetx>$PARAM[textoffset]</textoffsetx>
-				<texturenofocus border="5" colordiffuse="$PARAM[texturecolor]">shapes/white_rounded.png</texturenofocus>
-				<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-			</control>
-		</definition>
-	</include>
-
-	<include name="dialog_radiobutton">
-		<param name="width"/>
-		<param name="id"/>
-		<param name="align">center</param>
-		<param name="textoffset"/>
-		<param name="label"/>
-		<param name="label_width"/>
-		<param name="height">73</param>
-		<param name="texturecolor">00ffffff</param>
-		<param name="textcolor">text100</param>
-		<param name="disabledcolor">text500</param>
-		<definition>
-			<control type="radiobutton" id="$PARAM[id]">
-				<disabledcolor>$PARAM[disabledcolor]</disabledcolor>
-				<textcolor>$PARAM[textcolor]</textcolor>
-				<width>$PARAM[width]</width>
-				<height>$PARAM[height]</height>
-				<texturenofocus border="5" colordiffuse="$PARAM[texturecolor]">shapes/white_rounded.png</texturenofocus>
-				<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
-				<textoffsetx>$PARAM[textoffset]</textoffsetx>
-				<label>$PARAM[label]</label>
-				<textwidth>$PARAM[label_width]</textwidth>
-				<align>$PARAM[align]</align>
-				<aligny>center</aligny>
-				<radiowidth>$PARAM[height]</radiowidth>
-				<radioheight>$PARAM[height]</radioheight>
-			</control>
-		</definition>
-	</include>
-
-	<include name="dialog_label_bold">
-		<param name="width"/>
-		<param name="id"/>
-		<param name="label"/>
-		<param name="height">89</param>
-		<param name="align">center</param>
-		<definition>
-			<control type="label" id="$PARAM[id]">
-				<height>$PARAM[height]</height>
-				<width>$PARAM[width]</width>
-				<align>$PARAM[align]</align>
-				<aligny>center</aligny>
-				<label>$PARAM[label]</label>
-				<font>small_header</font>
+				<control type="image">
+					<width>25</width>
+					<height>89</height>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="text200">icons/list2.png</texture>
+				</control>
+				<control type="label" id="$PARAM[label_id]">
+					<height>89</height>
+					<label>$PARAM[label]</label>
+					<left>42</left>
+					<font>montserrat_bold_24</font>
+					<textcolor>text200</textcolor>
+				</control>
 			</control>
 		</definition>
 	</include>
@@ -150,7 +54,7 @@
 		<param name="label"/>
 		<param name="align">center</param>
 		<param name="textcolor">text100</param>
-		<param name="font">common_text</param>
+		<param name="font">opensans_regular_24</param>
 		<definition>
 			<control type="label" id="$PARAM[id]">
 				<textcolor>$PARAM[textcolor]</textcolor>
@@ -184,16 +88,16 @@
 				<left>$PARAM[left]</left>
 				<height>$PARAM[height]</height>
 				<width>$PARAM[width]</width>
-				<itemlayout height="89" width="$PARAM[width]" condition="$PARAM[visible_label2]">
+				<itemlayout height="80" width="$PARAM[width]" condition="$PARAM[visible_label2]">
 					<control type="group">
 						<left>21</left>
 						<top>-16</top>
 						<include content="dialog_label_regular">
 							<param name="width">$PARAM[label_width]</param>
 							<param name="label">$PARAM[label]</param>
-							<param name="height">89</param>
+							<param name="height">80</param>
 							<param name="align">left</param>
-							<param name="font">common_text_2</param>
+							<param name="textcolor">text200</param>
 						</include>
 					</control>
 					<control type="group">
@@ -201,84 +105,72 @@
 						<top>16</top>
 						<include content="dialog_label_regular">
 							<param name="width">$PARAM[label_width]</param>
-							<param name="height">89</param>
+							<param name="height">80</param>
+							<param name="label">$PARAM[label2]</param>
+							<param name="align">left</param>
+							<param name="textcolor">text400</param>
+						</include>
+					</control>
+				</itemlayout>
+				<itemlayout height="80" width="$PARAM[width]" condition="!$PARAM[visible_label2]">
+					<control type="group">
+						<left>21</left>
+						<include content="dialog_label_regular">
+							<param name="width">$PARAM[label_width]</param>
+							<param name="label">$PARAM[label]</param>
+							<param name="height">80</param>
+							<param name="align">left</param>
+							<param name="textcolor">text200</param>
+							<param name="font">montserrat_semibold_22</param>
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="80" width="$PARAM[width]" condition="$PARAM[visible_label2]">
+					<control type="image">
+						<visible>Control.HasFocus($PARAM[id])</visible>
+						<height>80</height>
+						<width>$PARAM[width]</width>
+						<texture border="5" colordiffuse="focus">shapes/white_rounded.png</texture>
+					</control>
+					<control type="group">
+						<left>21</left>
+						<top>-16</top>
+						<include content="dialog_label_regular">
+							<param name="width">$PARAM[label_width]</param>
+							<param name="height">80</param>
+							<param name="label">$PARAM[label]</param>
+							<param name="align">left</param>
+							<param name="textcolor">text100</param>
+						</include>
+					</control>
+					<control type="group">
+						<left>21</left>
+						<top>16</top>
+						<include content="dialog_label_regular">
+							<param name="width">$PARAM[label_width]</param>
+							<param name="height">80</param>
 							<param name="label">$PARAM[label2]</param>
 							<param name="align">left</param>
 							<param name="textcolor">text300</param>
 						</include>
 					</control>
-				</itemlayout>
-				<itemlayout height="89" width="$PARAM[width]" condition="!$PARAM[visible_label2]">
-					<control type="group">
-						<left>21</left>
-						<include content="dialog_label_regular">
-							<param name="width">$PARAM[label_width]</param>
-							<param name="label">$PARAM[label]</param>
-							<param name="height">89</param>
-							<param name="align">left</param>
-							<param name="font">common_text_2</param>
-						</include>
-					</control>
-				</itemlayout>
-				<focusedlayout height="89" width="$PARAM[width]" condition="$PARAM[visible_label2]">
-					<control type="image">
-						<visible>Control.HasFocus($PARAM[id])</visible>
-						<height>89</height>
-						<width>$PARAM[width]</width>
-						<texture border="5" colordiffuse="main500">shapes/white_rounded.png</texture>
-					</control>
-					<control type="image">
-						<visible>!Control.HasFocus($PARAM[id])</visible>
-						<height>89</height>
-						<width>$PARAM[width]</width>
-						<texture border="5" colordiffuse="main700">shapes/white_rounded.png</texture>
-					</control>
-					<control type="group">
-						<left>21</left>
-						<top>-16</top>
-						<include content="dialog_label_regular">
-							<param name="width">$PARAM[label_width]</param>
-							<param name="height">89</param>
-							<param name="label">$PARAM[label]</param>
-							<param name="align">left</param>
-							<param name="font">common_text_2</param>
-							<param name="textcolor">text900</param>
-						</include>
-					</control>
-					<control type="group">
-						<left>21</left>
-						<top>16</top>
-						<include content="dialog_label_regular">
-							<param name="width">$PARAM[label_width]</param>
-							<param name="height">89</param>
-							<param name="label">$PARAM[label2]</param>
-							<param name="align">left</param>
-							<param name="textcolor">text800</param>
-						</include>
-					</control>
 				</focusedlayout>
-				<focusedlayout height="89" width="$PARAM[width]" condition="!$PARAM[visible_label2]">
+				<focusedlayout height="80" width="$PARAM[width]" condition="!$PARAM[visible_label2]">
 					<control type="image">
 						<visible>Control.HasFocus($PARAM[id])</visible>
-						<height>89</height>
+						<height>80</height>
 						<width>$PARAM[width]</width>
-						<texture border="5" colordiffuse="main500">shapes/white_rounded.png</texture>
-					</control>
-					<control type="image">
-						<visible>!Control.HasFocus($PARAM[id])</visible>
-						<height>89</height>
-						<width>$PARAM[width]</width>
-						<texture border="5" colordiffuse="main700">shapes/white_rounded.png</texture>
+						<texture border="5" colordiffuse="focus">shapes/white_rounded.png</texture>
 					</control>
 					<control type="group">
 						<left>21</left>
 						<include content="dialog_label_regular">
 							<param name="width">$PARAM[label_width]</param>
-							<param name="height">89</param>
+							<param name="height">80</param>
 							<param name="label">$PARAM[label]</param>
 							<param name="align">left</param>
-							<param name="font">common_text_2</param>
-							<param name="textcolor">text900</param>
+							<param name="textcolor">text100</param>
+							<param name="font">montserrat_semibold_22</param>
 						</include>
 					</control>
 				</focusedlayout>
@@ -295,13 +187,13 @@
 		<param name="ondown"/>
 		<definition>
 			<control type="button" id="$PARAM[id]">
-				<font>sourcesanspro_bold_26</font>
+				<font>opensans_regular_24</font>
 				<onup>$PARAM[onup]</onup>
 				<ondown>$PARAM[ondown]</ondown>
 				<width>$PARAM[width]</width>
 				<height>$PARAM[height]</height>
-				<texturenofocus border="5" colordiffuse="main900">shapes/white_rounded.png</texturenofocus>
-				<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
+				<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
 				<label>$PARAM[label]</label>
 			</control>
 		</definition>
@@ -323,8 +215,8 @@
 				<height>$PARAM[height]</height>
 				<radiowidth>$PARAM[width]</radiowidth>
 				<radioheight>$PARAM[height]</radioheight>
-				<texturenofocus border="5" colordiffuse="main900">shapes/white_rounded.png</texturenofocus>
-				<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
+				<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
 				<textureradioonnofocus colordiffuse="text100">$PARAM[icon]</textureradioonnofocus>
 				<textureradioonfocus colordiffuse="text100">$PARAM[icon]</textureradioonfocus>
 				<textureradiooffnofocus colordiffuse="text100">$PARAM[alt_icon]</textureradiooffnofocus>
@@ -332,6 +224,74 @@
 				<textureradioondisabled colordiffuse="text500">$PARAM[icon]</textureradioondisabled>
 				<textureradiooffdisabled colordiffuse="text500">$PARAM[icon]</textureradiooffdisabled>
 				<radioposx>1</radioposx>
+			</control>
+		</definition>
+	</include>
+
+	<include name="widget_button">
+		<param name="id"/>
+		<param name="widget_id"/>
+		<definition>
+			<control type="group" id="$PARAM[id]0">
+				<height>80</height>
+				<control type="image">
+					<visible>Control.HasFocus($PARAM[id])</visible>
+					<height>80</height>
+					<width>930</width>
+					<texture border="5" colordiffuse="focus">shapes/white_rounded.png</texture>
+				</control>
+				<control type="label">
+					<visible>!Control.HasFocus($PARAM[id])</visible>
+					<height>80</height>
+					<left>21</left>
+					<textcolor>text200</textcolor>
+					<label>$VAR[widget_name_var]Widget #$PARAM[widget_id]   |   $INFO[Container(211).ListItem.Property(widgetName.widget$PARAM[widget_id])]</label>
+				</control>
+				<control type="label">
+					<visible>Control.HasFocus($PARAM[id])</visible>
+					<height>80</height>
+					<left>21</left>
+					<textcolor>text100</textcolor>
+					<label>Widget #$PARAM[widget_id]   |   $INFO[Container(211).ListItem.Property(widgetName.widget$PARAM[widget_id])]</label>
+				</control>
+			</control>
+			<control type="panel" id="$PARAM[id]">
+				<onunfocus>SetProperty(listposition,$INFO[Container($PARAM[id]).Position])</onunfocus>
+				<onfocus>Control.Move($PARAM[id],-$INFO[Container($PARAM[id]).Position])</onfocus>
+				<onfocus>Control.Move($PARAM[id],$INFO[Window().Property(listposition)])</onfocus>
+				<onleft>Control.SetFocus(211)</onleft>
+				<onleft>ClearProperty(SetWidgets)</onleft>
+				<top>-80</top>
+				<height>80</height>
+				<left>828</left>
+				<orientation>horizontal</orientation>
+				<itemlayout width="51">
+					<control type="image">
+						<width>30</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<texture colordiffuse="text300">$INFO[ListItem.Icon]</texture>
+					</control>
+				</itemlayout>
+				<focusedlayout width="51">
+					<control type="image">
+						<width>30</width>
+						<height>80</height>
+						<aspectratio>keep</aspectratio>
+						<texture colordiffuse="text100">$INFO[ListItem.Icon]</texture>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+						<onclick>SetProperty(widgetID,widget$PARAM[widget_id])</onclick>
+						<onclick>SendClick(312)</onclick>
+						<icon>icons/settings.png</icon>
+					</item>
+					<item>
+						<onclick>noop</onclick>
+						<icon>icons/pencil.png</icon>
+					</item>
+				</content>
 			</control>
 		</definition>
 	</include>

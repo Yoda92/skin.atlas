@@ -6,181 +6,190 @@
 		<control type="group">
 			<include>common_window_animation</include>
 			<include>dialog_background</include>
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>566</width>
+			<height>676</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">566</param>
+				<param name="height">676</param>
+				<param name="label">$LOCALIZE[31058]</param>
+			</include>
+			<control type="textbox" id="1">
+				<top>89</top>
+				<height>89</height>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
 			<control type="group">
-				<width>592</width>
-				<height>689</height>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
-				<include content="dialog_panel">
-					<param name="width">592</param>
-					<param name="height">689</param>
-					<param name="label">$LOCALIZE[31058]</param>
-					<param name="label_offset">34</param>
-				</include>
-				<control type="textbox" id="1">
-					<top>89</top>
+				<top>178</top>
+				<left>21</left>
+				<control type="image">
+					<height>89</height>
+					<width>524</width>
+					<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+				</control>
+				<control type="label" id="4">
+					<width>524</width>
 					<height>89</height>
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
-				<control type="group">
-					<top>178</top>
-					<left>34</left>
-					<control type="image">
-						<height>89</height>
-						<width>524</width>
-						<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
-					</control>
-					<control type="label" id="4">
-						<width>524</width>
-						<height>89</height>
-						<align>center</align>
-						<aligny>center</aligny>
-					</control>
+			</control>
+			<!-- Right buttons /-->
+			<control type="grouplist" id="9004">
+				<orientation>vertical</orientation>
+				<onleft condition="Control.HasFocus(23)">13</onleft>
+				<onleft condition="Control.HasFocus(21)">16</onleft>
+				<top>275</top>
+				<left>312</left>
+				<itemgap>8</itemgap>
+				<!-- Backspace /-->
+				<control type="button" id="23">
+					<label>$LOCALIZE[31059]</label>
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>233</width>
+					<height>89</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
 				</control>
-				<!-- Right buttons /-->
-				<control type="grouplist" id="9004">
-					<orientation>vertical</orientation>
-					<onleft condition="Control.HasFocus(23)">13</onleft>
-					<onleft condition="Control.HasFocus(21)">16</onleft>
-					<top>275</top>
-					<left>325</left>
-					<itemgap>8</itemgap>
-					<!-- Backspace /-->
-					<include content="dialog_button">
-						<param name="id">23</param>
-						<param name="width">233</param>
-						<param name="height">89</param>
-						<param name="label">$LOCALIZE[31059]</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
-					<!-- Done /-->
-					<include content="dialog_button">
-						<param name="id">21</param>
-						<param name="width">233</param>
-						<param name="height">89</param>
-						<param name="label">$LOCALIZE[31060]</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
+				<!-- Done /-->
+				<control type="button" id="21">
+					<label>$LOCALIZE[31060]</label>
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>233</width>
+					<height>89</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
 				</control>
-				<!-- 1-3 /-->
-				<control type="grouplist" id="9000">
-					<orientation>horizontal</orientation>
-					<onright>23</onright>
-					<left>34</left>
-					<top>275</top>
-					<itemgap>8</itemgap>
-					<!-- 1 /-->
-					<include content="keyboard_button">
-						<param name="id">11</param>
-						<param name="onup"/>
-						<param name="ondown">14</param>
-						<param name="label">$NUMBER[1]</param>
-					</include>
-					<!-- 2 /-->
-					<include content="keyboard_button">
-						<param name="id">12</param>
-						<param name="onup"/>
-						<param name="ondown">15</param>
-						<param name="label">$NUMBER[2]</param>
-					</include>
-					<!-- 3 /-->
-					<include content="keyboard_button">
-						<param name="id">13</param>
-						<param name="onup"/>
-						<param name="ondown">16</param>
-						<param name="label">$NUMBER[3]</param>
-					</include>
-				</control>
-				<!-- 4-6 /-->
-				<control type="grouplist" id="9001">
-					<orientation>horizontal</orientation>
-					<onright>21</onright>
-					<left>34</left>
-					<top>372</top>
-					<itemgap>8</itemgap>
-					<!-- 4 /-->
-					<include content="keyboard_button">
-						<param name="id">14</param>
-						<param name="onup">11</param>
-						<param name="ondown">17</param>
-						<param name="label">$NUMBER[4]</param>
-					</include>
-					<!-- 5 /-->
-					<include content="keyboard_button">
-						<param name="id">15</param>
-						<param name="onup">12</param>
-						<param name="ondown">18</param>
-						<param name="label">$NUMBER[5]</param>
-					</include>
-					<!-- 6 /-->
-					<include content="keyboard_button">
-						<param name="id">16</param>
-						<param name="onup">13</param>
-						<param name="ondown">19</param>
-						<param name="label">$NUMBER[6]</param>
-					</include>
-				</control>
-				<!-- 7-9 /-->
-				<control type="grouplist" id="9002">
-					<orientation>horizontal</orientation>
-					<onright>21</onright>
-					<left>34</left>
-					<top>469</top>
-					<itemgap>8</itemgap>
-					<!-- 7 /-->
-					<include content="keyboard_button">
-						<param name="id">17</param>
-						<param name="onup">14</param>
-						<param name="ondown">20</param>
-						<param name="label">$NUMBER[7]</param>
-					</include>
-					<!-- 8 /-->
-					<include content="keyboard_button">
-						<param name="id">18</param>
-						<param name="onup">15</param>
-						<param name="ondown">10</param>
-						<param name="label">$NUMBER[8]</param>
-					</include>
-					<!-- 9 /-->
-					<include content="keyboard_button">
-						<param name="id">19</param>
-						<param name="onup">16</param>
-						<param name="ondown">22</param>
-						<param name="label">$NUMBER[9]</param>
-					</include>
-				</control>
-				<!-- Bottom row /-->
-				<control type="grouplist" id="9003">
-					<orientation>horizontal</orientation>
-					<onright>21</onright>
-					<left>34</left>
-					<top>566</top>
-					<itemgap>8</itemgap>
-					<!-- Left /-->
-					<include content="keyboard_radiobutton">
-						<param name="id">20</param>
-						<param name="onup">17</param>
-						<param name="icon">icons/keyboard/left.png</param>
-						<param name="alt_icon">icons/keyboard/left.png</param>
-					</include>
-					<!-- 0 /-->
-					<include content="keyboard_button">
-						<param name="id">10</param>
-						<param name="onup">18</param>
-						<param name="ondown"/>
-						<param name="label">$NUMBER[0]</param>
-					</include>
-					<!-- Right /-->
-					<include content="keyboard_radiobutton">
-						<param name="id">22</param>
-						<param name="onup">19</param>
-						<param name="icon">icons/keyboard/right.png</param>
-						<param name="alt_icon">icons/keyboard/right.png</param>
-					</include>
-				</control>
+			</control>
+			<!-- 1-3 /-->
+			<control type="grouplist" id="9000">
+				<orientation>horizontal</orientation>
+				<onright>23</onright>
+				<left>21</left>
+				<top>275</top>
+				<itemgap>8</itemgap>
+				<!-- 1 /-->
+				<include content="keyboard_button">
+					<param name="id">11</param>
+					<param name="onup"/>
+					<param name="ondown">14</param>
+					<param name="label">$NUMBER[1]</param>
+				</include>
+				<!-- 2 /-->
+				<include content="keyboard_button">
+					<param name="id">12</param>
+					<param name="onup"/>
+					<param name="ondown">15</param>
+					<param name="label">$NUMBER[2]</param>
+				</include>
+				<!-- 3 /-->
+				<include content="keyboard_button">
+					<param name="id">13</param>
+					<param name="onup"/>
+					<param name="ondown">16</param>
+					<param name="label">$NUMBER[3]</param>
+				</include>
+			</control>
+			<!-- 4-6 /-->
+			<control type="grouplist" id="9001">
+				<orientation>horizontal</orientation>
+				<onright>21</onright>
+				<left>21</left>
+				<top>372</top>
+				<itemgap>8</itemgap>
+				<!-- 4 /-->
+				<include content="keyboard_button">
+					<param name="id">14</param>
+					<param name="onup">11</param>
+					<param name="ondown">17</param>
+					<param name="label">$NUMBER[4]</param>
+				</include>
+				<!-- 5 /-->
+				<include content="keyboard_button">
+					<param name="id">15</param>
+					<param name="onup">12</param>
+					<param name="ondown">18</param>
+					<param name="label">$NUMBER[5]</param>
+				</include>
+				<!-- 6 /-->
+				<include content="keyboard_button">
+					<param name="id">16</param>
+					<param name="onup">13</param>
+					<param name="ondown">19</param>
+					<param name="label">$NUMBER[6]</param>
+				</include>
+			</control>
+			<!-- 7-9 /-->
+			<control type="grouplist" id="9002">
+				<orientation>horizontal</orientation>
+				<onright>21</onright>
+				<left>21</left>
+				<top>469</top>
+				<itemgap>8</itemgap>
+				<!-- 7 /-->
+				<include content="keyboard_button">
+					<param name="id">17</param>
+					<param name="onup">14</param>
+					<param name="ondown">20</param>
+					<param name="label">$NUMBER[7]</param>
+				</include>
+				<!-- 8 /-->
+				<include content="keyboard_button">
+					<param name="id">18</param>
+					<param name="onup">15</param>
+					<param name="ondown">10</param>
+					<param name="label">$NUMBER[8]</param>
+				</include>
+				<!-- 9 /-->
+				<include content="keyboard_button">
+					<param name="id">19</param>
+					<param name="onup">16</param>
+					<param name="ondown">22</param>
+					<param name="label">$NUMBER[9]</param>
+				</include>
+			</control>
+			<!-- Bottom row /-->
+			<control type="grouplist" id="9003">
+				<orientation>horizontal</orientation>
+				<onright>21</onright>
+				<left>21</left>
+				<top>566</top>
+				<itemgap>8</itemgap>
+				<!-- Left /-->
+				<include content="keyboard_radiobutton">
+					<param name="id">20</param>
+					<param name="onup">17</param>
+					<param name="icon">icons/keyboard/left.png</param>
+					<param name="alt_icon">icons/keyboard/left.png</param>
+				</include>
+				<!-- 0 /-->
+				<include content="keyboard_button">
+					<param name="id">10</param>
+					<param name="onup">18</param>
+					<param name="ondown"/>
+					<param name="label">$NUMBER[0]</param>
+				</include>
+				<!-- Right /-->
+				<include content="keyboard_radiobutton">
+					<param name="id">22</param>
+					<param name="onup">19</param>
+					<param name="icon">icons/keyboard/right.png</param>
+					<param name="alt_icon">icons/keyboard/right.png</param>
+				</include>
 			</control>
 		</control>
 	</controls>

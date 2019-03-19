@@ -8,27 +8,30 @@
 			<include>dialog_background</include>
 			<!-- Dialog items /-->
 			<control type="group">
-				<width>734</width>
-				<height>488</height>
+				<width>708</width>
+				<height>462</height>
 				<centertop>50%</centertop>
 				<centerleft>50%</centerleft>
 				<include content="dialog_panel">
 					<param name="label">$LOCALIZE[31154]</param>
-					<param name="width">734</param>
-					<param name="height">488</param>
+					<param name="width">708</param>
+					<param name="height">462</param>
 				</include>
 				<control type="group">
-					<left>34</left>
-					<top>123</top>
+					<left>21</left>
+					<top>110</top>
 					<!-- Select Field /-->
 					<control type="button" id="15">
 						<ondown>16</ondown>
-						<width>666</width>
-						<height>73</height>
-						<texturenofocus border="5" colordiffuse="main900">shapes/white_rounded.png</texturenofocus>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 						<textoffsetx>21</textoffsetx>
 						<label>$LOCALIZE[31155]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>666</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -37,12 +40,15 @@
 						<ondown>20</ondown>
 						<onup>15</onup>
 						<top>86</top>
-						<width>666</width>
-						<height>73</height>
-						<texturenofocus border="5" colordiffuse="main900">shapes/white_rounded.png</texturenofocus>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
 						<textoffsetx>21</textoffsetx>
 						<label>$LOCALIZE[31156]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>666</width>
+						<height>73</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
 						<align>left</align>
 						<aligny>center</aligny>
 					</control>
@@ -54,8 +60,8 @@
 						<top>172</top>
 						<width>420</width>
 						<height>73</height>
-						<texturenofocus border="5" colordiffuse="secondary700">shapes/white_rounded.png</texturenofocus>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
 						<textoffsetx>21</textoffsetx>
 						<hinttext>$LOCALIZE[31157]</hinttext>
 						<align>left</align>
@@ -70,8 +76,8 @@
 						<left>433</left>
 						<width>233</width>
 						<height>73</height>
-						<texturenofocus border="5" colordiffuse="main900">shapes/white_rounded.png</texturenofocus>
-						<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
 						<label>$LOCALIZE[31158]</label>
 						<align>center</align>
 						<aligny>center</aligny>
@@ -86,21 +92,25 @@
 						<width>666</width>
 						<itemgap>21</itemgap>
 						<!-- OK /-->
-						<include content="dialog_button">
-							<param name="id">18</param>
-							<param name="width">233</param>
-							<param name="label">$LOCALIZE[31048]</param>
-							<param name="texturecolor">main900</param>
-							<param name="disabledcolor">text900</param>
-						</include>
+						<control type="button" id="18">
+							<width>233</width>
+							<height>73</height>
+							<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+							<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+							<label>$LOCALIZE[31048]</label>
+							<align>center</align>
+							<aligny>center</aligny>
+						</control>
 						<!-- Cancel /-->
-						<include content="dialog_button">
-							<param name="id">19</param>
-							<param name="width">233</param>
-							<param name="label">$LOCALIZE[31055]</param>
-							<param name="texturecolor">main900</param>
-							<param name="disabledcolor">text900</param>
-						</include>
+						<control type="button" id="19">
+							<width>233</width>
+							<height>73</height>
+							<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+							<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+							<label>$LOCALIZE[31055]</label>
+							<align>center</align>
+							<aligny>center</aligny>
+						</control>
 					</control>
 				</control>
 			</control>

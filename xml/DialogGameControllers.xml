@@ -2,145 +2,186 @@
 <window>
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">3</defaultcontrol>
+	<zorder>5</zorder>
 	<controls>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include>dialog_background</include>
-			<!-- Dialog items /-->
+			<include>dialog_fade</include>
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>1626</width>
+			<height>759</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="label_id">2</param>
+				<param name="width">1626</param>
+				<param name="height">759</param>
+				<param name="label">$LOCALIZE[31043]</param>
+			</include>
+			<!-- Left label /-->
+			<control type="label">
+				<left>21</left>
+				<top>89</top>
+				<height>89</height>
+				<width>377</width>
+				<align>center</align>
+				<label>$LOCALIZE[31044]</label>
+				<font>montserrat_semibold_22</font>
+				<textcolor>text300</textcolor>
+			</control>
+			<!-- Left background /-->
+			<control type="image">
+				<top>178</top>
+				<left>21</left>
+				<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+				<height>560</height>
+				<width>377</width>
+			</control>
+			<!-- Profile list /-->
+			<control type="grouplist" id="3">
+				<onright>5</onright>
+				<top>178</top>
+				<left>21</left>
+				<height>560</height>
+				<width>377</width>
+			</control>
+			<!-- Default profile button /-->
+			<control type="button" id="10">
+				<font>montserrat_semibold_22</font>
+				<disabledcolor>text400</disabledcolor>
+				<textcolor>text200</textcolor>
+				<focusedcolor>text100</focusedcolor>
+				<width>377</width>
+				<height>80</height>
+				<texturenofocus border="5" colordiffuse="00FFFFFF">shapes/white_rounded.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<!-- Center image /-->
+			<control type="gamecontroller" id="31">
+				<top>245</top>
+				<left>432</left>
+				<height>377</height>
+				<width>377</width>
+			</control>
+			<!-- Edit profile /-->
 			<control type="group">
-				<width>1652</width>
-				<height>723</height>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
-				<include content="dialog_panel">
-					<param name="label_id">2</param>
-					<param name="width">1652</param>
-					<param name="height">723</param>
-					<param name="label">$LOCALIZE[31043]</param>
-				</include>
-				<!-- Left label /-->
+				<left>817</left>
+				<top>89</top>
+				<!-- Right label /-->
 				<control type="label">
-					<left>34</left>
-					<top>89</top>
 					<height>89</height>
 					<width>377</width>
 					<align>center</align>
-					<label>$LOCALIZE[31044]</label>
-					<font>small_header</font>
+					<label>$LOCALIZE[31045]</label>
+					<font>montserrat_semibold_22</font>
+					<textcolor>text300</textcolor>
 				</control>
-				<!-- Left background /-->
+				<!-- Right background /-->
 				<control type="image">
-					<top>178</top>
-					<left>34</left>
-					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
-					<height>511</height>
-					<width>377</width>
-				</control>
-				<!-- Profile list /-->
-				<control type="grouplist" id="3">
-					<onright>5</onright>
-					<top>178</top>
-					<left>34</left>
-					<height>511</height>
-					<width>377</width>
-				</control>
-				<!-- Default profile button /-->
-				<include content="dialog_button">
-					<param name="id">10</param>
-					<param name="width">377</param>
-					<param name="texturecolor">main900</param>
-					<param name="disabledcolor">text900</param>
-				</include>
-				<!-- Center image /-->
-				<control type="gamecontroller" id="31">
-					<top>245</top>
-					<left>432</left>
-					<height>377</height>
-					<width>377</width>
-				</control>
-				<!-- Edit profile /-->
-				<control type="group">
-					<left>830</left>
 					<top>89</top>
-					<!-- Right label /-->
-					<control type="label">
-						<height>89</height>
-						<width>377</width>
-						<align>center</align>
-						<label>$LOCALIZE[31045]</label>
-						<font>small_header</font>
-					</control>
-					<!-- Right background /-->
-					<control type="image">
-						<top>89</top>
-						<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
-						<height>511</height>
-						<width>377</width>
-					</control>
-					<!-- Edit list /-->
-					<control type="grouplist" id="5">
-						<onleft>3</onleft>
-						<onright>61</onright>
-						<top>89</top>
-						<height>511</height>
-						<width>377</width>
-						<pagecontrol>61</pagecontrol>
-					</control>
-					<!-- Default edit button /-->
-					<include content="dialog_button">
-						<param name="id">7</param>
-						<param name="width">377</param>
-					</include>
-					<!-- Default edit label /-->
-					<include content="dialog_label_bold">
-						<param name="id">8</param>
-						<param name="width">377</param>
-					</include>
-					<!-- Edit scrollbar /-->
-					<control type="scrollbar" id="61">
-						<top>89</top>
-						<onleft>5</onleft>
-						<onright>9001</onright>
-						<orientation>vertical</orientation>
-						<left>377</left>
-						<height>511</height>
-						<width>13</width>
-					</control>
+					<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+					<height>560</height>
+					<width>377</width>
 				</control>
-				<control type="grouplist" id="9001">
+				<!-- Edit list /-->
+				<control type="grouplist" id="5">
+					<onleft>3</onleft>
+					<onright>61</onright>
+					<top>89</top>
+					<height>560</height>
+					<width>377</width>
+					<pagecontrol>61</pagecontrol>
+				</control>
+				<!-- Default edit button /-->
+				<control type="button" id="7">
+					<font>montserrat_semibold_22</font>
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>377</width>
+					<height>80</height>
+					<texturenofocus border="5" colordiffuse="00FFFFFF">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<!-- Default edit label /-->
+				<control type="label" id="8">
+					<height>80</height>
+					<width>377</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>montserrat_semibold_22</font>
+					<textcolor>text400</textcolor>
+				</control>
+				<!-- Edit scrollbar /-->
+				<control type="scrollbar" id="61">
+					<top>89</top>
 					<onleft>5</onleft>
-					<left>1241</left>
-					<top>178</top>
-					<itemgap>21</itemgap>
-					<!-- Get more /-->
-					<include content="dialog_button">
-						<param name="id">20</param>
-						<param name="width">377</param>
-						<param name="label">$LOCALIZE[31046]</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
-					<include content="dialog_button">
-						<param name="id">17</param>
-						<param name="width">377</param>
-						<param name="label">$LOCALIZE[31047]</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
-					<include content="dialog_button">
-						<param name="id">18</param>
-						<param name="width">377</param>
-						<param name="label">$LOCALIZE[31048]</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
-					<include content="dialog_button">
-						<param name="id">19</param>
-						<param name="width">377</param>
-						<param name="label">$LOCALIZE[31049]</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
+					<onright>9001</onright>
+					<orientation>vertical</orientation>
+					<left>377</left>
+					<height>560</height>
+					<width>13</width>
+				</control>
+			</control>
+			<control type="grouplist" id="9001">
+				<onleft>5</onleft>
+				<left>1228</left>
+				<top>178</top>
+				<itemgap>11</itemgap>
+				<control type="button" id="20">
+					<label>$LOCALIZE[31046]</label>
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>377</width>
+					<height>80</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="button" id="17">
+					<label>$LOCALIZE[31047]</label>
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>377</width>
+					<height>80</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="button" id="18">
+					<label>$LOCALIZE[31048]</label>
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>377</width>
+					<height>80</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="button" id="19">
+					<label>$LOCALIZE[31049]</label>
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>377</width>
+					<height>80</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
 				</control>
 			</control>
 		</control>

@@ -5,116 +5,167 @@
 	<controls>
 		<control type="group">
 			<include>common_window_animation</include>
-			<include>dialog_background</include>
-			<!-- Dialog items /-->
-			<control type="group">
-				<width>1485</width>
-				<height>741</height>
-				<centertop>50%</centertop>
-				<centerleft>50%</centerleft>
-				<include content="dialog_panel">
-					<param name="width">1482</param>
-					<param name="height">741</param>
-					<param name="label_id">2</param>
-				</include>
-				<!-- Background first panel /-->
-				<control type="image">
-					<top>123</top>
-					<left>34</left>
-					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
-					<height>584</height>
+			<include>dialog_fade</include>
+		</control>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>1459</width>
+			<height>666</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">1459</param>
+				<param name="height">666</param>
+				<param name="label_id">2</param>
+			</include>
+			<!-- Background first panel /-->
+			<control type="image">
+				<top>110</top>
+				<left>21</left>
+				<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+				<height>535</height>
+				<width>377</width>
+			</control>
+			<!-- Main list /-->
+			<control type="grouplist" id="3">
+				<onright>5</onright>
+				<top>110</top>
+				<left>21</left>
+				<width>377</width>
+				<height>535</height>
+				<itemgap>11</itemgap>
+			</control>
+			<control type="button" id="10">
+				<disabledcolor>text400</disabledcolor>
+				<textcolor>text200</textcolor>
+				<focusedcolor>text100</focusedcolor>
+				<width>377</width>
+				<height>80</height>
+				<texturenofocus border="5" colordiffuse="00FFFFFF">shapes/white_rounded.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<!-- Background second panel /-->
+			<control type="image">
+				<top>110</top>
+				<left>422</left>
+				<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
+				<height>535</height>
+				<width>618</width>
+			</control>
+			<!-- Second list /-->
+			<control type="grouplist" id="5">
+				<itemgap>11</itemgap>
+				<top>110</top>
+				<left>422</left>
+				<onleft>3</onleft>
+				<onright>7000</onright>
+				<width>618</width>
+				<height>535</height>
+			</control>
+			<control type="button" id="7">
+				<disabledcolor>text400</disabledcolor>
+				<textcolor>text200</textcolor>
+				<focusedcolor>text100</focusedcolor>
+				<width>618</width>
+				<height>80</height>
+				<texturenofocus border="5" colordiffuse="00FFFFFF">shapes/white_rounded.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>21</textoffsetx>
+			</control>
+			<control type="radiobutton" id="8">
+				<disabledcolor>text400</disabledcolor>
+				<width>618</width>
+				<textwidth>417</textwidth>
+				<height>80</height>
+				<texturenofocus border="5" colordiffuse="00FFFFFF">shapes/white_rounded.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				<align>left</align>
+				<radiowidth>80</radiowidth>
+				<radioheight>80</radioheight>
+				<radioposx>543</radioposx>
+			</control>
+			<control type="spincontrolex" id="9">
+				<textwidth>417</textwidth>
+				<disabledcolor>text400</disabledcolor>
+				<textcolor>text200</textcolor>
+				<focusedcolor>text100</focusedcolor>
+				<width>618</width>
+				<height>80</height>
+				<texturenofocus border="5" colordiffuse="00FFFFFF">shapes/white_rounded.png</texturenofocus>
+				<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>21</textoffsetx>
+			</control>
+			<control type="image" id="11">
+				<width>618</width>
+				<height>80</height>
+				<visible>false</visible>
+			</control>
+			<control type="label" id="14">
+				<height>80</height>
+				<width>618</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>montserrat_semibold_22</font>
+				<textcolor>text400</textcolor>
+			</control>
+			<control type="sliderex" id="13">
+				<align>left</align>
+				<textoffsetx>21</textoffsetx>
+				<height>80</height>
+				<width>618</width>
+			</control>
+			<control type="edit" id="12">
+				<height>80</height>
+				<width>618</width>
+				<textoffsetx>21</textoffsetx>
+			</control>
+			<!-- Third list /-->
+			<control type="grouplist" id="7000">
+				<itemgap>11</itemgap>
+				<onleft>5</onleft>
+				<top>110</top>
+				<left>1061</left>
+				<height>560</height>
+				<width>377</width>
+				<control type="button" id="28">
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
 					<width>377</width>
-				</control>
-				<!-- Main list /-->
-				<control type="grouplist" id="3">
-					<onright>5</onright>
-					<top>123</top>
-					<left>34</left>
-					<width>377</width>
-					<height>584</height>
-				</control>
-				<include content="dialog_button">
-					<param name="width">377</param>
-					<param name="id">10</param>
-				</include>
-				<!-- Background second panel /-->
-				<control type="image">
-					<top>123</top>
-					<left>435</left>
-					<texture border="5" colordiffuse="secondary700">shapes/white_rounded.png</texture>
-					<height>584</height>
-					<width>618</width>
-				</control>
-				<!-- Second list /-->
-				<control type="grouplist" id="5">
-					<top>123</top>
-					<left>435</left>
-					<onleft>3</onleft>
-					<onright>9000</onright>
-					<width>618</width>
-					<height>584</height>
-				</control>
-				<include content="dialog_button">
-					<param name="width">618</param>
-					<param name="id">7</param>
-					<param name="align">left</param>
-					<param name="textoffset">21</param>
-				</include>
-				<include content="dialog_radiobutton">
-					<param name="width">618</param>
-					<param name="id">8</param>
-					<param name="align">left</param>
-					<param name="textoffset">21</param>
-					<param name="label_width">403</param>
-				</include>
-				<include content="dialog_spincontrolex">
-					<param name="width">618</param>
-					<param name="id">9</param>
-					<param name="align">left</param>
-					<param name="textoffset">21</param>
-				</include>
-				<control type="image" id="11">
-					<width>618</width>
-					<height>1</height>
-				</control>
-				<control type="label" id="14">
+					<height>80</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
 					<align>center</align>
-					<width>618</width>
-					<textwidth>576</textwidth>
-					<height>73</height>
+					<aligny>center</aligny>
 				</control>
-				<control type="sliderex" id="13">
-					<align>left</align>
-					<textoffsetx>21</textoffsetx>
-					<height>73</height>
-					<width>618</width>
-				</control>
-				<!-- Third list /-->
-				<control type="grouplist" id="9000">
-					<itemgap>21</itemgap>
-					<onleft>5</onleft>
-					<top>123</top>
-					<left>1074</left>
-					<height>584</height>
+				<control type="button" id="29">
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
 					<width>377</width>
-					<include content="dialog_button">
-						<param name="width">377</param>
-						<param name="id">28</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
-					<include content="dialog_button">
-						<param name="width">377</param>
-						<param name="id">29</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
-					<include content="dialog_button">
-						<param name="width">377</param>
-						<param name="id">30</param>
-						<param name="texturecolor">main900</param>
-						<param name="disabledcolor">text900</param>
-					</include>
+					<height>80</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="button" id="30">
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text200</textcolor>
+					<focusedcolor>text100</focusedcolor>
+					<width>377</width>
+					<height>80</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
 				</control>
 			</control>
 		</control>

@@ -5,28 +5,33 @@
 	<controls>
 		<include>default_background</include>
 		<control type="group">
-			<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
-				<effect type="slide" start="0,0" end="455,0" tween="sine" time="233"/>
-			</animation>
 			<include>common_window_animation</include>
-			<include>common_settings_panel</include>
-			<include content="default_header_label">
-				<param name="id">2</param>
-			</include>
-			<include content="common_settings_menu">
-				<param name="header_id">3</param>
-				<param name="up_id">9000</param>
-				<param name="footer_id">5</param>
-				<param name="textbox_id">6</param>
-			</include>
-			<include>clock</include>
+			<include>dialog_fade</include>
 		</control>
-		<!-- Options panel /-->
-		<include content="common_options_menu">
-			<param name="list_id">3</param>
-			<param name="include_animation">false</param>
-			<param name="content">settingscategory_options_content</param>
-		</include>
+		<!-- Dialog items /-->
+		<control type="group">
+			<include>common_dialog_window_animation</include>
+			<width>1456</width>
+			<height>712</height>
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<include content="dialog_panel">
+				<param name="width">1456</param>
+				<param name="height">712</param>
+				<param name="label_id">2</param>
+			</include>
+			<!-- Background panels /-->
+			<include>settings_panel</include>
+			<include content="header_settings_menu">
+				<param name="header_id">3</param>
+				<param name="footer_id">5</param>
+			</include>
+			<include content="footer_settings_menu">
+				<param name="header_id">3</param>
+				<param name="footer_id">5</param>
+			</include>
+		</control>
+		<!-- Templates /-->
 		<include content="common_settings_button_header">
 			<param name="id">10</param>
 		</include>

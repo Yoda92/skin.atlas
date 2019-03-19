@@ -4,112 +4,229 @@
 	<defaultcontrol always="true">100</defaultcontrol>
 	<controls>
 		<control type="group">
-			<include>common_window_animation</include>
+			<control type="group">
+				<include>common_window_animation</include>
+				<include>dialog_background</include>
+			</control>
 			<!-- Dialog items /-->
 			<control type="group">
-				<include>default_background</include>
-				<include>clock</include>
-				<include content="default_header_label">
-					<param name="label">$VAR[list_label_var]</param>
-					<param name="container_id">100</param>
+				<include>common_dialog_window_animation</include>
+				<include>default_fanart</include>
+				<width>1428</width>
+				<height>601</height>
+				<centertop>50%</centertop>
+				<centerleft>50%</centerleft>
+				<include content="dialog_panel">
+					<param name="width">1428</param>
+					<param name="height">601</param>
+					<param name="label">$LOCALIZE[31210]</param>
 				</include>
-				<!-- Meta information /-->
 				<control type="group">
-					<top>165</top>
-					<left>590</left>
-					<!-- Panel background /-->
-					<control type="image">
-						<height>750</height>
-						<width>1276</width>
-						<texture border="5" colordiffuse="text800">shapes/white_rounded.png</texture>
+					<top>110</top>
+					<left>21</left>
+					<!-- Large thumb /-->
+					<control type="group">
+						<top>-20</top>
+						<left>-20</left>
+						<include content="common_poster">
+							<param name="width">400</param>
+							<param name="height">400</param>
+							<param name="fadetime">200</param>
+							<param name="bordersize">20</param>
+							<param name="bordertexture">shadows/shadow_20px.png</param>
+							<param name="aspectratio">scale</param>
+						</include>
 					</control>
-					<!-- Metadata /-->
-					<control type="grouplist">
-						<left>21</left>
-						<top>21</top>
-						<orientation>vertical</orientation>
-						<itemgap>8</itemgap>
-						<!-- Artist /-->
-						<control type="label">
-							<visible>!String.IsEmpty(ListItem.Artist)</visible>
-							<font>medium_header</font>
-							<height>42</height>
-							<width>auto</width>
-							<label>$INFO[ListItem.Artist]</label>
-						</control>
-						<!-- Album /-->
-						<control type="label">
-							<visible>!String.IsEmpty(ListItem.Album)</visible>
-							<textcolor>text200</textcolor>
-							<height>26</height>
-							<width>auto</width>
-							<label>$INFO[ListItem.Album]</label>
-						</control>
-						<!-- Year /-->
-						<control type="label">
-							<visible>!String.IsEmpty(ListItem.Year)</visible>
-							<textcolor>text200</textcolor>
-							<height>26</height>
-							<width>auto</width>
-							<label>$INFO[ListItem.Year]</label>
-						</control>
-						<!-- Song /-->
-						<control type="label">
-							<visible>!String.IsEmpty(ListItem.Title)</visible>
-							<height>26</height>
-							<width>auto</width>
-							<label>$INFO[ListItem.Title]</label>
+					<!-- Meta information /-->
+					<control type="group">
+						<left>381</left>
+						<!-- Metadata /-->
+						<control type="grouplist">
+							<width>1005</width>
+							<orientation>vertical</orientation>
+							<usecontrolcoords>true</usecontrolcoords>
+							<itemgap>11</itemgap>
+							<!-- Artist /-->
+							<control type="grouplist">
+								<visible>!String.IsEmpty(ListItem.Artist)</visible>
+								<orientation>horizontal</orientation>
+								<height>24</height>
+								<width>1214</width>
+								<control type="label">
+									<height>24</height>
+									<font>opensans_semibold_23</font>
+									<width>auto</width>
+									<label>[COLOR text100]$LOCALIZE[31214]:[/COLOR] </label>
+									<textcolor>text200</textcolor>
+								</control>
+								<control type="label">
+									<height>24</height>
+									<width>auto</width>
+									<font>opensans_regular_23</font>
+									<label>$INFO[ListItem.Artist]</label>
+									<textcolor>text300</textcolor>
+								</control>
+							</control>
+							<!-- Album /-->
+							<control type="grouplist">
+								<visible>!String.IsEmpty(ListItem.Album)</visible>
+								<orientation>horizontal</orientation>
+								<height>24</height>
+								<width>1214</width>
+								<control type="label">
+									<height>24</height>
+									<width>auto</width>
+									<font>opensans_semibold_23</font>
+									<label>[COLOR text100]$LOCALIZE[31215]:[/COLOR] </label>
+									<textcolor>text200</textcolor>
+								</control>
+								<control type="label">
+									<height>24</height>
+									<width>auto</width>
+									<font>opensans_regular_23</font>
+									<label>$INFO[ListItem.Album]</label>
+									<textcolor>text300</textcolor>
+								</control>
+							</control>
+							<!-- Title /-->
+							<control type="grouplist">
+								<visible>!String.IsEmpty(ListItem.Title)</visible>
+								<orientation>horizontal</orientation>
+								<height>24</height>
+								<width>1214</width>
+								<control type="label">
+									<height>24</height>
+									<width>auto</width>
+									<font>opensans_semibold_23</font>
+									<label>[COLOR text100]$LOCALIZE[31216]:[/COLOR] </label>
+									<textcolor>text200</textcolor>
+								</control>
+								<control type="label">
+									<height>24</height>
+									<width>auto</width>
+									<font>opensans_regular_23</font>
+									<label>$VAR[list_label_var]</label>
+									<textcolor>text300</textcolor>
+								</control>
+							</control>
+							<!-- Duration /-->
+							<control type="grouplist">
+								<visible>!String.IsEmpty(ListItem.Duration)</visible>
+								<orientation>horizontal</orientation>
+								<height>24</height>
+								<width>1214</width>
+								<control type="label">
+									<height>24</height>
+									<width>auto</width>
+									<font>opensans_semibold_23</font>
+									<label>[COLOR text100]$LOCALIZE[31068]:[/COLOR] </label>
+									<textcolor>text200</textcolor>
+								</control>
+								<control type="label">
+									<height>24</height>
+									<width>auto</width>
+									<font>opensans_regular_23</font>
+									<label>$INFO[ListItem.Duration(mins)] $LOCALIZE[31070]</label>
+									<textcolor>text300</textcolor>
+								</control>
+							</control>
+							<!-- Year /-->
+							<control type="grouplist">
+								<visible>!String.IsEmpty(ListItem.Year)</visible>
+								<orientation>horizontal</orientation>
+								<height>24</height>
+								<width>1214</width>
+								<control type="label">
+									<height>24</height>
+									<width>auto</width>
+									<font>opensans_semibold_23</font>
+									<label>[COLOR text100]$LOCALIZE[31069]:[/COLOR] </label>
+									<textcolor>text200</textcolor>
+								</control>
+								<control type="label">
+									<height>24</height>
+									<width>auto</width>
+									<font>opensans_regular_23</font>
+									<label>$INFO[ListItem.Year]</label>
+									<textcolor>text300</textcolor>
+								</control>
+							</control>
 						</control>
 					</control>
 				</control>
-			</control>
-			<!-- Large thumb /-->
-			<control type="group">
-				<top>145</top>
-				<left>35</left>
-				<include content="common_poster">
-					<param name="width">540</param>
-					<param name="height">790</param>
-					<param name="fadetime">200</param>
-					<param name="bordersize">20</param>
-					<param name="bordertexture">shadows/shadow_20px.png</param>
-					<param name="aspectratio">keep</param>
-				</include>
-			</control>
-			<!-- Dialog actions /-->
-			<control type="grouplist" id="100">
-				<onup>50</onup>
-				<orientation>horizontal</orientation>
-				<top>805</top>
-				<left>610</left>
-				<itemgap>21</itemgap>
-				<!-- Refresh /-->
-				<include content="dialog_button">
-					<param name="height">89</param>
-					<param name="width">230</param>
-					<param name="id">6</param>
-					<param name="label">$LOCALIZE[31056]</param>
-					<param name="texturecolor">main900</param>
-					<param name="disabledcolor">text900</param>
-				</include>
-				<!-- Connect to Last.fm /-->
-				<include content="dialog_button">
-					<param name="height">89</param>
-					<param name="width">230</param>
-					<param name="id">11</param>
-					<param name="label">Last.fm</param>
-					<param name="texturecolor">main900</param>
-					<param name="disabledcolor">text900</param>
-				</include>
-				<!-- Art /-->
-				<include content="dialog_button">
-					<param name="height">89</param>
-					<param name="width">230</param>
-					<param name="id">10</param>
-					<param name="label">$LOCALIZE[31057]</param>
-					<param name="texturecolor">main900</param>
-					<param name="disabledcolor">text900</param>
-				</include>
+				<!-- Dialog actions /-->
+				<control type="grouplist" id="100">
+					<onup>50</onup>
+					<orientation>horizontal</orientation>
+					<top>491</top>
+					<left>21</left>
+					<itemgap>21</itemgap>
+					<!-- Refresh /-->
+					<control type="button" id="6">
+						<label>$LOCALIZE[31056]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>230</width>
+						<height>89</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Connect to Last.fm /-->
+					<control type="button" id="11">
+						<label>Last.fm</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>230</width>
+						<height>89</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Artist thumb /-->
+					<control type="button" id="10">
+						<label>$LOCALIZE[31211]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>230</width>
+						<height>89</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Artist fanart /-->
+					<control type="button" id="12">
+						<label>$LOCALIZE[31211]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>230</width>
+						<height>89</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+					<!-- Song thumb /-->
+					<control type="button" id="13">
+						<label>$LOCALIZE[31211]</label>
+						<disabledcolor>text400</disabledcolor>
+						<textcolor>text200</textcolor>
+						<focusedcolor>text100</focusedcolor>
+						<width>230</width>
+						<height>89</height>
+						<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+						<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+				</control>
 			</control>
 		</control>
 	</controls>

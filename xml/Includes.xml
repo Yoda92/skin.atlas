@@ -5,7 +5,6 @@
 	<include file="Custom_Subtitles_Dialog.xml"/>
 	<include file="Custom_OSD_Settings_Dialog.xml"/>
 	<include file="Custom_NowPlayingOverlay.xml"/>
-	<include file="Custom_Hub_Movies"/>
 	<include file="Variables.xml"/>
 	<include file="VideoOSD.xml"/>
 	<include file="Includes_Media_Flags.xml"/>
@@ -16,24 +15,27 @@
 	<include file="Includes_Home.xml"/>
 	<include file="Includes_OSD.xml"/>
 	<include file="Includes_Weather.xml"/>
-	<include file="View_50_Widelist.xml"/>
+	<include file="View_50_List.xml"/>
 	<include file="View_51_Poster.xml"/>
 	<include file="View_52_Fanart.xml"/>
-	<include file="View_53_List.xml"/>
-	<include file="View_54_Episode_Vertical.xml"/>
-	<include file="View_55_Panel.xml"/>
+	<include file="View_53_Landscape_List.xml"/>
+	<include file="View_54_Alt_Landscape_List.xml"/>
+	<include file="View_55_Landscape_Wall.xml"/>
+	<include file="View_56_Poster_Wall.xml"/>
 	<include file="PVR_Channels.xml"/>
 	<include file="PVR_Guide.xml"/>
 	<include file="Defaults.xml"/>
 	<include file="script-skinshortcuts-includes.xml"/>
 
 	<include name="default_background">
-		<control type="image">
-			<width>100%</width>
-			<height>100%</height>
-			<texture colordiffuse="blue1000">colors/white.png</texture>
-		</control>
-		<include condition="!Skin.HasSetting(disableNoise)">noise</include>
+		<definition>
+			<control type="image">
+				<width>100%</width>
+				<height>100%</height>
+				<texture colordiffuse="background">colors/white.png</texture>
+			</control>
+			<include condition="!Skin.HasSetting(disableNoise)">noise</include>
+		</definition>
 	</include>
 
 	<include name="noise">
@@ -54,7 +56,7 @@
 			<fadetime>300</fadetime>
 			<width>100%</width>
 			<height>100%</height>
-			<texture colordiffuse="0Bffffff">$INFO[ListItem.Art(fanart)]</texture>
+			<texture colordiffuse="white100">$INFO[ListItem.Art(fanart)]</texture>
 		</control>
 	</include>
 
@@ -62,15 +64,15 @@
 		<control type="group">
 			<!-- Time /-->
 			<control type="label">
-				<bottom>55</bottom>
+				<bottom>63</bottom>
 				<left>55</left>
-				<height>55</height>
+				<height>34</height>
 				<label>$INFO[System.Time(hh:mm)]</label>
-				<font>medium_header</font>
+				<font>montserrat_bold_34</font>
 			</control>
 			<!-- Date /-->
 			<control type="label">
-				<font>medium_footer</font>
+				<font>opensans_semibold_23</font>
 				<bottom>38</bottom>
 				<left>55</left>
 				<height>25</height>
@@ -91,7 +93,7 @@
 		<definition>
 			<!-- Background /-->
 			<control type="image">
-				<texture>colors/black.png</texture>
+				<texture colordiffuse="primary900">colors/white.png</texture>
 				<height>$PARAM[height]</height>
 				<width>$PARAM[width]</width>
 				<fadetime>$PARAM[fadetime]</fadetime>
@@ -107,15 +109,24 @@
 				<aspectratio>$PARAM[aspectratio]</aspectratio>
 				<bordersize>$PARAM[bordersize]</bordersize>
 			</control>
-			<!-- Progress indicator /-->
+			<!-- Watched indicator /-->
+			<control type="image">
+				<visible>Integer.IsGreater(ListItem.PlayCount,0)</visible>
+				<fadetime>$PARAM[fadetime]</fadetime>
+				<width>90</width>
+				<height>90</height>
+				<top>$PARAM[bordersize]</top>
+				<left>$PARAM[bordersize]</left>
+				<texture>banners/overlaywatched.png</texture>
+			</control>
+			<!-- Collection / Unfinished indicator /-->
 			<control type="image">
 				<fadetime>$PARAM[fadetime]</fadetime>
-				<width>$PARAM[width]</width>
-				<height>89</height>
-				<aspectratio align="right">center</aspectratio>
-				<top>-8</top>
-				<left>8</left>
-				<texture colordiffuse="text100">$VAR[list_right_image_var]</texture>
+				<width>90</width>
+				<height>90</height>
+				<top>$PARAM[bordersize]</top>
+				<left>$PARAM[bordersize]</left>
+				<texture>$VAR[overlay_var]</texture>
 			</control>
 		</definition>
 	</include>
@@ -124,26 +135,28 @@
 		<param name="label">$VAR[default_header_var]</param>
 		<param name="container_id">50</param>
 		<param name="width">1810</param>
+		<param name="id"/>
 		<definition>
 			<control type="group">
-				<top>24</top>
-				<!-- header label /-->
+				<top>0</top>
+				<!-- Header label /-->
 				<control type="label" id="$PARAM[id]">
+					<top>38</top>
 					<width>$PARAM[width]</width>
 					<left>55</left>
-					<height>55</height>
+					<height>34</height>
 					<label>$PARAM[label]</label>
-					<font>medium_header</font>
+					<font>montserrat_bold_34</font>
 				</control>
 				<control type="label">
-					<font>medium_footer</font>
+					<font>opensans_semibold_23</font>
 					<visible>!String.IsEmpty(Container($PARAM[container_id]).CurrentItem)</visible>
 					<width>$PARAM[width]</width>
-					<top>48</top>
+					<top>72</top>
 					<left>55</left>
 					<height>25</height>
-					<textcolor>text200</textcolor>
-					<label>$LOCALIZE[31161]: [COLOR text100]$INFO[Container($PARAM[container_id]).CurrentItem][/COLOR] | [COLOR text300]$INFO[Container($PARAM[container_id]).NumItems][/COLOR]</label>
+					<textcolor>text300</textcolor>
+					<label>$LOCALIZE[31161]: [COLOR text100]$INFO[Container($PARAM[container_id]).CurrentItem][/COLOR] | $INFO[Container($PARAM[container_id]).NumItems]</label>
 				</control>
 			</control>
 		</definition>

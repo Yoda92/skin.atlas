@@ -12,7 +12,7 @@
 		<action>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</action>
 		<icon>special://skin/media/icons/clock.png</icon>
 	</shortcut>
-		<shortcut>
+	<shortcut>
 		<label>$LOCALIZE[31169]</label>
 		<label2>Common Shortcut</label2>
 		<action>ActivateWindow(Videos,videodb://inprogresstvshows/,return)</action>

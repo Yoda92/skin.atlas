@@ -20,25 +20,29 @@
 				<align>right</align>
 				<itemgap>21</itemgap>
 				<control type="button" id="3">
-					<disabledcolor>text900</disabledcolor>
+					<disabledcolor>text400</disabledcolor>
 					<textcolor>text100</textcolor>
 					<visible>Weather.IsFetched</visible>
 					<width>377</width>
 					<height>89</height>
-					<texturenofocus border="5" colordiffuse="main900">shapes/white_rounded.png</texturenofocus>
-					<texturefocus border="5" colordiffuse="main500">shapes/white_rounded.png</texturefocus>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
 					<onclick>Weather.LocationNext</onclick>
 				</control>
-				<include content="dialog_button">
-					<param name="id">2</param>
-					<param name="label">$LOCALIZE[31056]</param>
-					<param name="width">233</param>
-					<param name="height">89</param>
-					<param name="texturecolor">main900</param>
-					<param name="disabledcolor">text900</param>
-				</include>
+				<control type="button" id="2">
+					<disabledcolor>text400</disabledcolor>
+					<textcolor>text100</textcolor>
+					<width>233</width>
+					<height>89</height>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<align>center</align>
+					<aligny>center</aligny>
+					<onclick>Weather.Refresh</onclick>
+					<label>$LOCALIZE[31056]</label>
+				</control>
 			</control>
 			<!-- Weather information /-->
 			<control type="group">
@@ -50,7 +54,7 @@
 				<control type="image">
 					<width>1810</width>
 					<height>365</height>
-					<texture border="5" colordiffuse="blue900">shapes/white_rounded.png</texture>
+					<texture border="5" colordiffuse="primary900">shapes/white_rounded.png</texture>
 				</control>
 				<control type="image">
 					<left>21</left>
@@ -66,7 +70,7 @@
 					<top>48</top>
 					<width>169</width>
 					<height>269</height>
-					<texture colordiffuse="text150">icons/temperature.png</texture>
+					<texture colordiffuse="text200">icons/temperature.png</texture>
 				</control>
 				<control type="grouplist">
 					<visible>Weather.IsFetched</visible>
@@ -74,15 +78,16 @@
 					<orientation>vertical</orientation>
 					<align>center</align>
 					<height>365</height>
+					<itemgap>11</itemgap>
 					<control type="label">
 						<label>$INFO[Weather.Temperature]</label>
-						<font>large_header</font>
-						<height>155</height>
+						<font>montserrat_black_128</font>
+						<height>128</height>
 					</control>
 					<control type="label">
 						<textcolor>text200</textcolor>
 						<label>$INFO[Weather.Conditions]</label>
-						<font>home_clock_footer</font>
+						<font>opensans_semibold_24</font>
 						<height>24</height>
 					</control>
 				</control>

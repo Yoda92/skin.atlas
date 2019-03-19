@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="view_55_landscape_wall">
+		<control type="group">
+			<include>window_zoom_animation</include>
+			<include>view_zoom_animation</include>
+			<visible>Control.IsVisible(55)</visible>
+			<!-- Panel /-->
+			<control type="panel" id="55">
+				<visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(genres)</visible>
+				<viewtype label="Landscape Wall">icon</viewtype>
+				<top>135</top>
+				<left>37</left>
+				<pagecontrol>9001</pagecontrol>
+				<onleft>9000</onleft>
+				<onright>9001</onright>
+				<preloaditems>2</preloaditems>
+				<orientation>vertical</orientation>
+				<width>1828</width>
+				<height>945</height>
+				<itemlayout width="457" height="315" condition="Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes)">
+					<control type="group">
+						<left>13</left>
+						<include content="common_poster">
+							<param name="width">439</param>
+							<param name="height">244</param>
+							<param name="fadetime">0</param>
+							<param name="bordersize">5</param>
+							<param name="bordertexture">shadows/shadow_5px.png</param>
+							<param name="texture_var">$VAR[common_landscape_var]</param>
+							<param name="aspectratio">scale</param>
+						</include>
+						<control type="group">
+							<visible>!String.IsEmpty(ListItem.Label2)</visible>
+							<control type="label">
+								<aligny>center</aligny>
+								<top>254</top>
+								<height>25</height>
+								<width>439</width>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>text200</textcolor>
+								<font>montserrat_semibold_22</font>
+							</control> 
+							<control type="label">
+								<aligny>center</aligny>
+								<align>right</align>
+								<top>254</top>
+								<height>25</height>
+								<width>439</width>
+								<label>$INFO[ListItem.Label2]</label>
+								<textcolor>text300</textcolor>
+								<font>montserrat_semibold_22</font>
+							</control> 
+						</control>
+						<control type="group">
+							<visible>String.IsEmpty(ListItem.Label2)</visible>
+							<control type="label">
+								<aligny>center</aligny>
+								<align>center</align>
+								<top>254</top>
+								<height>25</height>
+								<width>439</width>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>text200</textcolor>
+								<font>montserrat_semibold_22</font>
+							</control> 
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="457" height="315" condition="Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(episodes)">
+					<control type="group">
+						<left>13</left>
+						<control type="group">
+							<width>439</width>
+							<height>244</height>
+							<animation type="Focus">
+								<effect type="zoom" start="100" end="103" time="89" center="auto"/>
+							</animation>
+							<animation type="UnFocus">
+								<effect type="zoom" start="103" end="100" time="89" center="auto"/>
+							</animation>
+							<control type="image">
+								<animation type="Focus">
+									<effect type="fade" start="0" end="100" time="144" easing="out"/>
+								</animation>
+								<animation type="UnFocus">
+									<effect type="fade" start="100" end="0" time="144" easing="out"/>
+								</animation>
+								<width>439</width>
+								<height>244</height>
+								<texture border="10" colordiffuse="focus_amplified">shapes/white_rounded_semi.png</texture>
+							</control>
+							<include content="common_poster">
+								<param name="width">439</param>
+								<param name="height">244</param>
+								<param name="fadetime">0</param>
+								<param name="bordersize">5</param>
+								<param name="bordertexture">shadows/shadow_5px.png</param>
+								<param name="texture_var">$VAR[common_landscape_var]</param>
+								<param name="aspectratio">scale</param>
+							</include>			
+						</control>
+						<control type="group">
+							<control type="group">
+								<visible>!String.IsEmpty(ListItem.Label2)</visible>
+								<control type="label">
+									<aligny>center</aligny>
+									<top>254</top>
+									<height>25</height>
+									<width>439</width>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>text200</textcolor>
+									<font>montserrat_semibold_22</font>
+								</control> 
+								<control type="label">
+									<aligny>center</aligny>
+									<align>right</align>
+									<top>254</top>
+									<height>25</height>
+									<width>439</width>
+									<label>$INFO[ListItem.Label2]</label>
+									<textcolor>text300</textcolor>
+									<font>montserrat_semibold_22</font>
+								</control> 
+							</control>
+							<control type="group">
+								<visible>String.IsEmpty(ListItem.Label2)</visible>
+								<control type="label">
+									<aligny>center</aligny>
+									<align>center</align>
+									<top>254</top>
+									<height>25</height>
+									<width>439</width>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>text200</textcolor>
+									<font>montserrat_semibold_22</font>
+								</control> 
+							</control>
+						</control>
+					</control>
+				</focusedlayout>
+				<itemlayout width="457" height="315" condition="!Container.Content(movies) + !Container.Content(seasons) + !Container.Content(sets) + !Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(genres)">
+					<control type="group">
+						<left>13</left>
+						<include content="common_poster">
+							<param name="width">439</param>
+							<param name="height">244</param>
+							<param name="fadetime">0</param>
+							<param name="bordersize">5</param>
+							<param name="bordertexture">shadows/shadow_5px.png</param>
+							<param name="texture_var">$VAR[common_landscape_var]</param>
+							<param name="aspectratio">keep</param>
+						</include>
+						<control type="group">
+							<visible>!String.IsEmpty(ListItem.Label2)</visible>
+							<control type="label">
+								<aligny>center</aligny>
+								<top>254</top>
+								<height>25</height>
+								<width>439</width>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>text200</textcolor>
+								<font>montserrat_semibold_22</font>
+							</control> 
+							<control type="label">
+								<aligny>center</aligny>
+								<align>right</align>
+								<top>254</top>
+								<height>25</height>
+								<width>439</width>
+								<label>$INFO[ListItem.Label2]</label>
+								<textcolor>text300</textcolor>
+								<font>montserrat_semibold_22</font>
+							</control> 
+						</control>
+						<control type="group">
+							<visible>String.IsEmpty(ListItem.Label2)</visible>
+							<control type="label">
+								<aligny>center</aligny>
+								<align>center</align>
+								<top>254</top>
+								<height>25</height>
+								<width>439</width>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>text200</textcolor>
+								<font>montserrat_semibold_22</font>
+							</control> 
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="457" height="315" condition="!Container.Content(movies) + !Container.Content(seasons) + !Container.Content(sets) + !Container.Content(tvshows) + !Container.Content(episodes) + !Container.Content(genres)">
+					<control type="group">
+						<left>13</left>
+						<control type="group">
+							<width>439</width>
+							<height>244</height>
+							<animation type="Focus">
+								<effect type="zoom" start="100" end="103" time="89" center="auto"/>
+							</animation>
+							<animation type="UnFocus">
+								<effect type="zoom" start="103" end="100" time="89" center="auto"/>
+							</animation>
+							<control type="image">
+								<animation type="Focus">
+									<effect type="fade" start="0" end="100" time="144" easing="out"/>
+								</animation>
+								<animation type="UnFocus">
+									<effect type="fade" start="100" end="0" time="144" easing="out"/>
+								</animation>
+								<width>439</width>
+								<height>244</height>
+								<texture border="10" colordiffuse="focus_amplified">shapes/white_rounded_semi.png</texture>
+							</control>
+							<include content="common_poster">
+								<param name="width">439</param>
+								<param name="height">244</param>
+								<param name="fadetime">0</param>
+								<param name="bordersize">5</param>
+								<param name="bordertexture">shadows/shadow_5px.png</param>
+								<param name="texture_var">$VAR[common_landscape_var]</param>
+								<param name="aspectratio">keep</param>
+							</include>			
+						</control>
+						<control type="group">
+							<control type="group">
+								<visible>!String.IsEmpty(ListItem.Label2)</visible>
+								<control type="label">
+									<aligny>center</aligny>
+									<top>254</top>
+									<height>25</height>
+									<width>439</width>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>text200</textcolor>
+									<font>montserrat_semibold_22</font>
+								</control> 
+								<control type="label">
+									<aligny>center</aligny>
+									<align>right</align>
+									<top>254</top>
+									<height>25</height>
+									<width>439</width>
+									<label>$INFO[ListItem.Label2]</label>
+									<textcolor>text300</textcolor>
+									<font>montserrat_semibold_22</font>
+								</control> 
+							</control>
+							<control type="group">
+								<visible>String.IsEmpty(ListItem.Label2)</visible>
+								<control type="label">
+									<aligny>center</aligny>
+									<align>center</align>
+									<top>254</top>
+									<height>25</height>
+									<width>439</width>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>text200</textcolor>
+									<font>montserrat_semibold_22</font>
+								</control> 
+							</control>
+						</control>
+					</control>
+				</focusedlayout>
+				<itemlayout width="457" height="315" condition="Container.Content(genres)">
+					<control type="group">
+						<left>13</left>
+						<include content="common_poster">
+							<param name="width">439</param>
+							<param name="height">244</param>
+							<param name="fadetime">0</param>
+							<param name="bordersize">5</param>
+							<param name="bordertexture">shadows/shadow_5px.png</param>
+							<param name="texture_var"/>
+							<param name="aspectratio">keep</param>
+						</include>	
+						<control type="image">
+							<top>61</top>
+							<width>439</width>
+							<height>122</height>
+							<aspectratio>keep</aspectratio>
+							<texture colordiffuse="text100" fallback="icons/genre.png">$VAR[genre_icon_var]</texture>
+						</control>
+						<control type="group">
+							<visible>!String.IsEmpty(ListItem.Label2)</visible>
+							<control type="label">
+								<aligny>center</aligny>
+								<top>254</top>
+								<height>25</height>
+								<width>439</width>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>text200</textcolor>
+								<font>montserrat_semibold_22</font>
+							</control> 
+							<control type="label">
+								<aligny>center</aligny>
+								<align>right</align>
+								<top>254</top>
+								<height>25</height>
+								<width>439</width>
+								<label>$INFO[ListItem.Label2]</label>
+								<textcolor>text300</textcolor>
+								<font>montserrat_semibold_22</font>
+							</control> 
+						</control>
+						<control type="group">
+							<visible>String.IsEmpty(ListItem.Label2)</visible>
+							<control type="label">
+								<aligny>center</aligny>
+								<align>center</align>
+								<top>254</top>
+								<height>25</height>
+								<width>439</width>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>text200</textcolor>
+								<font>montserrat_semibold_22</font>
+							</control> 
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="457" height="315" condition="Container.Content(genres)">
+					<control type="group">
+						<left>13</left>
+						<control type="group">
+							<width>439</width>
+							<height>244</height>
+							<animation type="Focus">
+								<effect type="zoom" start="100" end="103" time="89" center="auto"/>
+							</animation>
+							<animation type="UnFocus">
+								<effect type="zoom" start="103" end="100" time="89" center="auto"/>
+							</animation>
+							<control type="image">
+								<animation type="Focus">
+									<effect type="fade" start="0" end="100" time="144" easing="out"/>
+								</animation>
+								<animation type="UnFocus">
+									<effect type="fade" start="100" end="0" time="144" easing="out"/>
+								</animation>
+								<width>439</width>
+								<height>244</height>
+								<texture border="10" colordiffuse="focus_amplified">shapes/white_rounded_semi.png</texture>
+							</control>
+							<include content="common_poster">
+								<param name="width">439</param>
+								<param name="height">244</param>
+								<param name="fadetime">0</param>
+								<param name="bordersize">5</param>
+								<param name="bordertexture">shadows/shadow_5px.png</param>
+								<param name="texture_var"/>
+								<param name="aspectratio">keep</param>
+							</include>	
+							<control type="image">
+								<top>61</top>
+								<width>439</width>
+								<height>122</height>
+								<aspectratio>keep</aspectratio>
+								<texture colordiffuse="text100" fallback="icons/genre.png">$VAR[genre_icon_var]</texture>
+							</control>
+						</control>
+						<control type="group">
+							<control type="group">
+								<visible>!String.IsEmpty(ListItem.Label2)</visible>
+								<control type="label">
+									<aligny>center</aligny>
+									<top>254</top>
+									<height>25</height>
+									<width>439</width>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>text200</textcolor>
+									<font>montserrat_semibold_22</font>
+								</control> 
+								<control type="label">
+									<aligny>center</aligny>
+									<align>right</align>
+									<top>254</top>
+									<height>25</height>
+									<width>439</width>
+									<label>$INFO[ListItem.Label2]</label>
+									<textcolor>text300</textcolor>
+									<font>montserrat_semibold_22</font>
+								</control> 
+							</control>
+							<control type="group">
+								<visible>String.IsEmpty(ListItem.Label2)</visible>
+								<control type="label">
+									<aligny>center</aligny>
+									<align>center</align>
+									<top>254</top>
+									<height>25</height>
+									<width>439</width>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>text200</textcolor>
+									<font>montserrat_semibold_22</font>
+								</control> 
+							</control>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+</includes>

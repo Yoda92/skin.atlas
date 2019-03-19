@@ -33,9 +33,9 @@
 		<visible>System.CanReboot</visible>
 	</shortcut>
 	<shortcut>
-		<label>31009</label>
+		<label>$LOCALIZE[31009]</label>
 		<label2>Power Shortcut</label2>
-		<defaultID>settings</defaultID>
+		<defaultID>settings_powermenu</defaultID>
 		<action>ActivateWindow(Settings,return)</action>
 		<icon>special://skin/media/icons/settings.png</icon>
 	</shortcut>

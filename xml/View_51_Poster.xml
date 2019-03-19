@@ -11,20 +11,20 @@
 				<top>354</top>
 				<width>1920</width>
 				<height>372</height>
-				<texture colordiffuse="main1000">colors/white.png</texture>
+				<texture colordiffuse="primary1000">colors/white.png</texture>
 			</control>
 			<!-- Shadow /-->
 			<control type="image">
 				<top>349</top>
 				<height>5</height>
 				<width>1920</width>
-				<texture colordiffuse="main300" flipy="true">shadows/shadowline_5px_down.png</texture>
+				<texture colordiffuse="white500" flipy="true">shadows/shadowline_5px_down.png</texture>
 			</control>
 			<control type="image">
 				<top>726</top>
 				<height>5</height>
 				<width>1920</width>
-				<texture colordiffuse="main300">shadows/shadowline_5px_down.png</texture>
+				<texture colordiffuse="white500">shadows/shadowline_5px_down.png</texture>
 			</control>
 			<!-- Posterview /-->
 			<control type="fixedlist" id="51">
@@ -83,7 +83,7 @@
 					<left>-20</left>
 					<width>522</width>
 					<height>763</height>
-					<texture>colors/black.png</texture>
+					<texture colordiffuse="black">colors/white.png</texture>
 					<bordersize>20</bordersize>
 					<bordertexture border="20">shadows/shadow_20px.png</bordertexture>
 				</control>
@@ -105,10 +105,10 @@
 				<control type="label">
 					<visible>!String.IsEmpty(ListItem.Title) + !ListItem.IsParentFolder</visible>
 					<top>21</top>
-					<height>55</height>
+					<height>50</height>
 					<width>1129</width>
 					<label>$VAR[list_label_var]</label>
-					<font>common_header</font>
+					<font>montserrat_bold_50</font>
 				</control>
 				<!-- Genre /-->
 				<control type="label">
@@ -116,8 +116,8 @@
 					<height>26</height>
 					<width>1129</width>
 					<label>$INFO[ListItem.Genre]</label>
-					<textcolor>text150</textcolor>
-					<font>common_light</font>
+					<textcolor>text200</textcolor>
+					<font>montserrat_light_24</font>
 				</control>
 				<!-- Rating /-->
 				<control type="grouplist">
@@ -138,7 +138,7 @@
 						<width>auto</width>
 						<label>$INFO[ListItem.Rating]</label>
 						<textcolor>text200</textcolor>
-						<font>common_light</font>
+						<font>montserrat_light_24</font>
 					</control>
 					<!-- Duration/-->
 					<control type="label">
@@ -147,7 +147,7 @@
 						<width>auto</width>
 						<label>[COLOR text100]•[/COLOR]  $INFO[ListItem.Duration(mins)] $LOCALIZE[31070]</label>
 						<textcolor>text200</textcolor>
-						<font>common_light</font>
+						<font>montserrat_light_24</font>
 					</control>
 					<!-- Duration/-->
 					<control type="label">
@@ -156,7 +156,7 @@
 						<width>auto</width>
 						<label>[COLOR text100]•[/COLOR]  $INFO[ListItem.Year]</label>
 						<textcolor>text200</textcolor>
-						<font>common_light</font>
+						<font>montserrat_light_24</font>
 					</control>
 				</control>
 				<!-- Plot /-->

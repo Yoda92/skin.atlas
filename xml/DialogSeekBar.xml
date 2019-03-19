@@ -19,39 +19,28 @@
 			<control type="image">
 				<height>79</height>
 				<width>1920</width>
-				<texture colordiffuse="secondary300">colors/black.png</texture>
+				<texture colordiffuse="black900">colors/black.png</texture>
 			</control>
 			<control type="image">
 				<top>79</top>
 				<width>100%</width>
 				<height>5</height>
-				<texture colordiffuse="secondary300">shadows/shadowline_5px_down.png</texture>
+				<texture colordiffuse="white300">shadows/shadowline_5px_down.png</texture>
 			</control>
+			<!-- Title /-->
 			<control type="label">
 				<left>55</left>
 				<height>79</height>
-				<font>mediumsmall_header</font>
+				<font>montserrat_bold_30</font>
 				<label>$VAR[OSD_label_var]</label>
 			</control>
-			<control type="grouplist">
-				<orientation>vertical</orientation>
+			<!-- Time /-->
+			<control type="label">
 				<right>55</right>
+				<align>right</align>
 				<height>79</height>
-				<align>center</align>
-				<!-- Time /-->
-				<control type="label">
-					<align>right</align>
-					<height>25</height>
-					<label>$INFO[System.Time(hh:mm)]</label>
-					<font>small_header</font>
-				</control>
-				<!-- Date /-->
-				<control type="label">
-					<align>right</align>
-					<height>25</height>
-					<textcolor>text300</textcolor>
-					<label>$LOCALIZE[31061]: $INFO[Player.FinishTime]</label>
-				</control>
+				<label>$INFO[System.Time(hh:mm)]</label>
+				<font>montserrat_bold_30</font>
 			</control>
 		</control>
 		<!-- Bottom panel /-->
@@ -69,13 +58,13 @@
 				<bottom>0</bottom>
 				<height>128</height>
 				<width>1920</width>
-				<texture colordiffuse="secondary300">colors/black.png</texture>
+				<texture colordiffuse="black900">colors/black.png</texture>
 			</control>
 			<control type="image">
 				<bottom>128</bottom>
 				<width>100%</width>
 				<height>5</height>
-				<texture flipy="true" colordiffuse="secondary300">shadows/shadowline_5px_down.png</texture>
+				<texture flipy="true" colordiffuse="white300">shadows/shadowline_5px_down.png</texture>
 			</control>
 			<!-- Video time /-->
 			<control type="label">
@@ -83,7 +72,7 @@
 				<width>1920</width>
 				<height>107</height>
 				<align>center</align>
-				<font>small_header</font>
+				<font>montserrat_bold_24</font>
 				<label>$INFO[Player.Time(hh:mm:ss)] / $INFO[Player.Duration(hh:mm:ss)]</label>
 			</control>
 			<control type="label">
@@ -91,16 +80,16 @@
 				<left>55</left>
 				<width>1920</width>
 				<height>35</height>
-				<font>small_header</font>
+				<font>montserrat_bold_24</font>
 				<label>$INFO[Player.SeekStepSize]</label>
-				<shadowcolor>text700</shadowcolor>
+				<shadowcolor>text900</shadowcolor>
 			</control>
 			<control type="progress" id="13">
 				<bottom>107</bottom>
 				<height>21</height>
 				<width>1920</width>
-				<texturebg colordiffuse="text700">colors/white.png</texturebg>
-				<midtexture colordiffuse="red500">colors/white.png</midtexture>
+				<texturebg colordiffuse="primary800">colors/white.png</texturebg>
+				<midtexture colordiffuse="focus">colors/white.png</midtexture>
 				<info>Player.Progress</info>
 			</control>
 			<control type="slider">
