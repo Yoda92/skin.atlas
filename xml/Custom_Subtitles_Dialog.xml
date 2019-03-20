@@ -2,7 +2,6 @@
 <window type="dialog" id="1105">
 	<backgroundcolor>0</backgroundcolor>
 	<defaultcontrol always="true">10</defaultcontrol>
-	<zorder>4</zorder>
 	<controls>
 		<control type="group">
 			<include>common_window_animation</include>

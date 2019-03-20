@@ -24,6 +24,7 @@
 				<aspectratio>scale</aspectratio>
 			</control>
 			<control type="group">
+				<visible>Integer.IsGreater(Container(3000).NumItems,0)</visible>
 				<animation type="Conditional" condition="Control.HasFocus(3000)" reversible="false">
 					<effect type="slide" start="0,0" end="0,-45" time="400" tween="back" easing="out"/>
 				</animation>

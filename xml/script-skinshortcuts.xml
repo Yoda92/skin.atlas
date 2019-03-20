@@ -189,8 +189,7 @@
 					</control>
 					<!-- Configure submenu /-->
 					<control type="button" id="405">
-						<visible>!String.IsEqual(Window.Property(groupname),submenu)</visible>
-						<visible>!String.IsEqual(Window.Property(groupname),powermenu)</visible>
+						<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 						<label>$LOCALIZE[31188]</label>
 						<height>80</height>
 						<align>left</align>

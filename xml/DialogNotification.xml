@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <window type="dialog">
 	<backgroundcolor>0</backgroundcolor>
-	<zorder>3</zorder>
 	<controls>
 		<control type="group">
 			<include>common_dialog_window_animation</include>
@@ -33,14 +32,15 @@
 					<control type="label" id="401">
 						<height>26</height>
 						<width>492</width>
-						<font>montserrat_bold_23</font>
+						<font>opensans_bold_24</font>
 						<textcolor>text900</textcolor>
 					</control>
 					<!-- Message /-->
 					<control type="label" id="402">
 						<height>26</height>
 						<width>492</width>
-						<textcolor>text800</textcolor>
+						<textcolor>text700</textcolor>
+						<font>opensans_semibold_24</font>
 					</control>
 				</control>
 			</control>

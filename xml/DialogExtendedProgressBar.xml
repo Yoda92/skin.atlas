@@ -27,7 +27,7 @@
 					<align>center</align>
 					<height>24</height>
 					<width>568</width>
-					<font>montserrat_bold_23</font>
+					<font>opensans_bold_24</font>
 					<textcolor>text900</textcolor>
 				</control>
 				<!-- Text /-->
@@ -36,6 +36,7 @@
 					<height>26</height>
 					<width>568</width>
 					<textcolor>text800</textcolor>
+					<font>opensans_semibold_24</font>
 				</control>
 				<control type="progress" id="32">
 					<top>19</top>

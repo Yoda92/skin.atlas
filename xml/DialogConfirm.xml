@@ -17,7 +17,7 @@
 				<control type="label" id="1">
 					<height>23</height>
 					<align>center</align>
-					<font>montserrat_bold_23</font>
+					<font>montserrat_bold_24</font>
 				</control>
 				<!-- Dialog text /-->
 				<control type="textbox" id="9">
@@ -28,7 +28,7 @@
 					<textcolor>text300</textcolor>
 				</control>
 				<control type="grouplist" id="9000">
-					<height>80</height>
+					<height>73</height>
 					<align>center</align>
 					<orientation>horizontal</orientation>
 					<itemgap>21</itemgap>
@@ -38,7 +38,7 @@
 						<textcolor>text200</textcolor>
 						<focusedcolor>text100</focusedcolor>
 						<width>233</width>
-						<height>80</height>
+						<height>73</height>
 						<texturenofocus border="10" colordiffuse="primary700">shapes/white_rounded_10.png</texturenofocus>
 						<texturefocus border="10" colordiffuse="focus">shapes/white_rounded_10.png</texturefocus>
 						<align>center</align>
@@ -50,7 +50,7 @@
 						<textcolor>text200</textcolor>
 						<focusedcolor>text100</focusedcolor>
 						<width>233</width>
-						<height>80</height>
+						<height>73</height>
 						<texturenofocus border="10" colordiffuse="primary700">shapes/white_rounded_10.png</texturenofocus>
 						<texturefocus border="10" colordiffuse="focus">shapes/white_rounded_10.png</texturefocus>
 						<align>center</align>
