@@ -5,156 +5,46 @@
 	<controls>
 		<include>default_background</include>
 		<control type="group">
-			<include>window_zoom_animation</include>
+			<include>common_window_animation</include>
 			<control type="group">
-				<!-- Settings list /-->
-				<control type="panel" id="10">
-					<top>135</top>
-					<left>37</left>
-					<pagecontrol>9001</pagecontrol>
-					<onleft>9000</onleft>
-					<onright>9001</onright>
-					<preloaditems>2</preloaditems>
-					<orientation>vertical</orientation>
-					<width>1828</width>
-					<height>1080</height>
-					<itemlayout width="457" height="315">
-						<control type="group">
-							<left>13</left>
-							<control type="image">
-								<height>244</height>
-								<width>439</width>
-								<texture colordiffuse="primary900">panels/panel_tile.png</texture>
-							</control>
-							<control type="image">
-								<top>65</top>
-								<height>114</height>
-								<width>439</width>
-								<aspectratio>keep</aspectratio>
-								<texture colordiffuse="text200">$INFO[ListItem.Icon]</texture>
-							</control>
-							<control type="group">
-								<visible>!String.IsEmpty(ListItem.Label2)</visible>
-								<control type="label">
-									<aligny>center</aligny>
-									<top>254</top>
-									<height>25</height>
-									<width>439</width>
-									<label>$INFO[ListItem.Label]</label>
-									<textcolor>text200</textcolor>
-									<font>montserrat_semibold_22</font>
-								</control> 
-								<control type="label">
-									<aligny>center</aligny>
-									<align>right</align>
-									<top>254</top>
-									<height>25</height>
-									<width>439</width>
-									<label>$INFO[ListItem.Label2]</label>
-									<textcolor>text200</textcolor>
-									<font>montserrat_semibold_22</font>
-								</control> 
-							</control>
-							<control type="group">
-								<visible>String.IsEmpty(ListItem.Label2)</visible>
-								<control type="label">
-									<aligny>center</aligny>
-									<align>center</align>
-									<top>254</top>
-									<height>25</height>
-									<width>439</width>
-									<label>$INFO[ListItem.Label]</label>
-									<textcolor>text200</textcolor>
-									<font>montserrat_semibold_22</font>
-								</control> 
-							</control>
-						</control>
-					</itemlayout>
-					<focusedlayout width="457" height="315">
-						<control type="group">
-							<left>13</left>
-							<control type="group">
-								<control type="image">
-									<height>244</height>
-									<width>439</width>
-									<texture colordiffuse="focus">panels/panel_tile.png</texture>
-								</control>
-								<control type="image">
-									<top>65</top>
-									<height>114</height>
-									<width>439</width>
-									<aspectratio>keep</aspectratio>
-									<texture colordiffuse="text100">$INFO[ListItem.Icon]</texture>
-								</control>						
-							</control>
-							<control type="group">
-								<control type="group">
-									<visible>!String.IsEmpty(ListItem.Label2)</visible>
-									<control type="label">
-										<aligny>center</aligny>
-										<top>254</top>
-										<height>25</height>
-										<width>439</width>
-										<label>$INFO[ListItem.Label]</label>
-										<textcolor>text100</textcolor>
-										<font>montserrat_semibold_22</font>
-									</control> 
-									<control type="label">
-										<aligny>center</aligny>
-										<align>right</align>
-										<top>254</top>
-										<height>25</height>
-										<width>439</width>
-										<label>$INFO[ListItem.Label2]</label>
-										<textcolor>text100</textcolor>
-										<font>montserrat_semibold_22</font>
-									</control> 
-								</control>
-								<control type="group">
-									<visible>String.IsEmpty(ListItem.Label2)</visible>
-									<control type="label">
-										<aligny>center</aligny>
-										<align>center</align>
-										<top>254</top>
-										<height>25</height>
-										<width>439</width>
-										<label>$INFO[ListItem.Label]</label>
-										<textcolor>text100</textcolor>
-										<font>montserrat_semibold_22</font>
-									</control> 
-								</control>
-							</control>
-						</control>
-					</focusedlayout>
-					<content>
-						<include>default_settings_content</include>
-					</content>
+				<!-- Icon /-->
+				<control type="image">
+					<fadetime tween="cubic">300</fadetime>
+					<aspectratio>keep</aspectratio>
+					<top>390</top>
+					<width>1186</width>
+					<height>300</height>
+					<texture colordiffuse="white500">miscellaneous/settings.png</texture>
 				</control>
+				<!-- Panel /-->
+				<control type="image">
+					<left>1186</left>
+					<width>454</width>
+					<height>1080</height>
+					<texture colordiffuse="black">colors/white.png</texture>
+				</control>
+				<control type="image">
+					<left>1181</left>
+					<width>5</width>
+					<height>1080</height>
+					<texture colordiffuse="white300" flipx="true">shadows/shadowline_5px_right.png</texture>
+				</control>
+				<control type="image">
+					<left>1640</left>
+					<width>5</width>
+					<height>1080</height>
+					<texture colordiffuse="white300">shadows/shadowline_5px_right.png</texture>
+				</control>
+				<!-- Settings list /-->
+				<include content="settings_list">
+					<param name="id">10</param>
+					<param name="content">default_settings_content</param>
+				</include>
 				<include content="default_header_label">
 					<param name="label">$LOCALIZE[31009]</param>
 					<param name="container_id">10</param>
 				</include>
-				<control type="group">
-					<!-- Time /-->
-					<control type="label">
-						<top>38</top>
-						<right>55</right>
-						<align>right</align>
-						<height>34</height>
-						<label>$INFO[System.Time(hh:mm)]</label>
-						<font>montserrat_bold_34</font>
-					</control>
-					<!-- Date /-->
-					<control type="label">
-						<font>opensans_semibold_23</font>
-						<top>72</top>
-						<right>55</right>
-						<align>right</align>
-						<height>25</height>
-						<textcolor>text200</textcolor>
-						<label>$INFO[System.Date]</label>
-					</control>
-				</control>
+				<include>clock</include>
 			</control>
 		</control>
 	</controls>

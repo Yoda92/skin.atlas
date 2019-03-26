@@ -334,10 +334,61 @@
 		<param name="id"/>
 		<param name="content"/>
 		<definition>
-			<include content="horizontal_panel">
-				<param name="id">$PARAM[id]</param>
-				<param name="content">$PARAM[content]</param>
-			</include>
+			<!-- Icon list /-->
+			<control type="fixedlist" id="$PARAM[id]">
+				<focusposition>5</focusposition>
+				<movement>4</movement>
+				<orientation>vertical</orientation>
+				<left>1186</left>
+				<width>454</width>
+				<height>1080</height>
+				<itemlayout width="454" height="89">
+					<control type="image">
+						<left>46</left>
+						<height>89</height>
+						<width>30</width>
+						<texture colordiffuse="text300">$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<left>110</left>
+						<aligny>center</aligny>
+						<height>89</height>
+						<width>412</width>
+						<font>montserrat_semibold_22</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="454" height="89">
+					<control type="group">
+						<control type="image">
+							<left>21</left>
+							<width>412</width>
+							<height>89</height>
+							<texture border="5" colordiffuse="focus">shapes/white_rounded.png</texture>
+						</control>
+						<control type="image">
+							<left>46</left>
+							<height>89</height>
+							<width>30</width>
+							<texture colordiffuse="text100">$INFO[ListItem.Icon]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="label">
+							<textcolor>text100</textcolor>
+							<left>110</left>
+							<aligny>center</aligny>
+							<height>89</height>
+							<width>412</width>
+							<font>montserrat_semibold_22</font>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>
+					<include>$PARAM[content]</include>
+				</content>
+			</control>
 		</definition>
 	</include>
 </includes>
