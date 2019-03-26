@@ -11,12 +11,12 @@
 		<control type="group">
 			<include>common_dialog_window_animation</include>
 			<width>734</width>
-			<height>372</height>
+			<height>456</height>
 			<centertop>50%</centertop>
 			<centerleft>50%</centerleft>
 			<include content="dialog_panel">
 				<param name="width">734</param>
-				<param name="height">372</param>
+				<param name="height">456</param>
 				<param name="label">$LOCALIZE[31009]</param>
 			</include>
 			<!-- List /-->
