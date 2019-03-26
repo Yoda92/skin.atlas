@@ -3,8 +3,8 @@
 	<fontset id="default">
 		<font>
 			<name>font13</name>
-			<size>26</size>
-			<filename>sourcesanspro-regular.ttf</filename>
+			<size>24</size>
+			<filename>OpenSans-Regular.ttf</filename>
 		</font>
 		<font>
 			<name>montserrat_bold_26</name>

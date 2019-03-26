@@ -23,7 +23,7 @@
 
 	<variable name="default_header_var">
 		<value condition="!String.IsEmpty(Container.ShowTitle)">$INFO[Container.ShowTitle]</value>
-		<value condition="String.IsEqual(Container.FolderName,Titles">[CAPITALIZE]$INFO[Container.Content][/CAPITALIZE]</value>
+		<value condition="String.IsEqual(Container.FolderName,Titles)">[CAPITALIZE]$INFO[Container.Content][/CAPITALIZE]</value>
 		<value condition="!String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
 		<value>$LOCALIZE[31103]</value>
 	</variable>

@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include file="Includes_Animations.xml"/>
-	<include file="Custom_Configure_Menu.xml"/>
-	<include file="Custom_Subtitles_Dialog.xml"/>
-	<include file="Custom_OSD_Settings_Dialog.xml"/>
-	<include file="Custom_NowPlayingOverlay.xml"/>
 	<include file="Variables.xml"/>
-	<include file="VideoOSD.xml"/>
 	<include file="Includes_Media_Flags.xml"/>
 	<include file="Includes_Dialogs.xml"/>
 	<include file="Includes_DialogSelect.xml"/>

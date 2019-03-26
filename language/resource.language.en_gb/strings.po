@@ -113,7 +113,7 @@ msgid "Video filter"
 msgstr ""
 
 msgctxt "#31024"
-msgid "View mode"
+msgid "Stretch mode"
 msgstr ""
 
 msgctxt "#31025"
@@ -894,4 +894,8 @@ msgstr ""
 
 msgctxt "#31219"
 msgid "Random movies"
+msgstr ""
+
+msgctxt "#31220"
+msgid "Rotation mode"
 msgstr ""

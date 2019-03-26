@@ -76,7 +76,7 @@
 				<!-- Games: View mode /-->
 				<control type="button" id="105">
 					<visible>Player.HasGame</visible>
-					<onclick>ActivateWindow(GameViewMode)</onclick>
+					<onclick>ActivateWindow(GameStretchMode)</onclick>
 					<width>692</width>
 					<height>73</height>
 					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
@@ -84,6 +84,18 @@
 					<align>left</align>
 					<textoffsetx>21</textoffsetx>
 					<label>$LOCALIZE[31024]</label>
+				</control>
+				<!-- Games: Rotation /-->
+				<control type="button" id="106">
+					<visible>Player.HasGame</visible>
+					<onclick>ActivateWindow(GameVideoRotation)</onclick>
+					<width>692</width>
+					<height>73</height>
+					<texturefocus border="5" colordiffuse="focus">shapes/white_rounded.png</texturefocus>
+					<texturenofocus border="5" colordiffuse="primary700">shapes/white_rounded.png</texturenofocus>
+					<align>left</align>
+					<textoffsetx>21</textoffsetx>
+					<label>$LOCALIZE[31220]</label>
 				</control>
 				<!-- Games: Input /-->
 				<control type="button" id="106">
@@ -97,6 +109,7 @@
 					<textoffsetx>21</textoffsetx>
 					<label>$LOCALIZE[31025]</label>
 				</control>
+
 			</control>
 		</control>
 	</controls>
