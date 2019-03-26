@@ -98,7 +98,7 @@
 					<label>$LOCALIZE[31220]</label>
 				</control>
 				<!-- Games: Input /-->
-				<control type="button" id="106">
+				<control type="button" id="107">
 					<visible>Player.HasGame</visible>
 					<onclick>ActivateWindow(GameControllers)</onclick>
 					<width>692</width>
